@@ -1,0 +1,54 @@
+---
+title: "bonnes pratiques R"
+format: html
+editor: visual
+---
+
+# (Rappel?) Fonctions génériques et classes
+
+- Insister sur le côté objet de R
+- Principes de fonctions génériques, la fonction `methods`
+- quelques exemples `print`, `summary`, `predict`
+
+# Sous le capot des objets
+- afficher un objet ne suffit pas à l'appréhender -> `print.default`
+- exemples d'un objet `ts` et `Date`
+- le `typeof`, différence format `Date` et `IDate`
+- Pub pour les entiers
+- l'objet `data.frame` ou `data.table`
+----> Discussion sur ce qui prend de la place
+
+# La coercition des classes
+- Comment comparer (==, <, >) 2 objets de classes différentes ?
+- Difficultés et côté conventionnel de la coercition
+- Exemples divers `dt[, x:=x+1]` ou `dt[, x:=x+1L]`
+---> aléatoire et dépendant du langage --> mauvaise pratique
+
+# Gestion de la RAM 
+- Les classes qui prennent de la place
+- exemple de fusion désastreuse pour la RAM (pleins de taux annuels cf cotisation salariale)
+- un NA prend autant de place qu'une valeur !!!
+
+# Discussion sur les facteurs
+- Idée générale intéressante
+- `stringAsFactors = 0.2` de `fread`
+- Définir les niveaux une fois pour toute
+- Coercitions problématiques
+
+# Discussion sur les valeurs manquantes
+- Comportements dépendant du langage `mean(na.rm=TRUE)` de SAS
+- plusieurs type de NA --> `is.na`
+- Polysémie problématique des NA -> aurait pu/dû être rempli ou NA car absurde ?
+- Si absurde passage par des sous-bases 
+
+# Sous le capot de R, le C
+- Les fonctions `Primitive`
+- Exemple de la fonction `cumsum` dans le code source R
+- Ne pas réinventer la poudre : chercher les fonctions existantes et maintenues
+- Dépendances en paquets
+
+# Préparer à la traduction du code
+- Programme très décomposé (modules, fonctions)
+- scripts ou fonctions ? -> niveaux des agents ?
+- éviter les simplifications propres au langage exemple | & 
+
