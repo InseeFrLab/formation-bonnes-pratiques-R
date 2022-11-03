@@ -10,4 +10,4 @@ df_parquet
 
 data.table::setDT(df_parquet)
 
-data.table::fwrite(df_parquet[region == "24"], "individu_reg.csv")
+data.table::fwrite(df_parquet[region == "24"], "individu_reg.csv", sep = ";")
