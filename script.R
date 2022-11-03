@@ -22,6 +22,17 @@ print(summarise(df2,length(unique(unlist(cs3[!is.na(cs2)])))))
 oprint("Nombre de professions :")
 print(summarise(df2,length(unique(unlist(cs3[!is.na(cs3)])))))
 
+summarise(group_by(df2, aged), n())
+
+df2 %>% select(aged) %>% ggplot(.) + geom_histogram(aes(x = 5*floor(as.numeric(aged)/5)), stat = "count")
+
+ggplot(df2 %>% group_by(as.numeric(aged, sexe)) %>% summarise(SH_sexe = n()) %>% group_by(aged) %>% summarise(SH_sexe = SH_sexe/sum(SH_sexe))) %>% filter(sexe==1) + geom_bar(aes(x = as.numeric(aged), y = SH_sexe), stat="identity") + geom_point(aes(x = as.numeric(aged), y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
+# correction
+# ggplot(
+#   df2 %>% group_by(aged, sexe) %>% summarise(SH_sexe = n()) %>% group_by(aged) %>% mutate(SH_sexe = SH_sexe/sum(SH_sexe)) %>% filter(sexe==1)
+# ) + geom_bar(aes(x = as.numeric(aged), y = SH_sexe), stat="identity") + geom_point(aes(x = as.numeric(aged), y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
+
+
 #valeursManquantes <- data.frame(colonne = c(""), NBRE = c(NA))
 #for (i in 1:length(colnames(df2))){
 #  x = df2[,i]
@@ -34,11 +45,5 @@ print(summarise(df2,length(unique(unlist(cs3[!is.na(cs3)])))))
 #    
 #  )
 #}
-
-
-summarise(group_by(df2, aged), n())
-
-df2 %>% select(aged) %>% ggplot(.) + geom_histogram(aes(x = 5*floor(aged/5)), stat = "count") 
-
 
 
