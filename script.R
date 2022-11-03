@@ -28,22 +28,10 @@ df2 %>% select(aged) %>% ggplot(.) + geom_histogram(aes(x = 5*floor(as.numeric(a
 
 
 
-#valeursManquantes <- data.frame(colonne = c(""), NBRE = c(NA))
-#for (i in 1:length(colnames(df2))){
-#  x = df2[,i]
-#  j=0
-#  t <-0
-#  for (j in 1:nrow(x)){
-#    if (is.na(pull(x[j,])) == T) t <- t+1
-#  }
-#  data.frame(
-#    
-#  )
-#}
 
 # part d'homme dans chaque cohort
 ggplot(df %>% group_by(as.numeric(aged, sexe)) %>% summarise(SH_sexe = n()) %>% group_by(aged) %>% summarise(SH_sexe = SH_sexe/sum(SH_sexe))) %>% filter(sexe==1) + geom_bar(aes(x = as.numeric(aged), y = SH_sexe), stat="identity") + geom_point(aes(x = as.numeric(aged), y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
-# correction
+# correction (qu'il faudra retirer)
 # ggplot(
 #   df2 %>% group_by(aged, sexe) %>% summarise(SH_sexe = n()) %>% group_by(aged) %>% mutate(SH_sexe = SH_sexe/sum(SH_sexe)) %>% filter(sexe==1)
 # ) + geom_bar(aes(x = as.numeric(aged), y = SH_sexe), stat="identity") + geom_point(aes(x = as.numeric(aged), y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
@@ -60,3 +48,22 @@ df3 = tibble(df2 |> group_by(couple, trans) %>% summarise(x = n()) %>% group_by(
 )
 ggplot(df3) +
   geom_bar(aes(x = trans, y = y, color = couple), stat = "identity", position = "dodge")
+
+
+# recode valeurs manquantes
+#valeursManquantes <- data.frame(colonne = c(""), NBRE = c(NA))
+#for (i in 1:length(colnames(df2))){
+#  x = df2[,i]
+#  j=0
+#  t <-0
+#  for (j in 1:nrow(x)){
+#    if (is.na(pull(x[j,])) == T) t <- t+1
+#  }
+#  data.frame(
+#    
+#  )
+#}
+df2[df2$na38 == "ZZ","na38"] <- NA
+df2[df2$na38 == "Z","trans"] <- NA
+df2[df2$tp == "Z","tp"] <- NA
+df2[endsWith(df2$naf08, "Z"), "naf08"] <- NA
