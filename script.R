@@ -26,12 +26,6 @@ summarise(group_by(df2, aged), n())
 
 df2 %>% select(aged) %>% ggplot(.) + geom_histogram(aes(x = 5*floor(as.numeric(aged)/5)), stat = "count")
 
-# part d'homme dans chaque cohort
-ggplot(df2 %>% group_by(as.numeric(aged, sexe)) %>% summarise(SH_sexe = n()) %>% group_by(aged) %>% summarise(SH_sexe = SH_sexe/sum(SH_sexe))) %>% filter(sexe==1) + geom_bar(aes(x = as.numeric(aged), y = SH_sexe), stat="identity") + geom_point(aes(x = as.numeric(aged), y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
-# correction
-# ggplot(
-#   df2 %>% group_by(aged, sexe) %>% summarise(SH_sexe = n()) %>% group_by(aged) %>% mutate(SH_sexe = SH_sexe/sum(SH_sexe)) %>% filter(sexe==1)
-# ) + geom_bar(aes(x = as.numeric(aged), y = SH_sexe), stat="identity") + geom_point(aes(x = as.numeric(aged), y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
 
 
 #valeursManquantes <- data.frame(colonne = c(""), NBRE = c(NA))
@@ -47,4 +41,22 @@ ggplot(df2 %>% group_by(as.numeric(aged, sexe)) %>% summarise(SH_sexe = n()) %>%
 #  )
 #}
 
+# part d'homme dans chaque cohort
+ggplot(df %>% group_by(as.numeric(aged, sexe)) %>% summarise(SH_sexe = n()) %>% group_by(aged) %>% summarise(SH_sexe = SH_sexe/sum(SH_sexe))) %>% filter(sexe==1) + geom_bar(aes(x = as.numeric(aged), y = SH_sexe), stat="identity") + geom_point(aes(x = as.numeric(aged), y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
+# correction
+# ggplot(
+#   df2 %>% group_by(aged, sexe) %>% summarise(SH_sexe = n()) %>% group_by(aged) %>% mutate(SH_sexe = SH_sexe/sum(SH_sexe)) %>% filter(sexe==1)
+# ) + geom_bar(aes(x = as.numeric(aged), y = SH_sexe), stat="identity") + geom_point(aes(x = as.numeric(aged), y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
 
+
+# stats surf par statut
+df3 = tibble(df2 |> group_by(couple, surf) %>% summarise(x = n()) %>% group_by(couple) |> mutate(y = 100*x/sum(x))
+)
+ggplot(df3) %>%
+  geom_bar(aes(x = surf, y = y, color = couple), stat = "identity", position = "dodge")
+
+# stats trans par statut
+df3 = tibble(df2 |> group_by(couple, trans) %>% summarise(x = n()) %>% group_by(couple) |> mutate(y = 100*x/sum(x))
+)
+ggplot(df3) +
+  geom_bar(aes(x = trans, y = y, color = couple), stat = "identity", position = "dodge")
