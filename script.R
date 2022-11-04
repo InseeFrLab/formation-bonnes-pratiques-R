@@ -10,6 +10,8 @@ if (!require("MASS")) install.packages("MASS")
 library(tidyverse)
 library(dplyr)
 
+# IMPORT DONNEES ----------------------------
+
 # j'importe les données avec read_csv2 parce que
 # c'est un csv avec des ; et que read_csv attend
 # comme separateur des ,
@@ -33,6 +35,10 @@ df2 <- df |>
 print(df2, 20)
 
 
+# STATISTIQUES DESCRIPTIVES -------------------
+
+# COMPTE PROFESSIONS =================
+
 # combien de professions
 print("Nombre de professions :")
 print(summarise(df2, length(unique(unlist(cs3[!is.na(cs1)])))))
@@ -40,6 +46,9 @@ print("Nombre de professions :")
 print(summarise(df2, length(unique(unlist(cs3[!is.na(cs2)])))))
 oprint("Nombre de professions :")
 print(summarise(df2, length(unique(unlist(cs3[!is.na(cs3)])))))
+
+
+# STATISTIQUES AGE ======================
 
 summarise(group_by(df2, aged), n())
 
@@ -62,7 +71,8 @@ ggplot(df2[as.numeric(df2$aged) > 50, c(3, 4)],
 
 
 
-# part d'homme dans chaque cohort
+# part d'homme dans chaque cohorte ===================
+
 ggplot(df %>%
          group_by(as.numeric(aged, sexe)) %>%
          summarise(SH_sexe = n()) %>%
@@ -76,7 +86,8 @@ ggplot(df %>%
   coord_cartesian(c(0, 100))
 
 
-# stats surf par statut
+# stats surf par statut ==================
+
 df3 <- tibble(df2 |>
                 group_by(couple, surf) %>%
                 summarise(x = n()) %>%
@@ -86,7 +97,8 @@ ggplot(df3) %>%
   geom_bar(aes(x = surf, y = y, color = couple),
            stat = "identity", position = "dodge")
 
-# stats trans par statut
+# stats trans par statut ===================
+
 df3 <- tibble(df2 |>
                 group_by(couple, trans) %>%
                 summarise(x = n()) %>%
@@ -95,6 +107,8 @@ df3 <- tibble(df2 |>
 ggplot(df3) + geom_bar(aes(x = trans, y = y, color = couple),
                        stat = "identity", position = "dodge")
 
+
+# TRAITEMENT VALEURS MANQUANTES ------------------------
 
 # recode valeurs manquantes valeursManquantes <-
 # data.frame(colonne = c(''), NBRE = c(NA)) for
@@ -112,6 +126,8 @@ df2[, nrow(df2) - 1] <- factor(df2[, nrow(df2) - 1])
 df2$ur <- factor(df2$ur)
 library(forcats)
 df2$sexe <- fct_recode(df2$sexe, Homme = "0", Femme = "1")
+
+# STATS AGREGEES -----------------------
 
 # fonction de stat agregee
 fonction_de_stat_agregee <- function(a, b = "moyenne",
@@ -156,7 +172,8 @@ fonction_de_stat_agregee(df2 %>%
                            pull(aged), na.rm = TRUE)
 
 
-# modelisation
+# modelisation ----------------------------
+
 library(MASS)
 df3 <- df2 %>%
   select(surf, cs1, ur, couple, aged) %>%
