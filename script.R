@@ -1,17 +1,9 @@
-rm(list = ls())
-
-if (!require("ggplot2")) install.packages("ggplot2")
-if (!require("stringr")) install.packages("stringr")
-if (!require("dplyr")) install.packages("dplyr")
-if (!require("MASS")) install.packages("MASS")
-if (!require("arrow")) install.packages("arrow")
-
-
 library(arrow)
 library(dplyr)
 library(rlang)
 library(forcats)
 library(MASS)
+library(ggplot2)
 
 decennie_a_partir_annee <- function(annee) {
   return(annee - annee %% 10)
@@ -104,7 +96,7 @@ summarise(group_by(df2, age), n())
 
 df2 |>
   dplyr::select(age) |>
-  ggplot(.) + geom_histogram(aes(x = 5 * floor(age / 5)),
+  ggplot() + geom_histogram(aes(x = 5 * floor(age / 5)),
                              stat = "count")
 
 ggplot(df2[as.numeric(df2$aged) > 50,],
@@ -126,7 +118,7 @@ part_total <- function(df2, var_groupe = "age", var_interet = "sexe"){
     mutate(share = share / sum(share))
 }
 
-temp <- part_total(df2) |> filter(sexe=="Homme")
+temp <- part_total(df2) |> filter(sexe == "Homme")
 
 ggplot(temp) +
   geom_bar(aes(x = as.numeric(age),
