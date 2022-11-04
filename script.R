@@ -4,6 +4,7 @@ if (!require('ggplot2')) install.packages('ggplot2')
 if (!require('stringr')) install.packages('stringr')
 if (!require('dplyr')) install.packages('dplyr')
 if (!require('tidyverse')) install.packages('tidyverse')
+if (!require('MASS')) install.packages('MASS')
 
 
 library(tidyverse)
@@ -22,6 +23,7 @@ df2 <- df |>
   select(c("region", "dept", "aemm", "aged", "anai","catl","cs1", "cs2", "cs3", "couple", "na38", "naf08", "pnai12", "sexe", "surf", "tp", "trans", "ur"))
 print(df2, 20)
 
+
 # combien de professions
 print("Nombre de professions :")
 print(summarise(df2,length(unique(unlist(cs3[!is.na(cs1)])))))
@@ -32,8 +34,15 @@ print(summarise(df2,length(unique(unlist(cs3[!is.na(cs3)])))))
 
 summarise(group_by(df2, aged), n())
 
+decennie_a_partir_annee    = function(ANNEE){ return(ANNEE - ANNEE %%
+                                            10) }
+
+
 df2 %>% select(aged) %>% ggplot(.) + geom_histogram(aes(x = 5*floor(as.numeric(aged)/5)), stat = "count")
 
+ggplot(df2[as.numeric(df2$aged)>50,c(3,4)], aes(
+  x=as.numeric(aged)#x = as.numeric(aged) - as.numeric(aged) %% 5,
+  y = ..density.., fill = factor(decennie_a_partir_annee(as.numeric(aemm)))), alpha = 0.2) + geom_histogram()#position = "dodge") + scale_fill_viridis_d()
 
 
 
@@ -75,3 +84,18 @@ df2[df2$na38 == "ZZ","na38"] <- NA
 df2[df2$na38 == "Z","trans"] <- NA
 df2[df2$tp == "Z","tp"] <- NA
 df2[endsWith(df2$naf08, "Z"), "naf08"] <- NA
+
+str(df2)
+df2[,nrow(df2)-1] <- factor(df2[,nrow(df2)-1])
+df2$ur=factor(df2$ur)
+library(forcats)
+df2$sexe <- 
+fct_recode(df2$sexe,"Homme"="0","Femme"="1")
+
+# modelisation
+library(MASS)
+df3=df2%>%select(surf,cs1,ur,couple,aged)%>%filter(surf!="Z")
+df3[,1]=factor(df3$surf, ordered = T)
+df3[,"cs1"]=factor(df3$cs1)
+polr(surf ~ cs1 + factor(ur), df3 %>% filter(couple == "2"&&as.numeric(aged>40&&aged<60)))
+
