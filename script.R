@@ -16,28 +16,27 @@ decennie_a_partir_annee <- function(annee) {
   return(annee - annee %% 10)
 }
 # fonction de stat agregee
-fonction_de_stat_agregee <- function(a, b = "moyenne",
-                                     ...) {
-  checkvalue <- FALSE
-  for (x in c("moyenne", "variance", "ecart-type",
-              "sd", "ecart type")) {
-    checkvalue <- (checkvalue | b == x)
-  }
-  if (checkvalue == FALSE)
-    stop("statistique non supportée")
-  if (b == "moyenne") {
-    x <- mean(a, ...)
-  } else if (b == "ecart-type" || b == "sd" || b == "ecart type") {
-    x <- sd(b, ...)
-  } else if (a == "variance") {
-    x <- var(a, ...)
-  }
-  return(x)
+stats_agregees <- function(a, b = "moyenne",
+                           ...) {
+  match.arg(b,
+            c("moyenne",
+              "variance",
+              "ecart-type",
+              "sd",
+              "ecart type")
+  )
+  
+  switch(b,
+         moyenne = mean(a, ...),
+         variance = var(a, ...),
+         sd(a, ...)
+  )
+  
 }
-fonction_de_stat_agregee(rnorm(10))
-fonction_de_stat_agregee(rnorm(10), "cart type")
-fonction_de_stat_agregee(rnorm(10), "ecart type")
-fonction_de_stat_agregee(rnorm(10), "variance")
+stats_agregees(rnorm(10))
+#stats_agregees(rnorm(10), "cart type")
+stats_agregees(rnorm(10), "ecart type")
+stats_agregees(rnorm(10), "variance")
 
 
 
@@ -46,9 +45,9 @@ fonction_de_stat_agregee(rnorm(10), "variance")
 df2 <- readr::read_csv2(
   "/home/onyxia/formation-bonnes-pratiques-R/individu_reg.csv",
   col_select = c("region", "aemm", "aged", "anai",
-                "catl", "cs1", "cs2", "cs3", "couple", "na38",
-                "naf08", "pnai12", "sexe", "surf", "tp", "trans",
-                "ur"))
+                 "catl", "cs1", "cs2", "cs3", "couple", "na38",
+                 "naf08", "pnai12", "sexe", "surf", "tp", "trans",
+                 "ur"))
 
 # FEATURE ENGINEERING -------------------------
 
@@ -67,7 +66,7 @@ df2 <- df2 %>%
   mutate(across(
     c(-region, -aemm, -aged, -anai),
     as.factor)
-    )
+  )
 
 df2 <- df2 %>%
   mutate(age = as.numeric(aged))
@@ -151,22 +150,22 @@ ggplot(df3) + geom_bar(aes(x = trans, y = y, color = couple),
 
 # STATS AGREGEES =================
 
-fonction_de_stat_agregee(df2 %>%
-                           filter(sexe == "Homme") %>%
-                           mutate(aged = as.numeric(aged)) %>%
-                           pull(aged), na.rm = TRUE)
-fonction_de_stat_agregee(df2 %>%
-                           filter(sexe == "Femme") %>%
-                           mutate(aged = as.numeric(aged)) %>%
-                           pull(aged), na.rm = TRUE)
-fonction_de_stat_agregee(df2 %>%
-                           filter(sexe == "Homme" & couple == "2") %>%
-                           mutate(aged = as.numeric(aged)) %>%
-                           pull(aged), na.rm = TRUE)
-fonction_de_stat_agregee(df2 %>%
-                           filter(sexe == "Femme" & couple == "2") %>%
-                           mutate(aged = as.numeric(aged)) %>%
-                           pull(aged), na.rm = TRUE)
+stats_agregees(df2 %>%
+                 filter(sexe == "Homme") %>%
+                 mutate(aged = as.numeric(aged)) %>%
+                 pull(aged), na.rm = TRUE)
+stats_agregees(df2 %>%
+                 filter(sexe == "Femme") %>%
+                 mutate(aged = as.numeric(aged)) %>%
+                 pull(aged), na.rm = TRUE)
+stats_agregees(df2 %>%
+                 filter(sexe == "Homme" & couple == "2") %>%
+                 mutate(aged = as.numeric(aged)) %>%
+                 pull(aged), na.rm = TRUE)
+stats_agregees(df2 %>%
+                 filter(sexe == "Femme" & couple == "2") %>%
+                 mutate(aged = as.numeric(aged)) %>%
+                 pull(aged), na.rm = TRUE)
 
 
 # MODELISATION ----------------------------
@@ -182,4 +181,4 @@ polr(surf ~ cs1 + factor(ur),
          couple == 2 &
            age > 40 &
            age < 60)
-     )
+)
