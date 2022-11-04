@@ -93,17 +93,18 @@ df2$sexe <-
 fct_recode(df2$sexe,"Homme"="0","Femme"="1")
 
 #fonction de stat agregee
+ignoreNA <- T
 fonction_de_stat_agregee<-function(a,b="moyenne",...){
   checkvalue=F
   for (x in c("moyenne","variance","ecart-type","sd","ecart type")){checkvalue<-(checkvalue | b==x)}
   if (checkvalue == FALSE) stop("statistique non supportée")
   
   if (b=="moyenne"){
-    x=mean(a,...)
+    x=mean(a, na.rm = ignoreNA,...)
   } else if (b=="ecart-type" | b == "sd" | b == "ecart type"){
-    x = sd(b, ...)
+    x = sd(b, na.rm = ignoreNA, ...)
   } else if (a=="variance"){
-    x<- var(a, ...)
+    x<- var(a, na.rm = ignoreNA, ...)
   }
   return(x)
 }
