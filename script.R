@@ -3,12 +3,10 @@ rm(list = ls())
 if (!require("ggplot2")) install.packages("ggplot2")
 if (!require("stringr")) install.packages("stringr")
 if (!require("dplyr")) install.packages("dplyr")
-if (!require("tidyverse")) install.packages("tidyverse")
 if (!require("MASS")) install.packages("MASS")
 if (!require("arrow")) install.packages("arrow")
 
 
-library(tidyverse)
 library(arrow)
 library(dplyr)
 library(rlang)
