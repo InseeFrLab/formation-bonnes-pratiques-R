@@ -81,25 +81,25 @@ df2$sexe <- df2$sexe %>%
 # COMPTE PROFESSIONS =================
 
 # combien de professions
-oprint("Nombre de professions :")
+print("Nombre de professions :")
 print(summarise(df2, length(unique(unlist(cs3[!is.na(cs3)])))))
 print("Nombre de professions :")
-print(summarise(df2, length(unique(unlist(cs3[!is.na(cs2)])))))
+print(summarise(df2, length(unique(unlist(cs2[!is.na(cs2)])))))
 print("Nombre de professions :")
-print(summarise(df2, length(unique(unlist(cs3[!is.na(cs1)])))))
+print(summarise(df2, length(unique(unlist(cs1[!is.na(cs1)])))))
 
 
 # STATISTIQUES AGE ======================
 
-summarise(group_by(df2, aged), n())
+summarise(group_by(df2, age), n())
 
 
 df2 %>%
-  select(aged) %>%
-  ggplot(.) + geom_histogram(aes(x = 5 * floor(as.numeric(aged) / 5)),
+  dplyr::select(age) %>%
+  ggplot(.) + geom_histogram(aes(x = 5 * floor(age / 5)),
                              stat = "count")
 
-ggplot(df2[as.numeric(df2$aged) > 50, c(3, 4)],
+ggplot(df2[as.numeric(df2$aged) > 50,],
        aes(x = as.numeric(aged),
            y = ..density..,
            fill = factor(decennie_a_partir_annee(as.numeric(aemm)))
@@ -110,15 +110,17 @@ ggplot(df2[as.numeric(df2$aged) > 50, c(3, 4)],
 
 # part d'homme dans chaque cohorte ===================
 
-ggplot(df %>%
-         group_by(as.numeric(aged, sexe)) %>%
-         summarise(SH_sexe = n()) %>%
-         group_by(aged) %>%
-         summarise(SH_sexe = SH_sexe / sum(SH_sexe))) %>%
-  filter(sexe == 1) +
-  geom_bar(aes(x = as.numeric(aged),
+temp <- df2 %>%
+  group_by(age, sexe) %>%
+  summarise(SH_sexe = n()) %>%
+  group_by(age) %>%
+  mutate(SH_sexe = SH_sexe / sum(SH_sexe)) %>%
+  dplyr::filter(sexe == "Homme")
+
+ggplot(temp) +
+  geom_bar(aes(x = as.numeric(age),
                y = SH_sexe), stat = "identity") +
-  geom_point(aes(x = as.numeric(aged),
+  geom_point(aes(x = as.numeric(age),
                  y = SH_sexe), stat = "identity", color = "red") +
   coord_cartesian(c(0, 100))
 
