@@ -43,7 +43,7 @@ fonction_de_stat_agregee(rnorm(10), "variance")
 
 # IMPORT DONNEES ----------------------------
 
-df <- readr::read_csv2(
+df2 <- readr::read_csv2(
   "/home/onyxia/formation-bonnes-pratiques-R/individu_reg.csv",
   col_select = c("region", "aemm", "aged", "anai",
                 "catl", "cs1", "cs2", "cs3", "couple", "na38",
