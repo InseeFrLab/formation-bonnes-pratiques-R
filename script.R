@@ -127,30 +127,31 @@ ggplot(temp) +
 
 # stats surf par statut ==================
 
-df3 <- tibble(df2 |>
-                group_by(couple, surf) %>%
-                summarise(x = n()) %>%
-                group_by(couple) |>
-                mutate(y = 100 * x / sum(x)))
-ggplot(df3) %>%
+df3 <- df2 |>
+  group_by(couple, surf) %>%
+  summarise(x = n()) %>%
+  group_by(couple) |>
+  mutate(y = 100 * x / sum(x))
+
+ggplot(df3) +
   geom_bar(aes(x = surf, y = y, color = couple),
            stat = "identity", position = "dodge")
 
 # stats trans par statut ===================
 
-df3 <- tibble(df2 |>
-                group_by(couple, trans) %>%
-                summarise(x = n()) %>%
-                group_by(couple) |>
-                mutate(y = 100 * x / sum(x)))
+df3 <- df2 |>
+  group_by(couple, trans) %>%
+  summarise(x = n()) %>%
+  group_by(couple) |>
+  mutate(y = 100 * x / sum(x))
+
 ggplot(df3) + geom_bar(aes(x = trans, y = y, color = couple),
                        stat = "identity", position = "dodge")
 
 
-# STATS AGREGEES -----------------------
+# STATS AGREGEES =================
 
-
-fonction_de_stat_agregee(df %>%
+fonction_de_stat_agregee(df2 %>%
                            filter(sexe == "Homme") %>%
                            mutate(aged = as.numeric(aged)) %>%
                            pull(aged), na.rm = TRUE)
@@ -168,14 +169,17 @@ fonction_de_stat_agregee(df2 %>%
                            pull(aged), na.rm = TRUE)
 
 
-# modelisation ----------------------------
+# MODELISATION ----------------------------
 
 
 df3 <- df2 %>%
-  select(surf, cs1, ur, couple, aged) %>%
+  dplyr::select(surf, cs1, ur, couple, age) %>%
   filter(surf != "Z")
-df3[, 1] <- factor(df3$surf, ordered = TRUE)
-df3[, "cs1"] <- factor(df3$cs1)
-polr(surf ~ cs1 + factor(ur), df3 %>%
-       filter(couple == "2" && as.numeric(aged > 40 &&
-                                            aged < 60)))
+
+polr(surf ~ cs1 + factor(ur),
+     df3 %>%
+       filter(
+         couple == 2 &
+           age > 40 &
+           age < 60)
+     )
