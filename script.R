@@ -50,24 +50,30 @@ df2 <- readr::read_csv2(
                 "naf08", "pnai12", "sexe", "surf", "tp", "trans",
                 "ur"))
 
+# FEATURE ENGINEERING -------------------------
 
-# TRAITEMENT VALEURS MANQUANTES ------------------------
+# TRAITEMENT VALEURS MANQUANTES ==================
 
-# recode valeurs manquantes valeursManquantes <-
-# data.frame(colonne = c(''), NBRE = c(NA)) for
-# (i in 1:length(colnames(df2))){ x = df2[,i] j=0
-# t <-0 for (j in 1:nrow(x)){ if
-# (is.na(pull(x[j,])) == T) t <- t+1 }
-# data.frame( ) }
+
 df2[df2$na38 == "ZZ", "na38"] <- NA
-df2[df2$na38 == "Z", "trans"] <- NA
+df2[df2$trans == "Z", "trans"] <- NA
 df2[df2$tp == "Z", "tp"] <- NA
-df2[endsWith(df2$naf08, "Z"), "naf08"] <- NA
+df2[endsWith(df2$naf08, "ZZ"), "naf08"] <- NA
 
-str(df2)
-df2[, nrow(df2) - 1] <- factor(df2[, nrow(df2) - 1])
-df2$ur <- factor(df2$ur)
-df2$sexe <- fct_recode(df2$sexe, Homme = "0", Femme = "1")
+
+# TYPES EN FACTEUR ===================
+
+df2 <- df2 %>%
+  mutate(across(
+    c(-region, -aemm, -aged, -anai),
+    as.factor)
+    )
+
+df2 <- df2 %>%
+  mutate(age = as.numeric(aged))
+
+df2$sexe <- df2$sexe %>%
+  fct_recode(Homme = "1", Femme = "2")
 
 
 # STATISTIQUES DESCRIPTIVES -------------------
@@ -75,12 +81,12 @@ df2$sexe <- fct_recode(df2$sexe, Homme = "0", Femme = "1")
 # COMPTE PROFESSIONS =================
 
 # combien de professions
-print("Nombre de professions :")
-print(summarise(df2, length(unique(unlist(cs3[!is.na(cs1)])))))
-print("Nombre de professions :")
-print(summarise(df2, length(unique(unlist(cs3[!is.na(cs2)])))))
 oprint("Nombre de professions :")
 print(summarise(df2, length(unique(unlist(cs3[!is.na(cs3)])))))
+print("Nombre de professions :")
+print(summarise(df2, length(unique(unlist(cs3[!is.na(cs2)])))))
+print("Nombre de professions :")
+print(summarise(df2, length(unique(unlist(cs3[!is.na(cs1)])))))
 
 
 # STATISTIQUES AGE ======================
