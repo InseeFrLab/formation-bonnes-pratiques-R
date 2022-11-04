@@ -32,7 +32,8 @@ print("Nombre de professions :'')
 oprint("Nombre de professions :")
 print(summarise(df2,length(unique(unlist(cs3[!is.na(cs3)])))))
 
-summarise(group_by(df2, aged), n())
+print.data.frame <- summarise(group_by(df2, aged), n())
+print(print.data.frame)
 
 decennie_a_partir_annee    = function(ANNEE){ return(ANNEE - ANNEE %%
                                             10) }
