@@ -6,8 +6,8 @@ df_parquet <-
     opts = list("region" = "")
   )
 
-df_parquet
+df_parquet <- df_parquet %>% dplyr::filter(region == "24")
 
-data.table::setDT(df_parquet)
-
-data.table::fwrite(df_parquet[region == "24"], "individu_reg.csv", sep = ";")
+arrow::write_parquet(
+  df_parquet, "individu_reg.parquet"
+)
