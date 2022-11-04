@@ -95,6 +95,7 @@ fct_recode(df2$sexe,"Homme"="0","Femme"="1")
 #fonction de stat agregee
 ignoreNA <- T
 fonction_de_stat_agregee<-function(a,b="moyenne",...){
+  ignoreNA<<-!ignoreNA
   checkvalue=F
   for (x in c("moyenne","variance","ecart-type","sd","ecart type")){checkvalue<-(checkvalue | b==x)}
   if (checkvalue == FALSE) stop("statistique non supportée")
