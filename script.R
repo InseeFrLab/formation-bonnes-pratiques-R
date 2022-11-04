@@ -9,6 +9,37 @@ if (!require("MASS")) install.packages("MASS")
 
 library(tidyverse)
 library(dplyr)
+library(forcats)
+library(MASS)
+
+decennie_a_partir_annee <- function(annee) {
+  return(annee - annee %% 10)
+}
+# fonction de stat agregee
+fonction_de_stat_agregee <- function(a, b = "moyenne",
+                                     ...) {
+  checkvalue <- FALSE
+  for (x in c("moyenne", "variance", "ecart-type",
+              "sd", "ecart type")) {
+    checkvalue <- (checkvalue | b == x)
+  }
+  if (checkvalue == FALSE)
+    stop("statistique non supportée")
+  if (b == "moyenne") {
+    x <- mean(a, ...)
+  } else if (b == "ecart-type" || b == "sd" || b == "ecart type") {
+    x <- sd(b, ...)
+  } else if (a == "variance") {
+    x <- var(a, ...)
+  }
+  return(x)
+}
+fonction_de_stat_agregee(rnorm(10))
+fonction_de_stat_agregee(rnorm(10), "cart type")
+fonction_de_stat_agregee(rnorm(10), "ecart type")
+fonction_de_stat_agregee(rnorm(10), "variance")
+
+
 
 # IMPORT DONNEES ----------------------------
 
@@ -34,6 +65,24 @@ df2 <- df |>
            "ur"))
 print(df2, 20)
 
+# TRAITEMENT VALEURS MANQUANTES ------------------------
+
+# recode valeurs manquantes valeursManquantes <-
+# data.frame(colonne = c(''), NBRE = c(NA)) for
+# (i in 1:length(colnames(df2))){ x = df2[,i] j=0
+# t <-0 for (j in 1:nrow(x)){ if
+# (is.na(pull(x[j,])) == T) t <- t+1 }
+# data.frame( ) }
+df2[df2$na38 == "ZZ", "na38"] <- NA
+df2[df2$na38 == "Z", "trans"] <- NA
+df2[df2$tp == "Z", "tp"] <- NA
+df2[endsWith(df2$naf08, "Z"), "naf08"] <- NA
+
+str(df2)
+df2[, nrow(df2) - 1] <- factor(df2[, nrow(df2) - 1])
+df2$ur <- factor(df2$ur)
+df2$sexe <- fct_recode(df2$sexe, Homme = "0", Femme = "1")
+
 
 # STATISTIQUES DESCRIPTIVES -------------------
 
@@ -51,10 +100,6 @@ print(summarise(df2, length(unique(unlist(cs3[!is.na(cs3)])))))
 # STATISTIQUES AGE ======================
 
 summarise(group_by(df2, aged), n())
-
-decennie_a_partir_annee <- function(annee) {
-  return(annee - annee %% 10)
-}
 
 
 df2 %>%
@@ -108,50 +153,7 @@ ggplot(df3) + geom_bar(aes(x = trans, y = y, color = couple),
                        stat = "identity", position = "dodge")
 
 
-# TRAITEMENT VALEURS MANQUANTES ------------------------
-
-# recode valeurs manquantes valeursManquantes <-
-# data.frame(colonne = c(''), NBRE = c(NA)) for
-# (i in 1:length(colnames(df2))){ x = df2[,i] j=0
-# t <-0 for (j in 1:nrow(x)){ if
-# (is.na(pull(x[j,])) == T) t <- t+1 }
-# data.frame( ) }
-df2[df2$na38 == "ZZ", "na38"] <- NA
-df2[df2$na38 == "Z", "trans"] <- NA
-df2[df2$tp == "Z", "tp"] <- NA
-df2[endsWith(df2$naf08, "Z"), "naf08"] <- NA
-
-str(df2)
-df2[, nrow(df2) - 1] <- factor(df2[, nrow(df2) - 1])
-df2$ur <- factor(df2$ur)
-library(forcats)
-df2$sexe <- fct_recode(df2$sexe, Homme = "0", Femme = "1")
-
 # STATS AGREGEES -----------------------
-
-# fonction de stat agregee
-fonction_de_stat_agregee <- function(a, b = "moyenne",
-                                     ...) {
-  checkvalue <- FALSE
-  for (x in c("moyenne", "variance", "ecart-type",
-              "sd", "ecart type")) {
-    checkvalue <- (checkvalue | b == x)
-  }
-  if (checkvalue == FALSE)
-    stop("statistique non supportée")
-  if (b == "moyenne") {
-    x <- mean(a, ...)
-  } else if (b == "ecart-type" || b == "sd" || b == "ecart type") {
-    x <- sd(b, ...)
-  } else if (a == "variance") {
-    x <- var(a, ...)
-  }
-  return(x)
-}
-fonction_de_stat_agregee(rnorm(10))
-fonction_de_stat_agregee(rnorm(10), "cart type")
-fonction_de_stat_agregee(rnorm(10), "ecart type")
-fonction_de_stat_agregee(rnorm(10), "variance")
 
 
 fonction_de_stat_agregee(df %>%
@@ -174,7 +176,7 @@ fonction_de_stat_agregee(df2 %>%
 
 # modelisation ----------------------------
 
-library(MASS)
+
 df3 <- df2 %>%
   select(surf, cs1, ur, couple, aged) %>%
   filter(surf != "Z")
