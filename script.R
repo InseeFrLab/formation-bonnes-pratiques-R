@@ -112,6 +112,13 @@ fonction_de_stat_agregee(rnorm(10), "cart type")
 fonction_de_stat_agregee(rnorm(10), "ecart type")
 fonction_de_stat_agregee(rnorm(10), "variance")
 
+
+fonction_de_stat_agregee(df  %>% filter(sexe == "Homme") %>% mutate(aged = as.numeric(aged)) %>% pull(aged), na.rm=T)
+fonction_de_stat_agregee(df2 %>% filter(sexe == "Femme") %>% mutate(aged = as.numeric(aged)) %>% pull(aged), na.rm=T)
+fonction_de_stat_agregee(df2 %>% filter(sexe == "Homme" & couple == "2") %>% mutate(aged = as.numeric(aged)) %>% pull(aged), na.rm=T)
+fonction_de_stat_agregee(df2 %>% filter(sexe == "Femme" & couple == "2") %>% mutate(aged = as.numeric(aged)) %>% pull(aged), na.rm=T)
+
+
 # modelisation
 library(MASS)
 df3=df2%>%select(surf,cs1,ur,couple,aged)%>%filter(surf!="Z")
