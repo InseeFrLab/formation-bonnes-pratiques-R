@@ -159,11 +159,12 @@ df3_femme <- df2 |>
 df3_homme_couple <- df3_homme |> filter(couple == 2)
 df3_femme_couple <- df3_femme |> filter(couple == 2)
 
-
-stats_agregees(df3_homme$age, na.rm = TRUE)
-stats_agregees(df3_femme$age, na.rm = TRUE)
-stats_agregees(df3_homme_couple$age, na.rm = TRUE)
-stats_agregees(df3_femme_couple$age, na.rm = TRUE)
+lapply(
+  list(df3_homme$age,
+       df3_femme$age,
+       df3_homme_couple$age,
+       df3_femme_couple$age), stats_agregees, na.rm = TRUE
+)
 
 
 # MODELISATION ----------------------------
