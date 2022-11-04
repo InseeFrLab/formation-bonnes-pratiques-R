@@ -5,9 +5,11 @@ if (!require("stringr")) install.packages("stringr")
 if (!require("dplyr")) install.packages("dplyr")
 if (!require("tidyverse")) install.packages("tidyverse")
 if (!require("MASS")) install.packages("MASS")
+if (!require("arrow")) install.packages("arrow")
 
 
 library(tidyverse)
+library(arrow)
 library(dplyr)
 library(rlang)
 library(forcats)
@@ -50,12 +52,14 @@ recode_as_na <- function(df, var_name, value){
 
 # IMPORT DONNEES ----------------------------
 
-df2 <- readr::read_csv2(
-  "/home/onyxia/formation-bonnes-pratiques-R/individu_reg.csv",
+df2 <- arrow::read_parquet(
+  "individu_reg.parquet",
   col_select = c("region", "aemm", "aged", "anai",
                  "catl", "cs1", "cs2", "cs3", "couple", "na38",
                  "naf08", "pnai12", "sexe", "surf", "tp", "trans",
-                 "ur"))
+                 "ur") 
+  )
+df2 <- tibble(df2)
 
 # FEATURE ENGINEERING -------------------------
 
