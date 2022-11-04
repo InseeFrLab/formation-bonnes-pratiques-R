@@ -92,6 +92,26 @@ library(forcats)
 df2$sexe <- 
 fct_recode(df2$sexe,"Homme"="0","Femme"="1")
 
+#fonction de stat agregee
+fonction_de_stat_agregee<-function(a,b="moyenne",...){
+  checkvalue=F
+  for (x in c("moyenne","variance","ecart-type","sd","ecart type")){checkvalue<-(checkvalue | b==x)}
+  if (checkvalue == FALSE) stop("statistique non supportée")
+  
+  if (b=="moyenne"){
+    x=mean(a,...)
+  } else if (b=="ecart-type" | b == "sd" | b == "ecart type"){
+    x = sd(b, ...)
+  } else if (a=="variance"){
+    x<- var(a, ...)
+  }
+  return(x)
+}
+fonction_de_stat_agregee(rnorm(10))
+fonction_de_stat_agregee(rnorm(10), "cart type")
+fonction_de_stat_agregee(rnorm(10), "ecart type")
+fonction_de_stat_agregee(rnorm(10), "variance")
+
 # modelisation
 library(MASS)
 df3=df2%>%select(surf,cs1,ur,couple,aged)%>%filter(surf!="Z")
