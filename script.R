@@ -53,11 +53,9 @@ df2$sexe <- df2$sexe |>
 
 # combien de professions
 print("Nombre de professions :")
-print(summarise(df2, length(unique(unlist(cs3[!is.na(cs3)])))))
-print("Nombre de professions :")
-print(summarise(df2, length(unique(unlist(cs2[!is.na(cs2)])))))
-print("Nombre de professions :")
-print(summarise(df2, length(unique(unlist(cs1[!is.na(cs1)])))))
+sapply(df2 %>% dplyr::select(starts_with("cs")),
+       function(x) n_distinct(x))
+
 
 print(
   summarise(group_by(df2, aged), n())
