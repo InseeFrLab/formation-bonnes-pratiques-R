@@ -43,8 +43,8 @@ df2 <- df2 |>
 df2 <- df2 |>
   mutate(age = as.numeric(aged))
 
-df2$sexe <- df2$sexe |>
-  fct_recode(Homme = "1", Femme = "2")
+df2 <- df2 |>
+  mutate(sexe = fct_recode(sexe, Homme = "1", Femme = "2"))
 
 
 # STATISTIQUES DESCRIPTIVES -------------------
