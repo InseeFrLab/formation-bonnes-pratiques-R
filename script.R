@@ -1,4 +1,5 @@
 rm(list = ls())
+setwd("/home/onyxia/formation-bonnes-pratiques-R")
 
 if (!require('ggplot2')) install.packages('ggplot2')
 if (!require('stringr')) install.packages('stringr')
@@ -64,9 +65,11 @@ ggplot(df3) %>%
 # stats trans par statut
 df3 = tibble(df2 |> group_by(couple, trans) %>% summarise(x = n()) %>% group_by(couple) |> mutate(y = 100*x/sum(x))
 )
-ggplot(df3) +
+p <- ggplot(df3) +
   geom_bar(aes(x = trans, y = y, color = couple), stat = "identity", position = "dodge")
+setwd("/home/onyxia/")
 
+ggsave("p.png", p)
 
 # recode valeurs manquantes
 #valeursManquantes <- data.frame(colonne = c(""), NBRE = c(NA))
