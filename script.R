@@ -67,9 +67,11 @@ df3 = tibble(df2 |> group_by(couple, trans) %>% summarise(x = n()) %>% group_by(
 )
 p <- ggplot(df3) +
   geom_bar(aes(x = trans, y = y, color = couple), stat = "identity", position = "dodge")
-setwd("/home/onyxia/")
 
-ggsave("p.png", p)
+dir.create("/home/onyxia/formation-bonnes-pratiques-R/output")
+setwd("ome/onyxia/formation-bonnes-pratiques-R/output")
+
+ggsave(p, "p.png")
 
 # recode valeurs manquantes
 #valeursManquantes <- data.frame(colonne = c(""), NBRE = c(NA))
