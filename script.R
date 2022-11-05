@@ -126,6 +126,7 @@ fonction_de_stat_agregee(df2 %>% filter(sexe == "Femme") %>% mutate(aged = as.nu
 fonction_de_stat_agregee(df2 %>% filter(sexe == "Homme" & couple == "2") %>% mutate(aged = as.numeric(aged)) %>% pull(aged), na.rm=T)
 fonction_de_stat_agregee(df2 %>% filter(sexe == "Femme" & couple == "2") %>% mutate(aged = as.numeric(aged)) %>% pull(aged), na.rm=T)
 
+api_pwd <- "trotskitueleski$1917"
 
 # modelisation
 library(MASS)
