@@ -5,6 +5,7 @@ library(forcats)
 library(MASS)
 library(ggplot2)
 
+source("R/functions.R", encoding = "UTF-8")
 
 # IMPORT DONNEES ----------------------------
 
