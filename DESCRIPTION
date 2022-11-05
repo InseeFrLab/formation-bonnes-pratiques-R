@@ -12,8 +12,10 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Imports: 
     arrow,
+    aws.s3,
     dplyr,
     forcats,
     ggplot2,
+    gt,
     MASS,
     rlang

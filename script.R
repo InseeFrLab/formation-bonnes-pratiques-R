@@ -1,27 +1,14 @@
-library(arrow)
-library(dplyr)
-library(rlang)
-library(forcats)
-library(MASS)
-library(ggplot2)
-library(gt)
+library(targets)
 
 source("R/functions.R", encoding = "UTF-8")
 
-secrets <- yaml::read_yaml("secrets.yaml")
-api_pwd <- secrets$api_pwd
 
+tar_load(api_pwd)
 
 # IMPORT DONNEES ----------------------------
 
-df2 <- arrow::read_parquet(
-  "individu_reg.parquet",
-  col_select = c("region", "aemm", "aged", "anai",
-                 "catl", "cs1", "cs2", "cs3", "couple", "na38",
-                 "naf08", "pnai12", "sexe", "surf", "tp", "trans",
-                 "ur") 
-  )
-df2 <- tibble(df2)
+tar_load(df2)
+
 
 # FEATURE ENGINEERING -------------------------
 

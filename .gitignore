@@ -4,3 +4,4 @@
 .Ruserdata
 individu_reg.parquet
 secrets.yaml
+_targets/

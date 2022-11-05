@@ -1,5 +1,7 @@
+library(aws.s3)
+
 df_parquet <- 
-  aws.s3::s3read_using(
+  s3read_using(
     FUN = arrow::read_parquet,
     object = "/diffusion/RP/2016/individu_reg/individu_reg.parquet",
     bucket = "donnees-insee",
