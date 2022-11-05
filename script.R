@@ -7,6 +7,10 @@ library(ggplot2)
 
 source("R/functions.R", encoding = "UTF-8")
 
+secrets <- yaml::read_yaml("secrets.yaml")
+api_pwd <- secrets$api_pwd
+
+
 # IMPORT DONNEES ----------------------------
 
 df2 <- arrow::read_parquet(
@@ -55,6 +59,10 @@ print(summarise(df2, length(unique(unlist(cs2[!is.na(cs2)])))))
 print("Nombre de professions :")
 print(summarise(df2, length(unique(unlist(cs1[!is.na(cs1)])))))
 
+print(
+  summarise(group_by(df2, aged), n())
+)
+
 
 # STATISTIQUES AGE ======================
 
@@ -99,9 +107,16 @@ ggplot(temp) +
 
 df3 <- part_total(df2, "couple", "surf")
 
-ggplot(df3) +
-  geom_bar(aes(x = surf, y = share, color = couple),
+
+p <- ggplot(df3) +
+  geom_bar(aes(x = trans, y = y,
+               color = couple),
            stat = "identity", position = "dodge")
+
+dir.create("./output")
+
+ggsave(p, "./output/surf_par_statut.png")
+
 
 # stats trans par statut ===================
 
