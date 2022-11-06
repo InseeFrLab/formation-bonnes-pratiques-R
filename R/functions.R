@@ -167,11 +167,12 @@ part_total <- function(df2, var_groupe = "age", var_interet = "sexe"){
 
 graph_part_couple_by_surf <- function(data){
   
-  df3 <- part_total(data, "couple", "surf")
+  df3 <- part_total(data, "couple", "surf") |>
+    dplyr::filter(couple != "Z")
   
   p <- ggplot(df3) +
-    geom_bar(aes(x = share, y = y,
-                 color = couple),
+    geom_bar(aes(x = surf, y = share,
+                 fill = couple),
              stat = "identity", position = "dodge")
   
   return(p)

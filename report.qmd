@@ -1,0 +1,33 @@
+---
+title: "Mon super rapport"
+author: "Daffy Duck"
+format: html
+echo: false
+---
+
+
+```{r}
+#| include: false
+library(targets)
+tar_unscript()
+tar_load(table_age)
+tar_load(super_graphique)
+tar_load(super_regression)
+```
+
+# Statistiques descriptives
+
+```{r}
+table_age
+```
+
+# Résultats
+
+```{r}
+super_graphique
+```
+
+```{r}
+super_regression
+```
+
