@@ -17,15 +17,22 @@ tar_load(super_regression)
 
 # Statistiques descriptives
 
+Je vous propose d'admirer cette distribution de l'âge
+dans le recensement:
+
 ```{r}
 table_age
 ```
 
 # Résultats
 
+J'ai fait un graphique dont je suis hyper fier:
+
 ```{r}
 super_graphique
 ```
+
+Y a cette régression aussi, c'est un truc de ouf:
 
 ```{r}
 super_regression
