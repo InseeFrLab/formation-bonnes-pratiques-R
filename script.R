@@ -12,27 +12,7 @@ tar_load(df2)
 
 # FEATURE ENGINEERING -------------------------
 
-# TRAITEMENT VALEURS MANQUANTES ==================
-
-df2 <- recode_as_na(df2, "na38", "ZZ")
-df2 <- recode_as_na(df2, "trans", "Z")
-df2 <- recode_as_na(df2, "tp", "Z")
-df2[endsWith(df2$naf08, "ZZ"), "naf08"] <- NA
-
-
-# TYPES EN FACTEUR ===================
-
-df2 <- df2 |>
-  mutate(across(
-    c(-region, -aemm, -aged, -anai),
-    as.factor)
-  )
-
-df2 <- df2 |>
-  mutate(age = as.numeric(aged))
-
-df2 <- df2 |>
-  mutate(sexe = fct_recode(sexe, Homme = "1", Femme = "2"))
+tar_load(survey_recoded_factors)
 
 
 # STATISTIQUES DESCRIPTIVES -------------------
@@ -41,38 +21,20 @@ df2 <- df2 |>
 
 # combien de professions
 print("Nombre de professions :")
-sapply(df2 %>% dplyr::select(starts_with("cs")),
+sapply(survey_recoded_factors %>% dplyr::select(starts_with("cs")),
        function(x) n_distinct(x))
-
-
-stats_age <- df2 |> 
-  group_by(decennie = decennie_a_partir_annee(age)) |>
-  summarise(n())
-
-table_age <- gt(stats_age) |>
-  tab_header(
-    title = "Distribution des âges dans notre population"
-  ) |>
-  fmt_number(
-    columns = `n()`,
-    sep_mark = " ",
-    decimals = 0
-    ) |>
-  cols_label(
-    decennie = "Tranche d'âge",
-    `n()` = "Population"
-  )
 
 
 # STATISTIQUES AGE ======================
 
-summarise(group_by(df2, age), n())
+summarise(group_by(survey_recoded_factors, age), n())
 
+tar_load(table_age)
 
 df2 |>
   dplyr::select(age) |>
   ggplot() + geom_histogram(aes(x = 5 * floor(age / 5)),
-                             stat = "count")
+                            stat = "count")
 
 ggplot(df2[as.numeric(df2$aged) > 50,],
        aes(x = as.numeric(aged),
@@ -84,14 +46,6 @@ ggplot(df2[as.numeric(df2$aged) > 50,],
 
 
 # part d'homme dans chaque cohorte ===================
-
-part_total <- function(df2, var_groupe = "age", var_interet = "sexe"){
-  df2 |>
-    group_by(!!!syms(c(var_groupe, var_interet))) |>
-    summarise(share = n()) |>
-    group_by(!!sym(var_groupe)) |>
-    mutate(share = share / sum(share))
-}
 
 temp <- part_total(df2) |> filter(sexe == "Homme")
 
@@ -105,17 +59,9 @@ ggplot(temp) +
 
 # stats surf par statut ==================
 
-df3 <- part_total(df2, "couple", "surf")
 
+tar_load(super_graphique)
 
-p <- ggplot(df3) +
-  geom_bar(aes(x = trans, y = y,
-               color = couple),
-           stat = "identity", position = "dodge")
-
-dir.create("./output")
-
-ggsave(p, "./output/surf_par_statut.png")
 
 
 # stats trans par statut ===================
@@ -145,15 +91,4 @@ lapply(
 
 # MODELISATION ----------------------------
 
-
-df3 <- df2 |>
-  dplyr::select(surf, cs1, ur, couple, age) |>
-  filter(surf != "Z")
-
-polr(surf ~ cs1 + factor(ur),
-     df3 |>
-       filter(
-         couple == 2 &
-           age > 40 &
-           age < 60)
-)
+tar_load(super_regression)
