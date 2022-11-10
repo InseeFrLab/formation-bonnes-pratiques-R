@@ -20,10 +20,17 @@ df <- readr::read_csv2(
 colnames(df) <- df[1,]
 df <- df[2:nrow(df),]
 
+# plusieurs commandes sur la même ligne avec des ;
+colnames(df) ; dim(df) ; str(df) ;
+
 df2 <- df |>
   select(c("region", "dept", "aemm", "aged", "anai","catl","cs1", "cs2", "cs3", "couple", "na38", "naf08", "pnai12", "sexe", "surf", "tp", "trans", "ur"))
 print(df2, 20)
 
+# on vérifie qu'il n'y pas d'autres modalités de sexe avec un attach()
+attach(df2)
+verification <- df2[!(sexe %in% c("Homme","Femme")),]
+detach(df2)
 
 # combien de professions
 print("Nombre de professions :")
