@@ -11,10 +11,9 @@ jobs:
     steps:
       - name: Set up quarto
         uses: quarto-dev/quarto-actions/setup@v2
-      - name: Render and publish to GitHub Pages
-        uses: quarto-dev/quarto-actions/publish@v2
+      - name: Render
+        run: quarto render slides/index.qmd
+      - name: Publish
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          target: gh-pages
-          path: slides/index.qmd
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+          folder: slides
