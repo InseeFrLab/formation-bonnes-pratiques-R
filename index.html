@@ -11,7 +11,7 @@
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.269">
 
-  <meta name="author" content="Romain Avouac, Thomas Faria, Lino Galiana, Olivier Meslin, Tom Seimandi">
+  <meta name="author" content="Romain Avouac, Thomas Faria, Lino Galiana, Tom Seimandi">
   <title>Bonnes pratiques pour les projets statistiques</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -396,7 +396,7 @@
 
 <section id="title-slide" data-background-image="_extensions/InseeFrLab/onyxia/background.svg" data-background-size="contain" class="quarto-title-block center">
   <h1 class="title">Bonnes pratiques pour les projets statistiques</h1>
-  <p class="subtitle"></p><p><strong><span class="orange">Formation à la DESE</span></strong></p><p></p>
+  <p class="subtitle"></p><p><strong><span class="orange">1ère partie : formation à Git</span></strong></p><p></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -406,7 +406,6 @@
 </div>
 </div>
 
-  <p class="date">Invalid Date</p>
 </section>
 <section>
 <section id="introduction" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
@@ -429,7 +428,7 @@
 </div>
 <div class="fragment">
 <ul>
-<li><span class="blue2"><strong>Conséquence</strong></span> : un ensemble de <span class="orange"><strong>règles informelles</strong></span>, conventionnellement acceptées comme produisant des logiciels <span class="orange"><strong>fiables</strong></span>, <span class="orange"><strong>évolutifs</strong></span> et <span class="orange"><strong>maintenables</strong></span></li>
+<li><span class="blue2"><strong>Conséquence</strong></span> : ensemble de <span class="orange"><strong>règles informelles</strong></span>, conventionnellement acceptées comme produisant des logiciels <span class="orange"><strong>fiables</strong></span>, <span class="orange"><strong>évolutifs</strong></span> et <span class="orange"><strong>maintenables</strong></span></li>
 </ul>
 </div>
 </section>
@@ -439,26 +438,26 @@
 <p>L’activité du statisticien / <em>datascientist</em> tend à se rapprocher de celle du développeur :</p>
 <div class="fragment">
 <ul>
-<li>projets <span class="orange"><strong>intenses en code</strong></span></li>
+<li>projets <strong>intenses en code</strong></li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><span class="orange"><strong>projets collaboratifs</strong></span> et de grande envergure</li>
+<li><strong>projets collaboratifs</strong> et de grande envergure</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><span class="orange"><strong>complexification</strong></span> des données et donc des <span class="orange"><strong>infrastructures</strong></span></li>
+<li><strong>complexification</strong> des données et donc des <strong>infrastructures</strong></li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><span class="orange"><strong>déploiement</strong></span> d’applications pour valoriser les analyses</li>
+<li><strong>déploiement</strong> d’applications pour valoriser les analyses</li>
 </ul>
 </div>
 </section>
-<section id="bonnes-pratiques-et-reproductibilité" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
+<section id="bonnes-pratiques-et-reproductibilité" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Bonnes pratiques et reproductibilité</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -466,164 +465,197 @@
 </figure>
 </div>
 <p><strong>Source</strong> : Peng R., Reproducible Research in Computational Science, Science (2011)</p>
+<ul>
+<li><p>Une reproductibilité parfaite est <span class="orange"><strong>coûteuse</strong></span></p></li>
+<li><p><code>Git</code> est un <span class="orange"><strong>standard atteignable</strong></span> et <span class="orange"><strong>efficient</strong></span></p></li>
+</ul>
+</section>
+<section id="bonnes-pratiques-et-reproductibilité-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Bonnes pratiques et reproductibilité</h2>
+
+<img data-src="img/aea.png" class="r-stretch quarto-figure-center"><ul>
+<li>Les journaux académiques sont de plus en plus exigeants sur la reproductibilité (notamment <a href="https://aeadataeditor.github.io/">AEA</a> et <a href="https://twitter.com/AeaData"><span class="citation" data-cites="AeaData">@AeaData</span></a>)</li>
+</ul>
+<!--
+## L'objectif du jour
+
+- Aujourd'hui, on se [__concentre sur `Git`__]{.orange}
+
+![](https://www.memecreator.org/static/images/memes/5482008.jpg){fig-align="center"}
+-->
+</section></section>
+<section>
+<section id="le-contrôle-de-version-pourquoi-faire" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
+<h1>Le contrôle de version : pourquoi faire ?</h1>
+
+</section>
+<section id="archiver-son-code-proprement" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title"><span class="emoji" data-emoji="one">1️⃣</span> Archiver son code proprement</h2>
+<p>pour en finir avec ça :</p>
+
+<img data-src="img/fichiers_multiples.png" class="r-stretch"></section>
+<section id="archiver-son-code-proprement-1" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title"><span class="emoji" data-emoji="one">1️⃣</span> Archiver son code proprement</h2>
+<p>ou ça :</p>
+
+<img data-src="img/finalfinal.png" class="r-stretch quarto-figure-center"></section>
+<section id="archiver-son-code-proprement-2" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title"><span class="emoji" data-emoji="one">1️⃣</span> Archiver son code proprement</h2>
+<p>ou encore ça :</p>
+<div class="sourceCode" id="cb1" data-code-line-numbers="12-18"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb1-1" class="hljs-ln-code"><a href="#cb1-1"></a>prior <span class="op">&lt;-</span> read_csv(prior_path)</span>
+<span id="cb1-2" class="hljs-ln-code"><a href="#cb1-2"></a>prior <span class="op">&lt;-</span> prior <span class="op">%&gt;%</span></span>
+<span id="cb1-3" class="hljs-ln-code"><a href="#cb1-3"></a>    select(<span class="bu">id</span>, proba_inter, proba_build, proba_rfl) <span class="op">%&gt;%</span></span>
+<span id="cb1-4" class="hljs-ln-code"><a href="#cb1-4"></a>    separate(<span class="bu">id</span>, into <span class="op">=</span> c(<span class="st">'nidt'</span>, <span class="st">'grid_id'</span>), sep <span class="op">=</span> <span class="st">":"</span>) <span class="op">%&gt;%</span></span>
+<span id="cb1-5" class="hljs-ln-code"><a href="#cb1-5"></a>    group_by(nidt) <span class="op">%&gt;%</span></span>
+<span id="cb1-6" class="hljs-ln-code"><a href="#cb1-6"></a>    mutate(</span>
+<span id="cb1-7" class="hljs-ln-code"><a href="#cb1-7"></a>        proba_build <span class="op">=</span> proba_build<span class="op">/</span><span class="bu">sum</span>(proba_build),</span>
+<span id="cb1-8" class="hljs-ln-code"><a href="#cb1-8"></a>        proba_rfl <span class="op">=</span> proba_rfl<span class="op">/</span><span class="bu">sum</span>(proba_rfl),</span>
+<span id="cb1-9" class="hljs-ln-code"><a href="#cb1-9"></a>        ) <span class="op">%&gt;%</span></span>
+<span id="cb1-10" class="hljs-ln-code"><a href="#cb1-10"></a>    unite(col <span class="op">=</span> <span class="st">"id"</span>, nidt, grid_id, sep <span class="op">=</span> <span class="st">":"</span>)</span>
+<span id="cb1-11" class="hljs-ln-code"><a href="#cb1-11"></a></span>
+<span id="cb1-12" class="hljs-ln-code"><a href="#cb1-12"></a><span class="co"># Test</span></span>
+<span id="cb1-13" class="hljs-ln-code"><a href="#cb1-13"></a><span class="co"># prior_test &lt;- prior %&gt;%</span></span>
+<span id="cb1-14" class="hljs-ln-code"><a href="#cb1-14"></a><span class="co">#    mutate(</span></span>
+<span id="cb1-15" class="hljs-ln-code"><a href="#cb1-15"></a><span class="co">#        proba_inter = round(proba_inter, 4)</span></span>
+<span id="cb1-16" class="hljs-ln-code"><a href="#cb1-16"></a><span class="co">#        proba_build = round(proba_build, 4)</span></span>
+<span id="cb1-17" class="hljs-ln-code"><a href="#cb1-17"></a><span class="co">#        proba_rfl = round(proba_rfl, 4)</span></span>
+<span id="cb1-18" class="hljs-ln-code"><a href="#cb1-18"></a><span class="co">#    )</span></span>
+<span id="cb1-19" class="hljs-ln-code"><a href="#cb1-19"></a></span>
+<span id="cb1-20" class="hljs-ln-code"><a href="#cb1-20"></a>write_csv(prior_round, <span class="st">"~/prior.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="archiver-son-code-proprement-3" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title"><span class="emoji" data-emoji="one">1️⃣</span> Archiver son code proprement</h2>
+<p>Pour arriver à ça :</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/timeline.png" height="475"></p>
+</figure>
+</div>
+<p>Source : <a href="https://thinkr.fr/travailler-avec-git-via-rstudio-et-versionner-son-code/">ThinkR</a></p>
+</section>
+<section id="voyager-dans-le-temps-de-votre-projet" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2><span class="emoji" data-emoji="two">2️⃣</span> Voyager dans le temps (de votre projet)</h2>
+
+<img data-src="img/historique_utilitr.png" class="r-stretch quarto-figure-center"></section>
+<section id="une-collaboration-simplifiée-et-efficace" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title"><span class="emoji" data-emoji="three">3️⃣</span> Une collaboration simplifiée et efficace</h2>
+<p>Un modèle distribué</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/git_distributed.png" height="475"></p>
+</figure>
+</div>
+<p>Source : <a href="https://www.specbee.com">specbee.com</a></p>
+</section>
+<section id="une-collaboration-simplifiée-et-efficace-1" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title"><span class="emoji" data-emoji="three">3️⃣</span> Une collaboration simplifiée et efficace</h2>
+<p>Qui permet l’expérimentation en toute sécurité</p>
+
+<img data-src="img/branches.png" class="r-stretch quarto-figure-center"><p>Source : <a href="https://lutece.paris.fr/support/jsp/site/Portal.jsp?page=wiki&amp;view=page&amp;page_name=git&amp;language=fr">lutece.paris.fr</a></p>
+</section>
+<section id="une-collaboration-simplifiée-et-efficace-2" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title"><span class="emoji" data-emoji="three">3️⃣</span> Une collaboration simplifiée et efficace</h2>
+<p>Quel que soit l’environnement de travail</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/envtravail.png" height="475"></p>
+</figure>
+</div>
+</section>
+<section id="une-collaboration-simplifiée-et-efficace-3" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title"><span class="emoji" data-emoji="three">3️⃣</span> Une collaboration simplifiée et efficace</h2>
+<p>Avec des outils pour faciliter la collaboration</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/issue.png" height="500"></p>
+</figure>
+</div>
+</section>
+<section id="partager-son-code-à-un-public-large" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title"><span class="emoji" data-emoji="four">4️⃣</span> Partager son code à un public large</h2>
+<p>Une vitrine pour vous</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://starecat.com/content/wp-content/uploads/github-commits-contributions-you-vs-the-guy-she-told-you-not-to-be-worried-about.jpg" height="500"></p>
+</figure>
+</div>
+</section>
+<section id="en-résumé" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>En résumé</h2>
+<ul>
+<li><span class="blue2"><strong>Construire</strong></span> et <span class="blue2"><strong>naviguer</strong></span> à travers l’<span class="orange"><strong>historique</strong></span> de son projet</li>
+</ul>
 <div class="fragment">
 <ul>
-<li>Une reproductibilité parfaite est <span class="orange"><strong>coûteuse</strong></span></li>
+<li>La <span class="orange"><strong>collaboration</strong></span> rendue <span class="blue2"><strong>simple</strong></span> et <span class="blue2"><strong>efficace</strong></span></li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><code>Git</code> est un <span class="orange"><strong>standard atteignable</strong></span> et <span class="orange"><strong>efficient</strong></span></li>
+<li>Améliorer la <span class="orange"><strong>reproductibilité</strong></span> de ses projets</li>
 </ul>
 </div>
 <div class="fragment">
-<div class="callout callout-note callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Quel socle de bonnes pratiques pour les projets statistiques en <code>R</code> ?</strong></p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="plan-de-la-formation" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Plan de la formation</h2>
-<p>Améliorations graduelles dans l’échelle de la reproductibilité :</p>
-<p><span class="emoji" data-emoji="one">1️⃣</span> Qualité du code</p>
-<div class="fragment">
-<p><span class="emoji" data-emoji="two">2️⃣</span> Structure des projets</p>
-</div>
-<div class="fragment">
-<p><span class="emoji" data-emoji="three">3️⃣</span> Formats de données</p>
-</div>
-<div class="fragment">
-<p><span class="emoji" data-emoji="four">4️⃣</span> Environnements reproductibles</p>
-</div>
-<div class="fragment">
-<p><span class="emoji" data-emoji="five">5️⃣</span> <em>Pipelines</em> de données</p>
-</div>
-<div class="fragment">
-<p><span class="emoji" data-emoji="six">6️⃣</span> Publication reproductible</p>
-</div>
-</section>
-<section id="exercice-0" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 0</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Préparation de l’environnement de travail</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol type="1">
-<li class="fragment">Créer un nouveau dépôt public sur <a href="https://github.com/">GitHub</a></li>
-<li class="fragment">Lancer un service <code>RStudio</code> sur le <a href="https://datalab.sspcloud.fr/home">Datalab</a></li>
-<li class="fragment">Utiliser un <code>terminal</code> pour activer le stockage des identifiants :
 <ul>
-<li class="fragment"><code>git config --global credential.helper store</code></li>
-</ul></li>
-<li class="fragment">Cloner le dépôt distant sur votre environnement local (<code>Datalab</code>):
-<ul>
-<li class="fragment"><code>File</code> → <code>New project</code> → <code>Version Control</code> → <code>Git</code></li>
-</ul></li>
-<li class="fragment">Créer le script <code>script.R</code> dans votre dépôt en copiant le contenu du fichier qui se trouve <a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/script.R">ici</a></li>
-<li class="fragment">Créer un script <code>write_csv.R</code> en copiant le contenu de celui se trouvant <a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/write_csv.R">ici</a>, puis l’exécuter. Il récupére des données et en écrit un échantillon sur lequel nous allons travailler</li>
-<li class="fragment">Ajouter “individu_reg.*” au fichier <code>.gitignore</code></li>
-<li class="fragment"><em>commit</em>/<em>push</em> les changements</li>
-</ol>
-</div>
-</div>
-</div>
+<li>Améliorer la <span class="orange"><strong>visibilité</strong></span> de ses projets</li>
+</ul>
 </div>
 </section></section>
 <section>
-<section id="i--qualité-du-code" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
-<h1>I- Qualité du code</h1>
+<section id="le-contrôle-de-version-avec-git" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
+<h1>Le contrôle de version avec <code>Git</code></h1>
 
 </section>
-<section id="enjeux" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Enjeux</h2>
+<section id="git-est-complexe" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title"><span class="emoji" data-emoji="warning">⚠️</span> Git est complexe</h2>
+<p>L’utilisation de <code>Git</code> nécessite <span class="orange"><strong>certaines notions préalables</strong></span>:</p>
+<div>
 <ul>
-<li>D’une vision utilitariste du code à une vision du code comme <span class="orange"><strong>outil de communication</strong></span></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>Favoriser la <span class="orange"><strong>lisibilité</strong></span> et la <span class="orange"><strong>maintenabilité</strong></span></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Faciliter la <span class="orange"><strong>réutilisation</strong></span></li>
+<li class="fragment">Fonctionnement d’un <code>filesystem</code></li>
+<li class="fragment">Connaissance basique du terminal <code>Linux</code></li>
+<li class="fragment">Potentiellement, un grand nombre de commandes</li>
 </ul>
 </div>
-<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/gitfire.png" height="400"></p>
+<p></p><figcaption>Source : <a href="https://iulianacosmina.com/?p=19452">Ici</a></figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="git-est-complexe-1" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title"><span class="emoji" data-emoji="warning">⚠️</span> Git est complexe</h2>
+<p><span class="blue2"><strong>Mais</strong></span></p>
+<div>
 <ul>
-<li>Assurer la <span class="orange"><strong>transparence</strong></span> méthodologique</li>
+<li class="fragment">L’<strong>usage quotidien</strong> n’implique que <span class="orange"><strong>quelques commandes</strong></span></li>
+<li class="fragment"><span class="orange"><strong>Enormément de ressources</strong></span> disponibles sur internet</li>
+<li class="fragment">Des <span class="orange"><strong>interfaces visuelles</strong></span> (ex: <code>RStudio</code>, <code>Sublime Merge</code>, <code>VS Code</code>) qui facilitent l’apprentissage</li>
+<li class="fragment">Un petit investissement individuel pour de <span class="orange"><strong>gros gains collectifs</strong></span></li>
 </ul>
 </div>
 </section>
-<section id="principes-généraux" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Principes généraux</h2>
-<ol type="1">
-<li>Adopter les <span class="orange"><strong>standards communautaires</strong></span></li>
-</ol>
-<div class="fragment">
-<ol start="2" type="1">
-<li>Utiliser des <span class="orange"><strong>fonctions</strong></span></li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="3" type="1">
-<li><span class="orange"><strong>Documenter</strong></span> son code</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="4" type="1">
-<li>Indiquer les <em>packages</em> utilisés afin d’éviter les <span class="orange"><strong>conflits</strong></span></li>
-</ol>
-</div>
-</section>
-<section id="adopter-les-standards-communautaires" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="one">1️⃣</span> Adopter les standards communautaires</h2>
-<blockquote>
-<p><em>“Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread”</em></p>
-<p><a href="https://style.tidyverse.org/">Tidyverse Style Guide</a></p>
-</blockquote>
-<div class="fragment">
+<section id="concepts" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title">Concepts</h2>
+<p><code>Git</code>, <code>GitHub</code>, <code>GitLab</code>… quelles différences ?</p>
+<div>
 <ul>
-<li>Respecter les <span class="orange">conventions</span> du langage dans lequel il est rédigé</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Il existe un <strong>guide de référence</strong> pour bien coder en <code>R</code> : le <a href="https://style.tidyverse.org/index.html">Tidyverse style guide</a>.</li>
+<li class="fragment"><code>Git</code> est un <strong>logiciel</strong> ;</li>
+<li class="fragment">Utilisation en ligne de commandes</li>
+<li class="fragment">Différentes <span class="blue2"><strong>interfaces graphiques</strong></span> (<code>RStudio</code>, <code>VS Code</code>…)</li>
 </ul>
 </div>
 </section>
-<section id="adopter-les-standards-communautaires-1" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="one">1️⃣</span> Adopter les standards communautaires</h2>
-<p>Deux outils pratiques aident à respecter les standards :</p>
-<ol type="1">
-<li><span class="orange"><strong><em>linter</em></strong></span>: programme qui vérifie que le code est <strong>formellement</strong> conforme à un certain <em>guidestyle</em>
+<section id="concepts-1" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title">Concepts</h2>
+<p><code>Git</code>, <code>GitHub</code>, <code>GitLab</code>… quelles différences ?</p>
+<div>
 <ul>
-<li>signale problèmes formels, sans corriger</li>
-</ul></li>
-</ol>
-<div class="fragment">
-<ol start="2" type="1">
-<li><span class="orange"><strong><em>formatter</em></strong></span>: programme qui reformate un code pour le rendre conforme à un certain <em>guidestyle</em>
-<ul>
-<li>modifie directement le code</li>
-</ul></li>
-</ol>
+<li class="fragment"><code>GitHub</code> et <code>GitLab</code> sont des <strong>forges logicielles</strong></li>
+<li class="fragment"><em>Forge</em>: espace d’archivage de code</li>
+<li class="fragment">Des fonctionalités supplémentaires : <strong>réseau social du code</strong></li>
+</ul>
 </div>
-<div class="fragment">
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -634,1280 +666,470 @@
 </div>
 <div class="callout-content">
 <ul>
-<li><span class="blue2">Exemples d’erreurs repérées</span> par un <em>linter</em> :
-<ul>
-<li>lignes de code trop longues ou mal indentées, parenthèses non équilibrées, noms de fonctions mal construits…</li>
-</ul></li>
-<li><span class="blue2">Exemples d’erreurs <strong>non</strong> repérées</span> par un <em>linter</em> :
-<ul>
-<li>fonctions mal utilisées, arguments mal spécifiés, structure du code incohérente, code insuffisamment documenté…</li>
-</ul></li>
+<li><code>GitHub</code> : utilisation pour les projets <strong>open-source</strong></li>
+<li><code>GitLab</code> : utilisation pour les projets <strong>internes</strong></li>
 </ul>
 </div>
 </div>
 </div>
-<!--------- VERSION SITE WEB 
-1. Un [**_linter_**]{.orange} est un programme qui vérifie que le code est __formellement__ conforme à un certain _guidestyle_, et signale les erreurs. En revanche, un _linter_ ne modifie pas directement le code et ne repère pas les erreurs de fond.
+</section>
+<section id="concepts-2" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title">Concepts</h2>
+<p>Dépôt local / dépôt distant (<code>remote</code>)</p>
 
-  &#8627; Exemples d’erreurs repérées par un _linter_ : lignes de code trop longues ou mal indentées, parenthèses non équilibrées, noms de fonctions mal construits…
-  &#8627; Exemples d’erreurs __non__ repérées par un _linter_ : fonctions mal utilisées, arguments mal spécifiés, structure du code incohérente, code insuffisamment documenté…
-. . .
+<img data-src="img/localremote.png" class="r-stretch quarto-figure-center"><p>Source : <a href="https://collaboratif-git-formation-insee.netlify.app/des-bases-de-git.html">Collaborative work with R</a></p>
+</section>
+<section id="concepts-3" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title">Concepts</h2>
+<p><em>Workflow</em> (version littéraire) :</p>
+<ul>
+<li>On travaille sur un dépôt local en éditant des fichiers</li>
+<li>On dit à <code>Git</code> que ces fichiers doivent être suivis (<code>staging area</code>)</li>
+<li>On valide les modifications faites en local (<code>commit</code>)</li>
+<li>On soumet les modifications (<code>push</code>) après avoir récupéré la version collective (<code>pull</code>)</li>
+</ul>
+</section>
+<section id="concepts-4" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title">Concepts</h2>
+<p><em>Workflow</em> (version imagée) :</p>
 
-2. Un [**_formatter_**]{.orange} est un programme qui reformate un code source pour le rendre conforme à un certain _guidestyle_. Par définition, un _formatter_ modifie directement le code.
--------->
+<img data-src="img/areas.png" class="r-stretch quarto-figure-center"><p>Source : <a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">Git Documentation</a></p>
+</section>
+<section id="concepts-5" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title">Concepts</h2>
+<p><em>Workflow</em> (version imagée complète) :</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/completeworkflow.png" width="500" height="400"></p>
+<p></p><figcaption>Source : <a href="https://itnext.io/git-concepts-for-newcomers-part-2-git-repository-working-tree-and-staging-area-a2e720bf3528">itnext.io</a></figcaption><p></p>
+</figure>
 </div>
 </section>
-<section id="adopter-les-standards-communautaires-2" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="one">1️⃣</span> Adopter les standards communautaires</h2>
+<section id="commandes-essentielles" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title">Commandes essentielles</h2>
 <p><br></p>
-<p>Dans le cas de <i class="fa-brands fa-r-project" aria-hidden="true"></i> :</p>
-<ul>
-<li>le <span class="orange"><em>linter</em></span> à utiliser est le <em>package</em> <a href="https://github.com/r-lib/lintr"><code>lintr</code></a>;</li>
-<li>le <span class="orange"><em>formatter</em></span> à utiliser est le <em>package</em> <a href="https://github.com/r-lib/styler"><code>styler</code></a>.
-<ul>
-<li>Existe également le <em>package</em> <a href="https://github.com/yihui/formatR"><code>formatR</code></a>.</li>
-</ul></li>
-</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Action</th>
+<th>Commande</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cloner un projet</td>
+<td><code>git clone [url-to-git-repo]</code></td>
+</tr>
+<tr class="even">
+<td>Afficher les changements</td>
+<td><code>git status</code></td>
+</tr>
+<tr class="odd">
+<td>Retrouver l’URL du dépôt distant</td>
+<td><code>git remote -v</code></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="utiliser-des-fonctions" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="two">2️⃣</span> Utiliser des fonctions</h2>
+<section id="commandes-essentielles-1" class="slide level2 smaller" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title">Commandes essentielles</h2>
+<p><br></p>
+<table>
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Action</th>
+<th>Commande</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ajouter des changements à l’index de <code>Git</code></td>
+<td>Un seul fichier : <code>git add &lt;file-name&gt;</code> <br> Tous les fichiers déjà indexés : <code>git add -u</code> <br> Tous les fichiers <span class="emoji" data-emoji="warning">⚠️</span> : <code>git add -A</code></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
 <div class="callout callout-important callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Règle d’or</strong></p>
+<p><strong>Warning</strong></p>
 </div>
 <div class="callout-content">
-<p>Il faut utiliser une <span class="red2"><strong>fonction</strong></span> dès qu’on utilise une même portion de code plus de deux fois (<span class="red2"><strong><em>don’t repeat yourself</em> (DRY)</strong></span>)</p>
+<p>La méthode <code>git add -A</code> peut amener à suivre les modifications de fichiers qui ne devraient pas l’être (par exemple, des données).</p>
+<p>Il est recommandé de bien réfléchir avant de l’utiliser (ou d’avoir un bon <code>.gitignore</code>)</p>
 </div>
 </div>
 </div>
+</section>
+<section id="commandes-essentielles-2" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title">Commandes essentielles</h2>
+<p><br></p>
+<table>
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Action</th>
+<th>Commande</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Faire un <code>commit</code></td>
+<td><code>git commit -m "message"</code></td>
+</tr>
+<tr class="even">
+<td>Pousser les changements locaux (branche <code>master</code>)</td>
+<td><code>git push origin master</code></td>
+</tr>
+<tr class="odd">
+<td>Récupérer les changements distants (branche <code>master</code>)</td>
+<td><code>git pull origin master</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="application-0" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 0</h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Préparation de l’environnement de travail</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol type="1">
+<li class="fragment">Créer un compte <a href="https://github.com/"><code>GitHub</code></a></li>
+<li class="fragment">Créer un nouveau dépôt public sur <code>GitHub</code></li>
+<li class="fragment"><a href="https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">Générer un <em>token</em></a> (jeton d’accès) d’authentification</li>
+<li class="fragment">Lancer un service <code>RStudio</code> sur le <a href="https://datalab.sspcloud.fr/home">Datalab</a></li>
+<li class="fragment">Utiliser un <code>terminal</code> pour activer le stockage des identifiants :
 <ul>
-<li><span class="orange">Limite les risques d’erreurs</span> liés aux copier/coller</li>
-<li>Rend le code <span class="orange">plus lisible</span> et <span class="orange">plus compact</span></li>
-<li><span class="orange">Un seul endroit</span> du code à modifier lorsqu’on souhaite modifier le traitement</li>
-<li>Facilite la <span class="orange">réutilisation</span> et la <span class="orange">documentation</span> du code !</li>
+<li class="fragment"><code>git config --global credential.helper store</code></li>
+</ul></li>
+<li class="fragment">Cloner le dépôt distant sur votre environnement local (<code>Datalab</code>):
+<ul>
+<li class="fragment"><code>File</code> → <code>New project</code> → <code>Version Control</code> → <code>Git</code></li>
+</ul></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<p>❓ <strong>Question</strong> : qu’est ce qui différencie le projet cloné d’un projet quelconque ?</p>
+</section>
+<section id="application-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 1</h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Premiers commits</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol type="1">
+<li class="fragment">Créer un dossier 📁 <code>scripts</code></li>
+<li class="fragment">Y créer les fichiers <code>script1.R</code> et <code>script2.R</code>, chacun contenant quelques commandes <code>R</code> de votre choix</li>
+<li class="fragment">Ajouter ces fichiers à l’index (<em>staging area</em>) de Git en les cochant dans l’interface <code>RStudio</code></li>
+<li class="fragment">Effectuer un <code>commit</code>, auquel on donnera un message descriptif pertinent</li>
+<li class="fragment">Supprimer le fichier <code>script1.R</code> et modifier le contenu du fichier <code>script2.R</code></li>
+<li class="fragment">Analyser ce qui se passe lorsque l’on coche ces fichiers dans l’interface <code>RStudio</code></li>
+<li class="fragment">Effectuer un nouveau <em>commit</em> pour ajouter ces modifications à l’historique</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<p>❓ <strong>Question</strong> : à ce stade, le dépôt du projet sur <code>GitHub</code> (<code>remote</code>) a-t-il été modifié ?</p>
+</section>
+<section id="application-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 2</h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Interactions avec le dépôt distant</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol type="1">
+<li class="fragment">Effectuer un <code>push</code> pour intégrer les changements locaux au projet distant</li>
+<li class="fragment">Parcourir l’historique du projet sur <code>GitHub</code>
+<ol type="a">
+<li class="fragment">Faire apparaître les différences entre deux versions consécutives du projet</li>
+<li class="fragment">Afficher une version passée du projet</li>
+</ol></li>
+<li class="fragment">Modifier le fichier <code>README.md</code> via l’interface d’édition web</li>
+<li class="fragment">Faire une modification du projet local, puis <code>commit</code>/<code>push</code>. Que se passe-t-il ?</li>
+<li class="fragment">Faire un <code>pull</code> pour intégrer les changements distants au projet local</li>
+<li class="fragment">Effectuer à nouveau l’étape de <code>push</code> des changements locaux</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<p>❓ <strong>Question</strong> : comment s’assurer que notre projet local est toujours iso au projet distant ?</p>
+</section>
+<section id="bonnes-pratiques" class="slide level2 smaller" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title">Bonnes pratiques</h2>
+<p><strong>Que versionne-t-on ?</strong></p>
+<div>
+<ul>
+<li class="fragment">Essentiellement du <span class="orange"><strong>code source</strong></span></li>
+<li class="fragment"><span class="orange"><strong>Pas d’outputs</strong></span> (fichiers <code>.html</code>, <code>.pdf</code>, modèles…)</li>
+<li class="fragment"><span class="orange"><strong>Pas de données</strong></span>, d’informations locales ou sensibles</li>
 </ul>
-<div class="fragment">
-<div class="callout callout-tip callout-captioned callout-style-default">
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Règles pour écrire des fonctions <strong>pertinentes</strong></strong></p>
+<p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<ul>
-<li>Une tâche = une fonction ;</li>
-<li>Une tâche complexe = un enchaînement de fonctions réalisant chacune une tâche simple ;</li>
-<li>Limiter l’utilisation de variables globales.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="documenter-son-code" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="three">3️⃣</span> Documenter son code</h2>
-<ul>
-<li>Grands principes :
-<ul>
-<li>Documenter le <span class="orange"><strong>pourquoi</strong></span> plutôt que le <span class="orange"><strong>comment</strong></span> ;</li>
-<li>Privilégier auto-documentation via des <span class="orange"><strong>nommages pertinents</strong></span>.</li>
-</ul></li>
-</ul>
-<div class="fragment">
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Comment bien documenter un script ?</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li><span class="orange"><strong>Minimum</strong></span> 🚦 : commentaire au début du script pour décrire ce qu’il fait ;</li>
-<li><span class="orange"><strong>Bien</strong></span> 👍 : commenter les parties “délicates” du code ;</li>
-<li><span class="orange"><strong>Idéal</strong></span> 💪 : documenter ses fonctions avec la syntaxe <code>roxygen2</code>.</li>
-</ul>
-</div>
+<p>Pour définir des règles qui évitent de committer tel ou tel fichier, on utilise un fichier nommé <strong><code>.gitignore</code></strong>.</p>
+<p>Si on mélange du code et des éléments annexes (<em>output</em>, données…) dans un même dossier, il <span class="orange"><strong>faut consacrer du temps à ce fichier</strong></span>.</p>
+<p>Le site <a href="https://www.toptal.com/developers/gitignore"><code>gitignore.io</code></a> peut vous fournir des modèles.</p>
+<p>N’hésitez pas à y ajouter des règles conservatrices (par exemple <code>*.csv</code>), comme cela est expliqué dans <a href="https://www.book.utilitr.org/git.html?q=gitignore#gitignore">la documentation <code>utilitR</code></a>.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="pas-dambiguité-sur-les-packages-utilisés" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="four">4️⃣</span> Pas d’ambiguité sur les <em>packages</em> utilisés</h2>
-<ul>
-<li>Deux fonctions peuvent avoir le <span class="orange"><strong>même nom</strong></span> dans des <span class="orange"><strong>packages différents</strong></span></li>
-</ul>
-<div class="fragment">
-<ul>
-<li><code>R</code> utilise par défaut la librairie chargée le plus récemment</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Erreurs difficiles à repérer car il est nécessaire d’exécuter le code</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Recommandation : indiquer explicitement le <em>package</em> : notation <code>package::fonction()</code>
-<ul>
-<li>Exemple <code>dplyr::filter()</code></li>
-</ul></li>
-</ul>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Exemple</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li><code>package1</code> et <code>package2</code> contiennent chacun une fonction appelée <code>superFonction</code>.</li>
-<li>Si <code>package2</code> est chargé après <code>package1</code>, alors <code>superFonction</code> désigne par défaut la fonction de <code>package2</code>.</li>
-<li>Mieux vaut noter <code>package1::superFonction</code> et <code>package2::superFonction</code></li>
-</ul>
-</div>
-</div>
-</div>
-<!------ Pour la version blog
-
-Des packages contenant des fonctions homonymes peuvent être à l’origine de conflits. Ceci est dû au fait que R utilise par défaut la fonction du package chargé le plus récemment.
-
-    Exemple: si les packages package1 et package2 contiennent chacun une fonction appelée superFonction, et si package2 est chargé après package1, alors superFonction désigne par défaut la fonction de package2.
-
-Cette ambiguïté peut entraîner des erreurs difficiles à repérer, car le code donne l’impression d’appeler la bonne fonction. C’est pourquoi il est recommandé d’indiquer explicitement le package utilisé en utilisant la notation package::fonction() (par exemple dplyr::filter()).
-
-:::{.callout-tip}
-## Le_package_[`conflicted`](https://github.com/r-lib/conflicted#conflicted)
-
-Le_package_`conflicted` aide à gérer les conflits de_packages_de manière fluide.
-:::
------->
-</div>
-</section>
-<section id="ressources-supplémentaires" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Ressources supplémentaires</h2>
-<p><br></p>
-<ul>
-<li><a href="https://r-pkgs.org/man.html"><em>R Packages</em></a> par Hadley Wickham and Jenny Bryan</li>
-<li>Une <a href="https://mitmat.github.io/slides/2022-05-26-egu/code-data-open-science.html#1">présentation très bien faite</a></li>
-<li><a href="https://eliocamp.github.io/reproducibility-with-r/">Un cours complet</a> sur la reproductibilité avec <code>R</code></li>
-<li>L’équivalent <code>Python</code> en <a href="https://ensae-reproductibilite.netlify.app/about/">3A d’ENSAE</a></li>
-</ul>
-</section>
-<section id="exercice-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 1</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Partie 1: préparation de l’environnement</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol type="1">
-<li class="fragment">Installer les <em>packages</em> <code>R</code> <a href="https://github.com/r-lib/lintr"><code>lintr</code></a> et <a href="https://www.tidyverse.org/blog/2017/12/styler-1.0.0/"><code>styler</code></a>.</li>
-<li class="fragment">Si ce n’est pas déjà fait, faire un <em>commit</em> de <code>script.R</code> .</li>
-<li class="fragment">Définir le <em>linter</em> à utiliser comme étant de type <code>tidyverse</code>.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-1-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 1</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Partie 2: premiers standards de qualité</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol type="1">
-<li class="fragment">Utiliser l’<em>addin</em> de <code>lintr</code> pour diagnostiquer le script <code>script.R</code> (<code>Addins &gt; Lint current file</code>).
-<ul>
-<li class="fragment">Regardez bien la liste des problèmes détectés par le <em>linter</em>.</li>
-<li class="fragment">Comprenez-vous la nature des problèmes?</li>
-</ul></li>
-<li class="fragment">Utiliser l’<em>addin</em> de <code>styler</code> pour nettoyer le fichier (<code>Addins &gt; Style active file</code>).
-<ul>
-<li class="fragment">Que se passe-t-il d’inattendu? Comprenez-vous le problème?</li>
-<li class="fragment">Lorsque vous avez trouvé le problème, vous pouvez le corriger puis faire un <em>commit</em>.</li>
-</ul></li>
-<li class="fragment">Utiliser à nouveau l’<em>addin</em> de <code>styler</code> pour nettoyer le fichier.
-<ul>
-<li class="fragment">Enregistrer et faire un <em>commit</em> du fichier.</li>
-<li class="fragment">Prenez le temps de regarder le <em>diff</em> du <em>commit</em>. Comprenez-vous les modifications faites par le <em>formatter</em>?</li>
-</ul></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-1-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 1</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Application des standards de qualité de code (suite)</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol type="1">
-<li class="fragment">Refaire tourner le <em>linter</em>. Il reste encore un certain nombre d’erreurs de formattage, car <code>styler</code> est un <em>formatter</em> peu intrusif.</li>
-<li class="fragment">On va maintenant configurer le <em>linter</em> pour qu’il propose une analyse beaucoup plus rigoureuse. Pour cela, exécuter le code suivant.</li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>linters_complets <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"best_practices"</span>, <span class="st">"common_mistakes"</span>, <span class="st">"correctness"</span>, <span class="st">"efficiency"</span>, <span class="st">"readability"</span>, <span class="st">"style"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>lintr<span class="sc">::</span><span class="fu">lint</span>(<span class="st">"script.R"</span>, <span class="at">linters =</span> lintr<span class="sc">::</span><span class="fu">linters_with_tags</span>(linters_complets))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
-<li class="fragment">Regarder la liste des problèmes repérés par le <em>linter</em>, et la comparer avec celle de l’étape précédente.
-<ul>
-<li class="fragment">Comprenez-vous les nouveaux problèmes repérés par le <em>linter</em>?<br>
-<!-- 9. On peut maintenant tester un autre _formatter_ plus intrusif. Pour cela, --> <!-- installer le _package_ `formatR`, exécuter `formatR::tidy_source("script.R", width.cutoff = 50)`. Régler les erreurs inattendues s'il y en a. Le script reformatté est imprimé dans la console. Copier le script reformatté, et le coller dans l'éditeur et remplacer. A ce stade, faire un _commit_. Prenez le temps de regarder le _diff_ du _commit_. Comprenez-vous les modifications faites par le _formatter_? --> <!-- 10. Refaire tourner le _linter_. Corriger les lignes manuellement (vous pouvez utiliser <kbd>CTRL</kbd>+<kbd>I</kbd> pour aligner des lignes ensemble).  --></li>
-</ul></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="ii--structure-des-projets" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
-<h1>II- Structure des projets</h1>
-
-</section>
-<section id="enjeux-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Enjeux</h2>
-<ol type="1">
-<li>Favoriser la <span class="orange"><strong>lisibilité</strong></span> et la <span class="orange"><strong>maintenabilité</strong></span></li>
-</ol>
-<div class="fragment">
-<p>2 Construire des projets <span class="orange"><strong>reproductibles</strong></span></p>
-</div>
-</section>
-<section id="a-ne-pas-reproduire-chez-vous" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="warning">⚠️</span> A ne pas reproduire chez vous</h2>
-<p><br></p>
-<pre><code>├── report.Rmd
-├── correlation.png
-├── data.csv
-├── data2.csv
-├── fig1.png
-├── figure 2 (copy).png
-├── report.pdf
-├── partial data.csv
-├── script.R
-└── script_final.R</code></pre>
-<p>Source : <a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/">eliocamp.github.io</a></p>
-</section>
-<section id="principes-généraux-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Principes généraux</h2>
-<ol type="1">
-<li>Utiliser les <span class="orange"><strong>projets RStudio</strong></span></li>
-</ol>
-<div class="fragment">
-<ol start="2" type="1">
-<li>Organiser son projet en <span class="orange"><strong>sous-dossiers</strong></span></li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="3" type="1">
-<li>Donner des <span class="orange"><strong>noms pertinents</strong></span> aux fichiers</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="4" type="1">
-<li><span class="orange"><strong>Documenter</strong></span> son projet</li>
-</ol>
-</div>
-</section>
-<section id="utiliser-les-projets-rstudio" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="one">1️⃣</span> Utiliser les projets RStudio</h2>
-<ul>
-<li><span class="orange"><strong>Objectif</strong></span> : favoriser la <span class="blue2"><strong>reproductibilité</strong></span>
-<ul>
-<li>Tous les fichiers nécessaires au projet dans un même dossier ;</li>
-<li>Le dossier contenant le projet RStudio est automatiquement utilisé comme <strong><em>working directory</em></strong> ;</li>
-<li>Utilisation de <span class="blue2"><strong>chemins relatifs</strong></span> plutôt qu’absolus.</li>
-</ul></li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Bonus</strong> : en utilisant <code>Git</code>, on s’assure de toujours travailler dans un projet RStudio !</li>
-</ul>
-</div>
-</section>
-<section id="organiser-son-projet-en-sous-dossiers" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="two">2️⃣</span> Organiser son projet en sous-dossiers</h2>
-<ul>
-<li><span class="orange"><strong>Objectif</strong></span> : adopter une structure arbitraire, mais <span class="blue2"><strong>lisible</strong></span> et <span class="blue2"><strong>cohérente</strong></span></li>
-</ul>
-<pre><code>├── data
-│   ├── raw
-│   │   ├── data.csv
-│   │   └── data2.csv
-│   └── derived
-│       └── partial data.csv
-├── scripts
-│   └── script.R
-├── analysis
-│   ├── script_final.R
-│   └── report.Rmd
-└── output
-    ├── fig1.png
-    ├── figure 2 (copy).png
-    ├── figure10.png
-    ├── correlation.png
-    └── report.pdf</code></pre>
-</section>
-<section id="donner-des-noms-pertinents-aux-fichiers" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="three">3️⃣</span> Donner des noms pertinents aux fichiers</h2>
-<ul>
-<li><span class="orange"><strong>Objectif</strong></span> : <span class="blue2"><strong>auto-documenter</strong></span> son projet</li>
-</ul>
-<pre><code>├── data
-│   ├── raw
-│   │   ├── dpe_logement_202103.csv
-│   │   └── dpe_logement_202003.csv
-│   └── derived
-│       └── dpe_logement_merged_preprocessed.csv
-├── scripts
-│   └── preprocessing.R
-├── analysis
-│   ├── generate_plots.R
-│   └── report.Rmd
-└── output
-    ├── histogram_energy_diagnostic.png
-    ├── barplot_consumption_pcs.png
-    ├── correlation_matrix.png
-    └── report.pdf</code></pre>
-</section>
-<section id="documenter-son-projet" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="four">4️⃣</span> Documenter son projet</h2>
-<ul>
-<li>Le fichier <code>README.md</code>, situé à la racine du projet, est à la fois la <strong>carte d’identité</strong> et la <strong>vitrine du projet</strong></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>Idéalement, il contient :
-<ul>
-<li>Une <span class="orange"><strong>présentation</strong></span> du contexte et des objectifs</li>
-<li>Une description de son <span class="orange"><strong>fonctionnement</strong></span></li>
-<li>Un guide de <span class="orange"><strong>contribution</strong></span> (<em>open-source</em>)</li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Quelques modèles de <code>README.md</code> complets :
-<ul>
-<li><a href="https://github.com/InseeFrLab/utilitR/blob/master/README.md">utilitR</a></li>
-<li><a href="https://github.com/InseeFrLab/DoReMIFaSol">DoReMIFaSol</a></li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="ressources-supplémentaires-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Ressources supplémentaires</h2>
-<p><br></p>
-<ul>
-<li>La documentation <a href="https://www.book.utilitr.org/rproject.html">utilitR</a></li>
-<li><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/">eliocamp.github.io</a></li>
-</ul>
-</section>
-<section id="exercice-2-15" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 2 (1/5)</h2>
-<p>Cette application vise à résoudre une partie des problèmes détectés précédemment.</p>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Travail sur le fichier: modifications de structure</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol type="1">
-<li class="fragment">Créer des parties dans <code>script.R</code> pour aider à la compréhension de la structure du fichier:
-<ul>
-<li class="fragment"><code># TITRE NIVEAU 1 ------------</code> et <code># TITRE NIVEAU 2 ==========</code></li>
-<li class="fragment">Faire un <em>commit</em></li>
-</ul></li>
-<li class="fragment">Déplacer les <code>library</code> pour les mettre tous ensemble au début du script.
-<ul>
-<li class="fragment">Conserver l’ordre des <em>packages</em> (<code>MASS</code> après <code>tidyverse</code> notamment).</li>
-<li class="fragment">Faire un <em>commit</em>.</li>
-</ul></li>
-<li class="fragment">Le script n’est pas construit dans un ordre logique. Déplacer les parties pour adopter une structure plus logique:
-<ul>
-<li class="fragment">Gestion de l’environnement -&gt; Définition de fonctions -&gt; Import des donnees -&gt; Retraitement des données -&gt; Statistiques descriptives -&gt; Graphiques -&gt; Modélisation</li>
-<li class="fragment">Faire un <em>commit</em>.</li>
-</ul></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-2-25" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 2 (2/5)</h2>
-<p>On va se pencher sur chaque partie du code maintenant qu’on y voit plus clair:</p>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Modifications de la partie import des données</strong></p>
-</div>
-<div class="callout-content">
-<div class="smaller">
-<ol start="4" type="1">
-<li class="fragment">Faire tourner le code jusqu’à l’import des données. Regarder les données.
-<ul>
-<li class="fragment">Quel problème repérez-vous?</li>
-<li class="fragment">Corriger le problème en vous aidant de la documentation de <code>read_csv2</code>.</li>
-</ul></li>
-<li class="fragment">Faire tourner le code qui définit la table <code>df2</code>.
-<ul>
-<li class="fragment">Corriger le problème et faire un <em>commit</em>.</li>
-</ul></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-2-35" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 2 (3/5)</h2>
-<p>On se penche maintenant sur la partie retraitement des données :</p>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Modifications de la partie restructuration des données</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ul>
-<li class="fragment">Exécuter la partie de gestion des valeurs manquantes, remarquer des problèmes en regardant code et données.
-<ul>
-<li class="fragment">Utiliser les fonctions <code>dplyr::mutate</code>, <code>dplyr::na_if</code> et <code>dplyr::across</code> pour simplifier le code.</li>
-<li class="fragment">Faire un <em>commit</em></li>
-</ul></li>
-<li class="fragment">S’occuper de la partie gestion des variables catégorielles.
-<ul>
-<li class="fragment">Repérer des problèmes en regardant les données et les corriger.</li>
-<li class="fragment">Faire un <em>commit</em></li>
-</ul></li>
-<li class="fragment">Changer le type de la variable <code>aged</code> afin d’éviter les nombreux <code>as.numeric(aged)</code> ultérieurs.
-<ul>
-<li class="fragment">Remplacer toutes les occurrences de <code>as.numeric(aged)</code>.</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-2-45" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 2 (4/5)</h2>
-<ul>
-<li>On passe maintenant à la partie statistiques descriptives.
-<ul>
-<li>Après chaque question, faire un <em>commit</em></li>
-</ul></li>
-</ul>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Modifications de la partie statistiques descriptives</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ul>
-<li class="fragment">Corriger les erreurs sur le décompte des professions.</li>
-<li class="fragment">Exécuter le code produisant les statistiques d’âge jusqu’à rencontrer l’erreur <code>Error in select(., aged) : unused argument (aged)</code>.
-<ul>
-<li class="fragment">Comment la résoudre ?</li>
-</ul></li>
-<li class="fragment">Récupérer les données utilisées lors de la production de <code>ggplot(.)</code> ;</li>
-<li class="fragment">Remplacer le second <code>summarise</code> par la bonne commande dans la partie <code>#part d'homme dans chaque cohorte</code> ;</li>
-<li class="fragment">Débugger la partie <code>#stats surf par statut</code> puis produire un graphique lisible ;</li>
-<li class="fragment">Comprendre les erreurs dans la partie où on applique <code>fonction_de_stat_agregee</code> et les corriger.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-2-55" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 2 (5/5)</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Modifications de la partie modélisation et gestion des secrets</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol type="1">
-<li class="fragment">Régler les problèmes de la partie modélisation ;</li>
-<li class="fragment">Traiter correctement les informations confidentielles (<em>secrets</em>) :</li>
-</ol>
-<ul>
-<li class="fragment">Repérer le jeton d’API dans le code. Retirer le jeton d’API du code et créer un fichier YAML nommé <code>secrets.yaml</code> où vous écrivez ce secret sous la forme <code>key: value</code>.</li>
-<li class="fragment">Dans <code>script.R</code>, importer ce YAML (avec <code>yaml::read_yaml("secrets.yaml"</code>) pour créer une variable <code>api_token</code> ayant cette valeur.</li>
-<li class="fragment">Ajouter dans <code>.gitignore</code> le fichier <code>secrets.yaml</code> et indiquer dans le <code>README.md</code> de votre projet que les secrets sont stockés dans ce fichier.</li>
-<li class="fragment"><span class="red2"><span class="emoji" data-emoji="warning">⚠️</span> Attention</span> : il ne faut pas committer <code>secrets.yaml</code> car le jeton d’API est personnel et secret!</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="bilan-de-lexercice" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Bilan de l’exercice</h2>
-<ul>
-<li>Un code mal structuré
-<ul>
-<li>Limite la lisibilité du projet</li>
-<li>Est très coûteux à maintenir (dette technique)</li>
-</ul></li>
-</ul>
+<section id="bonnes-pratiques-1" class="slide level2 smaller" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title">Bonnes pratiques</h2>
+<p><strong>Format des commits</strong></p>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 72.7%;justify-content: center;">
-<p><img data-src="https://www.earthdatascience.org/images/earth-analytics/clean-code/reproducible-science-is-about-being-lazy-hadley-wickham.png"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="checkpoint" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Checkpoint</h2>
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
 <ul>
-<li>Des dizaines de <code>script.R</code> différents peuvent être considérés valides à ce stade</li>
-</ul>
-<div class="fragment">
+<li class="fragment"><span class="orange"><strong>Fréquence</strong></span>
 <ul>
-<li>Si vous avez eu des difficultés avec une des questions, vous pouvez repartir de <a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/649b8955600c85cbd62c08c9697a264be5279be2/script.R">cette version</a>
+<li class="fragment">Aussi souvent que possible</li>
+<li class="fragment">Le lot de modifications doit “faire sens”</li>
+</ul></li>
+<li class="fragment"><span class="orange"><strong>Messages</strong></span>
 <ul>
-<li>L’idéal est néanmoins que vous continuiez avec votre version</li>
+<li class="fragment">Courts et informatifs (comme un titre de mail)</li>
+<li class="fragment">Décrire <strong>le pourquoi plutôt que le comment</strong> dans le texte</li>
 </ul></li>
 </ul>
 </div>
+<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<p><img data-src="img/titre-commit.png"></p>
+</div>
+</div>
+</div>
 </section>
-<section id="exercice-3-modularisation-12" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 3: modularisation (1/2)</h2>
+<section id="application-3" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 3</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
-<p><strong>Améliorer la fonction <code>fonction_de_stat_agregee</code></strong></p>
+<p><strong>Le fichier <code>.gitignore</code></strong></p>
 </div>
 <div class="callout-content">
 <div>
+<p>Lors de la création du projet via Rstudio un fichier <code>.gitignore</code> a été créé à la racine du projet.</p>
 <ol type="1">
-<li class="fragment">Lui donner un nom plus court.</li>
-<li class="fragment">Remplacer la première partie par un <code>match.arg</code>.</li>
-<li class="fragment">Remplacer la deuxième partie par <code>switch</code>.</li>
-<li class="fragment">S’assurer qu’elle soit <strong>pure</strong>, c’est-à-dire qu’elle n’utilise pas de variables globales.</li>
-<li class="fragment">Compter les erreurs de code que vous venez de corriger.</li>
-<li class="fragment">Limiter la duplication de code en utilisant des <strong>fonctions</strong> et, quand c’est pertinent, en utilisant <code>lapply</code> pour les appliquer en série.</li>
+<li class="fragment">Ajouter le contenu du <a href="https://github.com/github/gitignore/blob/main/R.gitignore">.gitignore standard R</a></li>
+<li class="fragment">Exclure également les fichiers de type <code>.pdf</code> et <code>.html</code></li>
+<li class="fragment">Créer un dossier <code>data</code> à la racine du projet et l’ajouter au <code>.gitignore</code></li>
+<li class="fragment">Effectuer un <em>commit</em> pour ajouter le fichier <code>.gitignore</code> au projet Git</li>
+<li class="fragment">Vérifier que toutes les règles ajoutées précédemment fonctionnent comme attendu</li>
 </ol>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="exercice-3-modularisation-22" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 3: modularisation (2/2)</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Améliorer la fonction <code>fonction_de_stat_agregee</code> (suite)</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol start="7" type="1">
-<li class="fragment">Déplacer toutes les fonctions dans un fichier <code>R/functions.R</code>.</li>
-<li class="fragment">Dans <code>script.R</code>, appeler en début de chaîne ces fonctions avec <code>source("R/functions.R", encoding = "UTF-8")</code>.</li>
-<li class="fragment">Documenter la fonction en utilisant <code>roxygen2</code>.</li>
-<li class="fragment">Redémarrer la session (en faisant <code>Session &gt; Restart R</code>). Si tout va bien, le code devrait maintenant fonctionner.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="checkpoint-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Checkpoint</h2>
-<ul>
-<li><a href="https://github.com/InseeFrLab/formation-bonnes-pratiques-R/blob/8d42730279619fb85a818e5fbde7176096915c94/script.R"><code>script.R</code></a></li>
-<li><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/8d42730279619fb85a818e5fbde7176096915c94/R/functions.R"><code>R/functions.R</code></a></li>
-</ul>
+<p>❓ <strong>Question</strong> : que se passe-t-il lorsque l’on ajoute au <code>.gitignore</code> des fichiers qui ont déjà été <em>commit</em> sur le projet Git ?</p>
 </section></section>
 <section>
-<section id="iii--formats-de-données" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
-<h1>III- Formats de données</h1>
+<section id="le-travail-collaboratif-avec-git" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
+<h1>Le travail collaboratif avec Git</h1>
 
 </section>
-<section id="enjeux-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Enjeux</h2>
+<section id="outils-pour-le-travail-collaboratif" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Outils pour le travail collaboratif</h2>
 <ul>
-<li>Le choix d’un format de données répond à un <span class="orange"><strong>arbitrage</strong></span> entre plusieurs critères :
+<li>L’éco-système <code>Git</code> <span class="blue2"><strong>facilite</strong> le travail collaboratif</span>
 <ul>
-<li>Finalité (traitement, analyse, diffusion)</li>
-<li>Public cible</li>
-<li>Volumétrie</li>
+<li><code>Git</code> <i class="fa-brands fa-git-alt" aria-hidden="true"></i> : modèle des <span class="orange"><strong>branches</strong></span></li>
+<li><code>GitHub</code> <i class="fa-brands fa-github" aria-hidden="true"></i> / <code>GitLab</code> <i class="fa-brands fa-gitlab" aria-hidden="true"></i> : <span class="orange"><strong>Issues</strong>, <strong>Pull Requests</strong>, <strong>Forks</strong></span></li>
 </ul></li>
-</ul>
-</section>
-<section id="recommandations" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
-<h2>Recommandations</h2>
-<ul>
-<li>Eviter impérativement les formats de données adhérents à un langage (<code>RDS</code>, <code>RData</code>, <code>fst</code>, <code>sas7bdat</code>, etc.).</li>
 </ul>
 <div class="fragment">
 <ul>
-<li>Deux formats à privilégier :
+<li>Ces outils ne remplacent pas une <span class="orange"><strong>bonne définition de l’organisation du travail</strong></span> en équipe
 <ul>
-<li><span class="orange"><strong>CSV</strong></span> : pour la <span class="blue2"><strong>plupart des usages courants</strong></span>
-<ul>
-<li><em>Avantage</em>: <span class="blue2"><strong>non-compressé</strong></span> donc facilement <span class="blue2"><strong>lisible</strong></span></li>
-<li><em>Inconvénients</em> : pas de gestion des méta-données, peu adapté aux données volumineuses</li>
-</ul></li>
-<li><span class="orange"><strong>Parquet</strong></span> : pour le traitement de <span class="blue2"><strong>données volumineuses</strong></span>
-<ul>
-<li><span class="blue2"><strong>Compressé</strong></span> et très <span class="blue2"><strong>performant</strong></span> en lecture/écriture</li>
-<li>Gestion native des méta-données</li>
-</ul></li>
+<li>Choix d’un <em>workflow</em></li>
+<li>Droits d’accès</li>
+<li>Règles de contribution</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="exercice-4" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 4</h2>
+<section id="application-4" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 4</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
-<p><strong>Manipulation des formats CSV et Parquet</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ul>
-<li class="fragment">Effacer la base <code>individu_reg.csv</code> ;</li>
-<li class="fragment">Transformer le script <code>write_csv.R</code> pour n’utiliser que le format <code>parquet</code>; sauvegarder la table <code>individu_reg</code> en format Parquet ;</li>
-<li class="fragment">Modifier la phase d’import de <code>script.R</code> pour utiliser <code>arrow</code> et lire le fichier Parquet créé précédemment.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="iv--environnements-reproductibles" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
-<h1>IV- Environnements reproductibles</h1>
-
-</section>
-<section id="expérience-de-pensée" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Expérience de pensée</h2>
-<ul>
-<li>Imaginons la situation suivante :
-<ul>
-<li>J’installe une version de <code>R</code> sur mon poste ;</li>
-<li>Je développe un projet en installant les <em>packages</em> nécessaires ;</li>
-<li>Une fois terminé, je passe au projet suivant, et ainsi de suite.</li>
-</ul></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>Quels problèmes puis-je rencontrer au fil des projets ?</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Est-il facile de partager un de mes projets ?</li>
-</ul>
-</div>
-</section>
-<section id="enjeux-3" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Enjeux</h2>
-<ul>
-<li><span class="orange"><strong>Version de</strong></span> <span class="blue2"><strong>R</strong></span> <span class="orange"><strong>fixe</strong></span>, celle de l’installation système</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><span class="orange"><strong>Conflits de version</strong></span> : différents projets peuvent requérir différentes versions d’un même <em>package</em>.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><span class="orange"><strong>Reproductibilité limitée</strong></span> : difficile de dire quel projet nécessite quel <em>package</em>.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><span class="orange"><strong>Portabilité limitée</strong></span> : difficile de préciser dans un fichier les dépendances spécifiques à un projet.</li>
-</ul>
-</div>
-</section>
-<section id="exercice-5a" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 5A</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Création du fichier <code>Description</code></strong></p>
+<p><strong>Synchronisation des dépôts</strong></p>
 </div>
 <div class="callout-content">
 <div>
 <ol type="1">
-<li class="fragment">Utiliser <code>usethis::use_description(check_name = FALSE)</code> pour créer le modèle de fichier <code>Description</code>. Un nouveau fichier apparaît dans le dossier RStudio. Faire un <em>commit</em>.</li>
-<li class="fragment">Taper <code>usethis::use_package("ggplot2")</code> dans la commande et observer le changement dans ce fichier <code>Description</code>. Faire un <em>commit</em>.</li>
-<li class="fragment">Taper <code>usethis::use_package("tidyverse")</code> et observer le message.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-5a-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 5A</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Modifications du fichier <code>Description</code></strong></p>
-</div>
-<div class="callout-content">
+<li class="fragment">Se mettre par <span class="orange"><strong>groupes de 3/4 personnes</strong></span>:
 <ul>
-<li>On va suivre le conseil des développeurs de <code>tidyverse</code>:
-<ul>
-<li>il vaut mieux retirer <code>tidyverse</code> des dépendances de notre code et plutôt lister uniquement les <em>packages</em> qu’on utilise.</li>
+<li class="fragment">Une personne aura la responsabilité d’être <span class="blue2"><strong>mainteneur</strong></span></li>
+<li class="fragment">Deux à trois personnes seront <span class="blue2"><strong>développeurs</strong></span></li>
 </ul></li>
-</ul>
-<div>
-<ol type="1">
-<li class="fragment">Retourner dans <code>script.R</code>. Repartir d’un environnement vide (en relançant <code>R</code>) et supprimer la ligne <code>library(tidyverse)</code></li>
-<li class="fragment">Exécuter les lignes l’une après l’autre. S’il y a une erreur, vérifier la fonction responsable et son package associé.</li>
-<li class="fragment">Vérifier que le code tourne toujours.</li>
-<li class="fragment">Une fois que la liste est stabilisée faire <code>lapply(c("package1", "package2"...), usethis::use_package)</code> pour les ajouter au fichier <code>Description</code>.</li>
+<li class="fragment">Le mainteneur crée un dépôt sur <code>Github</code>. Il/Elle donne des droits au(x) développeur(s) du projet</li>
+<li class="fragment">Créer une copie locale (clone) du projet sur son service <code>RStudio</code> du <a href="https://datalab.sspcloud.fr/home">Datalab</a></li>
+<li class="fragment">Créer un fichier <code>&lt;votre_nom&gt;-&lt;votre_prenom&gt;.md</code>. Écrire dedans trois phrases de son choix sans ponctuation ni majuscules, puis <code>commit</code> et <code>push</code> les modifications</li>
 </ol>
 </div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-5a-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 5A</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Utilisation du fichier <code>Description</code></strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol type="1">
-<li class="fragment">Retirer les <code>install.packages</code> au début de <code>script.R</code>.</li>
-<li class="fragment">Si vous ne l’avez pas déjà fait, retirer <code>rm(list = ls())</code>.</li>
-<li class="fragment">En option, vous pouvez compléter les autres champs de votre <code>Description</code>.</li>
-<li class="fragment">Committer et pusher les fichiers modifiés.</li>
-<li class="fragment">Créer un nouveau service RStudio, comme dans l’exercice 0.</li>
-<li class="fragment">Cloner le dépôt, comme dans l’exercice 0.</li>
-<li class="fragment">Installer les dépendances du projet avec <code>devtools::install_deps(upgrade = "never")</code>.</li>
-<li class="fragment">Tester <code>write_csv.R</code> puis <code>script.R</code>. Tout doit fonctionner (normalement…).</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="une-solution-plus-complète-renv" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Une solution plus complète : <code>renv</code></h2>
-<ul>
-<li><code>renv</code> permet de créer des <strong>env</strong>ironnements <strong>r</strong>eproductibles</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><span class="orange"><strong>Isolation</strong></span> : chaque projet dispose de sa propre librairie de packages</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><span class="orange"><strong>Reproductibilité</strong></span> : <code>renv</code> enregistre les versions exactes des <em>packages</em> nécessaires au projet</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><span class="orange"><strong>Portabilité</strong></span>: un tiers peut exécuter le projet avec les mêmes spécifications</li>
-</ul>
-</div>
-</section>
-<section id="utilisation-de-renv" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Utilisation de <code>renv</code></h2>
-<ol type="1">
-<li><span class="orange"><strong>Initialisation</strong></span> (<code>init</code>) de l’environnement local du projet</li>
-</ol>
-<div class="fragment">
-<ol start="2" type="1">
-<li><span class="orange"><strong>Développement</strong></span> du projet</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="3" type="1">
-<li><span class="orange"><strong>Enregistrement</strong></span> (<code>snapshot</code>) des versions des <em>packages</em> installés</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="4" type="1">
-<li><span class="orange"><strong>Restauration</strong></span> (<code>restore</code>) d’un environnement</li>
-</ol>
-</div>
-</section>
-<section id="initialisation-de-lenvironnement" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="one">1️⃣</span> Initialisation de l’environnement</h2>
-<ul>
-<li><code>renv::init()</code> dans un projet RStudio crée :
-<ul>
-<li>Un dossier <code>renv</code> et le fichier <code>.Rprofile</code> : activation automatique de l’environnement</li>
-<li>Le fichier <code>renv.lock</code> : versions des <em>packages</em> installés</li>
-</ul></li>
-</ul>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/renv_init.png" height="400"></p>
-</figure>
-</div>
-</div>
-</section>
-<section id="développement-du-projet" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="two">2️⃣</span> Développement du projet</h2>
-<ul>
-<li>Une fois l’environnement initialisé, on développe le projet de manière habituelle
-<ul>
-<li>Installations/suppressions/mises à jour de packages</li>
-<li>Ecriture de scripts</li>
-</ul></li>
-</ul>
-<div class="fragment">
-<ul>
-<li><code>renv::status()</code> : indique les <em>packages</em> installés/supprimés par rapport au fichier <code>renv.lock</code></li>
-</ul>
-</div>
-</section>
-<section id="enregistrement-de-lenvironnement" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="three">3️⃣</span> Enregistrement de l’environnement</h2>
-<ul>
-<li><code>renv::snapshot()</code> : enregistre les versions des <em>packages</em> installés dans le fichier <code>renv.lock</code></li>
-</ul>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/renv_snapshot.png" height="400"></p>
-</figure>
-</div>
-</div>
-</section>
-<section id="restauration-de-lenvironnement" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="four">4️⃣</span> Restauration de l’environnement</h2>
-<ul>
-<li><code>renv::restore()</code> : installe/désinstalle les <em>packages</em> nécessaires pour arriver à l’état spécifié dans le fichier <code>renv.lock</code></li>
-</ul>
-<div class="fragment">
-<ul>
-<li><span class="orange"><strong>Portabilité</strong></span> : un tiers peut recréer un environnement avec les mêmes spécifications</li>
-</ul>
-</div>
-</section>
-<section id="exercice-5b" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 5B</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Prise en main de la librairie <code>renv</code></strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol type="1">
-<li class="fragment"><p>Taper dans la console <code>renv::init()</code>, <strong>lire le message</strong> et accepter.</p></li>
-<li class="fragment"><p>Observer le dossier <code>renv</code> qui apparaît.</p></li>
-<li class="fragment"><p>Installer le <a href="https://gt.rstudio.com/">package <code>gt</code></a> et observer le message dans la console.</p></li>
-<li class="fragment"><p>Dans la partie sur les statistiques descriptives d’âge, ajouter ce code :</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>stats_age <span class="ot">&lt;-</span> df2 <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">group_by</span>(<span class="at">decennie =</span> <span class="fu">decennie_a_partir_annee</span>(age)) <span class="sc">|&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">summarise</span>(<span class="fu">n</span>())</span>
-<span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a>table_age <span class="ot">&lt;-</span> <span class="fu">gt</span>(stats_age) <span class="sc">|&gt;</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb5-7"><a href="#cb5-7"></a>    <span class="at">title =</span> <span class="st">"Distribution des âges dans notre population"</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a>  <span class="fu">fmt_number</span>(</span>
-<span id="cb5-10"><a href="#cb5-10"></a>    <span class="at">columns =</span> <span class="st">`</span><span class="at">n()</span><span class="st">`</span>,</span>
-<span id="cb5-11"><a href="#cb5-11"></a>    <span class="at">sep_mark =</span> <span class="st">" "</span>,</span>
-<span id="cb5-12"><a href="#cb5-12"></a>    <span class="at">decimals =</span> <span class="dv">0</span></span>
-<span id="cb5-13"><a href="#cb5-13"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb5-14"><a href="#cb5-14"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb5-15"><a href="#cb5-15"></a>    <span class="at">decennie =</span> <span class="st">"Tranche d'âge"</span>,</span>
-<span id="cb5-16"><a href="#cb5-16"></a>    <span class="st">`</span><span class="at">n()</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Population"</span></span>
-<span id="cb5-17"><a href="#cb5-17"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-5b-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 5B</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Prise en main de la librairie <code>renv</code> (suite)</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol type="1">
-<li class="fragment">Dans la console, faire <code>renv::snapshot()</code> et observer le message.</li>
-<li class="fragment">Faire un <em>commit</em> et un <em>push</em> des fichiers <code>script.R</code>, <code>.Rprofile</code>, <code>renv.lock</code> et du dossier <code>renv/</code>. <em>Push</em>.</li>
-<li class="fragment">Ouvrir un nouveau service <code>RStudio</code> sur le <code>SSPCloud</code> et cloner le projet dans les mêmes conditions que l’exercice 0. Regarder les messages dans la console.</li>
-<li class="fragment">Exécuter <code>renv::status()</code> dans la console. Constater que les <em>packages</em> ne sont pas installés par <code>renv</code>, car c’est à l’utilisateur de décider de le faire. Faire <code>renv::install()</code>. Par défaut, <code>renv</code> installe les dépendances manuellement ajoutées dans <code>DESCRIPTION</code>.</li>
-<li class="fragment">Refaire un <code>renv::status()</code>. Les dépendances manquantes doivent être ajoutées au <code>DESCRIPTION</code> avec <code>usethis::use_package</code>.</li>
-<li class="fragment">Refaire <code>renv::install()</code>.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="vers-une-reproductibilité-optimale" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Vers une reproductibilité optimale</h2>
-<ul>
-<li><span class="orange"><strong>Limites</strong></span> des environnements virtuels :
-<ul>
-<li>Les <span class="blue2"><strong>librairies système</strong></span> ne sont pas gérées</li>
-<li>Lourdeur de la phase d’installation à chaque changement d’environnement</li>
-<li>Peu adaptés à un environnement de production</li>
-</ul></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>La <span class="orange"><strong>conteneurisation</strong></span> (ex : <code>Docker</code>) apporte la solution</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><span class="orange"><strong>Intuition</strong></span> : au lieu de distribuer la recette pour recréer l’environnement, <span class="blue2"><strong>distribuer directement une “machine” qui contient <em>tout</em> l’environnement nécessaire au projet</strong></span></li>
-</ul>
-</div>
-</section>
-<section id="ressources-supplémentaires-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Ressources supplémentaires</h2>
-<ul>
-<li><p>La <a href="https://rstudio.github.io/renv/articles/renv.html">documentation officielle de <code>renv</code></a></p></li>
-<li><p><a href="https://elise.maigne.pages.mia.inra.fr/2021_package_renv/presentation.html#1">Une présentation sur <code>renv</code></a></p></li>
-</ul>
-</section></section>
-<section>
-<section id="v--pipelines-de-données" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
-<h1>V- <em>Pipelines</em> de données</h1>
-
-</section>
-<section id="motivations" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Motivations</h2>
-<ul>
-<li>Une analyse de données ou une chaîne de production font intervenir des <span class="orange"><strong>étapes standardisées</strong></span></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>Modéliser ces étapes sous forme de <span class="orange"><strong>pipeline (<em>direct acyclic graph</em>)</strong></span> a plusieurs avantages :
-<ul>
-<li><span class="blue2"><strong>Découplage</strong></span> des différentes étapes</li>
-<li>Facilite la <span class="blue2"><strong>planification</strong></span> du traitement</li>
-<li>Facilite la <span class="blue2"><strong>prise en main</strong></span> du projet par un tiers</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="targets" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>targets</h2>
-<ul>
-<li><code>targets</code> est un <em>framework</em> de modélisation de <em>pipelines</em> spécifiquement dédié aux projets <code>R</code>.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li>Deux objectifs majeurs :
-<ol type="1">
-<li><span class="orange"><strong>Réduire le coût d’expérimentation</strong></span> en sauvegardant les résultats intermédiaires (<strong><em>targets</em></strong>)</li>
-<li>Garantir la <span class="orange"><strong>reproductibilité</strong></span> de la chaîne en traçant les changements de ces <strong><em>targets</em></strong></li>
-</ol></li>
-</ul>
-</div>
-</section>
-<section id="utilisation-de-targets" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Utilisation de <code>targets</code></h2>
-</section>
-<section id="un-projet-minimaliste" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="one">1️⃣</span> Un projet minimaliste</h2>
-<pre><code>├── _targets.R
-├── data
-│   ├── raw
-│   │   └── data.csv
-├── scripts
-│   └── fonctions.R</code></pre>
-</section>
-<section id="le-fichier-_targets.r" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="two">2️⃣</span> Le fichier <code>_targets.R</code></h2>
-<ul>
-<li>Le fichier <code>_targets.R</code> doit satisfaire plusieurs conditions :
-<ol type="1">
-<li>Charger le_package_<code>targets</code> ;</li>
-<li>Charger dans l’environnement les fonctions nécessaires ;</li>
-<li>Déclarer les_packages_nécessaires aux différentes étapes ;</li>
-<li>Définir le <em>pipeline</em>.</li>
-</ol></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/targets.png" height="250"></p>
-</figure>
-</div>
-</section>
-<section id="inspecter-le-pipeline" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="three">3️⃣</span> Inspecter le <em>pipeline</em></h2>
-<ul>
-<li>La fonction <code>tar_visnetwork</code> permet de visualiser le <em>pipeline</em></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/pipeline.png" height="350"></p>
-</figure>
-</div>
-</section>
-<section id="exécuter-le-pipeline" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="three">3️⃣</span> Exécuter le <em>pipeline</em></h2>
-<ul>
-<li>La fonction <code>tar_make</code> exécute le <em>pipeline</em></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/pipeline_run1.png" height="200"></p>
-</figure>
-</div>
-<ul>
-<li>Lors des exécutions suivantes, <code>targets</code> saute automatiquement les étapes qui n’ont pas changé</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/pipeline_run2.png" height="100"></p>
-</figure>
-</div>
-</section>
-<section id="ressources-supplémentaires-3" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Ressources supplémentaires</h2>
-<ul>
-<li>La <a href="https://books.ropensci.org/targets/">documentation officielle de <code>targets</code></a></li>
-</ul>
-</section>
-<section id="exercice-6a" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 6A</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Modélisation d’un projet sous forme de <em>pipeline</em> de données</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol type="1">
-<li class="fragment">Partir de l’exemple de <a href="https://books.ropensci.org/targets/walkthrough.html"><code>_targets.R</code></a> pour créer un fichier <code>_targets.R</code> dans la documentation.</li>
-<li class="fragment">Ajouter <code>_targets/</code> dans le .gitignore.</li>
-<li class="fragment">Commençons par les dépendances. Reporter les <code>library</code> dans le fichier <code>R/functions.R</code> et récupérer les noms des packages pour les mettre dans la section <code>tar_option_set()</code>.</li>
-<li class="fragment">Créer dans <code>R/functions.R</code>, une fonction <code>read_yaml_secret</code> et une <code>read_from_parquet</code> qui prennent en argument un chemin et exportent, respectivement, le jeton de l’API et notre dataframe de départ.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-6a-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 6A</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Modélisation d’un projet sous forme de <em>pipeline</em> de données (suite)</strong></p>
-</div>
-<div class="callout-content">
+<p><strong>À ce stade, une seule personne (la plus rapide) devrait ne pas avoir rencontré de rejet du <code>push</code>.</strong> C’est normal ! Avant d’accepter une modification, <code>Git</code> vérifie en premier lieu la cohérence de la branche avec le dépôt distant. Le premier ayant fait un <code>push</code> a modifié le dépôt commun ; les autres doivent intégrer ces modifications dans leur version locale (<code>pull</code>) avant d’avoir le droit de proposer un changement.</p>
 <div>
 <ol start="5" type="1">
-<li class="fragment">A partir du modèle dans la documentation de <code>targets</code>, créer les quatre premières cibles (<em>targets</em>): les deux fichiers (utiliser l’argument <code>format</code>) et les deux objets <code>R</code> construits à partir des fonctions <code>read_yaml_secret</code> et <code>read_from_parquet</code>. Nommer ces cibles, respectivement <code>pwd_api</code> et <code>survey_sample_24</code>. Pour la cible utilisant <code>survey_sample_24</code> ajouter l’argument <code>format="parquet"</code>.</li>
-<li class="fragment">Visualiser les relations entre objets de notre <em>pipeline</em> à partir de <code>tar_visnetwork()</code>.</li>
-<li class="fragment">Exécuter <code>tar_make()</code> dans la console et observer le changement d’état avec <code>tar_visnetwork()</code>.</li>
-<li class="fragment">Dans <code>script.R</code>:
-<ol type="a">
-<li class="fragment">remplacer la création de <code>pwd_api</code> par <code>tar_load(pwd_api)</code></li>
-<li class="fragment">remplacer l’import de <code>individu_reg.parquet</code> par <code>tar_load(survey_sample_24)</code></li>
-</ol></li>
+<li class="fragment">Pour ceux dont le <code>push</code> a été refusé, effectuer un <code>pull</code> des modifications distantes</li>
+<li class="fragment">Dans <code>RStudio</code>, afficher l’historique du projet et regarder la manière dont ont été intégrées les modifications des collaborateurs</li>
+<li class="fragment">Effectuer à nouveau un <code>push</code> de vos modifications locales</li>
+<li class="fragment">Les derniers membres du groupe devront refaire les étapes précédentes, potentiellement plusieurs fois, pour pouvoir <code>push</code> les modifications locales</li>
 </ol>
 </div>
 </div>
 </div>
 </div>
+<p>❓ <strong>Question</strong> : que se serait-il passé si les différents membres du groupe avaient effectué leurs modifications sur un seul et même fichier ?</p>
 </section>
-<section id="exercice-6b" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 6B</h2>
+<section id="application-5" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 5</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
-<p><strong>Avantage de <code>targets</code>: ne pas refaire tourner tout le <em>pipeline</em> pour un changement intermédiaire</strong></p>
+<p><strong>Résoudre les conflits</strong></p>
 </div>
 <div class="callout-content">
 <div>
-<!------
-Le _pipeline_ n'est pas pleinement reproductible à ce stade car le fichier `write_csv.R`
-fait toujours la transformation de base:
-- créer une fonction `import_parquet_raw` dans `R/fonctions.R` pour modulariser cet import
-et la sélection de l'échantillon (region=24). Changer le fichier `_targets.R` en conséquence. 
------->
 <ol type="1">
-<li class="fragment">Adopter la même approche de modularisation puis intégration dans <code>_targets.R</code> de la partie <em>feature engineering</em>. Faire un <code>tar_visnetwork()</code> avant de faire <code>tar_make()</code>. Faire un <code>tar_visnetwork()</code>.</li>
-<li class="fragment">Créer une fonction <code>produce_table_age</code> pour produire le tableau <code>gt</code> que vous avez créé précédemment et intégrer sa production dans le <em>pipeline</em> défini dans <code>_targets.R</code> (sous le nom <code>table_age</code>)</li>
-<li class="fragment">Exécuter <code>tar_make()</code> dans la console puis remplacer le code en question dans <code>script.R</code> par <code>tar_load(table_age)</code>.</li>
-<li class="fragment">Il est nécessaire de recoder les valeurs <code>Z</code> en valeurs manquantes dans la variable <code>cat1</code>. Ajouter cela dans la fonction de recodage des valeurs manquantes.</li>
+<li class="fragment">On se place dans la même configuration que dans l’application précédente : un <span class="blue2"><strong>mainteneur</strong></span> et deux/trois <span class="blue2"><strong>développeurs</strong></span></li>
+<li class="fragment">Le mainteneur modifie le contenu de son fichier, puis <code>commit</code> et <code>push</code> les modifications</li>
+<li class="fragment">Sans faire de <code>pull</code> préalable, les développeurs modifient également le contenu du fichier du mainteneur, puis <code>commit</code> et <code>push</code> les modifications</li>
 </ol>
 </div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-6b-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 6B</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Avantage de <code>targets</code>: ne pas refaire tourner tout le <em>pipeline</em> pour un changement intermédiaire (suite)</strong></p>
-</div>
-<div class="callout-content">
+<p>Le <code>push</code> est rejeté pour la même raison que dans l’application précédente : les dépôts ne sont plus synchronisés, il faut <code>pull</code> les changements distants au préalable. Mais <strong>cette fois, le <code>pull</code> est également rejeté</strong> : il y a un <strong>conflit</strong> entre l’historique du projet distant et celui du projet local. <code>Git</code> nous indique qu’il faut résoudre le conflit avant de pouvoir modifier l’historique du projet.</p>
 <div>
 <ol start="5" type="1">
-<li class="fragment">Après avoir sauvegardé <code>R/functions.R</code>, observer le changement dans le pipeline avec <code>tar_visnetwork()</code>.</li>
-<li class="fragment">Faire un <code>tar_make()</code></li>
-<li class="fragment">Ajouter deux éléments au <em>pipeline</em> :
-<ul>
-<li class="fragment">Choisir le graphique qu’on enregistrait sous le nom <code>surf_par_statut.png</code>. Faire une fonction pour le produire et l’intégrer dans le <em>pipeline</em>. Appeler la cible, <code>super_graphique</code>.</li>
-<li class="fragment">Créer une fonction pour générer la régression à la fin. Faire une fonction pour le produire et intégrer dans le <em>pipeline</em>. Appeler la cible, <code>super_regression</code>.</li>
-</ul></li>
-<li class="fragment">Observer la fin du <em>pipeline</em> avec <code>tar_visnetwork()</code> puis faire <code>tar_make()</code>.</li>
-<li class="fragment"><code>renv::snapshot()</code> puis commit/push.</li>
+<li class="fragment">Utiliser l’interface de <code>RStudio</code> pour résoudre le conflit, en choisissant la version du fichier que vous souhaitez conserver, puis <code>commit</code>/<code>push</code> les modifications</li>
+<li class="fragment">Comme dans l’application précédente, seul le développeur le plus rapide parvient à <code>push</code>. Les autres doivent répéter l’opération.</li>
 </ol>
 </div>
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="vi--publication-reproductible" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
-<h1>VI- Publication reproductible</h1>
+<p>❓ <strong>Question</strong> : comment limiter au maximum la survenue des conflits d’historique ?</p>
+</section>
+<section id="le-modèle-des-branches" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title">Le modèle des branches</h2>
 
+<img data-src="https://i.imgflip.com/4ooord.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="le-modèle-des-branches-1" class="slide level2" data-auto-animate="true" data-background-image="background.svg" data-background-size="contain">
+<h2 data-id="quarto-animate-title">Le modèle des branches</h2>
+
+<img data-src="img/branches.png" class="r-stretch"></section>
+<section id="exemple-dorganisation-le-github-flow" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Exemple d’organisation : le <em>GitHub flow</em></h2>
+
+<img data-src="img/ghflow.png" class="r-stretch"><p>Description plus détaillée : <a href="https://docs.github.com/en/get-started/quickstart/github-flow">ici</a></p>
+<!--
+## Adopter de bonnes pratiques collaboratives {.smaller}
+
+:warning: __Ne jamais `git push --force`__
+
+![](https://miro.medium.com/max/400/0*XaLzNzYkA6PZjbl9.jpg){height="350" fig-align="center"}
+-->
 </section>
-<section id="enjeux-4" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Enjeux</h2>
-<ul>
-<li>Produire des <strong>études reproductibles</strong> en intégrant le code et le texte dans un même document</li>
-</ul>
-<div class="fragment">
-<ul>
-<li>La génération complète de l’étude est contenue dans un <strong>unique projet</strong></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Limiter les risques d’erreurs</strong> dûes aux gestes manuels</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Gestion native de <strong>différents formats</strong> pour le document final (<code>pdf</code>, <code>html</code>, <code>odt</code>, etc.)</li>
-</ul>
-</div>
-</section>
-<section id="r-markdown" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><code>R Markdown</code></h2>
-<ul>
-<li><code>R Markdown</code> est un <em>package</em> <code>R</code> qui permet de lier
-<ul>
-<li>Du <strong>texte</strong> au format <code>Markdown</code></li>
-<li>Du <strong>code</strong> <code>R</code> qui peut être exécuté et dont les sorties peuvent être intégrées au texte</li>
-</ul></li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Dissociation du fond et de la forme</strong> du document</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Un document est <strong>compilé</strong> en deux étapes
-<ul>
-<li><strong><em>knit</em></strong> : le package <code>knitr</code> transforme le texte et les sorties <code>R</code> en un document <code>Markdown</code> standard ;</li>
-<li><strong><em>convert</em></strong> : le logiciel <code>pandoc</code> transforme le document <code>.md</code> en un format de sortie standard (<code>html</code>, <code>pdf</code>, etc.)</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="quarto" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><code>Quarto</code></h2>
-<ul>
-<li><code>Quarto</code> est le successeur de <code>R Markdown</code></li>
-</ul>
-<div class="fragment">
-<ul>
-<li><code>Quarto</code> supporte <strong>différents moteurs de calcul</strong> (<code>knitr</code>, <code>Jupyter</code>, <code>Observable</code>..) ce qui le rend nativement <strong>multi-langage</strong> (<code>R</code>, <code>Python</code>, <code>JavaScript</code>..)</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Le fonctionnement des deux systèmes reste très proche</li>
-</ul>
-</div>
-</section>
-<section id="anatomie-dun-document-reproductible" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Anatomie d’un document reproductible</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/qmd.png" height="700"></p>
-</figure>
-</div>
-</section>
-<section id="ressources-supplémentaires-4" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Ressources supplémentaires</h2>
-<ul>
-<li><p>La <a href="https://rmarkdown.rstudio.com/lesson-1.html">documentation officielle de <code>R Markdown</code></a></p></li>
-<li><p>La <a href="https://www.book.utilitr.org/rmarkdown.html">fiche <code>UtilitR</code> sur <code>R Markdown</code></a></p></li>
-<li><p>La <a href="https://quarto.org/">documentation officielle de <code>quarto</code></a></p></li>
-</ul>
-</section>
-<section id="exercice-7" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 7</h2>
+<section id="application-6" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 6</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
-<p><strong>Introduction à la publication reproductible</strong></p>
+<p><strong>Utilisation de branches</strong></p>
 </div>
 <div class="callout-content">
 <div>
+<ol type="1">
+<li class="fragment">Sur le même dépôt local que pour les applications 4 et 5, récupérer les mises à jour de la branche principale du dépôt distant</li>
+<li class="fragment">Créer une branche intitulée <code>&lt;votre_nom&gt;-&lt;votre_prénom&gt;</code></li>
+<li class="fragment">Effectuer un <code>commit</code> avec les modifications de votre choix, puis pousser les changements sur une nouvelle branche du dépôt distant (<code>git push -u origin &lt;votre_nom&gt;-&lt;votre_prénom&gt;</code>)</li>
+<li class="fragment">Ouvrir une <code>Pull Request</code> (<code>PR</code>) pour proposer d’intégrer vos changements sur la branche principale du dépôt distant</li>
+<li class="fragment">Ouvrir une <code>Issue</code> dans laquelle vous mentionnez la <code>Pull Request</code> précédemment ouverte</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<p>❓ <strong>Question</strong> : quelle organisation pour merge dans la branche principale ?</p>
+</section>
+<section id="application-7" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 7</h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Contribution à un projet open-source</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol type="1">
+<li class="fragment">Sur <code>GitHub</code>, faire un <code>fork</code> du dépôt <a href="https://github.com/avouacr/git-exo.git"><code>git-exo</code></a></li>
+<li class="fragment">Créer une branche intitulée <code>&lt;votre_nom&gt;-&lt;votre_prénom&gt;</code></li>
+<li class="fragment">Effectuer un <code>commit</code> avec les modifications de votre choix, puis pousser les changements sur votre <code>fork</code></li>
+<li class="fragment">Ouvrir une <code>Pull Request</code> (<code>PR</code>) pour proposer d’intégrer vos changements sur la branche principale du dépôt <a href="https://github.com/avouacr/git-exo.git"><code>git-exo</code></a></li>
+<li class="fragment">Ouvrir une <code>Issue</code> dans laquelle vous mentionnez la <code>Pull Request</code> précédemment ouverte</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<p>❓ <strong>Question</strong> : pourquoi, avec un <code>fork</code>, est-il très important de toujours effectuer une <code>Pull Request</code> à partir d’une branche différente de la branche principale ?</p>
+</section>
+<section id="ressources-utiles" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
+<h2>Ressources utiles</h2>
+<p><br></p>
 <ul>
-<li class="fragment">Cliquer sur <code>File &gt; New file &gt; Quarto document</code>:
+<li>Pour <strong>aller plus loin</strong>:
 <ul>
-<li class="fragment">Décocher la case <code>Use visual markdown editor</code></li>
-<li class="fragment">Donner un titre et un auteur au rapport</li>
+<li>Formation <a href="https://collaboratif-git-formation-insee.netlify.app/index.html">Travail collaboratif avec <code>R</code></a></li>
+<li>Cours <a href="https://ensae-reproductibilite.netlify.app/">Reproductibilité et bonnes pratiques pour les projets de data science</a> de l’<code>ENSAE</code></li>
+<li>La <a href="https://www.book.utilitr.org/">documentation <code>utilitR</code></a> propose plusieurs chapitres sur <code>Git</code></li>
+<li>La <a href="https://git-scm.com/book/en/v2">Bible</a> <br></li>
 </ul></li>
-<li class="fragment">Sauvegarder le fichier sous le nom <code>report.qmd</code></li>
-<li class="fragment">S’inspirer de <a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/1b6d4e88328c91b37da0b6f18f3dd1080db81aac/report.qmd">cette base de départ</a> pour créer votre rapport</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Trouver de l’aide</strong>:
+<ul>
+<li>Pour toute question : le salon Tchap <a href="https://tchap.gouv.fr/#/room/#InseeGitGitlablPtu8f1Frns:agent.finances.tchap.gouv.fr">Insee-Git-Gitlab</a></li>
+<li>Sollicitez vos collègues utilisateurs de Git !</li>
+</ul></li>
 </ul>
 </div>
-</div>
-</div>
-</div>
+</section>
+<section id="merci-pour-votre-attention" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Merci pour votre attention !</h2>
+<!--
+![](https://miro.medium.com/max/820/0*Gb3B1-Xk5qHaxU7v.jpg){fig-align="center"}
+-->
 <div class="footer footer-default">
 <p>Bonnes pratiques pour les projets statistiques</p>
 </div>
