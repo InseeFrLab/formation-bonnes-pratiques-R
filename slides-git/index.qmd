@@ -1,0 +1,472 @@
+---
+title: Bonnes pratiques pour les projets statistiques
+subtitle: |
+  **[Formation à la DESE]{.orange}**
+author: |
+  [Romain Avouac](https://github.com/avouacr),
+  [Thomas Faria](https://github.com/ThomasFaria),
+  [Lino Galiana](https://www.linogaliana.fr/),
+  [Tom Seimandi](https://github.com/tomseimandi/)
+date: 29 Septembre 2022 et 3 octobre 2022
+slide-number: true
+footer: |
+  Bonnes pratiques pour les projets statistiques
+# uncomment for French presentations:
+#lang: fr-FR
+# for blind readers:
+slide-tone: false
+# for @olevitt:
+chalkboard: # press the B key to toggle chalkboard
+  theme: whiteboard
+# uncomment to use the multiplex mode:
+#multiplex: true
+format:
+  # pick the light mode (onyxia-revealjs) or the dark mode (onyxia-dark-revealjs)
+  onyxia-revealjs:
+  #onyxia-dark-revealjs:
+    output-file: index.html
+controls: true
+css: custom.css
+from: markdown+emoji
+---
+
+# Introduction
+
+## La notion de bonnes pratiques
+
+- [**Origine**]{.blue2} : communauté des développeurs logiciels
+
+. . .
+
+- [**Constats**]{.blue2} :
+    - le [_"code est plus souvent lu qu'écrit"_]{.green2} ([Guido Van Rossum](https://fr.wikipedia.org/wiki/Guido_van_Rossum))
+    - la maintenance d'un code est très coûteuse
+
+. . .
+
+- [**Conséquence**]{.blue2} : ensemble de [**règles informelles**]{.orange},
+conventionnellement acceptées comme produisant des logiciels [**fiables**]{.orange}, [**évolutifs**]{.orange} et [**maintenables**]{.orange}
+
+
+## Pourquoi s'intéresser aux bonnes pratiques ? {.smaller}
+
+<br>
+
+L'activité du statisticien / *datascientist* tend à se rapprocher de celle du développeur :
+
+. . .
+
+- projets **intenses en code**
+
+. . .
+
+- **projets collaboratifs** et de grande envergure
+
+. . .
+
+
+- **complexification** des données et donc des **infrastructures**
+
+. . .
+
+- **déploiement** d'applications pour valoriser les analyses
+
+## Bonnes pratiques et reproductibilité
+
+![](img/reprospectrum.png){height="200" fig-align="center"}
+
+**Source** : Peng R., Reproducible Research in Computational Science, Science (2011)
+
+- Une reproductibilité parfaite est [**coûteuse**]{.orange}
+
+- `Git` est un [**standard atteignable**]{.orange} et [**efficient**]{.orange}
+
+## Bonnes pratiques et reproductibilité
+
+![](img/aea.png){fig-align="center"}
+
+- Les journaux académiques sont de plus en plus exigeants sur
+la reproductibilité
+(notamment [AEA](https://aeadataeditor.github.io/) et [@AeaData](https://twitter.com/AeaData))
+
+<!--
+## L'objectif du jour
+
+- Aujourd'hui, on se [__concentre sur `Git`__]{.orange}
+
+![](https://www.memecreator.org/static/images/memes/5482008.jpg){fig-align="center"}
+-->
+
+# Le contrôle de version : pourquoi faire ?
+
+## :one: Archiver son code proprement {auto-animate=true}
+
+pour en finir avec ça :
+
+![](img/fichiers_multiples.png)
+
+
+## :one: Archiver son code proprement {auto-animate=true}
+
+ou ça :
+
+![](img/finalfinal.png){fig-align="center"}
+
+
+## :one: Archiver son code proprement {auto-animate=true}
+
+ou encore ça :
+
+```{.python code-line-numbers="12-18"}
+prior <- read_csv(prior_path)
+prior <- prior %>%
+    select(id, proba_inter, proba_build, proba_rfl) %>%
+    separate(id, into = c('nidt', 'grid_id'), sep = ":") %>%
+    group_by(nidt) %>%
+    mutate(
+        proba_build = proba_build/sum(proba_build),
+        proba_rfl = proba_rfl/sum(proba_rfl),
+        ) %>%
+    unite(col = "id", nidt, grid_id, sep = ":")
+
+# Test
+# prior_test <- prior %>%
+#    mutate(
+#        proba_inter = round(proba_inter, 4)
+#        proba_build = round(proba_build, 4)
+#        proba_rfl = round(proba_rfl, 4)
+#    )
+
+write_csv(prior_round, "~/prior.csv")
+```
+
+## :one: Archiver son code proprement {auto-animate=true}
+
+Pour arriver à ça :
+
+![](img/timeline.png){fig-align="center" height=475}
+
+Source : [ThinkR](https://thinkr.fr/travailler-avec-git-via-rstudio-et-versionner-son-code/)
+
+## :two: Voyager dans le temps (de votre projet)
+
+![](img/historique_utilitr.png){fig-align="center"}
+
+## :three: Une collaboration simplifiée et efficace {auto-animate=true}
+
+Un modèle distribué
+
+![](img/git_distributed.png){fig-align="center" height=475}
+
+Source : [specbee.com](https://www.specbee.com)
+
+## :three: Une collaboration simplifiée et efficace {auto-animate=true}
+
+Qui permet l'expérimentation en toute sécurité
+
+![](img/branches.png){fig-align="center"}
+
+Source : [lutece.paris.fr](https://lutece.paris.fr/support/jsp/site/Portal.jsp?page=wiki&view=page&page_name=git&language=fr)
+
+## :three: Une collaboration simplifiée et efficace {auto-animate=true}
+
+Quel que soit l'environnement de travail
+
+![](img/envtravail.png){fig-align="center" height=475}
+
+## :three: Une collaboration simplifiée et efficace {auto-animate=true}
+
+Avec des outils pour faciliter la collaboration
+
+![](img/issue.png){fig-align="center" height=500}
+
+## :four: Partager son code à un public large {auto-animate=true}
+
+Une vitrine pour vous
+
+![](https://starecat.com/content/wp-content/uploads/github-commits-contributions-you-vs-the-guy-she-told-you-not-to-be-worried-about.jpg){height="500" fig-align="center"}
+
+
+
+## En résumé
+
+- [__Construire__]{.blue2} et [__naviguer__]{.blue2} à travers l'[**historique**]{.orange} de son projet
+
+. . .
+
+- La [**collaboration**]{.orange} rendue [__simple__]{.blue2} et [__efficace__]{.blue2}
+
+. . .
+
+- Améliorer la [**reproductibilité**]{.orange} de ses projets
+
+. . .
+
+- Améliorer la [**visibilité**]{.orange} de ses projets
+
+# Le contrôle de version avec `Git`
+
+## :warning: Git est complexe {auto-animate=true}
+
+L'utilisation de `Git` nécessite [__certaines notions préalables__]{.orange}:
+
+::: {.incremental}
+- Fonctionnement d'un `filesystem`
+- Connaissance basique du terminal `Linux`
+- Potentiellement, un grand nombre de commandes
+:::
+
+![Source : [Ici](https://iulianacosmina.com/?p=19452)](img/gitfire.png){height="400"}
+
+## :warning: Git est complexe {auto-animate=true}
+
+[__Mais__]{.blue2}
+
+::: {.incremental}
+- L'**usage quotidien** n'implique que [**quelques commandes**]{.orange}
+- [**Enormément de ressources**]{.orange} disponibles sur internet
+- Des [**interfaces visuelles**]{.orange} (ex: `RStudio`, `Sublime Merge`, `VS Code`) qui facilitent l'apprentissage
+- Un petit investissement individuel pour de [**gros gains collectifs**]{.orange}
+:::
+
+
+## Concepts {auto-animate=true}
+
+`Git`, `GitHub`, `GitLab`... quelles différences ?
+
+:::{.incremental}
+- `Git` est un **logiciel** ;
+- Utilisation en ligne de commandes
+- Différentes [__interfaces graphiques__]{.blue2} (`RStudio`, `VS Code`...)
+:::
+
+## Concepts {auto-animate=true}
+
+`Git`, `GitHub`, `GitLab`... quelles différences ?
+
+
+:::{.incremental}
+- `GitHub` et `GitLab` sont des **forges logicielles**
+- _Forge_: espace d'archivage de code
+- Des fonctionalités supplémentaires : __réseau social du code__
+:::
+
+:::{.callout-tip}
+
+- `GitHub` : utilisation pour les projets **open-source**
+- `GitLab` : utilisation pour les projets **internes**
+
+:::
+
+
+## Concepts {auto-animate=true}
+
+Dépôt local / dépôt distant (`remote`)
+
+![](img/localremote.png){ fig-align="center"}
+
+Source : [Collaborative work with R](https://collaboratif-git-formation-insee.netlify.app/des-bases-de-git.html)
+
+
+## Concepts {auto-animate=true}
+
+_Workflow_ (version littéraire) :
+
+- On travaille sur un dépôt local en éditant des fichiers
+- On dit à `Git` que ces fichiers doivent être suivis (`staging area`)
+- On valide les modifications faites en local (`commit`)
+- On soumet les modifications (`push`) après avoir récupéré la version collective (`pull`)
+
+## Concepts {auto-animate=true}
+
+_Workflow_ (version imagée) :
+
+![](img/areas.png){ fig-align="center"}
+
+Source : [Git Documentation](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
+
+## Concepts {auto-animate=true}
+
+_Workflow_ (version imagée complète) :
+
+![Source : [itnext.io](https://itnext.io/git-concepts-for-newcomers-part-2-git-repository-working-tree-and-staging-area-a2e720bf3528)](img/completeworkflow.png){height="400" width="500"}
+
+
+## Commandes essentielles {auto-animate=true}
+
+<br> 
+
+| Action     | Commande      |
+|------------|---------------|
+| Cloner un projet | `git clone [url-to-git-repo]` |
+| Afficher les changements | `git status` |
+| Retrouver l'URL du dépôt distant | `git remote -v` |
+
+## Commandes essentielles {auto-animate=true .smaller}
+
+<br>
+
+| Action     | Commande      |
+|------------|---------------|
+| Ajouter des changements à l'index de `Git` | Un seul fichier : `git add <file-name>` <br> Tous les fichiers déjà indexés : `git add -u` <br> Tous les fichiers :warning: : `git add -A` |
+
+<br>
+
+:::{.callout-important}
+## Warning
+
+La méthode `git add -A` peut amener à suivre les modifications
+de fichiers qui ne devraient pas l'être (par exemple, des données).
+
+Il est recommandé de bien réfléchir avant de l'utiliser (ou d'avoir
+un bon `.gitignore`)
+
+:::
+
+## Commandes essentielles {auto-animate=true}
+
+<br>
+
+| Action     | Commande      |
+|------------|---------------|
+| Faire un `commit` | `git commit -m "message"`|
+| Pousser les changements locaux (branche `master`) | `git push origin master` |
+| Récupérer les changements distants (branche `master`) | `git pull origin master` |
+
+## Application 0
+
+{{< include _application0.qmd >}}
+
+## Application 1
+
+{{< include _application1.qmd >}}
+
+## Application 2
+
+{{< include _application2.qmd >}}
+
+## Bonnes pratiques {auto-animate=true .smaller}
+
+__Que versionne-t-on ?__
+
+:::{.incremental}
+- Essentiellement du [**code source**]{.orange}
+- [__Pas d'outputs__]{.orange} (fichiers `.html`, `.pdf`, modèles...)
+- [__Pas de données__]{.orange}, d'informations locales ou sensibles
+:::
+
+:::{.callout-note}
+
+Pour définir des règles qui évitent de committer tel ou tel fichier, on utilise
+un fichier nommé __`.gitignore`__.
+
+Si on mélange du code et des éléments
+annexes (_output_, données...) dans un même dossier, il [__faut consacrer du temps à ce fichier__]{.orange}.
+
+Le site [`gitignore.io`](https://www.toptal.com/developers/gitignore) peut vous fournir
+des modèles.
+
+N'hésitez pas à y ajouter des règles conservatrices (par exemple `*.csv`), 
+comme cela est expliqué dans [la documentation `utilitR`](https://www.book.utilitr.org/git.html?q=gitignore#gitignore).
+
+:::
+
+## Bonnes pratiques {auto-animate=true .smaller}
+
+__Format des commits__
+
+::: {layout="[40,60]"}
+
+::: {.incremental}
+- [**Fréquence**]{.orange}
+    - Aussi souvent que possible
+    - Le lot de modifications doit "faire sens"
+- [**Messages**]{.orange}
+    - Courts et informatifs (comme un titre de mail)
+    - Décrire **le pourquoi plutôt que le comment** dans le texte
+:::
+
+![](img/titre-commit.png)
+
+:::
+
+## Application 3
+
+{{< include _application3.qmd >}}
+
+
+# Le travail collaboratif avec Git
+
+## Outils pour le travail collaboratif
+
+- L'éco-système `Git` [**facilite** le travail collaboratif]{.blue2}
+    - `Git` {{< fa brands git-alt >}} : modèle des [__branches__]{.orange}
+    - `GitHub` {{< fa brands github >}} / `GitLab` {{< fa brands gitlab >}} : [**Issues**, **Pull Requests**, **Forks**]{.orange}
+
+. . .
+
+- Ces outils ne remplacent pas une [**bonne définition de l'organisation du travail**]{.orange} en équipe
+    - Choix d'un *workflow*
+    - Droits d'accès
+    - Règles de contribution
+
+## Application 4 {.smaller}
+
+{{< include _application4.qmd >}}
+
+## Application 5 {.smaller}
+
+{{< include _application5.qmd >}}
+
+## Le modèle des branches {auto-animate=true}
+
+![](https://i.imgflip.com/4ooord.jpg){fig-align="center"}
+
+## Le modèle des branches {auto-animate=true}
+
+![](img/branches.png)
+
+## Exemple d'organisation : le *GitHub flow*
+
+![](img/ghflow.png)
+
+Description plus détaillée : [ici](https://docs.github.com/en/get-started/quickstart/github-flow)
+
+<!--
+## Adopter de bonnes pratiques collaboratives {.smaller}
+
+:warning: __Ne jamais `git push --force`__
+
+![](https://miro.medium.com/max/400/0*XaLzNzYkA6PZjbl9.jpg){height="350" fig-align="center"}
+-->
+
+## Application 6
+
+{{< include _application6.qmd >}}
+
+## Application 7
+
+{{< include _application7.qmd >}}
+
+## Ressources utiles {.smaller}
+
+<br>
+
+- Pour **aller plus loin**:
+    - Formation [Travail collaboratif avec `R`](https://collaboratif-git-formation-insee.netlify.app/index.html)
+    - Cours [Reproductibilité et bonnes pratiques pour les projets de data science](https://ensae-reproductibilite.netlify.app/) de l'`ENSAE`
+    - La [documentation `utilitR`](https://www.book.utilitr.org/) propose plusieurs chapitres sur `Git`
+    - La [Bible](https://git-scm.com/book/en/v2)
+<br>
+
+. . .
+
+- **Trouver de l'aide**:
+    - Pour toute question : le salon Tchap [Insee-Git-Gitlab](https://tchap.gouv.fr/#/room/#InseeGitGitlablPtu8f1Frns:agent.finances.tchap.gouv.fr)
+    - Sollicitez vos collègues utilisateurs de Git !
+
+## Merci pour votre attention !
+
+<!--
+![](https://miro.medium.com/max/820/0*Gb3B1-Xk5qHaxU7v.jpg){fig-align="center"}
+-->

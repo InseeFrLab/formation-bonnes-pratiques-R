@@ -1,0 +1,16 @@
+:::{.callout-tip collapse="true" icon=false}
+## Le fichier `.gitignore`
+
+::: {.incremental}
+Lors de la création du projet via Rstudio un fichier `.gitignore` a été créé à la racine du projet.
+
+1. Ajouter le contenu du [.gitignore standard R](https://github.com/github/gitignore/blob/main/R.gitignore)
+2. Exclure également les fichiers de type `.pdf` et `.html`
+3. Créer un dossier `data` à la racine du projet et l'ajouter au `.gitignore`
+4. Effectuer un *commit* pour ajouter le fichier `.gitignore` au projet Git
+5. Vérifier que toutes les règles ajoutées précédemment fonctionnent comme attendu
+:::
+
+:::
+
+❓ **Question** : que se passe-t-il lorsque l'on ajoute au `.gitignore` des fichiers qui ont déjà été *commit* sur le projet Git ?

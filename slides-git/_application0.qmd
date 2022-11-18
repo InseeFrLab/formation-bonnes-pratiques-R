@@ -1,0 +1,17 @@
+:::{.callout-tip collapse="true" icon=false}
+## Préparation de l'environnement de travail
+
+:::{.incremental}
+1. Créer un compte [`GitHub`](https://github.com/)
+2. Créer un nouveau dépôt public sur `GitHub`
+3. [Générer un *token*](https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) (jeton d'accès) d'authentification
+4. Lancer un service `RStudio` sur le [Datalab](https://datalab.sspcloud.fr/home)
+5. Utiliser un `terminal` pour activer le stockage des identifiants : 
+    + `git config --global credential.helper store`
+6. Cloner le dépôt distant sur votre environnement local (`Datalab`):
+    + `File` → `New project` → `Version Control` → `Git`
+:::
+
+:::
+
+❓ **Question** : qu'est ce qui différencie le projet cloné d'un projet quelconque ?
