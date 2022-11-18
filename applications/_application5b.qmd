@@ -1,0 +1,50 @@
+
+:::{.callout-tip collapse="true" icon=false}
+## Prise en main de la librairie `renv`
+
+:::{.incremental}
+1. Taper dans la console `renv::init()`, __lire le message__ et accepter.
+2. Observer le dossier `renv` qui apparaît.
+3. Installer le [package `gt`](https://gt.rstudio.com/) et observer le message dans la console.
+4. Dans la partie sur les statistiques descriptives d'âge, ajouter ce code :
+
+    ```r
+    stats_age <- df2 |> 
+      group_by(decennie = decennie_a_partir_annee(age)) |>
+      summarise(n())
+    
+    table_age <- gt(stats_age) |>
+      tab_header(
+        title = "Distribution des âges dans notre population"
+      ) |>
+      fmt_number(
+        columns = `n()`,
+        sep_mark = " ",
+        decimals = 0
+        ) |>
+      cols_label(
+        decennie = "Tranche d'âge",
+        `n()` = "Population"
+      )
+    ```
+
+:::
+
+:::
+
+## Exercice 5B
+
+:::{.callout-tip collapse="true" icon=false}
+## Prise en main de la librairie `renv` (suite)
+
+:::{.incremental}
+1. Dans la console, faire `renv::snapshot()` et observer le message.
+6. Faire un _commit_ et un _push_ des fichiers `script.R`, `.Rprofile`, `renv.lock` et du dossier `renv/`. _Push_.
+7. Ouvrir un nouveau service `RStudio` sur le `SSPCloud` et cloner le projet dans les mêmes conditions que l'exercice 0. Regarder les messages dans la console. 
+8. Exécuter `renv::status()` dans la console. Constater que les _packages_ ne sont pas installés par `renv`, car c'est à l'utilisateur de décider de le faire. Faire `renv::install()`. Par défaut, `renv`
+installe les dépendances manuellement ajoutées dans `DESCRIPTION`.
+9. Refaire un `renv::status()`. Les dépendances manquantes doivent être ajoutées au `DESCRIPTION` avec `usethis::use_package`.
+10. Refaire `renv::install()`.
+:::
+
+:::

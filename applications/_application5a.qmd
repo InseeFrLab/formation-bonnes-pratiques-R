@@ -1,0 +1,48 @@
+:::{.callout-tip collapse="true" icon=false}
+## Création du fichier `Description`
+
+:::{.incremental}
+1. Utiliser `usethis::use_description(check_name = FALSE)` pour créer le modèle de fichier `Description`. Un nouveau fichier apparaît dans le dossier RStudio. Faire un _commit_.
+2. Taper `usethis::use_package("ggplot2")` dans la commande et observer le changement dans ce fichier `Description`. Faire un _commit_.
+3. Taper `usethis::use_package("tidyverse")` et observer le message.
+:::
+
+:::
+
+## Exercice 5A
+
+
+
+:::{.callout-tip collapse="true" icon=false}
+## Modifications du fichier `Description`
+
+- On va suivre le conseil des développeurs de `tidyverse`:
+    + il vaut mieux retirer `tidyverse` des dépendances de notre code et plutôt lister uniquement les _packages_ qu'on utilise.
+
+:::{.incremental}
+1. Retourner dans `script.R`. Repartir d'un environnement vide (en relançant `R`) et supprimer la ligne `library(tidyverse)`
+2. Exécuter les lignes l'une après l'autre. S'il y a une erreur, vérifier la fonction responsable et son package associé.
+3. Vérifier que le code tourne toujours.
+4. Une fois que la liste est stabilisée faire `lapply(c("package1", "package2"...), usethis::use_package)` pour les ajouter au fichier `Description`.
+:::
+
+:::
+
+## Exercice 5A
+
+:::{.callout-tip collapse="true" icon=false}
+## Utilisation du fichier `Description`
+
+:::{.incremental}
+1. Retirer les `install.packages` au début de `script.R`.
+9. Si vous ne l'avez pas déjà fait, retirer `rm(list = ls())`.
+10. En option, vous pouvez compléter les autres champs de votre `Description`.
+11. Committer et pusher les fichiers modifiés.
+12. Créer un nouveau service RStudio, comme dans l'exercice 0.
+13. Cloner le dépôt, comme dans l'exercice 0.
+14. Installer les dépendances du projet avec `devtools::install_deps(upgrade = "never")`.
+15. Tester `write_csv.R` puis `script.R`. Tout doit fonctionner (normalement...).
+
+:::
+  
+:::

@@ -1,0 +1,13 @@
+:::{.callout-tip collapse="true" icon=false}
+## Introduction à la publication reproductible
+
+:::{.incremental}
+- Cliquer sur `File > New file > Quarto document`:
+    + Décocher la case `Use visual markdown editor`
+    + Donner un titre et un auteur au rapport
+- Sauvegarder le fichier sous le nom `report.qmd`
+- S'inspirer de [cette base de départ](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/1b6d4e88328c91b37da0b6f18f3dd1080db81aac/report.qmd)
+pour créer votre rapport
+:::
+
+:::

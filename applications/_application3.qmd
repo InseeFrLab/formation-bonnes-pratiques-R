@@ -1,0 +1,36 @@
+## Exercice 3: modularisation (1/2)
+
+:::{.callout-tip collapse="true" icon=false}
+## Améliorer la fonction `fonction_de_stat_agregee`
+
+
+:::{.incremental}
+
+1. Lui donner un nom plus court.
+2. Remplacer la première partie par un `match.arg`.
+3. Remplacer la deuxième partie par `switch`.
+4. S'assurer qu'elle soit __pure__, c'est-à-dire qu'elle n'utilise pas de variables globales. 
+5. Compter les erreurs de code que vous venez de corriger. 
+6. Limiter la duplication de code en utilisant des **fonctions** et, quand c'est pertinent, en utilisant `lapply` pour les appliquer en série.
+:::
+
+:::
+
+## Exercice 3: modularisation (2/2)
+
+
+:::{.callout-tip collapse="true" icon=false}
+## Améliorer la fonction `fonction_de_stat_agregee` (suite)
+
+
+:::{.incremental}
+
+7. Déplacer toutes les fonctions dans un fichier `R/functions.R`.
+8. Dans `script.R`, appeler en début de chaîne ces fonctions avec `source("R/functions.R", encoding = "UTF-8")`.
+9. Documenter la fonction en utilisant `roxygen2`.
+10. Redémarrer la session (en faisant `Session > Restart R`).
+Si tout va bien, le code devrait maintenant fonctionner.
+
+:::
+  
+:::

@@ -1,0 +1,17 @@
+:::{.callout-tip collapse="true" icon=false}
+## Préparation de l'environnement de travail
+
+:::{.incremental}
+1. Créer un nouveau dépôt public sur [GitHub](https://github.com/)
+2. Lancer un service `RStudio` sur le [Datalab](https://datalab.sspcloud.fr/home)
+3. Utiliser un `terminal` pour activer le stockage des identifiants : 
+    + `git config --global credential.helper store`
+4. Cloner le dépôt distant sur votre environnement local (`Datalab`):
+    + `File` → `New project` → `Version Control` → `Git`
+5. Créer le script `script.R` dans votre dépôt en copiant le contenu du fichier qui se trouve [ici](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/script.R)
+6. Créer un script `write_csv.R` en copiant le contenu de celui se trouvant [ici](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/write_csv.R), puis l'exécuter. Il récupére des données et en écrit un échantillon sur lequel nous allons travailler
+7. Ajouter "individu_reg.*" au fichier `.gitignore`
+8. *commit*/*push* les changements
+:::
+
+:::

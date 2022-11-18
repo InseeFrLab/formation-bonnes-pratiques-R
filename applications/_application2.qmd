@@ -1,0 +1,98 @@
+## Exercice 2 (1/5) {.smaller}
+
+Cette application vise à résoudre une partie des problèmes détectés précédemment.
+
+:::{.callout-tip collapse="true" icon=false}
+## Travail sur le fichier: modifications de structure
+
+:::{.incremental}
+1. Créer des parties dans `script.R` pour aider à la compréhension de la structure du fichier:
+    + `# TITRE NIVEAU 1 ------------` et `# TITRE NIVEAU 2 ==========`
+    + Faire un _commit_
+2. Déplacer les `library` pour les mettre tous ensemble au début du script.
+    + Conserver l'ordre des _packages_ (`MASS` après `tidyverse` notamment).
+    + Faire un _commit_.
+3. Le script n'est pas construit dans un ordre logique. Déplacer les parties 
+pour adopter une structure plus logique: 
+    + Gestion de l'environnement -> Définition de fonctions -> Import des donnees -> Retraitement des données -> Statistiques descriptives -> Graphiques -> Modélisation
+    + Faire un _commit_.
+:::
+
+:::
+
+## Exercice 2 (2/5)
+
+On va se pencher sur chaque partie du code maintenant 
+qu'on y voit plus clair:
+
+:::{.callout-tip collapse="true" icon=false}
+## Modifications de la partie import des données
+
+:::{.incremental .smaller}
+4. Faire tourner le code jusqu'à l'import des données. Regarder les données.
+    + Quel problème repérez-vous?
+    + Corriger le problème en vous aidant de la documentation de `read_csv2`.
+5. Faire tourner le code qui définit la table `df2`. 
+    + Corriger le problème et faire un _commit_.
+:::
+
+:::
+
+## Exercice 2 (3/5)
+
+On se penche maintenant sur la partie retraitement des données :
+
+:::{.callout-tip collapse="true" icon=false}
+## Modifications de la partie restructuration des données
+
+:::{.incremental}
+
++ Exécuter la partie de gestion des valeurs manquantes, remarquer des problèmes en regardant code et données.
+  + Utiliser les fonctions `dplyr::mutate`, `dplyr::na_if` et `dplyr::across` pour simplifier le code.
+  + Faire un _commit_
++ S'occuper de la partie gestion des variables catégorielles.
+  + Repérer des problèmes en regardant les données et les corriger.
+  + Faire un _commit_ 
++ Changer le type de la variable `aged` afin d'éviter les nombreux `as.numeric(aged)` ultérieurs.
+  + Remplacer toutes les occurrences de `as.numeric(aged)`.
+:::
+  
+:::
+
+## Exercice 2 (4/5) {.smaller}
+
+- On passe maintenant à la partie statistiques descriptives. 
+  + Après chaque question, faire un _commit_
+
+:::{.callout-tip collapse="true" icon=false}
+## Modifications de la partie statistiques descriptives
+
+
+:::{.incremental}
+- Corriger les erreurs sur le décompte des professions. 
++ Exécuter le code produisant les statistiques d'âge jusqu'à rencontrer l'erreur `Error in select(., aged) : unused argument (aged)`.
+    + Comment la résoudre ?
+- Récupérer les données utilisées lors de la production de `ggplot(.)` ;
++ Remplacer le second `summarise` par la bonne commande dans la partie `#part d'homme dans chaque cohorte` ;
++ Débugger la partie `#stats surf par statut` puis produire un graphique lisible ; 
++ Comprendre les erreurs dans la partie où on applique `fonction_de_stat_agregee` et les corriger.
+:::
+  
+:::
+
+## Exercice 2 (5/5)
+
+:::{.callout-tip collapse="true" icon=false}
+## Modifications de la partie modélisation et gestion des secrets
+
+:::{.incremental}
+1. Régler les problèmes de la partie modélisation ;
+2. Traiter correctement les informations confidentielles (*secrets*) :
+
+  + Repérer le jeton d'API dans le code. Retirer le jeton d'API du code et créer un fichier YAML nommé `secrets.yaml` où vous écrivez ce secret sous la forme `key: value`. 
+  + Dans `script.R`, importer ce YAML (avec `yaml::read_yaml("secrets.yaml"`) pour créer une variable `api_token` ayant cette valeur. 
+  + Ajouter dans `.gitignore` le fichier `secrets.yaml` et indiquer dans le `README.md` de votre projet que les secrets sont stockés dans ce fichier. 
+  + [:warning: Attention]{.red2} : il ne faut pas committer `secrets.yaml` car le jeton d'API est personnel et secret!
+:::
+  
+:::

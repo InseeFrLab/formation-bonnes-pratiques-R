@@ -1,0 +1,36 @@
+:::{.callout-tip collapse="true" icon=false}
+## Modélisation d'un projet sous forme de *pipeline* de données
+
+:::{.incremental}
+1. Partir de l'exemple de [`_targets.R`](https://books.ropensci.org/targets/walkthrough.html)
+pour créer un fichier `_targets.R` dans la documentation.
+2. Ajouter `_targets/` dans le .gitignore.
+3. Commençons par les dépendances. Reporter les `library` dans le fichier `R/functions.R` et
+récupérer les noms des packages pour les mettre dans la section `tar_option_set()`.
+4. Créer dans `R/functions.R`,
+une fonction `read_yaml_secret` et une `read_from_parquet` qui prennent en argument
+un chemin et exportent, respectivement, le jeton de l'API et notre dataframe de départ.
+:::
+
+:::
+
+## Exercice 6A
+
+:::{.callout-tip collapse="true" icon=false}
+## Modélisation d'un projet sous forme de *pipeline* de données (suite)
+
+:::{.incremental}
+
+5. A partir du modèle dans la documentation de `targets`, créer les quatre premières
+cibles (_targets_): les deux fichiers (utiliser l'argument `format`) et les deux
+objets `R` construits à partir des fonctions  `read_yaml_secret` et `read_from_parquet`.
+Nommer ces cibles, respectivement `pwd_api` et `survey_sample_24`. 
+Pour la cible utilisant `survey_sample_24` ajouter l'argument `format="parquet"`.
+6. Visualiser les relations entre objets de notre _pipeline_ à partir de `tar_visnetwork()`.
+7. Exécuter `tar_make()` dans la console et observer le changement d'état avec `tar_visnetwork()`.
+8. Dans `script.R`:
+    a. remplacer la création de `pwd_api` par `tar_load(pwd_api)`
+    b. remplacer l'import de `individu_reg.parquet` par `tar_load(survey_sample_24)`
+:::
+
+:::
