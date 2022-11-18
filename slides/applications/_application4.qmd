@@ -1,0 +1,11 @@
+:::{.callout-tip collapse="true" icon=false}
+## Manipulation des formats CSV et Parquet
+
+:::{.incremental}
+- Effacer la base `individu_reg.csv` ;
+- Transformer le script `write_csv.R` pour n'utiliser que le format `parquet`; sauvegarder la table `individu_reg` en format Parquet ;
+- Modifier la phase d'import de `script.R` pour utiliser `arrow` et lire le fichier Parquet créé précédemment.
+
+:::
+
+:::

@@ -1,0 +1,55 @@
+## Exercice 1
+
+:::{.callout-tip collapse="true" icon=false}
+## Partie 1: préparation de l'environnement
+
+:::{.incremental}
+1. Installer les _packages_ `R` [`lintr`](https://github.com/r-lib/lintr) et [`styler`](https://www.tidyverse.org/blog/2017/12/styler-1.0.0/).
+2. Si ce n'est pas déjà fait, faire un _commit_ de `script.R` .
+3. Définir le _linter_ à utiliser comme étant de type `tidyverse`.
+:::
+
+:::
+
+
+## Exercice 1
+
+:::{.callout-tip collapse="true" icon=false}
+## Partie 2: premiers standards de qualité
+
+:::{.incremental}
+1. Utiliser l'_addin_ de `lintr` pour diagnostiquer le script `script.R` (`Addins > Lint current file`).
+    + Regardez bien la liste des problèmes détectés par le _linter_.
+    + Comprenez-vous la nature des problèmes?
+2. Utiliser l'_addin_ de `styler` pour nettoyer le fichier (`Addins > Style active file`).
+    + Que se passe-t-il d'inattendu? Comprenez-vous le problème?
+    + Lorsque vous avez trouvé le problème, vous pouvez le corriger puis faire un _commit_.
+3. Utiliser à nouveau l'_addin_ de `styler` pour nettoyer le fichier.
+    + Enregistrer et faire un _commit_ du fichier.
+    + Prenez le temps de regarder le _diff_ du _commit_. Comprenez-vous les modifications faites par le _formatter_?
+:::
+
+:::
+
+## Exercice 1
+
+:::{.callout-tip collapse="true" icon=false}
+## Application des standards de qualité de code (suite)
+
+:::{.incremental}
+1. Refaire tourner le _linter_. Il reste encore un certain nombre d'erreurs de formattage, car `styler` est un _formatter_ peu intrusif.
+2. On va maintenant configurer le _linter_ pour qu'il propose une analyse beaucoup plus rigoureuse. Pour cela, exécuter le code suivant. 
+
+```r
+linters_complets <- c("best_practices", "common_mistakes", "correctness", "efficiency", "readability", "style")
+lintr::lint("script.R", linters = lintr::linters_with_tags(linters_complets))
+```
+
+3. Regarder la liste des problèmes repérés par le _linter_, et la comparer avec celle de l'étape précédente.
+    + Comprenez-vous les nouveaux problèmes repérés par le _linter_?   
+<!-- 9. On peut maintenant tester un autre _formatter_ plus intrusif. Pour cela, -->
+<!-- installer le _package_ `formatR`, exécuter `formatR::tidy_source("script.R", width.cutoff = 50)`. Régler les erreurs inattendues s'il y en a. Le script reformatté est imprimé dans la console. Copier le script reformatté, et le coller dans l'éditeur et remplacer. A ce stade, faire un _commit_. Prenez le temps de regarder le _diff_ du _commit_. Comprenez-vous les modifications faites par le _formatter_? -->
+<!-- 10. Refaire tourner le _linter_. Corriger les lignes manuellement (vous pouvez utiliser <kbd>CTRL</kbd>+<kbd>I</kbd> pour aligner des lignes ensemble).  -->
+:::
+
+:::

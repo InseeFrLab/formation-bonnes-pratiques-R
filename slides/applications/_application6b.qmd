@@ -1,0 +1,45 @@
+:::{.callout-tip collapse="true" icon=false}
+## Avantage de `targets`: ne pas refaire tourner tout le _pipeline_ pour un changement intermédiaire 
+
+:::{.incremental}
+<!------
+Le _pipeline_ n'est pas pleinement reproductible à ce stade car le fichier `write_csv.R`
+fait toujours la transformation de base:
+- créer une fonction `import_parquet_raw` dans `R/fonctions.R` pour modulariser cet import
+et la sélection de l'échantillon (region=24). Changer le fichier `_targets.R` en conséquence. 
+------>
+1. Adopter la même approche de modularisation puis intégration dans `_targets.R` de la 
+partie _feature engineering_. Faire un `tar_visnetwork()` avant de faire `tar_make()`.
+Faire un `tar_visnetwork()`.
+2. Créer une fonction `produce_table_age` pour produire le tableau `gt` que vous avez créé précédemment
+et intégrer sa production dans le _pipeline_ défini dans `_targets.R` (sous le nom `table_age`)
+3. Exécuter `tar_make()` dans la console puis remplacer le code en question dans `script.R` par `tar_load(table_age)`. 
+4. Il est nécessaire de recoder les valeurs `Z` en valeurs manquantes dans la variable `cat1`. Ajouter cela 
+dans la fonction de recodage des valeurs manquantes. 
+:::
+
+
+:::
+
+## Exercice 6B
+
+:::{.callout-tip collapse="true" icon=false}
+## Avantage de `targets`: ne pas refaire tourner tout le _pipeline_ pour un changement intermédiaire (suite)
+
+:::{.incremental}
+
+5. Après avoir sauvegardé `R/functions.R`, observer le
+changement dans le pipeline avec `tar_visnetwork()`.
+6. Faire un `tar_make()`
+7. Ajouter deux éléments au _pipeline_ :
+    + Choisir le graphique qu'on enregistrait sous le nom `surf_par_statut.png`.
+    Faire une fonction pour le produire et l'intégrer dans le _pipeline_.
+    Appeler la cible, `super_graphique`.
+    + Créer une fonction pour générer la régression à la fin. Faire une fonction pour le produire et intégrer dans le _pipeline_.
+    Appeler la cible, `super_regression`.
+8. Observer la fin du _pipeline_ avec `tar_visnetwork()` puis faire `tar_make()`.
+9. `renv::snapshot()` puis commit/push.
+:::
+
+
+:::
