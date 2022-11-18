@@ -1,11 +1,9 @@
-name: Publish R BP slides
+name: Publish slides
 
 on: 
   push:
     branches:
       - main
-    paths:
-      - "slides-bp-r/"
 
 jobs:
   publish:
@@ -15,7 +13,14 @@ jobs:
         uses: actions/checkout@v3
       - name: Set up quarto
         uses: quarto-dev/quarto-actions/setup@v2
-      - name: Publish
+      - name: Publish Git slides
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+          path: slides-git/index.qmd
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish BP slides
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
