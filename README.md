@@ -1,1 +1,0 @@
-# formation-bonnes-pratiques-R

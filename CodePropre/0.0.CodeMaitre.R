@@ -1,7 +1,0 @@
-source("0.1.packages.R")
-source("0.2.outils.R")
-source("0.3.aws.R")
-source("1.1.chargementDonnees.R")
-source("1.2.traitementDonnees.R")
-source("2.1.etudeCommunes.R")
-source("2.2.structureParAges.R")
