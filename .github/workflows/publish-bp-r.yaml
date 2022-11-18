@@ -1,11 +1,11 @@
-name: Publish slides
+name: Publish R BP slides
 
 on: 
   push:
     branches:
       - main
     paths:
-      - "slides-bp-r"
+      - "slides-bp-r/"
 
 jobs:
   publish:

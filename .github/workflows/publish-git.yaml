@@ -1,11 +1,11 @@
-name: Publish slides
+name: Publish Git slides
 
 on: 
   push:
     branches:
       - main
     paths:
-      - "slides-git"
+      - "slides-git/"
 
 jobs:
   publish:

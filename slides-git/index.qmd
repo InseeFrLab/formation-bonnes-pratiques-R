@@ -1,13 +1,13 @@
 ---
 title: Bonnes pratiques pour les projets statistiques
 subtitle: |
-  **[Formation à la DESE]{.orange}**
+  **[1ère partie : formation à Git]{.orange}**
 author: |
   [Romain Avouac](https://github.com/avouacr),
   [Thomas Faria](https://github.com/ThomasFaria),
   [Lino Galiana](https://www.linogaliana.fr/),
   [Tom Seimandi](https://github.com/tomseimandi/)
-date: 29 Septembre 2022 et 3 octobre 2022
+# date: 
 slide-number: true
 footer: |
   Bonnes pratiques pour les projets statistiques
