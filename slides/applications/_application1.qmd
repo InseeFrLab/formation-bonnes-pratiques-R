@@ -3,26 +3,9 @@
 :::{.callout-tip collapse="true" icon=false}
 ## Partie 0: vérification du bon fonctionnement du code
 
-Un code reproductible est avant toute chose un code fonctionnel ! Repérez les erreurs qui empêchent le script `script.R` de s'exécuter correctement, et les corriger.
-
-Indices :
-1. Utiliser des chemins relatifs plutôt qu'absolus
-2. 
+Un code **reproductible** est avant toute chose un code **fonctionnel** ! Repérez les **erreurs** qui empêchent le script script.R de s’exécuter correctement, et les **corriger**.
 
 :::
-
-## Exercice 1
-
-:::{.callout-tip collapse="true" icon=false}
-## Partie 1: préparation de l'environnement
-
-:::{.incremental}
-1. Installer les _packages_ `R` [`lintr`](https://github.com/r-lib/lintr) et [`styler`](https://github.com/r-lib/styler).
-2. Définir le _linter_ à utiliser comme étant de type `tidyverse` : `lintr::use_lintr(type = "tidyverse")`
-:::
-
-:::
-
 
 ## Exercice 1
 
@@ -30,10 +13,12 @@ Indices :
 ## Partie 2: premiers standards de qualité
 
 :::{.incremental}
-1. Diagnostiquer le script `script.R` à l'aide de `lintr` : `lintr::lint("script.R")`.
+1. Installer les _packages_ `R` [`lintr`](https://github.com/r-lib/lintr) et [`styler`](https://github.com/r-lib/styler).
+2. Définir le _linter_ à utiliser comme étant de type `tidyverse` : `lintr::use_lintr(type = "tidyverse")`
+3. Diagnostiquer le script `script.R` à l'aide de `lintr` : `lintr::lint("script.R")`.
     + Regardez bien la liste des problèmes détectés par le _linter_.
     + Comprenez-vous la nature des problèmes?
-2. Nettoyer le fichier à l'aide de `styler` : `styler::style_file("script.R")`.
+4. Nettoyer le fichier à l'aide de `styler` : `styler::style_file("script.R")`.
     + Enregistrer et faire un _commit_ du fichier.
     + Prenez le temps de regarder le _diff_ du _commit_. Comprenez-vous les modifications faites par le _formatter_?
 :::
@@ -47,18 +32,7 @@ Indices :
 
 :::{.incremental}
 1. Refaire tourner le _linter_. Il reste encore un certain nombre d'erreurs de formattage, car `styler` est un _formatter_ peu intrusif.
-2. On va maintenant configurer le _linter_ pour qu'il propose une analyse beaucoup plus rigoureuse. Pour cela, exécuter le code suivant. 
-
-```r
-linters_complets <- c("best_practices", "common_mistakes", "correctness", "efficiency", "readability", "style")
-lintr::lint("script.R", linters = lintr::linters_with_tags(linters_complets))
-```
-
-3. Regarder la liste des problèmes repérés par le _linter_, et la comparer avec celle de l'étape précédente.
-    + Comprenez-vous les nouveaux problèmes repérés par le _linter_?   
-<!-- 9. On peut maintenant tester un autre _formatter_ plus intrusif. Pour cela, -->
-<!-- installer le _package_ `formatR`, exécuter `formatR::tidy_source("script.R", width.cutoff = 50)`. Régler les erreurs inattendues s'il y en a. Le script reformatté est imprimé dans la console. Copier le script reformatté, et le coller dans l'éditeur et remplacer. A ce stade, faire un _commit_. Prenez le temps de regarder le _diff_ du _commit_. Comprenez-vous les modifications faites par le _formatter_? -->
-<!-- 10. Refaire tourner le _linter_. Corriger les lignes manuellement (vous pouvez utiliser <kbd>CTRL</kbd>+<kbd>I</kbd> pour aligner des lignes ensemble).  -->
+2. Regarder les différents problèmes repérés par le _linter_, et en corriger quelques uns (un pour chaque type de problème).
 :::
 
 :::
