@@ -815,7 +815,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <div>
 <ol type="1">
 <li class="fragment">Installer les <em>packages</em> <code>R</code> <a href="https://github.com/r-lib/lintr"><code>lintr</code></a> et <a href="https://github.com/r-lib/styler"><code>styler</code></a>.</li>
-<li class="fragment">En vous inspirant de la <a href="https://github.com/r-lib/lintr"><code>documentation</code></a> du package, définir le <em>linter</em> à utiliser comme étant de type <code>tidyverse</code>.</li>
+<li class="fragment">Définir le <em>linter</em> à utiliser comme étant de type <code>tidyverse</code> : <code>lintr::use_lintr(type = "tidyverse")</code></li>
 </ol>
 </div>
 </div>
@@ -832,17 +832,12 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <div class="callout-content">
 <div>
 <ol type="1">
-<li class="fragment">Utiliser l’<em>addin</em> de <code>lintr</code> pour diagnostiquer le script <code>script.R</code> (<code>Addins &gt; Lint current file</code>).
+<li class="fragment">Diagnostiquer le script <code>script.R</code> à l’aide de <code>lintr</code> : <code>lintr::lint("script.R")</code>.
 <ul>
 <li class="fragment">Regardez bien la liste des problèmes détectés par le <em>linter</em>.</li>
 <li class="fragment">Comprenez-vous la nature des problèmes?</li>
 </ul></li>
-<li class="fragment">Utiliser l’<em>addin</em> de <code>styler</code> pour nettoyer le fichier (<code>Addins &gt; Style active file</code>).
-<ul>
-<li class="fragment">Que se passe-t-il d’inattendu? Comprenez-vous le problème?</li>
-<li class="fragment">Lorsque vous avez trouvé le problème, vous pouvez le corriger puis faire un <em>commit</em>.</li>
-</ul></li>
-<li class="fragment">Utiliser à nouveau l’<em>addin</em> de <code>styler</code> pour nettoyer le fichier.
+<li class="fragment">Nettoyer le fichier à l’aide de <code>styler</code> : <code>styler::style_file("script.R")</code>.
 <ul>
 <li class="fragment">Enregistrer et faire un <em>commit</em> du fichier.</li>
 <li class="fragment">Prenez le temps de regarder le <em>diff</em> du <em>commit</em>. Comprenez-vous les modifications faites par le <em>formatter</em>?</li>
@@ -1037,7 +1032,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <ol type="1">
 <li class="fragment">Créer des parties dans <code>script.R</code> pour aider à la compréhension de la structure du fichier:
 <ul>
-<li class="fragment"><code># TITRE NIVEAU 1 ------------</code> et <code># TITRE NIVEAU 2 ==========</code></li>
+<li class="fragment"><code># TITRE NIVEAU 1 ------------</code> et <code>## TITRE NIVEAU 2 ==========</code></li>
 <li class="fragment">Faire un <em>commit</em></li>
 </ul></li>
 <li class="fragment">Déplacer les <code>library</code> pour les mettre tous ensemble au début du script.
@@ -1557,9 +1552,10 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 <div class="callout-content">
 <div>
-<ol type="1">
+<ol start="0" type="1">
+<li class="fragment"><p>Installer le package <a href="https://rstudio.github.io/renv/articles/renv.html"><code>renv</code></a></p></li>
 <li class="fragment"><p>Taper dans la console <code>renv::init()</code>, <strong>lire le message</strong> et accepter.</p></li>
-<li class="fragment"><p>Observer le dossier <code>renv</code> qui apparaît.</p></li>
+<li class="fragment"><p>Observer les nouveaux élements qui sont apparus dans le projet.</p></li>
 <li class="fragment"><p>Installer le <a href="https://gt.rstudio.com/">package <code>gt</code></a> et observer le message dans la console.</p></li>
 <li class="fragment"><p>Dans la partie sur les statistiques descriptives d’âge, ajouter ce code :</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>stats_age <span class="ot">&lt;-</span> df2 <span class="sc">|&gt;</span> </span>
@@ -1594,13 +1590,12 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 <div class="callout-content">
 <div>
-<ol type="1">
+<ol start="5" type="1">
 <li class="fragment">Dans la console, faire <code>renv::snapshot()</code> et observer le message.</li>
 <li class="fragment">Faire un <em>commit</em> et un <em>push</em> des fichiers <code>script.R</code>, <code>.Rprofile</code>, <code>renv.lock</code> et du dossier <code>renv/</code>. <em>Push</em>.</li>
 <li class="fragment">Ouvrir un nouveau service <code>RStudio</code> sur le <code>SSPCloud</code> et cloner le projet dans les mêmes conditions que l’exercice 0. Regarder les messages dans la console.</li>
-<li class="fragment">Exécuter <code>renv::status()</code> dans la console. Constater que les <em>packages</em> ne sont pas installés par <code>renv</code>, car c’est à l’utilisateur de décider de le faire. Faire <code>renv::install()</code>. Par défaut, <code>renv</code> installe les dépendances manuellement ajoutées dans <code>DESCRIPTION</code>.</li>
-<li class="fragment">Refaire un <code>renv::status()</code>. Les dépendances manquantes doivent être ajoutées au <code>DESCRIPTION</code> avec <code>usethis::use_package</code>.</li>
-<li class="fragment">Refaire <code>renv::install()</code>.</li>
+<li class="fragment">Exécuter <code>renv::restore()</code> pour installer les packages nécessaires à l’exécution du projet.</li>
+<li class="fragment">Vérifier que le <code>script.R</code> s’exécute correctement dans ce nouvel environnement.</li>
 </ol>
 </div>
 </div>
@@ -1705,7 +1700,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <section id="ressources-supplémentaires-3" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Ressources supplémentaires</h2>
 <ul>
-<li>La <a href="https://books.ropensci.org/targets/">documentation officielle de <code>targets</code></a></li>
+<li><p>La <a href="https://books.ropensci.org/targets/">documentation officielle de <code>targets</code></a></p></li>
+<li><p>La <a href="https://www.book.utilitr.org/targets.html">fiche UtilitR dédiée à <code>targets</code></a></p></li>
 </ul>
 </section>
 <section id="exercice-6a" class="slide level2" data-background-image="background.svg" data-background-size="contain">
@@ -1820,7 +1816,7 @@ et la sélection de l'échantillon (region=24). Changer le fichier `_targets.R` 
 </div>
 <div class="fragment">
 <ul>
-<li><strong>Limiter les risques d’erreurs</strong> dûes aux gestes manuels</li>
+<li><strong>Limiter les risques d’erreurs</strong> dues aux gestes manuels</li>
 </ul>
 </div>
 <div class="fragment">
