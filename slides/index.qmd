@@ -711,6 +711,8 @@ pouvez repartir de [cette version](https://raw.githubusercontent.com/InseeFrLab/
 
 - La [documentation officielle de `targets`](https://books.ropensci.org/targets/)
 
+- La [fiche UtilitR dédiée à `targets`](https://www.book.utilitr.org/targets.html)
+
 ## Exercice 6A
 
 {{< include applications/_application6a.qmd >}}
@@ -734,7 +736,7 @@ pouvez repartir de [cette version](https://raw.githubusercontent.com/InseeFrLab/
 
 . . .
 
-- **Limiter les risques d'erreurs** dûes aux gestes manuels
+- **Limiter les risques d'erreurs** dues aux gestes manuels
 
 . . .
 

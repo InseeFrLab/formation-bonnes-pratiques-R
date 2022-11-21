@@ -7,7 +7,7 @@ Cette application vise à résoudre une partie des problèmes détectés précé
 
 :::{.incremental}
 1. Créer des parties dans `script.R` pour aider à la compréhension de la structure du fichier:
-    + `# TITRE NIVEAU 1 ------------` et `# TITRE NIVEAU 2 ==========`
+    + `# TITRE NIVEAU 1 ------------` et `## TITRE NIVEAU 2 ==========`
     + Faire un _commit_
 2. Déplacer les `library` pour les mettre tous ensemble au début du script.
     + Conserver l'ordre des _packages_ (`MASS` après `tidyverse` notamment).

@@ -5,7 +5,7 @@
 
 :::{.incremental}
 1. Installer les _packages_ `R` [`lintr`](https://github.com/r-lib/lintr) et [`styler`](https://github.com/r-lib/styler).
-2. En vous inspirant de la [`documentation`](https://github.com/r-lib/lintr) du package, définir le _linter_ à utiliser comme étant de type `tidyverse`.
+2. Définir le _linter_ à utiliser comme étant de type `tidyverse` : `lintr::use_lintr(type = "tidyverse")`
 :::
 
 :::
@@ -17,13 +17,10 @@
 ## Partie 2: premiers standards de qualité
 
 :::{.incremental}
-1. Utiliser l'_addin_ de `lintr` pour diagnostiquer le script `script.R` (`Addins > Lint current file`).
+1. Diagnostiquer le script `script.R` à l'aide de `lintr` : `lintr::lint("script.R")`.
     + Regardez bien la liste des problèmes détectés par le _linter_.
     + Comprenez-vous la nature des problèmes?
-2. Utiliser l'_addin_ de `styler` pour nettoyer le fichier (`Addins > Style active file`).
-    + Que se passe-t-il d'inattendu? Comprenez-vous le problème?
-    + Lorsque vous avez trouvé le problème, vous pouvez le corriger puis faire un _commit_.
-3. Utiliser à nouveau l'_addin_ de `styler` pour nettoyer le fichier.
+2. Nettoyer le fichier à l'aide de `styler` : `styler::style_file("script.R")`.
     + Enregistrer et faire un _commit_ du fichier.
     + Prenez le temps de regarder le _diff_ du _commit_. Comprenez-vous les modifications faites par le _formatter_?
 :::
