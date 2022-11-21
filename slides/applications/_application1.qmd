@@ -36,3 +36,7 @@ Un code **reproductible** est avant toute chose un code **fonctionnel** ! Repér
 :::
 
 :::
+
+## Checkpoint
+
+- [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application1.R)
