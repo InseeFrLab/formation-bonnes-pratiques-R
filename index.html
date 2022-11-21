@@ -520,7 +520,8 @@
 </div>
 <div class="callout-content">
 <div>
-<ol type="1">
+<ol start="0" type="1">
+<li class="fragment">Si vous ne l’avez pas fait lors de la première partie de la formation, créer un compte sur <a href="https://github.com/">GitHub</a> et <a href="https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">générer un <em>token</em></a> (jeton d’accès) d’authentification</li>
 <li class="fragment">Créer un nouveau dépôt public sur <a href="https://github.com/">GitHub</a></li>
 <li class="fragment">Lancer un service <code>RStudio</code> sur le <a href="https://datalab.sspcloud.fr/home">Datalab</a></li>
 <li class="fragment">Utiliser un <code>terminal</code> pour activer le stockage des identifiants :
@@ -813,9 +814,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <div class="callout-content">
 <div>
 <ol type="1">
-<li class="fragment">Installer les <em>packages</em> <code>R</code> <a href="https://github.com/r-lib/lintr"><code>lintr</code></a> et <a href="https://www.tidyverse.org/blog/2017/12/styler-1.0.0/"><code>styler</code></a>.</li>
-<li class="fragment">Si ce n’est pas déjà fait, faire un <em>commit</em> de <code>script.R</code> .</li>
-<li class="fragment">Définir le <em>linter</em> à utiliser comme étant de type <code>tidyverse</code>.</li>
+<li class="fragment">Installer les <em>packages</em> <code>R</code> <a href="https://github.com/r-lib/lintr"><code>lintr</code></a> et <a href="https://github.com/r-lib/styler"><code>styler</code></a>.</li>
+<li class="fragment">En vous inspirant de la <a href="https://github.com/r-lib/lintr"><code>documentation</code></a> du package, définir le <em>linter</em> à utiliser comme étant de type <code>tidyverse</code>.</li>
 </ol>
 </div>
 </div>
@@ -1520,6 +1520,34 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </ul>
 </div>
 </section>
+<section id="vers-une-reproductibilité-optimale" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Vers une reproductibilité optimale</h2>
+<ul>
+<li><span class="orange"><strong>Limites</strong></span> des environnements virtuels :
+<ul>
+<li>Les <span class="blue2"><strong>librairies système</strong></span> ne sont pas gérées</li>
+<li>Lourdeur de la phase d’installation à chaque changement d’environnement</li>
+<li>Peu adaptés à un environnement de production</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>La <span class="orange"><strong>conteneurisation</strong></span> (ex : <code>Docker</code>) apporte la solution</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="orange"><strong>Intuition</strong></span> : au lieu de distribuer la recette pour recréer l’environnement, <span class="blue2"><strong>distribuer directement une “machine” qui contient <em>tout</em> l’environnement nécessaire au projet</strong></span></li>
+</ul>
+</div>
+</section>
+<section id="ressources-supplémentaires-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Ressources supplémentaires</h2>
+<ul>
+<li><p>La <a href="https://rstudio.github.io/renv/articles/renv.html">documentation officielle de <code>renv</code></a></p></li>
+<li><p><a href="https://elise.maigne.pages.mia.inra.fr/2021_package_renv/presentation.html#1">Une présentation sur <code>renv</code></a></p></li>
+</ul>
+</section>
 <section id="exercice-5b" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Exercice 5B</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
@@ -1578,34 +1606,6 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 </div>
 </div>
-</section>
-<section id="vers-une-reproductibilité-optimale" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Vers une reproductibilité optimale</h2>
-<ul>
-<li><span class="orange"><strong>Limites</strong></span> des environnements virtuels :
-<ul>
-<li>Les <span class="blue2"><strong>librairies système</strong></span> ne sont pas gérées</li>
-<li>Lourdeur de la phase d’installation à chaque changement d’environnement</li>
-<li>Peu adaptés à un environnement de production</li>
-</ul></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>La <span class="orange"><strong>conteneurisation</strong></span> (ex : <code>Docker</code>) apporte la solution</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><span class="orange"><strong>Intuition</strong></span> : au lieu de distribuer la recette pour recréer l’environnement, <span class="blue2"><strong>distribuer directement une “machine” qui contient <em>tout</em> l’environnement nécessaire au projet</strong></span></li>
-</ul>
-</div>
-</section>
-<section id="ressources-supplémentaires-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Ressources supplémentaires</h2>
-<ul>
-<li><p>La <a href="https://rstudio.github.io/renv/articles/renv.html">documentation officielle de <code>renv</code></a></p></li>
-<li><p><a href="https://elise.maigne.pages.mia.inra.fr/2021_package_renv/presentation.html#1">Une présentation sur <code>renv</code></a></p></li>
-</ul>
 </section></section>
 <section>
 <section id="v--pipelines-de-données" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
