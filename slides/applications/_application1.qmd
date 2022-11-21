@@ -1,6 +1,19 @@
 ## Exercice 1
 
 :::{.callout-tip collapse="true" icon=false}
+## Partie 0: vérification du bon fonctionnement du code
+
+Un code reproductible est avant toute chose un code fonctionnel ! Repérez les erreurs qui empêchent le script `script.R` de s'exécuter correctement, et les corriger.
+
+Indices :
+1. Utiliser des chemins relatifs plutôt qu'absolus
+2. 
+
+:::
+
+## Exercice 1
+
+:::{.callout-tip collapse="true" icon=false}
 ## Partie 1: préparation de l'environnement
 
 :::{.incremental}
