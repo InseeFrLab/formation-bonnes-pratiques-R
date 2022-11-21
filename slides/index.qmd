@@ -614,12 +614,6 @@ pouvez repartir de [cette version](https://raw.githubusercontent.com/InseeFrLab/
 
 - [**Portabilité**]{.orange} : un tiers peut recréer un environnement avec les mêmes spécifications
 
-## Exercice 5B
-
-{{< include applications/_application5b.qmd >}}
-
-
-
 ## Vers une reproductibilité optimale
 
 - [**Limites**]{.orange} des environnements virtuels : 
@@ -640,6 +634,11 @@ pouvez repartir de [cette version](https://raw.githubusercontent.com/InseeFrLab/
 - La [documentation officielle de `renv`](https://rstudio.github.io/renv/articles/renv.html)
 
 - [Une présentation sur `renv`](https://elise.maigne.pages.mia.inra.fr/2021_package_renv/presentation.html#1)
+
+## Exercice 5B
+
+{{< include applications/_application5b.qmd >}}
+
 
 
 

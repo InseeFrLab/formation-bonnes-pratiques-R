@@ -4,9 +4,8 @@
 ## Partie 1: préparation de l'environnement
 
 :::{.incremental}
-1. Installer les _packages_ `R` [`lintr`](https://github.com/r-lib/lintr) et [`styler`](https://www.tidyverse.org/blog/2017/12/styler-1.0.0/).
-2. Si ce n'est pas déjà fait, faire un _commit_ de `script.R` .
-3. Définir le _linter_ à utiliser comme étant de type `tidyverse`.
+1. Installer les _packages_ `R` [`lintr`](https://github.com/r-lib/lintr) et [`styler`](https://github.com/r-lib/styler).
+2. En vous inspirant de la [`documentation`](https://github.com/r-lib/lintr) du package, définir le _linter_ à utiliser comme étant de type `tidyverse`.
 :::
 
 :::
