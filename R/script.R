@@ -26,14 +26,13 @@ print(df2, 20)
 
 # combien de professions
 print("Nombre de professions :")
-print(summarise(df2,length(unique(unlist(cs3[!is.na(cs1)])))))
-print("Nombre de professions :'')
-"print(summarise(df2,length(unique(unlist(cs3[!is.na(cs2)])))))
-oprint("Nombre de professions :")
 print(summarise(df2,length(unique(unlist(cs3[!is.na(cs3)])))))
+print("Nombre de professions :'')
+"print(summarise(df2,length(unique(unlist(cs2[!is.na(cs2)])))))
+oprint("Nombre de professions :")
+print(summarise(df2,length(unique(unlist(cs1[!is.na(cs1)])))))
 
-print.data.frame <- summarise(group_by(df2, aged), n())
-print(print.data.frame)
+summarise(group_by(df2, aged), n())
 
 decennie_a_partir_annee    = function(ANNEE){ return(ANNEE - ANNEE %%
                                             10) }
@@ -88,7 +87,8 @@ ggsave("p.png", p)
 df2[df2$na38 == "ZZ","na38"] <- NA
 df2[df2$trans == "Z","trans"] <- NA
 df2[df2$tp == "Z","tp"] <- NA
-df2[endsWith(df2$naf08, "Z"), "naf08"] <- NA
+df2[df2$naf08 == "ZZZZZ","naf08"] <- NA
+# df2[df2$aemm == "ZZZZ","aemm"] <- NA
 
 str(df2)
 df2[,nrow(df2)-1] <- factor(df2[,nrow(df2)-1])
