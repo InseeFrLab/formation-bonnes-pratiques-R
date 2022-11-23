@@ -9,9 +9,6 @@
 1. Lui donner un nom plus court.
 2. Remplacer la première partie par un `match.arg`.
 3. Remplacer la deuxième partie par `switch`.
-4. S'assurer qu'elle soit __pure__, c'est-à-dire qu'elle n'utilise pas de variables globales. 
-5. Compter les erreurs de code que vous venez de corriger. 
-6. Limiter la duplication de code en utilisant des **fonctions** et, quand c'est pertinent, en utilisant `lapply` pour les appliquer en série.
 :::
 
 :::
@@ -27,10 +24,16 @@
 
 7. Déplacer toutes les fonctions dans un fichier `R/functions.R`.
 8. Dans `script.R`, appeler en début de chaîne ces fonctions avec `source("R/functions.R", encoding = "UTF-8")`.
-9. Documenter la fonction en utilisant `roxygen2`.
+9. Documenter la fonction principale au [format attendu](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) par `roxygen2`.
 10. Redémarrer la session (en faisant `Session > Restart R`).
 Si tout va bien, le code devrait maintenant fonctionner.
 
 :::
   
 :::
+
+## Checkpoint
+
+- [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3-script.R)
+
+- [functions.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3-functions.R)

@@ -83,3 +83,7 @@ Traiter correctement les informations confidentielles (*secrets*) :
 :::
   
 :::
+
+## Checkpoint
+
+- [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application2.R)
