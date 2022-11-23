@@ -9,3 +9,9 @@
 :::
 
 :::
+
+## Checkpoint
+
+- [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application4/script.R)
+
+- [write_csv.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application4/write_csv.R)
