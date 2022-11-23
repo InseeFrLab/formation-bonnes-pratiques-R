@@ -100,7 +100,7 @@ fct_recode(df2$sexe,"Homme"="0","Femme"="1")
 #fonction de stat agregee
 fonction_de_stat_agregee<-function(a,b="moyenne",...){
   checkvalue=F
-  for (x in c("moyenne","variance","ecart-type","sd","ecart type")){checkvalue<-(checkvalue | b==x)}
+  for (x in c("moyenne","variance","ecart-type","sd")){checkvalue<-(checkvalue | b==x)}
   if (checkvalue == FALSE) stop("statistique non supportée")
   
   if (b=="moyenne"){
@@ -113,7 +113,6 @@ fonction_de_stat_agregee<-function(a,b="moyenne",...){
   return(x)
 }
 fonction_de_stat_agregee(rnorm(10))
-fonction_de_stat_agregee(rnorm(10), "ecart type")
 fonction_de_stat_agregee(rnorm(10), "ecart type")
 fonction_de_stat_agregee(rnorm(10), "variance")
 
