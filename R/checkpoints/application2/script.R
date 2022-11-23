@@ -17,7 +17,7 @@ library(yaml)
 
 # ENVIRONNEMENT ----------------------------
 
-api_token <- yaml::read_yaml("R/secrets.yaml")$JETON_API
+api_token <- yaml::read_yaml("secrets.yaml")$JETON_API
 
 
 
