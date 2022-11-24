@@ -1074,7 +1074,12 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <section id="exercice-2-35" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Exercice 2 (3/5)</h2>
 <p>On se penche maintenant sur la partie retraitement des données :</p>
-<p>:::{.callout-tip collapse=“true” icon=false} ## Modifications de la partie restructuration des données</p>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Modifications de la partie restructuration des données</strong></p>
+</div>
+<div class="callout-content">
 <div>
 <ul>
 <li class="fragment">Exécuter la partie de gestion des valeurs manquantes, remarquer des problèmes en regardant code et données.
@@ -1093,16 +1098,27 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </ul></li>
 </ul>
 </div>
+</div>
+</div>
+</div>
 </section>
 <section id="exercice-2-45" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Exercice 2 (4/5)</h2>
 <p>On se penche maintenant sur la partie retraitement des données :</p>
-<p>:::{.callout-tip collapse=“true” icon=false} ## Modifications de la partie statistiques descriptives</p>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Modifications de la partie statistiques descriptives</strong></p>
+</div>
+<div class="callout-content">
 <div>
 <ul>
 <li class="fragment">Trouver la cause des différents <em>warnings</em> produits par les fonctions de visualisation, et les résoudre.</li>
 <li class="fragment">Proposer une visualisation plus pertinente de la distribution des âges.</li>
 </ul>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="exercice-2-55" class="slide level2" data-background-image="background.svg" data-background-size="contain">
@@ -1114,7 +1130,13 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 <div class="callout-content">
 <div>
-<p>Traiter correctement les informations confidentielles (<em>secrets</em>) : + Repérer le jeton d’API dans le code. Retirer le jeton d’API du code et créer à la racine du projet un fichier YAML nommé <code>secrets.yaml</code> où vous écrivez ce secret sous la forme <code>key: value</code>. + Dans <code>script.R</code>, importer ce YAML (avec <code>yaml::read_yaml("secrets.yaml")</code>) pour créer une variable <code>api_token</code> ayant cette valeur. + Ajouter dans <code>.gitignore</code> le fichier <code>secrets.yaml</code> et indiquer dans le <code>README.md</code> de votre projet que les secrets sont stockés dans ce fichier. + <span class="red2"><span class="emoji" data-emoji="warning">⚠️</span> Attention</span> : il ne faut pas committer <code>secrets.yaml</code> car le jeton d’API est personnel et secret!</p>
+<p>Traiter correctement les informations confidentielles (<em>secrets</em>) :</p>
+<ul>
+<li class="fragment">Repérer le jeton d’API dans le code. Retirer le jeton d’API du code et créer à la racine du projet un fichier YAML nommé <code>secrets.yaml</code> où vous écrivez ce secret sous la forme <code>key: value</code>.</li>
+<li class="fragment">Dans <code>script.R</code>, importer ce YAML (avec <code>yaml::read_yaml("secrets.yaml")</code>) pour créer une variable <code>api_token</code> ayant cette valeur.</li>
+<li class="fragment">Ajouter dans <code>.gitignore</code> le fichier <code>secrets.yaml</code> et indiquer dans le <code>README.md</code> de votre projet que les secrets sont stockés dans ce fichier.</li>
+<li class="fragment"><span class="red2"><span class="emoji" data-emoji="warning">⚠️</span> Attention</span> : il ne faut pas committer <code>secrets.yaml</code> car le jeton d’API est personnel et secret!</li>
+</ul>
 </div>
 </div>
 </div>
