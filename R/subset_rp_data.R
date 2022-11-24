@@ -7,8 +7,14 @@ df_parquet <-
     opts = list("region" = "")
   )
 
-df_parquet
+df_subset <- data.table::setDT(df_parquet) %>%
+  dplyr::slice_sample(n=100000)
 
-data.table::setDT(df_parquet)
-
-data.table::fwrite(df_parquet[region == "24"], "individu_reg.csv", sep = ";")
+aws.s3::s3write_using(
+  df_subset,
+  FUN = data.table::fwrite,
+  sep = ";",
+  object = "diffusion/bonnes-pratiques-r/rp_2016_individu_sample.csv",
+  bucket = "projet-formation",
+  opts = list("region" = "")
+  )

@@ -10,7 +10,7 @@
 4. Cloner le dépôt distant sur votre environnement local (`Datalab`):
     + `File` → `New project` → `Version Control` → `Git`
 5. Créer le script `script.R` dans votre dépôt en copiant le contenu de [ce fichier](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/script.R)
-6. Créer un script `write_csv.R` en copiant le contenu de [cd fichier](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/write_csv.R), puis l'exécuter
+6. Créer un script `get_data.R` en copiant le contenu de [ce fichier](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/get_data.R), puis l'exécuter
 7. Ajouter "individu_reg.*" au fichier `.gitignore`
 8. *commit*/*push* les changements
 :::

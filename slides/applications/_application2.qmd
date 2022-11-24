@@ -56,43 +56,34 @@ On se penche maintenant sur la partie retraitement des données :
 + Changer le type de la variable `aged` afin d'éviter les nombreux `as.numeric(aged)` ultérieurs.
   + Remplacer toutes les occurrences de `as.numeric(aged)`.
 :::
-  
-:::
 
-## Exercice 2 (4/5) {.smaller}
+## Exercice 2 (4/5)
 
-- On passe maintenant à la partie statistiques descriptives. 
-  + Après chaque question, faire un _commit_
+On se penche maintenant sur la partie retraitement des données :
 
 :::{.callout-tip collapse="true" icon=false}
 ## Modifications de la partie statistiques descriptives
 
-
 :::{.incremental}
-- Corriger les erreurs sur le décompte des professions. 
-+ Exécuter le code produisant les statistiques d'âge jusqu'à rencontrer l'erreur `Error in select(., aged) : unused argument (aged)`.
-    + Comment la résoudre ?
-- Récupérer les données utilisées lors de la production de `ggplot(.)` ;
-+ Remplacer le second `summarise` par la bonne commande dans la partie `#part d'homme dans chaque cohorte` ;
-+ Débugger la partie `#stats surf par statut` puis produire un graphique lisible ; 
-+ Comprendre les erreurs dans la partie où on applique `fonction_de_stat_agregee` et les corriger.
-:::
-  
++ Trouver la cause des différents *warnings* produits par les fonctions de visualisation, et les résoudre.
++ Proposer une visualisation plus pertinente de la distribution des âges.
 :::
 
 ## Exercice 2 (5/5)
 
 :::{.callout-tip collapse="true" icon=false}
-## Modifications de la partie modélisation et gestion des secrets
+## Modifications de la partie gestion des secrets
 
 :::{.incremental}
-1. Régler les problèmes de la partie modélisation ;
-2. Traiter correctement les informations confidentielles (*secrets*) :
-
-  + Repérer le jeton d'API dans le code. Retirer le jeton d'API du code et créer un fichier YAML nommé `secrets.yaml` où vous écrivez ce secret sous la forme `key: value`. 
-  + Dans `script.R`, importer ce YAML (avec `yaml::read_yaml("secrets.yaml"`) pour créer une variable `api_token` ayant cette valeur. 
+Traiter correctement les informations confidentielles (*secrets*) :
+  + Repérer le jeton d'API dans le code. Retirer le jeton d'API du code et créer à la racine du projet un fichier YAML nommé `secrets.yaml` où vous écrivez ce secret sous la forme `key: value`. 
+  + Dans `script.R`, importer ce YAML (avec `yaml::read_yaml("secrets.yaml")`) pour créer une variable `api_token` ayant cette valeur. 
   + Ajouter dans `.gitignore` le fichier `secrets.yaml` et indiquer dans le `README.md` de votre projet que les secrets sont stockés dans ce fichier. 
   + [:warning: Attention]{.red2} : il ne faut pas committer `secrets.yaml` car le jeton d'API est personnel et secret!
 :::
   
 :::
+
+## Checkpoint
+
+- [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application2/script.R)
