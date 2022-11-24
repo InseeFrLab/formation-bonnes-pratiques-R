@@ -474,10 +474,6 @@ pouvez repartir de [cette version](https://raw.githubusercontent.com/InseeFrLab/
 
 {{< include applications/_application3.qmd >}}
 
-## Checkpoint
-
-- [`script.R`](https://github.com/InseeFrLab/formation-bonnes-pratiques-R/blob/8d42730279619fb85a818e5fbde7176096915c94/script.R)
-- [`R/functions.R`](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/8d42730279619fb85a818e5fbde7176096915c94/R/functions.R)
 
 # III- Formats de données
 
