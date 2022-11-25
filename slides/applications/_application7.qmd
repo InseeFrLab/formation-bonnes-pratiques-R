@@ -15,7 +15,7 @@ Lancer la commande `tinytex::install_tinytex()` pour l'installer, puis redémarr
     + Importer les données avec la fonction `read_from_parquet`
     + Produire la table avec la fonction `produce_table_age`
 Seuls le code utilisé et la table doivent appraître dans le rapport final.
-5. Générer le rapport avec la touche `Render` et vérifier que l'*output* correspond à celui attendu.
+5. Générer le rapport avec le bouton `Render` et vérifier que l'*output* correspond à celui attendu.
 :::
 
 :::
