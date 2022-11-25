@@ -3,18 +3,18 @@
 Cette application vise à résoudre une partie des problèmes détectés précédemment.
 
 :::{.callout-tip collapse="true" icon=false}
-## Travail sur le fichier: modifications de structure
+## Travail sur le fichier : modifications de structure
 
 :::{.incremental}
-1. Créer des parties dans `script.R` pour aider à la compréhension de la structure du fichier:
+1. Créer des parties dans `script.R` pour aider à la compréhension de la structure du fichier :
     + `# TITRE NIVEAU 1 ------------` et `## TITRE NIVEAU 2 ==========`
     + Faire un _commit_
 2. Déplacer les `library` pour les mettre tous ensemble au début du script.
     + Conserver l'ordre des _packages_ (`MASS` après `tidyverse` notamment).
     + Faire un _commit_.
 3. Le script n'est pas construit dans un ordre logique. Déplacer les parties 
-pour adopter une structure plus logique: 
-    + Gestion de l'environnement -> Définition de fonctions -> Import des donnees -> Retraitement des données -> Statistiques descriptives -> Graphiques -> Modélisation
+pour adopter une structure plus logique : 
+    + Gestion de l'environnement -> Définition de fonctions -> Import des données -> Retraitement des données -> Statistiques descriptives -> Graphiques -> Modélisation
     + Faire un _commit_.
 :::
 
@@ -22,8 +22,7 @@ pour adopter une structure plus logique:
 
 ## Exercice 2 (2/5)
 
-On va se pencher sur chaque partie du code maintenant 
-qu'on y voit plus clair:
+Maintenant qu'on y voit plus clair, on va se pencher sur chaque partie du code :
 
 :::{.callout-tip collapse="true" icon=false}
 ## Modifications de la partie import des données

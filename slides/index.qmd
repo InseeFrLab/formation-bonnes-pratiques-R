@@ -184,12 +184,12 @@ Améliorations graduelles dans l'échelle de la reproductibilité :
 
 Deux outils pratiques aident à respecter les standards :
 
-1. [**_linter_**]{.orange}: programme qui vérifie que le code est __formellement__ conforme à un certain _guidestyle_
+1. [**_linter_**]{.orange} : programme qui vérifie que le code est __formellement__ conforme à un certain _guidestyle_
     + signale problèmes formels, sans corriger 
 
 . . .
 
-2. [**_formatter_**]{.orange}: programme qui reformate un code pour le rendre conforme à un certain _guidestyle_
+2. [**_formatter_**]{.orange} : programme qui reformate un code pour le rendre conforme à un certain _guidestyle_
     + modifie directement le code
 
 . . .
@@ -252,7 +252,7 @@ portion de code plus de deux fois ([**_don't repeat yourself_ (DRY)**]{.red2})
 
 - Grands principes :
   - Documenter le [__pourquoi__]{.orange} plutôt que le [__comment__]{.orange} ;
-  - Privilégier auto-documentation via des [**nommages pertinents**]{.orange}.
+  - Privilégier l'auto-documentation via des [**nommages pertinents**]{.orange}.
 
 . . .
 
@@ -266,7 +266,7 @@ portion de code plus de deux fois ([**_don't repeat yourself_ (DRY)**]{.red2})
 :::
 
 
-## :four: Pas d'ambiguité sur les _packages_ utilisés {.smaller}
+## :four: Pas d'ambiguïté sur les _packages_ utilisés {.smaller}
 
 - Deux fonctions peuvent avoir le [__même nom__]{.orange} dans des [__packages différents__]{.orange}
 
@@ -281,7 +281,7 @@ portion de code plus de deux fois ([**_don't repeat yourself_ (DRY)**]{.red2})
 . . .
 
 - Recommandation : indiquer explicitement le _package_ : notation `package::fonction()`
-    + Exemple `dplyr::filter()`
+    + Exemple : `dplyr::filter()`
 
 :::{.callout-tip}
 ## Exemple
