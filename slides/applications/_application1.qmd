@@ -3,7 +3,7 @@
 :::{.callout-tip collapse="true" icon=false}
 ## Partie 1 : vérification du bon fonctionnement du code
 
-Un code **reproductible** est avant toute chose un code **fonctionnel** ! Repérez les **erreurs** qui empêchent le script `script.R` de s’exécuter correctement, et les **corriger**.
+Un code reproductible est avant toute chose un code fonctionnel ! Repérez les erreurs qui empêchent le script `script.R` de s’exécuter correctement, et les corriger.
 
 :::
 

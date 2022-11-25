@@ -10,6 +10,16 @@
 3. Pour pouvoir générer un document `PDF`, une distribution de `LaTeX` est nécessaire.
 Lancer la commande `tinytex::install_tinytex()` pour l'installer, puis redémarrer l'environnement R
 (`File` -> `Quit Session`) pour mettre l'environnement à jour.
+:::
+
+:::
+
+## Exercice 7
+
+:::{.callout-tip collapse="true" icon=false}
+## Introduction à la publication reproductible (suite)
+
+:::{.incremental}
 4. En vous inspirant du code d'exemple, modifier le fichier `report.qmd` pour :
     + Importer les fonctions du script `functions.R`
     + Importer les données avec la fonction `read_from_parquet`

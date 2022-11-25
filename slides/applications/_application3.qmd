@@ -1,4 +1,4 @@
-## Exercice 3: modularisation (1/2)
+## Exercice 3: modularisation
 
 :::{.callout-tip collapse="true" icon=false}
 ## Améliorer la fonction `fonction_de_stat_agregee`
@@ -9,27 +9,13 @@
 1. Lui donner un nom plus court.
 2. Remplacer la première partie par un `match.arg`.
 3. Remplacer la deuxième partie par `switch`.
-:::
-
-:::
-
-## Exercice 3: modularisation (2/2)
-
-
-:::{.callout-tip collapse="true" icon=false}
-## Améliorer la fonction `fonction_de_stat_agregee` (suite)
-
-
-:::{.incremental style="margin-left: 30px;"}
-
 7. Déplacer toutes les fonctions dans un fichier `R/functions.R`.
 8. Dans `script.R`, appeler en début de chaîne ces fonctions avec `source("R/functions.R", encoding = "UTF-8")`.
 9. Documenter la fonction principale au [format attendu](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) par `roxygen2`.
 10. Redémarrer la session (en faisant `Session > Restart R`).
 Si tout va bien, le code devrait maintenant fonctionner.
-
 :::
-  
+
 :::
 
 ## Checkpoint
