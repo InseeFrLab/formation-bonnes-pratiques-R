@@ -497,7 +497,7 @@ pouvez repartir de [cette version](https://raw.githubusercontent.com/InseeFrLab/
 
 - Deux formats à privilégier :
   - [**CSV**]{.orange} : pour la [**plupart des usages courants**]{.blue2}
-    - _Avantage_: [**non-compressé**]{.blue2} donc facilement [**lisible**]{.blue2}
+    - _Avantage_ : [**non-compressé**]{.blue2} donc facilement [**lisible**]{.blue2}
     - _Inconvénients_ : pas de gestion des méta-données, peu adapté aux données volumineuses
   - [**Parquet**]{.orange} : pour le traitement de [**données volumineuses**]{.blue2}
     - [**Compressé**]{.blue2} et très [**performant**]{.blue2} en lecture/écriture
@@ -590,7 +590,7 @@ pouvez repartir de [cette version](https://raw.githubusercontent.com/InseeFrLab/
 
 ## :two: Développement du projet
 
-- Une fois l'environnement initialisé, on développe le projet de manière habituelle
+- Une fois l'environnement initialisé, on développe le projet de manière habituelle :
   - Installations/suppressions/mises à jour de packages
   - Ecriture de scripts
 
@@ -728,35 +728,35 @@ pouvez repartir de [cette version](https://raw.githubusercontent.com/InseeFrLab/
 
 ## Enjeux
 
-- Produire des **études reproductibles** en intégrant le code et le texte dans un même document
+- Produire des [**études reproductibles**]{.orange} en intégrant le code et le texte dans un même document
 
 . . .
 
-- La génération complète de l'étude est contenue dans un **unique projet**
+- La génération complète de l'étude est contenue dans un [**unique projet**]{.orange}
 
 . . .
 
-- **Limiter les risques d'erreurs** dues aux gestes manuels
+- [**Limiter les risques d'erreurs**]{.orange} dues aux gestes manuels
 
 . . .
 
-- Gestion native de **différents formats** pour le document final (`pdf`, `html`, `odt`, etc.)
+- Gestion native de [**différents formats**]{.orange} pour le document final (`pdf`, `html`, `odt`, etc.)
 
 ## `R Markdown`
 
 - `R Markdown` est un *package* `R` qui permet de lier
-  - Du **texte** au format `Markdown`
-  - Du **code** `R` qui peut être exécuté et dont les sorties peuvent être intégrées au texte
+  - Du [**texte**]{.orange} au format `Markdown`
+  - Du [**code**]{.orange} `R` qui peut être exécuté et dont les sorties peuvent être intégrées au texte
 
 . . .
 
-- **Dissociation du fond et de la forme** du document
+- [**Dissociation du fond et de la forme**]{.orange} du document
 
 . . .
 
-- Un document est **compilé** en deux étapes
-  - ***knit*** : le package `knitr` transforme le texte et les sorties `R` en un document `Markdown` standard ;
-  - ***convert*** : le logiciel `pandoc` transforme le document `.md` en un format de sortie standard (`html`, `pdf`, etc.)
+- Un document est [**compilé**]{.orange} en deux étapes
+  - [***knit***]{.green2} : le package `knitr` transforme le texte et les sorties `R` en un document `Markdown` standard ;
+  - [***convert***]{.green2} : le logiciel `pandoc` transforme le document `.md` en un format de sortie standard (`html`, `pdf`, etc.)
 
 ## `Quarto`
 
@@ -764,7 +764,7 @@ pouvez repartir de [cette version](https://raw.githubusercontent.com/InseeFrLab/
 
 . . .
 
-- `Quarto` supporte **différents moteurs de calcul** (`knitr`, `Jupyter`, `Observable`..) ce qui le rend nativement **multi-langage** (`R`, `Python`, `JavaScript`..)
+- `Quarto` supporte [**différents moteurs de calcul**]{.orange} (`knitr`, `Jupyter`, `Observable`..) ce qui le rend nativement [**multi-langage**]{.orange} (`R`, `Python`, `JavaScript`..)
 
 . . .
 
@@ -772,7 +772,7 @@ pouvez repartir de [cette version](https://raw.githubusercontent.com/InseeFrLab/
 
 ## Anatomie d'un document reproductible
 
-![](img/qmd.png){height="700" fig-align="center"}
+![](img/qmd.png){height="500" fig-align="center"}
 
 ## Ressources supplémentaires
 

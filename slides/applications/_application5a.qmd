@@ -33,7 +33,7 @@
 :::{.callout-tip collapse="true" icon=false}
 ## Utilisation du fichier `Description`
 
-:::{.incremental}
+:::{.incremental style="margin-left: 30px;"}
 8. Retirer les `install.packages` au début de `script.R`.
 9. Si vous ne l'avez pas déjà fait, retirer `rm(list = ls())`.
 10. En option, vous pouvez compléter les autres champs de votre `Description`.

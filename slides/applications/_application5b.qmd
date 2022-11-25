@@ -38,7 +38,7 @@
 :::{.callout-tip collapse="true" icon=false}
 ## Prise en main de la librairie `renv` (suite)
 
-:::{.incremental}
+:::{.incremental style="margin-left: 30px;"}
 5. Dans la console, faire `renv::status()` et observer le message.
 6. Effectuer `renv::snapshot()` pour intégrer les nouveaux packages au *lockfile*
 7. Faire un _commit_ et un _push_ des fichiers `script.R`, `.Rprofile`, `renv.lock` et du dossier `renv/`. _Push_.
