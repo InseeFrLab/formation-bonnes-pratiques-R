@@ -812,7 +812,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <p><strong>Partie 1 : vérification du bon fonctionnement du code</strong></p>
 </div>
 <div class="callout-content">
-<p>Un code <strong>reproductible</strong> est avant toute chose un code <strong>fonctionnel</strong> ! Repérez les <strong>erreurs</strong> qui empêchent le script <code>script.R</code> de s’exécuter correctement, et les <strong>corriger</strong>.</p>
+<p>Un code reproductible est avant toute chose un code fonctionnel ! Repérez les erreurs qui empêchent le script <code>script.R</code> de s’exécuter correctement, et les corriger.</p>
 </div>
 </div>
 </div>
@@ -1167,8 +1167,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 </div>
 </section>
-<section id="exercice-3-modularisation-12" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 3: modularisation (1/2)</h2>
+<section id="exercice-3-modularisation" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Exercice 3: modularisation</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1180,22 +1180,6 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li class="fragment">Lui donner un nom plus court.</li>
 <li class="fragment">Remplacer la première partie par un <code>match.arg</code>.</li>
 <li class="fragment">Remplacer la deuxième partie par <code>switch</code>.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-3-modularisation-22" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 3: modularisation (2/2)</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Améliorer la fonction <code>fonction_de_stat_agregee</code> (suite)</strong></p>
-</div>
-<div class="callout-content">
-<div style="margin-left: 30px;">
-<ol start="7" type="1">
 <li class="fragment">Déplacer toutes les fonctions dans un fichier <code>R/functions.R</code>.</li>
 <li class="fragment">Dans <code>script.R</code>, appeler en début de chaîne ces fonctions avec <code>source("R/functions.R", encoding = "UTF-8")</code>.</li>
 <li class="fragment">Documenter la fonction principale au <a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">format attendu</a> par <code>roxygen2</code>.</li>
@@ -1866,6 +1850,22 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </ul></li>
 <li class="fragment">Sauvegarder le fichier sous le nom <code>report.qmd</code>.</li>
 <li class="fragment">Pour pouvoir générer un document <code>PDF</code>, une distribution de <code>LaTeX</code> est nécessaire. Lancer la commande <code>tinytex::install_tinytex()</code> pour l’installer, puis redémarrer l’environnement R (<code>File</code> -&gt; <code>Quit Session</code>) pour mettre l’environnement à jour.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercice-7-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Exercice 7</h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Introduction à la publication reproductible (suite)</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol start="4" type="1">
 <li class="fragment">En vous inspirant du code d’exemple, modifier le fichier <code>report.qmd</code> pour :
 <ul>
 <li class="fragment">Importer les fonctions du script <code>functions.R</code></li>
