@@ -1,0 +1,29 @@
+---
+title: "Mon super rapport"
+author: "Daffy Duck"
+format: pdf
+---
+
+```{r}
+#| include: false
+source("R/functions.R")
+```
+
+## Import des données
+
+Avant tout, j'importe mon fichier de données. Au format `parquet`, bien entendu. 
+
+```{r}
+#| echo: true
+df <- read_from_parquet("individu_reg.parquet")
+```
+
+## Statistiques descriptives
+
+
+Je vous propose d'admirer cette distribution de la population par décennie d'âge.
+Pas mal, non ?
+
+```{r}
+produce_table_age(df)
+```
