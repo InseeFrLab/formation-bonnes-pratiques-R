@@ -12,7 +12,7 @@ et la sélection de l'échantillon (region=24). Changer le fichier `_targets.R` 
 partie _feature engineering_. Faire un `tar_visnetwork()` avant de faire `tar_make()`.
 Faire un `tar_visnetwork()`.
 2. Créer une fonction `produce_table_age` pour produire le tableau `gt` que vous avez créé précédemment
-et intégrer sa production dans le _pipeline_ défini dans `_targets.R` (sous le nom `table_age`)
+et intégrer sa production dans le _pipeline_ défini dans `_targets.R` (sous le nom `table_age`).
 3. Exécuter `tar_make()` dans la console puis remplacer le code en question dans `script.R` par `tar_load(table_age)`. 
 4. Il est nécessaire de recoder les valeurs `Z` en valeurs manquantes dans la variable `cat1`. Ajouter cela 
 dans la fonction de recodage des valeurs manquantes. 
@@ -30,7 +30,7 @@ dans la fonction de recodage des valeurs manquantes.
 
 5. Après avoir sauvegardé `R/functions.R`, observer le
 changement dans le pipeline avec `tar_visnetwork()`.
-6. Faire un `tar_make()`
+6. Faire un `tar_make()`.
 7. Ajouter deux éléments au _pipeline_ :
     + Choisir le graphique qu'on enregistrait sous le nom `surf_par_statut.png`.
     Faire une fonction pour le produire et l'intégrer dans le _pipeline_.
