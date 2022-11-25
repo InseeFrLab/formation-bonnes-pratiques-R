@@ -28,11 +28,11 @@ Un code **reproductible** est avant toute chose un code **fonctionnel** ! Repér
 ## Exercice 1
 
 :::{.callout-tip collapse="true" icon=false}
-## Partie 2 : application des standards de qualité de code
+## Partie 2 : premiers standards de qualité (suite)
 
 :::{.incremental}
-1. Refaire tourner le _linter_. Il reste encore un certain nombre d'erreurs de formattage, car `styler` est un _formatter_ peu intrusif.
-2. Regarder les différents problèmes repérés par le _linter_, et en corriger quelques uns (un pour chaque type de problème).
+5. Refaire tourner le _linter_. Il reste encore un certain nombre d'erreurs de formattage, car `styler` est un _formatter_ peu intrusif.
+6. Regarder les différents problèmes repérés par le _linter_, et en corriger quelques uns (un pour chaque type de problème).
 :::
 
 :::
