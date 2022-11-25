@@ -20,7 +20,7 @@
 ## Améliorer la fonction `fonction_de_stat_agregee` (suite)
 
 
-:::{.incremental}
+:::{.incremental style="margin-left: 30px;"}
 
 7. Déplacer toutes les fonctions dans un fichier `R/functions.R`.
 8. Dans `script.R`, appeler en début de chaîne ces fonctions avec `source("R/functions.R", encoding = "UTF-8")`.
