@@ -461,17 +461,6 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 :::
 
-## Checkpoint
-
-- Des dizaines de `script.R` différents peuvent être considérés valides
-à ce stade
-
-. . .
-
-- Si vous avez eu des difficultés avec une des questions, vous 
-pouvez repartir de [cette version](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/649b8955600c85cbd62c08c9697a264be5279be2/script.R)
-    + L'idéal est néanmoins que vous continuiez avec votre version
-
 {{< include applications/_application3.qmd >}}
 
 
