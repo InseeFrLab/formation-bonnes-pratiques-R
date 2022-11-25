@@ -766,3 +766,23 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 ## Exercice 7
 
 {{< include applications/_application7.qmd >}}
+
+
+
+
+
+# Conclusion
+
+- Les bonnes pratiques favorisent la [**reproductibilité**]{.orange} et la [**réutilisation**]{.orange} des projets statistiques
+
+. . .
+
+- Des [**outils**]{.orange} permettent d'appliquer les bonnes pratiques facilement
+
+. . .
+
+- Le coût est d'autant plus faible que l'on se place [**en amont du projet**]{.orange}
+
+. . .
+
+- Quel [**socle**]{.orange} de bonnes pratiques pour l'Insee ?
