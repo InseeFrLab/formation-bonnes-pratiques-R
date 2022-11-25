@@ -1261,12 +1261,12 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 <div class="callout-content">
 <div>
-<ul>
+<ol type="1">
 <li class="fragment">Effacer la base <code>individu_reg.csv</code> ;</li>
 <li class="fragment">Transformer le script <code>write_csv.R</code> pour n’utiliser que le format <code>parquet</code> ;</li>
 <li class="fragment">Sauvegarder la table <code>individu_reg</code> en format Parquet ;</li>
 <li class="fragment">Modifier la phase d’import de <code>script.R</code> pour utiliser <code>arrow</code> et lire le fichier Parquet créé précédemment.</li>
-</ul>
+</ol>
 </div>
 </div>
 </div>
@@ -1696,8 +1696,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li><p>La <a href="https://www.book.utilitr.org/targets.html">fiche UtilitR dédiée à <code>targets</code></a></p></li>
 </ul>
 </section>
-<section id="exercice-6a" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 6A</h2>
+<section id="exercice-6" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Exercice 6</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1705,19 +1705,21 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 <div class="callout-content">
 <div>
-<ol type="1">
-<li class="fragment">Partir de l’exemple de <a href="https://books.ropensci.org/targets/walkthrough.html"><code>_targets.R</code></a> pour créer un fichier <code>_targets.R</code> dans la documentation.</li>
+<ol start="0" type="1">
+<li class="fragment">Installer le package <code>targets</code>.</li>
+<li class="fragment">Créer un fichier <code>_targets.R</code> à la racine du dépôt, dans la documentation.</li>
 <li class="fragment">Ajouter <code>_targets/</code> dans le .gitignore.</li>
 <li class="fragment">Commençons par les dépendances. Reporter les <code>library</code> dans le fichier <code>R/functions.R</code> et récupérer les noms des packages pour les mettre dans la section <code>tar_option_set()</code>.</li>
-<li class="fragment">Créer dans <code>R/functions.R</code>, une fonction <code>read_yaml_secret</code> et une <code>read_from_parquet</code> qui prennent en argument un chemin et exportent, respectivement, le jeton de l’API et notre dataframe de départ.</li>
+<li class="fragment">Créer dans <code>R/functions.R</code> une fonction <code>read_yaml_secret</code> qui prend en arguments le chemin du fichier et la clé associée au secret, et renvoie le jeton de l’API.</li>
+<li class="fragment">Créer dans <code>R/functions.R</code> une fonction <code>read_from_parquet</code> qui prend en argument le chemin du fichier et renvoie notre dataframe de départ.</li>
 </ol>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercice-6a-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 6A</h2>
+<section id="exercice-6-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Exercice 6</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1725,71 +1727,44 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 <div class="callout-content">
 <div>
-<ol start="5" type="1">
-<li class="fragment">A partir du modèle dans la documentation de <code>targets</code>, créer les quatre premières cibles (<em>targets</em>): les deux fichiers (utiliser l’argument <code>format</code>) et les deux objets <code>R</code> construits à partir des fonctions <code>read_yaml_secret</code> et <code>read_from_parquet</code>. Nommer ces cibles, respectivement <code>pwd_api</code> et <code>survey_sample_24</code>. Pour la cible utilisant <code>survey_sample_24</code> ajouter l’argument <code>format="parquet"</code>.</li>
+<ol start="6" type="1">
+<li class="fragment">A partir du modèle dans la documentation de <code>targets</code>, créer les quatres premières cibles (<em>targets</em>): respectivement, les deux fichiers (utiliser l’argument <code>format = 'file'</code>) et les deux objets <code>R</code> construits à partir des fonctions <code>read_yaml_secret</code> et <code>read_from_parquet</code>. Pour cette dernière, utiliser le <code>format = 'parquet'</code>.</li>
 <li class="fragment">Visualiser les relations entre objets de notre <em>pipeline</em> à partir de <code>tar_visnetwork()</code>.</li>
 <li class="fragment">Exécuter <code>tar_make()</code> dans la console et observer le changement d’état avec <code>tar_visnetwork()</code>.</li>
-<li class="fragment">Dans <code>script.R</code>:
-<ol type="a">
-<li class="fragment">remplacer la création de <code>pwd_api</code> par <code>tar_load(pwd_api)</code></li>
-<li class="fragment">remplacer l’import de <code>individu_reg.parquet</code> par <code>tar_load(survey_sample_24)</code></li>
-</ol></li>
 </ol>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercice-6b" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 6B</h2>
+<section id="exercice-6-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Exercice 6</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
-<p><strong>Avantage de <code>targets</code>: ne pas refaire tourner tout le <em>pipeline</em> pour un changement intermédiaire</strong></p>
+<p><strong>Modélisation d’un projet sous forme de <em>pipeline</em> de données (suite)</strong></p>
 </div>
 <div class="callout-content">
 <div>
-<!------
-Le _pipeline_ n'est pas pleinement reproductible à ce stade car le fichier `write_csv.R`
-fait toujours la transformation de base:
-- créer une fonction `import_parquet_raw` dans `R/fonctions.R` pour modulariser cet import
-et la sélection de l'échantillon (region=24). Changer le fichier `_targets.R` en conséquence. 
------->
-<ol type="1">
-<li class="fragment">Adopter la même approche de modularisation puis intégration dans <code>_targets.R</code> de la partie <em>feature engineering</em>. Faire un <code>tar_visnetwork()</code> avant de faire <code>tar_make()</code>. Faire un <code>tar_visnetwork()</code>.</li>
-<li class="fragment">Créer une fonction <code>produce_table_age</code> pour produire le tableau <code>gt</code> que vous avez créé précédemment et intégrer sa production dans le <em>pipeline</em> défini dans <code>_targets.R</code> (sous le nom <code>table_age</code>).</li>
-<li class="fragment">Exécuter <code>tar_make()</code> dans la console puis remplacer le code en question dans <code>script.R</code> par <code>tar_load(table_age)</code>.</li>
-<li class="fragment">Il est nécessaire de recoder les valeurs <code>Z</code> en valeurs manquantes dans la variable <code>cat1</code>. Ajouter cela dans la fonction de recodage des valeurs manquantes.</li>
+<ol start="9" type="1">
+<li class="fragment">Créer une fonction <code>produce_table_age</code> qui produit le tableau <code>gt</code> que vous avez créé précédemment et intégrer sa production dans le <em>pipeline</em> défini dans <code>_targets.R</code> (sous le nom <code>table_age</code>)</li>
+<li class="fragment">Exécuter <code>tar_make()</code> pour lancer le <em>pipeline</em> et analyser la sortie dans la console.</li>
+<li class="fragment">A l’aide de la fonction <code>tar_read</code>, visualiser la table des âges produite.</li>
+<li class="fragment">Modifier la fonction <code>produce_table_age</code> pour que la table affiche également le nombre de femmes et d’hommes par tranche d’âge.</li>
+<li class="fragment">Exécuter <code>tar_make()</code> pour lancer le <em>pipeline</em> et analyser la sortie dans la console.</li>
+<li class="fragment">A l’aide de la fonction <code>tar_read</code>, vérifier que la table de sortie a bien été mise à jour.</li>
 </ol>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercice-6b-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 6B</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Avantage de <code>targets</code>: ne pas refaire tourner tout le <em>pipeline</em> pour un changement intermédiaire (suite)</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol start="5" type="1">
-<li class="fragment">Après avoir sauvegardé <code>R/functions.R</code>, observer le changement dans le pipeline avec <code>tar_visnetwork()</code>.</li>
-<li class="fragment">Faire un <code>tar_make()</code>.</li>
-<li class="fragment">Ajouter deux éléments au <em>pipeline</em> :
+<section id="checkpoint-6" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Checkpoint</h2>
 <ul>
-<li class="fragment">Choisir le graphique qu’on enregistrait sous le nom <code>surf_par_statut.png</code>. Faire une fonction pour le produire et l’intégrer dans le <em>pipeline</em>. Appeler la cible, <code>super_graphique</code>.</li>
-<li class="fragment">Créer une fonction pour générer la régression à la fin. Faire une fonction pour le produire et intégrer dans le <em>pipeline</em>. Appeler la cible, <code>super_regression</code>.</li>
-</ul></li>
-<li class="fragment">Observer la fin du <em>pipeline</em> avec <code>tar_visnetwork()</code> puis faire <code>tar_make()</code>.</li>
-<li class="fragment"><code>renv::snapshot()</code> puis commit/push.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
+<li><p><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application6/functions.R">functions.R</a></p></li>
+<li><p><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application6/_targets.R">_targets.R</a></p></li>
+</ul>
 </section></section>
 <section>
 <section id="vi--publication-reproductible" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
@@ -1882,19 +1857,33 @@ et la sélection de l'échantillon (region=24). Changer le fichier `_targets.R` 
 </div>
 <div class="callout-content">
 <div>
+<ol type="1">
+<li class="fragment">Cliquer sur <code>File &gt; New file &gt; Quarto document</code>:
 <ul>
-<li class="fragment">Cliquer sur <code>File &gt; New file &gt; Quarto document</code> :
-<ul>
+<li class="fragment">Donner un titre et un.e auteur.e au rapport</li>
+<li class="fragment">Choisir <code>pdf</code> comme format de sortie</li>
 <li class="fragment">Décocher la case <code>Use visual markdown editor</code></li>
-<li class="fragment">Donner un titre et un auteur au rapport</li>
 </ul></li>
-<li class="fragment">Sauvegarder le fichier sous le nom <code>report.qmd</code></li>
-<li class="fragment">S’inspirer de <a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/1b6d4e88328c91b37da0b6f18f3dd1080db81aac/report.qmd">cette base de départ</a> pour créer votre rapport</li>
+<li class="fragment">Sauvegarder le fichier sous le nom <code>report.qmd</code>.</li>
+<li class="fragment">Pour pouvoir générer un document <code>PDF</code>, une distribution de <code>LaTeX</code> est nécessaire. Lancer la commande <code>tinytex::install_tinytex()</code> pour l’installer, puis redémarrer l’environnement R (<code>File</code> -&gt; <code>Quit Session</code>) pour mettre l’environnement à jour.</li>
+<li class="fragment">En vous inspirant du code d’exemple, modifier le fichier <code>report.qmd</code> pour :
+<ul>
+<li class="fragment">Importer les fonctions du script <code>functions.R</code></li>
+<li class="fragment">Importer les données avec la fonction <code>read_from_parquet</code></li>
+<li class="fragment">Produire la table avec la fonction <code>produce_table_age</code> Seuls le code utilisé et la table doivent appraître dans le rapport final.</li>
+</ul></li>
+<li class="fragment">Générer le rapport avec le bouton <code>Render</code> et vérifier que l’<em>output</em> correspond à celui attendu.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="checkpoint-7" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Checkpoint</h2>
+<ul>
+<li><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application7/report.qmd">report.qmd</a></li>
 </ul>
-</div>
-</div>
-</div>
-</div>
 <div class="footer footer-default">
 <p>Bonnes pratiques pour les projets statistiques</p>
 </div>
