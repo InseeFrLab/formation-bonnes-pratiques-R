@@ -31,3 +31,27 @@ Pour cette dernière, utiliser le `format = 'parquet'`.
 :::
 
 :::
+
+## Exercice 6
+
+:::{.callout-tip collapse="true" icon=false}
+## Modélisation d'un projet sous forme de *pipeline* de données (suite)
+
+:::{.incremental}
+9. Créer une fonction `produce_table_age` qui produit le tableau `gt` que vous avez créé précédemment
+et intégrer sa production dans le _pipeline_ défini dans `_targets.R` (sous le nom `table_age`)
+10. Exécuter `tar_make()` pour lancer le *pipeline* et analyser la sortie dans la console.
+11. A l'aide de la fonction `tar_read`, visualiser la table des âges produite.
+12. Modifier la fonction `produce_table_age` pour que la table affiche également le nombre de femmes
+et d'hommes par tranche d'âge.
+13. Exécuter `tar_make()` pour lancer le *pipeline* et analyser la sortie dans la console.
+14. A l'aide de la fonction `tar_read`, vérifier que la table de sortie a bien été mise à jour.
+:::
+
+:::
+
+## Checkpoint
+
+- [functions.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application6/functions.R)
+
+- [_targets.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application6/_targets.R)

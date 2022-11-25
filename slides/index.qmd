@@ -713,14 +713,9 @@ pouvez repartir de [cette version](https://raw.githubusercontent.com/InseeFrLab/
 
 - La [fiche UtilitR dédiée à `targets`](https://www.book.utilitr.org/targets.html)
 
-## Exercice 6A
+## Exercice 6
 
-{{< include applications/_application6a.qmd >}}
-
-## Exercice 6B
-
-{{< include applications/_application6b.qmd >}}
-
+{{< include applications/_application6.qmd >}}
 
 
 
