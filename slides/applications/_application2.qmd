@@ -2,6 +2,8 @@
 
 Cette application vise à résoudre une partie des problèmes détectés précédemment.
 
+:warning: La documentation du fichier est disponible [ici](https://www.insee.fr/fr/statistiques/fichier/4171523/contenu_RP2016_indreg.pdf).
+
 :::{.callout-tip collapse="true" icon=false}
 ## Travail sur le fichier : modifications de structure
 
