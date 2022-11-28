@@ -41,11 +41,11 @@ bibliography: references.bib
 
 - [**Origine**]{.blue2} : communauté des développeurs logiciels
 
-. . .
-
+::: {.incremental}
 - [**Constats**]{.blue2} :
     - le [_"code est plus souvent lu qu'écrit"_]{.green2} ([Guido Van Rossum](https://fr.wikipedia.org/wiki/Guido_van_Rossum))
     - la maintenance d'un code est très coûteuse
+:::
 
 . . .
 
@@ -366,10 +366,12 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 ## :one: Utiliser les projets RStudio
 
+::: {.incremental}
 - [**Objectif**]{.orange} : favoriser la [**reproductibilité**]{.blue2}
   - Tous les fichiers nécessaires au projet dans un même dossier ;
   - Le dossier contenant le projet RStudio est automatiquement utilisé comme ***working directory*** ;
   - Utilisation de [**chemins relatifs**]{.blue2} plutôt qu'absolus.
+:::
 
 . . .
 
@@ -426,12 +428,12 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 - Le fichier `README.md`, situé à la racine du projet, est à la fois la **carte d'identité** et la **vitrine du projet**
 
-. . .
-
+::: {.incremental}
 - Idéalement, il contient :
   - Une [**présentation**]{.orange} du contexte et des objectifs
   - Une description de son [**fonctionnement**]{.orange}
   - Un guide de [**contribution**]{.orange} (*open-source*)
+:::
 
 . . .
 
@@ -451,9 +453,13 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 ## Bilan de l'exercice
 
+::: {.incremental}
 - Un code mal structuré
   - Limite la lisibilité du projet
   - Est très coûteux à maintenir (dette technique)
+:::
+
+. . .
 
 ::: {layout="[80,30]"}
 
@@ -468,18 +474,18 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 ## Enjeux
 
+::: {.incremental}
 - Le choix d'un format de données répond à un [**arbitrage**]{.orange} entre plusieurs critères :
-  - Finalité (traitement, analyse, diffusion)
-  - Public cible
-  - Volumétrie
-
+  - [**Finalité**]{.blue2} (traitement, analyse, diffusion)
+  - [**Public cible**]{.blue2}
+  - [**Volumétrie**]{.blue2}
+:::
 
 ## Recommandations {.smaller}
 
 - Eviter impérativement les formats de données adhérents à un langage (`RDS`, `RData`, `fst`, `sas7bdat`, etc.).
 
-. . .
-
+::: {.incremental}
 - Deux formats à privilégier :
   - [**CSV**]{.orange} : pour la [**plupart des usages courants**]{.blue2}
     - _Avantage_ : [**non-compressé**]{.blue2} donc facilement [**lisible**]{.blue2}
@@ -487,6 +493,7 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
   - [**Parquet**]{.orange} : pour le traitement de [**données volumineuses**]{.blue2}
     - [**Compressé**]{.blue2} et très [**performant**]{.blue2} en lecture/écriture
     - Gestion native des méta-données
+:::
 
 ## Exercice 4
 
@@ -497,18 +504,17 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 ## Expérience de pensée
 
+::: {.incremental}
 - Imaginons la situation suivante :
   - J'installe une version de `R` sur mon poste ;
   - Je développe un projet en installant les _packages_ nécessaires ;
   - Une fois terminé, je passe au projet suivant, et ainsi de suite.
 
-. . .
 
-- Quels problèmes puis-je rencontrer au fil des projets ?
+- Quels [**problèmes**]{.orange} puis-je rencontrer au fil des projets ?
 
-. . .
-
-- Est-il facile de partager un de mes projets ?
+- Est-il facile de [**partager**]{.orange} un de mes projets ?
+:::
 
 ## Enjeux
 
@@ -565,9 +571,11 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 ## :one: Initialisation de l'environnement
 
+::: {.incremental}
 - `renv::init()` dans un projet RStudio crée :
   - Un dossier `renv` et le fichier `.Rprofile` : activation automatique de l'environnement
   - Le fichier `renv.lock` : versions des *packages* installés
+:::
 
 . . .
 
@@ -575,9 +583,11 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 ## :two: Développement du projet
 
+::: {.incremental}
 - Une fois l'environnement initialisé, on développe le projet de manière habituelle :
   - Installations/suppressions/mises à jour de packages
   - Ecriture de scripts
+:::
 
 . . .
 
@@ -601,10 +611,12 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 ## Vers une reproductibilité optimale
 
+::: {.incremental}
 - [**Limites**]{.orange} des environnements virtuels : 
   - Les [**librairies système**]{.blue2} ne sont pas gérées
   - Lourdeur de la phase d'installation à chaque changement d'environnement
   - Peu adaptés à un environnement de production
+:::
 
 . . .
 
@@ -634,22 +646,22 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 - Une analyse de données ou une chaîne de production font intervenir des [**étapes standardisées**]{.orange}
 
-. . . 
-
+::: {.incremental}
 - Modéliser ces étapes sous forme de [**pipeline (*direct acyclic graph*)**]{.orange} a plusieurs avantages :
   - [**Découplage**]{.blue2} des différentes étapes
   - Facilite la [**planification**]{.blue2} du traitement
   - Facilite la [**prise en main**]{.blue2} du projet par un tiers
+:::
 
 ## targets
 
 - `targets` est un *framework* de modélisation de *pipelines* spécifiquement dédié aux projets `R`.
 
-. . . 
-
+::: {.incremental}
 - Deux objectifs majeurs : 
   1. [**Réduire le coût d'expérimentation**]{.orange} en sauvegardant les résultats intermédiaires (***targets***)
   2. Garantir la [**reproductibilité**]{.orange} de la chaîne en traçant les changements de ces ***targets***
+:::
 
 ## Utilisation de `targets`
 
@@ -666,15 +678,17 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 ## :two: Le fichier `_targets.R` {.smaller}
 
+::: {.incremental}
 - Le fichier `_targets.R` doit satisfaire plusieurs conditions :
   1. Charger le_package_`targets` ;
   2. Charger dans l'environnement les fonctions nécessaires ;
   3. Déclarer les_packages_nécessaires aux différentes étapes ;
   4. Définir le *pipeline*.
-
-![](img/targets.png){height="250" fig-align="center"}
+:::
 
 . . . 
+
+![](img/targets.png){height="250" fig-align="center"}
 
 ## :three: Inspecter le *pipeline*
 
@@ -725,19 +739,21 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 ## `R Markdown`
 
+::: {.incremental}
 - `R Markdown` est un *package* `R` qui permet de lier
   - Du [**texte**]{.orange} au format `Markdown`
   - Du [**code**]{.orange} `R` qui peut être exécuté et dont les sorties peuvent être intégrées au texte
+:::
 
 . . .
 
 - [**Dissociation du fond et de la forme**]{.orange} du document
 
-. . .
-
+::: {.incremental}
 - Un document est [**compilé**]{.orange} en deux étapes
   - [***knit***]{.green2} : le package `knitr` transforme le texte et les sorties `R` en un document `Markdown` standard ;
   - [***convert***]{.green2} : le logiciel `pandoc` transforme le document `.md` en un format de sortie standard (`html`, `pdf`, etc.)
+:::
 
 ## `Quarto`
 
