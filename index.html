@@ -1375,7 +1375,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li class="fragment">Créer un nouveau service RStudio, comme dans l’exercice 0.</li>
 <li class="fragment">Cloner le dépôt, comme dans l’exercice 0.</li>
 <li class="fragment">Installer les dépendances du projet avec <code>devtools::install_deps(upgrade = "never")</code>.</li>
-<li class="fragment">Tester <code>write_csv.R</code> puis <code>script.R</code>. Tout doit fonctionner (normalement…).</li>
+<li class="fragment">Tester <code>get_data.R</code> puis <code>script.R</code>. Tout doit fonctionner (normalement…).</li>
 </ol>
 </div>
 </div>
@@ -1536,20 +1536,20 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li class="fragment"><p>Observer les nouveaux élements qui sont apparus dans le projet.</p></li>
 <li class="fragment"><p>Installer le <a href="https://gt.rstudio.com/">package <code>gt</code></a> et observer le message dans la console.</p></li>
 <li class="fragment"><p>Dans la partie sur les statistiques descriptives d’âge, ajouter ce code :</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>stats_age <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>stats_age <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">group_by</span>(<span class="at">decennie =</span> <span class="fu">decennie_a_partir_annee</span>(age)) <span class="sc">%&gt;%</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">summarise</span>(<span class="fu">n</span>())</span>
 <span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a>table_age <span class="ot">&lt;-</span> <span class="fu">gt</span>(stats_age) <span class="sc">%&gt;%</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb4-5"><a href="#cb4-5"></a>table_age <span class="ot">&lt;-</span> gt<span class="sc">::</span><span class="fu">gt</span>(stats_age) <span class="sc">%&gt;%</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(</span>
 <span id="cb4-7"><a href="#cb4-7"></a>    <span class="at">title =</span> <span class="st">"Distribution des âges dans notre population"</span></span>
 <span id="cb4-8"><a href="#cb4-8"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb4-9"><a href="#cb4-9"></a>  gt<span class="sc">::</span><span class="fu">fmt_number</span>(</span>
 <span id="cb4-10"><a href="#cb4-10"></a>    <span class="at">columns =</span> <span class="st">`</span><span class="at">n()</span><span class="st">`</span>,</span>
 <span id="cb4-11"><a href="#cb4-11"></a>    <span class="at">sep_mark =</span> <span class="st">" "</span>,</span>
 <span id="cb4-12"><a href="#cb4-12"></a>    <span class="at">decimals =</span> <span class="dv">0</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb4-13"><a href="#cb4-13"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>  gt<span class="sc">::</span><span class="fu">cols_label</span>(</span>
 <span id="cb4-15"><a href="#cb4-15"></a>    <span class="at">decennie =</span> <span class="st">"Tranche d'âge"</span>,</span>
 <span id="cb4-16"><a href="#cb4-16"></a>    <span class="st">`</span><span class="at">n()</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Population"</span></span>
 <span id="cb4-17"><a href="#cb4-17"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
