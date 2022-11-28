@@ -41,7 +41,7 @@
 12. Créer un nouveau service RStudio, comme dans l'exercice 0.
 13. Cloner le dépôt, comme dans l'exercice 0.
 14. Installer les dépendances du projet avec `devtools::install_deps(upgrade = "never")`.
-15. Tester `write_csv.R` puis `script.R`. Tout doit fonctionner (normalement...).
+15. Tester `get_data.R` puis `script.R`. Tout doit fonctionner (normalement...).
 :::
   
 :::
