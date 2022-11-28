@@ -417,12 +417,12 @@
 <ul>
 <li><span class="blue2"><strong>Origine</strong></span> : communauté des développeurs logiciels</li>
 </ul>
-<div class="fragment">
+<div>
 <ul>
-<li><span class="blue2"><strong>Constats</strong></span> :
+<li class="fragment"><span class="blue2"><strong>Constats</strong></span> :
 <ul>
-<li>le <span class="green2"><em>“code est plus souvent lu qu’écrit”</em></span> (<a href="https://fr.wikipedia.org/wiki/Guido_van_Rossum">Guido Van Rossum</a>)</li>
-<li>la maintenance d’un code est très coûteuse</li>
+<li class="fragment">le <span class="green2"><em>“code est plus souvent lu qu’écrit”</em></span> (<a href="https://fr.wikipedia.org/wiki/Guido_van_Rossum">Guido Van Rossum</a>)</li>
+<li class="fragment">la maintenance d’un code est très coûteuse</li>
 </ul></li>
 </ul>
 </div>
@@ -921,14 +921,16 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </section>
 <section id="utiliser-les-projets-rstudio" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2><span class="emoji" data-emoji="one">1️⃣</span> Utiliser les projets RStudio</h2>
+<div>
 <ul>
-<li><span class="orange"><strong>Objectif</strong></span> : favoriser la <span class="blue2"><strong>reproductibilité</strong></span>
+<li class="fragment"><span class="orange"><strong>Objectif</strong></span> : favoriser la <span class="blue2"><strong>reproductibilité</strong></span>
 <ul>
-<li>Tous les fichiers nécessaires au projet dans un même dossier ;</li>
-<li>Le dossier contenant le projet RStudio est automatiquement utilisé comme <strong><em>working directory</em></strong> ;</li>
-<li>Utilisation de <span class="blue2"><strong>chemins relatifs</strong></span> plutôt qu’absolus.</li>
+<li class="fragment">Tous les fichiers nécessaires au projet dans un même dossier ;</li>
+<li class="fragment">Le dossier contenant le projet RStudio est automatiquement utilisé comme <strong><em>working directory</em></strong> ;</li>
+<li class="fragment">Utilisation de <span class="blue2"><strong>chemins relatifs</strong></span> plutôt qu’absolus.</li>
 </ul></li>
 </ul>
+</div>
 <div class="fragment">
 <ul>
 <li><strong>Bonus</strong> : en utilisant <code>Git</code>, on s’assure de toujours travailler dans un projet RStudio !</li>
@@ -985,13 +987,13 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <ul>
 <li>Le fichier <code>README.md</code>, situé à la racine du projet, est à la fois la <strong>carte d’identité</strong> et la <strong>vitrine du projet</strong></li>
 </ul>
-<div class="fragment">
+<div>
 <ul>
-<li>Idéalement, il contient :
+<li class="fragment">Idéalement, il contient :
 <ul>
-<li>Une <span class="orange"><strong>présentation</strong></span> du contexte et des objectifs</li>
-<li>Une description de son <span class="orange"><strong>fonctionnement</strong></span></li>
-<li>Un guide de <span class="orange"><strong>contribution</strong></span> (<em>open-source</em>)</li>
+<li class="fragment">Une <span class="orange"><strong>présentation</strong></span> du contexte et des objectifs</li>
+<li class="fragment">Une description de son <span class="orange"><strong>fonctionnement</strong></span></li>
+<li class="fragment">Un guide de <span class="orange"><strong>contribution</strong></span> (<em>open-source</em>)</li>
 </ul></li>
 </ul>
 </div>
@@ -1153,17 +1155,21 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </section>
 <section id="bilan-de-lexercice" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Bilan de l’exercice</h2>
+<div>
 <ul>
-<li>Un code mal structuré
+<li class="fragment">Un code mal structuré
 <ul>
-<li>Limite la lisibilité du projet</li>
-<li>Est très coûteux à maintenir (dette technique)</li>
+<li class="fragment">Limite la lisibilité du projet</li>
+<li class="fragment">Est très coûteux à maintenir (dette technique)</li>
 </ul></li>
 </ul>
+</div>
+<div class="fragment">
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 72.7%;justify-content: center;">
 <p><img data-src="https://www.earthdatascience.org/images/earth-analytics/clean-code/reproducible-science-is-about-being-lazy-hadley-wickham.png"></p>
+</div>
 </div>
 </div>
 </div>
@@ -1205,33 +1211,35 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </section>
 <section id="enjeux-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Enjeux</h2>
+<div>
 <ul>
-<li>Le choix d’un format de données répond à un <span class="orange"><strong>arbitrage</strong></span> entre plusieurs critères :
+<li class="fragment">Le choix d’un format de données répond à un <span class="orange"><strong>arbitrage</strong></span> entre plusieurs critères :
 <ul>
-<li>Finalité (traitement, analyse, diffusion)</li>
-<li>Public cible</li>
-<li>Volumétrie</li>
+<li class="fragment"><span class="blue2"><strong>Finalité</strong></span> (traitement, analyse, diffusion)</li>
+<li class="fragment"><span class="blue2"><strong>Public cible</strong></span></li>
+<li class="fragment"><span class="blue2"><strong>Volumétrie</strong></span></li>
 </ul></li>
 </ul>
+</div>
 </section>
 <section id="recommandations" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
 <h2>Recommandations</h2>
 <ul>
 <li>Eviter impérativement les formats de données adhérents à un langage (<code>RDS</code>, <code>RData</code>, <code>fst</code>, <code>sas7bdat</code>, etc.).</li>
 </ul>
-<div class="fragment">
+<div>
 <ul>
-<li>Deux formats à privilégier :
+<li class="fragment">Deux formats à privilégier :
 <ul>
-<li><span class="orange"><strong>CSV</strong></span> : pour la <span class="blue2"><strong>plupart des usages courants</strong></span>
+<li class="fragment"><span class="orange"><strong>CSV</strong></span> : pour la <span class="blue2"><strong>plupart des usages courants</strong></span>
 <ul>
-<li><em>Avantage</em> : <span class="blue2"><strong>non-compressé</strong></span> donc facilement <span class="blue2"><strong>lisible</strong></span></li>
-<li><em>Inconvénients</em> : pas de gestion des méta-données, peu adapté aux données volumineuses</li>
+<li class="fragment"><em>Avantage</em> : <span class="blue2"><strong>non-compressé</strong></span> donc facilement <span class="blue2"><strong>lisible</strong></span></li>
+<li class="fragment"><em>Inconvénients</em> : pas de gestion des méta-données, peu adapté aux données volumineuses</li>
 </ul></li>
-<li><span class="orange"><strong>Parquet</strong></span> : pour le traitement de <span class="blue2"><strong>données volumineuses</strong></span>
+<li class="fragment"><span class="orange"><strong>Parquet</strong></span> : pour le traitement de <span class="blue2"><strong>données volumineuses</strong></span>
 <ul>
-<li><span class="blue2"><strong>Compressé</strong></span> et très <span class="blue2"><strong>performant</strong></span> en lecture/écriture</li>
-<li>Gestion native des méta-données</li>
+<li class="fragment"><span class="blue2"><strong>Compressé</strong></span> et très <span class="blue2"><strong>performant</strong></span> en lecture/écriture</li>
+<li class="fragment">Gestion native des méta-données</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1271,22 +1279,16 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </section>
 <section id="expérience-de-pensée" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Expérience de pensée</h2>
+<div>
 <ul>
-<li>Imaginons la situation suivante :
+<li class="fragment"><p>Imaginons la situation suivante :</p>
 <ul>
-<li>J’installe une version de <code>R</code> sur mon poste ;</li>
-<li>Je développe un projet en installant les <em>packages</em> nécessaires ;</li>
-<li>Une fois terminé, je passe au projet suivant, et ainsi de suite.</li>
+<li class="fragment">J’installe une version de <code>R</code> sur mon poste ;</li>
+<li class="fragment">Je développe un projet en installant les <em>packages</em> nécessaires ;</li>
+<li class="fragment">Une fois terminé, je passe au projet suivant, et ainsi de suite.</li>
 </ul></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>Quels problèmes puis-je rencontrer au fil des projets ?</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Est-il facile de partager un de mes projets ?</li>
+<li class="fragment"><p>Quels <span class="orange"><strong>problèmes</strong></span> puis-je rencontrer au fil des projets ?</p></li>
+<li class="fragment"><p>Est-il facile de <span class="orange"><strong>partager</strong></span> un de mes projets ?</p></li>
 </ul>
 </div>
 </section>
@@ -1431,13 +1433,15 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </section>
 <section id="initialisation-de-lenvironnement" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2><span class="emoji" data-emoji="one">1️⃣</span> Initialisation de l’environnement</h2>
+<div>
 <ul>
-<li><code>renv::init()</code> dans un projet RStudio crée :
+<li class="fragment"><code>renv::init()</code> dans un projet RStudio crée :
 <ul>
-<li>Un dossier <code>renv</code> et le fichier <code>.Rprofile</code> : activation automatique de l’environnement</li>
-<li>Le fichier <code>renv.lock</code> : versions des <em>packages</em> installés</li>
+<li class="fragment">Un dossier <code>renv</code> et le fichier <code>.Rprofile</code> : activation automatique de l’environnement</li>
+<li class="fragment">Le fichier <code>renv.lock</code> : versions des <em>packages</em> installés</li>
 </ul></li>
 </ul>
+</div>
 <div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1448,13 +1452,15 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </section>
 <section id="développement-du-projet" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2><span class="emoji" data-emoji="two">2️⃣</span> Développement du projet</h2>
+<div>
 <ul>
-<li>Une fois l’environnement initialisé, on développe le projet de manière habituelle :
+<li class="fragment">Une fois l’environnement initialisé, on développe le projet de manière habituelle :
 <ul>
-<li>Installations/suppressions/mises à jour de packages</li>
-<li>Ecriture de scripts</li>
+<li class="fragment">Installations/suppressions/mises à jour de packages</li>
+<li class="fragment">Ecriture de scripts</li>
 </ul></li>
 </ul>
+</div>
 <div class="fragment">
 <ul>
 <li><code>renv::status()</code> : indique les <em>packages</em> installés/supprimés par rapport au fichier <code>renv.lock</code></li>
@@ -1487,14 +1493,16 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </section>
 <section id="vers-une-reproductibilité-optimale" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Vers une reproductibilité optimale</h2>
+<div>
 <ul>
-<li><span class="orange"><strong>Limites</strong></span> des environnements virtuels :
+<li class="fragment"><span class="orange"><strong>Limites</strong></span> des environnements virtuels :
 <ul>
-<li>Les <span class="blue2"><strong>librairies système</strong></span> ne sont pas gérées</li>
-<li>Lourdeur de la phase d’installation à chaque changement d’environnement</li>
-<li>Peu adaptés à un environnement de production</li>
+<li class="fragment">Les <span class="blue2"><strong>librairies système</strong></span> ne sont pas gérées</li>
+<li class="fragment">Lourdeur de la phase d’installation à chaque changement d’environnement</li>
+<li class="fragment">Peu adaptés à un environnement de production</li>
 </ul></li>
 </ul>
+</div>
 <div class="fragment">
 <ul>
 <li>La <span class="orange"><strong>conteneurisation</strong></span> (ex : <code>Docker</code>) apporte la solution</li>
@@ -1589,13 +1597,13 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <ul>
 <li>Une analyse de données ou une chaîne de production font intervenir des <span class="orange"><strong>étapes standardisées</strong></span></li>
 </ul>
-<div class="fragment">
+<div>
 <ul>
-<li>Modéliser ces étapes sous forme de <span class="orange"><strong>pipeline (<em>direct acyclic graph</em>)</strong></span> a plusieurs avantages :
+<li class="fragment">Modéliser ces étapes sous forme de <span class="orange"><strong>pipeline (<em>direct acyclic graph</em>)</strong></span> a plusieurs avantages :
 <ul>
-<li><span class="blue2"><strong>Découplage</strong></span> des différentes étapes</li>
-<li>Facilite la <span class="blue2"><strong>planification</strong></span> du traitement</li>
-<li>Facilite la <span class="blue2"><strong>prise en main</strong></span> du projet par un tiers</li>
+<li class="fragment"><span class="blue2"><strong>Découplage</strong></span> des différentes étapes</li>
+<li class="fragment">Facilite la <span class="blue2"><strong>planification</strong></span> du traitement</li>
+<li class="fragment">Facilite la <span class="blue2"><strong>prise en main</strong></span> du projet par un tiers</li>
 </ul></li>
 </ul>
 </div>
@@ -1605,12 +1613,12 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <ul>
 <li><code>targets</code> est un <em>framework</em> de modélisation de <em>pipelines</em> spécifiquement dédié aux projets <code>R</code>.</li>
 </ul>
-<div class="fragment">
+<div>
 <ul>
-<li>Deux objectifs majeurs :
+<li class="fragment">Deux objectifs majeurs :
 <ol type="1">
-<li><span class="orange"><strong>Réduire le coût d’expérimentation</strong></span> en sauvegardant les résultats intermédiaires (<strong><em>targets</em></strong>)</li>
-<li>Garantir la <span class="orange"><strong>reproductibilité</strong></span> de la chaîne en traçant les changements de ces <strong><em>targets</em></strong></li>
+<li class="fragment"><span class="orange"><strong>Réduire le coût d’expérimentation</strong></span> en sauvegardant les résultats intermédiaires (<strong><em>targets</em></strong>)</li>
+<li class="fragment">Garantir la <span class="orange"><strong>reproductibilité</strong></span> de la chaîne en traçant les changements de ces <strong><em>targets</em></strong></li>
 </ol></li>
 </ul>
 </div>
@@ -1629,19 +1637,23 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </section>
 <section id="le-fichier-_targets.r" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
 <h2><span class="emoji" data-emoji="two">2️⃣</span> Le fichier <code>_targets.R</code></h2>
+<div>
 <ul>
-<li>Le fichier <code>_targets.R</code> doit satisfaire plusieurs conditions :
+<li class="fragment">Le fichier <code>_targets.R</code> doit satisfaire plusieurs conditions :
 <ol type="1">
-<li>Charger le_package_<code>targets</code> ;</li>
-<li>Charger dans l’environnement les fonctions nécessaires ;</li>
-<li>Déclarer les_packages_nécessaires aux différentes étapes ;</li>
-<li>Définir le <em>pipeline</em>.</li>
+<li class="fragment">Charger le_package_<code>targets</code> ;</li>
+<li class="fragment">Charger dans l’environnement les fonctions nécessaires ;</li>
+<li class="fragment">Déclarer les_packages_nécessaires aux différentes étapes ;</li>
+<li class="fragment">Définir le <em>pipeline</em>.</li>
 </ol></li>
 </ul>
+</div>
+<div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/targets.png" height="250"></p>
 </figure>
+</div>
 </div>
 </section>
 <section id="inspecter-le-pipeline" class="slide level2" data-background-image="background.svg" data-background-size="contain">
@@ -1779,26 +1791,28 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </section>
 <section id="r-markdown" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2><code>R Markdown</code></h2>
+<div>
 <ul>
-<li><code>R Markdown</code> est un <em>package</em> <code>R</code> qui permet de lier
+<li class="fragment"><code>R Markdown</code> est un <em>package</em> <code>R</code> qui permet de lier
 <ul>
-<li>Du <span class="orange"><strong>texte</strong></span> au format <code>Markdown</code></li>
-<li>Du <span class="orange"><strong>code</strong></span> <code>R</code> qui peut être exécuté et dont les sorties peuvent être intégrées au texte</li>
+<li class="fragment">Du <span class="orange"><strong>texte</strong></span> au format <code>Markdown</code></li>
+<li class="fragment">Du <span class="orange"><strong>code</strong></span> <code>R</code> qui peut être exécuté et dont les sorties peuvent être intégrées au texte</li>
 </ul></li>
-</ul>
-<div class="fragment">
-<ul>
-<li><span class="orange"><strong>Dissociation du fond et de la forme</strong></span> du document</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li>Un document est <span class="orange"><strong>compilé</strong></span> en deux étapes
+<li><span class="orange"><strong>Dissociation du fond et de la forme</strong></span> du document</li>
+</ul>
+<div>
 <ul>
-<li><span class="green2"><strong><em>knit</em></strong></span> : le package <code>knitr</code> transforme le texte et les sorties <code>R</code> en un document <code>Markdown</code> standard ;</li>
-<li><span class="green2"><strong><em>convert</em></strong></span> : le logiciel <code>pandoc</code> transforme le document <code>.md</code> en un format de sortie standard (<code>html</code>, <code>pdf</code>, etc.)</li>
+<li class="fragment">Un document est <span class="orange"><strong>compilé</strong></span> en deux étapes
+<ul>
+<li class="fragment"><span class="green2"><strong><em>knit</em></strong></span> : le package <code>knitr</code> transforme le texte et les sorties <code>R</code> en un document <code>Markdown</code> standard ;</li>
+<li class="fragment"><span class="green2"><strong><em>convert</em></strong></span> : le logiciel <code>pandoc</code> transforme le document <code>.md</code> en un format de sortie standard (<code>html</code>, <code>pdf</code>, etc.)</li>
 </ul></li>
 </ul>
+</div>
 </div>
 </section>
 <section id="quarto" class="slide level2" data-background-image="background.svg" data-background-size="contain">
