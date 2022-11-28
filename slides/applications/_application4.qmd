@@ -3,7 +3,7 @@
 
 :::{.incremental}
 1. Effacer la base `individu_reg.csv` ;
-2. Transformer le script `write_csv.R` pour n'utiliser que le format `parquet` ; 
+2. Transformer le script `get_data.R` pour n'utiliser que le format `parquet` ; 
 3. Sauvegarder la table `individu_reg` en format Parquet ;
 4. Modifier la phase d'import de `script.R` pour utiliser `arrow` et lire le fichier Parquet créé précédemment.
 
