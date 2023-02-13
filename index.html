@@ -1027,20 +1027,14 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <div class="callout-content">
 <div>
 <ol type="1">
-<li class="fragment">Créer des parties dans <code>script.R</code> pour aider à la compréhension de la structure du fichier :
-<ul>
-<li class="fragment"><code># TITRE NIVEAU 1 ------------</code> et <code>## TITRE NIVEAU 2 ==========</code></li>
-<li class="fragment">Faire un <em>commit</em></li>
-</ul></li>
 <li class="fragment">Déplacer les <code>library</code> pour les mettre tous ensemble au début du script.
 <ul>
-<li class="fragment">Conserver l’ordre des <em>packages</em> (<code>MASS</code> après <code>tidyverse</code> notamment).</li>
-<li class="fragment">Faire un <em>commit</em>.</li>
+<li class="fragment">Attention à l’ordre des <em>packages</em> (<code>MASS</code> après <code>tidyverse</code> notamment).</li>
 </ul></li>
 <li class="fragment">Le script n’est pas construit dans un ordre logique. Déplacer les parties pour adopter une structure plus logique :
 <ul>
-<li class="fragment">Gestion de l’environnement -&gt; Définition de fonctions -&gt; Import des données -&gt; Retraitement des données -&gt; Statistiques descriptives -&gt; Graphiques -&gt; Modélisation</li>
-<li class="fragment">Faire un <em>commit</em>.</li>
+<li class="fragment">Gestion de l’environnement -&gt; Définition de fonctions -&gt; Import des données -&gt; Retraitement des données -&gt; Statistiques descriptives -&gt; Graphiques -&gt; Modélisation On utilisera pour cela les standards de documentation reconnus par RStudio :</li>
+<li class="fragment"><code># TITRE NIVEAU 1 ------------</code> et <code>## TITRE NIVEAU 2 ==========</code></li>
 </ul></li>
 </ol>
 </div>
@@ -1179,18 +1173,17 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
-<p><strong>Améliorer la fonction <code>fonction_de_stat_agregee</code></strong></p>
+<p><strong>Modularisation du projet</strong></p>
 </div>
 <div class="callout-content">
 <div>
 <ol type="1">
-<li class="fragment">Lui donner un nom plus court.</li>
-<li class="fragment">Remplacer la première partie par un <code>match.arg</code>.</li>
-<li class="fragment">Remplacer la deuxième partie par <code>switch</code>.</li>
 <li class="fragment">Déplacer toutes les fonctions dans un fichier <code>R/functions.R</code>.</li>
+<li class="fragment">Donner à la fonction <code>fonction_de_stat_agregee</code> un nom plus pertinent.</li>
 <li class="fragment">Dans <code>script.R</code>, appeler en début de chaîne ces fonctions avec <code>source("R/functions.R", encoding = "UTF-8")</code>.</li>
 <li class="fragment">Documenter la fonction principale au <a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">format attendu</a> par <code>roxygen2</code>.</li>
-<li class="fragment">Redémarrer la session (en faisant <code>Session &gt; Restart R</code>). Si tout va bien, le code devrait maintenant fonctionner.</li>
+<li class="fragment">Redémarrer la session (en faisant <code>Session &gt; Restart R</code>).</li>
+<li class="fragment">Tester le bon fonctionnement de <code>script.R</code>.</li>
 </ol>
 </div>
 </div>
