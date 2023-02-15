@@ -16,9 +16,8 @@ Un code reproductible est avant toute chose un code fonctionnel ! Repérez les e
 1. Installer les _packages_ `R` [`lintr`](https://github.com/r-lib/lintr) et [`styler`](https://github.com/r-lib/styler).
 2. Définir le _linter_ à utiliser comme étant de type `tidyverse` : `lintr::use_lintr(type = "tidyverse")`
 3. Diagnostiquer le script `script.R` : `lintr::lint("R/script.R")`.
-    + Regardez bien la liste des problèmes détectés par le _linter_.
-    + Comprenez-vous la nature des problèmes?
-4. Nettoyer le fichier `styler::style_file("R/script.R")`.
+    + Comprenez-vous la nature des problèmes détectés par le _linter_?
+4. Appliquer le _`styler`_formatter_ au `script.R` : `styler::style_file("R/script.R")`.
     + Enregistrer et faire un _commit_ du fichier.
     + Prenez le temps de regarder le _diff_ du _commit_. Comprenez-vous les modifications faites par le _formatter_?
 5. Refaire tourner le _linter_. Il reste encore un certain nombre d'erreurs de formattage, car `styler` est un _formatter_ peu intrusif.
