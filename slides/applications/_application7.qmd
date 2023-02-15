@@ -11,7 +11,7 @@
 
 :::
 
-## Exercice 7
+## Application 7
 
 :::{.callout-tip collapse="true" icon=false}
 ## Introduction à la publication reproductible (suite)

@@ -125,7 +125,7 @@ Améliorations graduelles dans l'échelle de la reproductibilité :
 . . .
 
 
-## Exercice 0
+## Application 0
 
 {{< include applications/_application0.qmd >}}
 
@@ -451,7 +451,7 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 {{< include applications/_application2.qmd >}}
 
 
-## Bilan de l'exercice
+## Bilan de l'Application
 
 ::: {.incremental}
 - Un code mal structuré
@@ -495,7 +495,7 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
     - Gestion native des méta-données
 :::
 
-## Exercice 4
+## Application 4
 
 {{< include applications/_application4.qmd >}}
 
@@ -532,7 +532,7 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 - [**Portabilité limitée**]{.orange} : difficile de préciser dans un fichier les dépendances spécifiques à un projet.
 
-## Exercice 5A
+## Application 5A
 
 {{< include applications/_application5a.qmd >}}
 
@@ -632,7 +632,7 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 - [Une présentation sur `renv`](https://elise.maigne.pages.mia.inra.fr/2021_package_renv/presentation.html#1)
 
-## Exercice 5B
+## Application 5B
 
 {{< include applications/_application5b.qmd >}}
 
@@ -742,7 +742,7 @@ dans 📁 `R/functions.R`
 
 - La [fiche UtilitR dédiée à `targets`](https://www.book.utilitr.org/targets.html)
 
-## Exercice 6
+## Application 6
 
 {{< include applications/_application6.qmd >}}
 
@@ -809,7 +809,7 @@ dans 📁 `R/functions.R`
 
 - La [documentation officielle de `quarto`](https://quarto.org/)
 
-## Exercice 7
+## Application 7
 
 {{< include applications/_application7.qmd >}}
 

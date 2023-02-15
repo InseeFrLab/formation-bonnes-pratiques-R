@@ -1,4 +1,4 @@
-## Exercice 1
+## Application 1
 
 :::{.callout-tip collapse="true" icon=false}
 ## Partie 1 : vérification du bon fonctionnement du code
@@ -7,7 +7,7 @@ Un code reproductible est avant toute chose un code fonctionnel ! Repérez les e
 
 :::
 
-## Exercice 1
+## Application 1
 
 :::{.callout-tip collapse="true" icon=false}
 ## Partie 2 : premiers standards de qualité

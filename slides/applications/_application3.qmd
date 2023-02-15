@@ -1,4 +1,4 @@
-## Exercice 3: modularisation
+## Application 3: modularisation
 
 :::{.callout-tip collapse="true" icon=false}
 ## Modularisation du projet

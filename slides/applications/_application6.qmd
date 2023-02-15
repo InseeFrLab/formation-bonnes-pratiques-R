@@ -33,7 +33,7 @@ read_from_parquet <- function(path) {
 
 :::
 
-## Exercice 6
+## Application 6
 
 :::{.callout-tip collapse="true" icon=false}
 ## Modélisation d'un projet sous forme de *pipeline* de données (suite)
@@ -53,7 +53,7 @@ cibles (_targets_):
 
 :::
 
-## Exercice 6
+## Application 6
 
 :::{.callout-tip collapse="true" icon=false}
 ## Modélisation d'un projet sous forme de *pipeline* de données (suite)
