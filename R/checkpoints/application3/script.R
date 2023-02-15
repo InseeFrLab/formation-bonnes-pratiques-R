@@ -15,9 +15,9 @@ source("R/functions.R", encoding = "UTF-8")
 api_pwd <- yaml::read_yaml("secrets.yaml")$JETON_API
 
 
-fonction_de_stat_agregee(rnorm(10))
-fonction_de_stat_agregee(rnorm(10), "ecart-type")
-fonction_de_stat_agregee(rnorm(10), "variance")
+stats_agregees(rnorm(10))
+stats_agregees(rnorm(10), "ecart-type")
+stats_agregees(rnorm(10), "variance")
 
 # IMPORT DONNEES ------------------
 
