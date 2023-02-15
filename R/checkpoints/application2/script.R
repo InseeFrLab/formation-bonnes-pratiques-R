@@ -15,6 +15,7 @@ library(forcats)
 
 api_pwd <- yaml::read_yaml("secrets.yaml")$JETON_API
 
+# DEFINITION FONCTIONS -------------------------
 
 decennie_a_partir_annee <- function(annee) {
   return(annee - annee %%
