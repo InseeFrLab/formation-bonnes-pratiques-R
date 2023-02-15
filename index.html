@@ -1032,7 +1032,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <div class="callout-content">
 <div style="margin-left: 30px;">
 <ol type="1">
-<li class="fragment">Repérer le jeton d’API dans le code. Retirer le jeton d’API du code et créer à la racine du projet un fichier YAML nommé <code>secrets.yaml</code> où vous écrivez ce secret sous la forme <code>key: value</code>.</li>
+<li class="fragment">Repérer le jeton d’API dans le code. Retirer le jeton d’API du code et créer à la racine du projet un fichier YAML nommé <code>secrets.yaml</code> où vous écrivez ce secret sous la forme <code>key: value</code>. <span class="red2"><span class="emoji" data-emoji="warning">⚠️</span> Attention</span> : le package <code>yaml</code> impose la création d’une ligne vierge à la fin du fichier pour être valide.</li>
 <li class="fragment">Dans <code>script.R</code>, importer ce YAML (avec <code>yaml::read_yaml("secrets.yaml")</code>) pour créer une variable <code>api_token</code> ayant cette valeur.</li>
 <li class="fragment">Ajouter dans <code>.gitignore</code> le fichier <code>secrets.yaml</code> et indiquer dans le <code>README.md</code> de votre projet que les secrets sont stockés dans ce fichier. <span class="red2"><span class="emoji" data-emoji="warning">⚠️</span> Attention</span> : il ne faut pas committer <code>secrets.yaml</code> car le jeton d’API est personnel et secret!</li>
 </ol>
