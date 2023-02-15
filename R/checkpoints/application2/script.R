@@ -13,7 +13,7 @@ library(forcats)
 
 # ENVIRONNEMENT -------------------------
 
-api_pwd <- yaml::read_yaml("secrets.yaml")$JETON_API
+api_token <- yaml::read_yaml("secrets.yaml")$JETON_API
 
 # DEFINITION FONCTIONS -------------------------
 
