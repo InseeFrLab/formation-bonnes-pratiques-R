@@ -1,73 +1,63 @@
 rm(list = ls())
 setwd("/home/onyxia/formation-bonnes-pratiques-R")
 
-if (!require("ggplot2")) install.packages("ggplot2")
-if (!require("stringr")) install.packages("stringr")
-if (!require("dplyr")) install.packages("dplyr")
-if (!require("tidyverse")) install.packages("tidyverse")
+if (!require('ggplot2')) install.packages('ggplot2')
+if (!require('stringr')) install.packages('stringr')
+if (!require('dplyr')) install.packages('dplyr')
+if (!require('tidyverse')) install.packages('tidyverse')
 
 
 library(tidyverse)
 library(dplyr)
 
+# j'importe les données avec read_csv2 parce que c'est un csv avec des ; et que read_csv attend comme separateur des , 
 df <- readr::read_csv2(
   "individu_reg.csv",
-  col_select = c(
-    "region", "aemm", "aged", "anai", "catl", "cs1", "cs2", "cs3",
-    "couple", "na38", "naf08", "pnai12", "sexe", "surf", "tp",
-    "trans", "ur"
-  )
-)
+  col_select = c("region", "aemm", "aged", "anai","catl","cs1", "cs2", "cs3", "couple", "na38", "naf08", "pnai12", "sexe", "surf", "tp", "trans", "ur"))
 
 summarise(group_by(df, aged), n())
 
-decennie_a_partir_annee <- function(annee) {
-  return(annee - annee %%
-    10)
-}
+decennie_a_partir_annee    = function(ANNEE){ return(ANNEE - ANNEE %%
+                                                       10) }
 
-ggplot(df) +
-  geom_histogram(aes(x = 5 * floor(as.numeric(aged) / 5)), stat = "count")
+ggplot(df) + geom_histogram(aes(x = 5*floor(as.numeric(aged)/5)), stat = "count")
 
 # part d'homme dans chaque cohort
-df %>%
-  group_by(aged, sexe) %>%
-  summarise(SH_sexe = n()) %>%
-  group_by(aged) %>%
-  mutate(SH_sexe = SH_sexe / sum(SH_sexe)) %>%
-  filter(sexe == 1) %>%
-  ggplot() +
-  geom_bar(aes(x = as.numeric(aged), y = SH_sexe), stat = "identity") +
-  geom_point(aes(x = as.numeric(aged), y = SH_sexe), stat = "identity",
-             color = "red") +
-  coord_cartesian(c(0, 100))
+df %>% 
+  group_by(aged, sexe) %>% 
+  summarise(SH_sexe = n()) %>% 
+  group_by(aged) %>% 
+  mutate(SH_sexe = SH_sexe/sum(SH_sexe)) %>% 
+  filter(sexe==1) %>%
+  ggplot() + geom_bar(aes(x = as.numeric(aged), y = SH_sexe), stat="identity") + geom_point(aes(x = as.numeric(aged), y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
+
+# correction (qu'il faudra retirer)
+# ggplot(
+#   df %>% group_by(aged, sexe) %>% summarise(SH_sexe = n()) %>% group_by(aged) %>% mutate(SH_sexe = SH_sexe/sum(SH_sexe)) %>% filter(sexe==1)
+# ) + geom_bar(aes(x = as.numeric(aged), y = SH_sexe), stat="identity") + geom_point(aes(x = as.numeric(aged), y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
 
 # stats trans par statut
-df3 <- df %>%
-  group_by(couple, trans) %>%
-  summarise(x = n()) %>%
-  group_by(couple) %>%
-  mutate(y = 100 * x / sum(x))
+df3 = tibble(df %>% group_by(couple, trans) %>% summarise(x = n()) %>% group_by(couple) %>% mutate(y = 100*x/sum(x))
+)
 p <- ggplot(df3) +
-  geom_bar(aes(x = trans, y = y, color = couple), stat = "identity",
-           position = "dodge")
+  geom_bar(aes(x = trans, y = y, color = couple), stat = "identity", position = "dodge")
 
 ggsave("p.png", p)
 
-df[, ncol(df) - 1] <- factor(pull(df[, ncol(df) - 1]))
+df[,ncol(df)-1] <- factor(df[,ncol(df)-1])
 library(forcats)
 df$sexe <- df$sexe %>%
   as.character() %>%
   fct_recode(Homme = "1", Femme = "2")
 
-# fonction de stat agregee
-fonction_de_stat_agregee <- function(a, b = "moyenne", ...) {
-  if (b == "moyenne") {
-    x <- mean(a, na.rm = TRUE, ...)
-  } else if (b == "ecart-type" || b == "sd") {
-    x <- sd(a, na.rm = TRUE, ...)
-  } else if (b == "variance") {
-    x <- var(a, na.rm = TRUE, ...)
+#fonction de stat agregee
+fonction_de_stat_agregee<-function(a,b="moyenne",...){
+  if (b=="moyenne"){
+    x=mean(a, na.rm = T,...)
+  } else if (b=="ecart-type" | b == "sd"){
+    x = sd(a, na.rm = T, ...)
+  } else if (b=="variance"){
+    x = var(a, na.rm = T, ...)
   }
   return(x)
 }
@@ -76,23 +66,16 @@ fonction_de_stat_agregee(rnorm(10))
 fonction_de_stat_agregee(rnorm(10), "ecart-type")
 fonction_de_stat_agregee(rnorm(10), "variance")
 
-df %>%
-  filter(sexe == "Homme") %>%
-  mutate(aged = as.numeric(aged)) %>%
-  pull(aged) %>%
-  fonction_de_stat_agregee()
-
-df %>%
-  filter(sexe == "Femme") %>%
-  mutate(aged = as.numeric(aged)) %>%
-  pull(aged) %>%
-  fonction_de_stat_agregee()
+fonction_de_stat_agregee(df  %>% filter(sexe == "Homme") %>% mutate(aged = as.numeric(aged)) %>% pull(aged))
+fonction_de_stat_agregee(df %>% filter(sexe == "Femme") %>% mutate(aged = as.numeric(aged)) %>% pull(aged))
 
 api_pwd <- "trotskitueleski$1917"
 
 # modelisation
 # library(MASS)
-df %>%
-  select(surf, cs1, ur, couple, aged) %>%
-  filter(surf != "Z") %>%
-  polr(factor(surf) ~ cs1 + factor(ur), .)
+df3=df%>%select(surf,cs1,ur,couple,aged)%>%filter(surf!="Z")
+df3[,1]=factor(df3$surf, ordered = T)
+df3[,"cs1"]=factor(df3$cs1)
+df3 %>% 
+  filter(couple == "2" & aged>40 & aged<60)
+polr(surf ~ cs1 + factor(ur), df3)
