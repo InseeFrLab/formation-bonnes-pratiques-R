@@ -700,9 +700,6 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 . . . 
 
 ```
-#| eval: false
-#| echo: true
-
 # _targets.R file
 library(targets)
 source("R/functions.R")
