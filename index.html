@@ -1593,22 +1593,20 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li class="fragment">Reporter les <code>library</code> dans le fichier <code>R/functions.R</code> et récupérer les noms des packages pour les mettre dans la section <code>tar_option_set()</code>.</li>
 <li class="fragment">Créer dans <code>R/functions.R</code> les fonctions <code>read_yaml_secret</code> et <code>read_from_parquet</code>:</li>
 </ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="co">#| echo: true</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a>read_yaml_secret <span class="ot">&lt;-</span> <span class="cf">function</span>(path, key) {</span>
-<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">return</span>(yaml<span class="sc">::</span><span class="fu">read_yaml</span>(path)[[key]])</span>
-<span id="cb7-5"><a href="#cb7-5"></a>}</span>
-<span id="cb7-6"><a href="#cb7-6"></a>read_from_parquet <span class="ot">&lt;-</span> <span class="cf">function</span>(path) {</span>
-<span id="cb7-7"><a href="#cb7-7"></a>  df <span class="ot">&lt;-</span> arrow<span class="sc">::</span><span class="fu">read_parquet</span>(</span>
-<span id="cb7-8"><a href="#cb7-8"></a>    path,</span>
-<span id="cb7-9"><a href="#cb7-9"></a>    <span class="at">col_select  =</span> <span class="fu">c</span>(</span>
-<span id="cb7-10"><a href="#cb7-10"></a>      <span class="st">"region"</span>, <span class="st">"aemm"</span>, <span class="st">"aged"</span>, <span class="st">"anai"</span>, <span class="st">"catl"</span>, <span class="st">"cs1"</span>, <span class="st">"cs2"</span>, <span class="st">"cs3"</span>,</span>
-<span id="cb7-11"><a href="#cb7-11"></a>      <span class="st">"couple"</span>, <span class="st">"na38"</span>, <span class="st">"naf08"</span>, <span class="st">"pnai12"</span>, <span class="st">"sexe"</span>, <span class="st">"surf"</span>, <span class="st">"tp"</span>,</span>
-<span id="cb7-12"><a href="#cb7-12"></a>      <span class="st">"trans"</span>, <span class="st">"ur"</span></span>
-<span id="cb7-13"><a href="#cb7-13"></a>    )</span>
-<span id="cb7-14"><a href="#cb7-14"></a>  )</span>
-<span id="cb7-15"><a href="#cb7-15"></a>  <span class="fu">return</span>(df)</span>
-<span id="cb7-16"><a href="#cb7-16"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>read_yaml_secret <span class="ot">&lt;-</span> <span class="cf">function</span>(path, key) {</span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">return</span>(yaml<span class="sc">::</span><span class="fu">read_yaml</span>(path)[[key]])</span>
+<span id="cb7-3"><a href="#cb7-3"></a>}</span>
+<span id="cb7-4"><a href="#cb7-4"></a>read_from_parquet <span class="ot">&lt;-</span> <span class="cf">function</span>(path) {</span>
+<span id="cb7-5"><a href="#cb7-5"></a>  df <span class="ot">&lt;-</span> arrow<span class="sc">::</span><span class="fu">read_parquet</span>(</span>
+<span id="cb7-6"><a href="#cb7-6"></a>    path,</span>
+<span id="cb7-7"><a href="#cb7-7"></a>    <span class="at">col_select  =</span> <span class="fu">c</span>(</span>
+<span id="cb7-8"><a href="#cb7-8"></a>      <span class="st">"region"</span>, <span class="st">"aemm"</span>, <span class="st">"aged"</span>, <span class="st">"anai"</span>, <span class="st">"catl"</span>, <span class="st">"cs1"</span>, <span class="st">"cs2"</span>, <span class="st">"cs3"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9"></a>      <span class="st">"couple"</span>, <span class="st">"na38"</span>, <span class="st">"naf08"</span>, <span class="st">"pnai12"</span>, <span class="st">"sexe"</span>, <span class="st">"surf"</span>, <span class="st">"tp"</span>,</span>
+<span id="cb7-10"><a href="#cb7-10"></a>      <span class="st">"trans"</span>, <span class="st">"ur"</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>    )</span>
+<span id="cb7-12"><a href="#cb7-12"></a>  )</span>
+<span id="cb7-13"><a href="#cb7-13"></a>  <span class="fu">return</span>(df)</span>
+<span id="cb7-14"><a href="#cb7-14"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1792,8 +1790,23 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <ul>
 <li class="fragment">Importer les fonctions du script <code>functions.R</code></li>
 <li class="fragment">Importer les données avec la fonction <code>read_from_parquet</code></li>
-<li class="fragment">Produire la table avec la fonction <code>produce_table_age</code> Seuls le code utilisé et la table doivent appraître dans le rapport final.</li>
+<li class="fragment">Produire la table avec la fonction <code>produce_table_age</code></li>
 </ul></li>
+</ol>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Seuls le code utilisé et la table doivent apparaître dans le rapport final</p>
+</div>
+</div>
+</div>
+<ol start="5" type="1">
 <li class="fragment">Générer le rapport avec le bouton <code>Render</code> et vérifier que l’<em>output</em> correspond à celui attendu.</li>
 </ol>
 </div>
