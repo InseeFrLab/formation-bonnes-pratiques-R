@@ -10,6 +10,7 @@
 2. Donner à la fonction `fonction_de_stat_agregee` un nom plus pertinent.
 3. Dans `script.R`, appeler en début de chaîne ces fonctions avec `source("R/functions.R", encoding = "UTF-8")`.
 4. Documenter la fonction principale au [format attendu](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) par `roxygen2`.
+4. Retirer `rm(list = ls())` au début du script
 5. Redémarrer la session (en faisant `Session > Restart R`).
 6. Tester le bon fonctionnement de `script.R`.
 :::
