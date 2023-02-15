@@ -467,8 +467,9 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 :::
 
-{{< include applications/_application3.qmd >}}
+{{< include applications/_application3a.qmd >}}
 
+{{< include applications/_application3b.qmd >}}
 
 # III- Formats de données
 

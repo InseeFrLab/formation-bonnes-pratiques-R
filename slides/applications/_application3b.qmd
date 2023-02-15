@@ -1,0 +1,10 @@
+## Application 3 (2/2)
+
+:::{.callout-tip collapse="true" icon=false}
+## Création d'un *package*
+
+:::{.incremental}
+WIP
+:::
+
+:::

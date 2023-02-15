@@ -1,8 +1,7 @@
-## Application 3: modularisation
+## Application 3 (1/2)
 
 :::{.callout-tip collapse="true" icon=false}
 ## Modularisation du projet
-
 
 :::{.incremental}
 1. Déplacer toutes les fonctions dans un fichier `R/functions.R`.
@@ -16,6 +15,6 @@
 
 ## Checkpoint
 
-- [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3/script.R)
+- [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3a/script.R)
 
-- [functions.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3/functions.R)
+- [functions.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3a/functions.R)
