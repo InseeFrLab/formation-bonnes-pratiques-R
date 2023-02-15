@@ -1,11 +1,11 @@
-## Exercice 2 (1/5) {.smaller}
+## Application 2 (1/2)
 
 Cette application vise à résoudre une partie des problèmes détectés précédemment.
 
 :warning: La documentation du fichier est disponible [ici](https://www.insee.fr/fr/statistiques/fichier/4171523/contenu_RP2016_indreg.pdf).
 
 :::{.callout-tip collapse="true" icon=false}
-## Travail sur le fichier : modifications de structure
+## (Auto-)documentation du script
 
 :::{.incremental}
 1. Déplacer les `library` pour les mettre tous ensemble au début du script.
@@ -13,63 +13,13 @@ Cette application vise à résoudre une partie des problèmes détectés précé
 2. Le script n'est pas construit dans un ordre logique. Déplacer les parties 
 pour adopter une structure plus logique : 
     + Gestion de l'environnement -> Définition de fonctions -> Import des données -> Retraitement des données -> Statistiques descriptives -> Graphiques -> Modélisation
-On utilisera pour cela les standards de documentation reconnus par RStudio :
+3. Donner des titres aux parties/sous-parties en utilisant les standards de documentation reconnus par RStudio :
     + `# TITRE NIVEAU 1 ------------` et `## TITRE NIVEAU 2 ==========`
 :::
 
 :::
 
-## Exercice 2 (2/5)
-
-Maintenant qu'on y voit plus clair, on va se pencher sur chaque partie du code :
-
-:::{.callout-tip collapse="true" icon=false}
-## Modifications de la partie [import des données]{.orange}
-
-:::{.incremental .smaller}
-4. Faire tourner le code jusqu'à l'import des données. Regarder les données.
-    + Quel problème repérez-vous ?
-    + Corriger le problème en vous aidant de la documentation de `read_csv2`.
-5. Faire tourner le code qui définit la table `df2`. 
-    + Corriger le problème et faire un _commit_.
-:::
-
-:::
-
-## Exercice 2 (3/5)
-
-On se penche maintenant sur la partie retraitement des données :
-
-:::{.callout-tip collapse="true" icon=false}
-## Modifications de la partie [restructuration des données]{.orange}
-
-:::{.incremental}
-
-6. Exécuter la partie de gestion des valeurs manquantes, remarquer des problèmes en regardant code et données.
-  + Utiliser les fonctions `dplyr::mutate`, `dplyr::na_if` et `dplyr::across` pour simplifier le code.
-  + Faire un _commit_
-7. S'occuper de la partie gestion des variables catégorielles.
-  + Repérer des problèmes en regardant les données et les corriger.
-  + Faire un _commit_ 
-8. Changer le type de la variable `aged` afin d'éviter les nombreux `as.numeric(aged)` ultérieurs.
-  + Remplacer toutes les occurrences de `as.numeric(aged)`.
-:::
-
-:::
-
-## Exercice 2 (4/5)
-
-:::{.callout-tip collapse="true" icon=false}
-## Modifications de la partie [statistiques descriptives]{.orange}
-
-:::{.incremental  style="margin-left: 30px;"}
-9. Trouver la cause des différents *warnings* produits par les fonctions de visualisation, et les résoudre.
-10. Proposer une visualisation plus pertinente de la distribution des âges.
-:::
-
-:::
-
-## Exercice 2 (5/5)
+## Application 2 (2/2)
 
 On souhaite maintenant traiter correctement les informations confidentielles (*secrets*).
 
@@ -78,9 +28,9 @@ On souhaite maintenant traiter correctement les informations confidentielles (*s
 
 :::{.incremental style="margin-left: 30px;"}
 
-11. Repérer le jeton d'API dans le code. Retirer le jeton d'API du code et créer à la racine du projet un fichier YAML nommé `secrets.yaml` où vous écrivez ce secret sous la forme `key: value`. 
-12. Dans `script.R`, importer ce YAML (avec `yaml::read_yaml("secrets.yaml")`) pour créer une variable `api_token` ayant cette valeur. 
-13. Ajouter dans `.gitignore` le fichier `secrets.yaml` et indiquer dans le `README.md` de votre projet que les secrets sont stockés dans ce fichier. 
+1. Repérer le jeton d'API dans le code. Retirer le jeton d'API du code et créer à la racine du projet un fichier YAML nommé `secrets.yaml` où vous écrivez ce secret sous la forme `key: value`.
+2. Dans `script.R`, importer ce YAML (avec `yaml::read_yaml("secrets.yaml")`) pour créer une variable `api_token` ayant cette valeur.
+3. Ajouter dans `.gitignore` le fichier `secrets.yaml` et indiquer dans le `README.md` de votre projet que les secrets sont stockés dans ce fichier.
 [:warning: Attention]{.red2} : il ne faut pas committer `secrets.yaml` car le jeton d'API est personnel et secret!
 
 :::
