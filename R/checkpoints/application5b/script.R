@@ -71,6 +71,7 @@ df %>%
   stats_agregees()
 
 stats_age <- df %>%
+  mutate(age = as.numeric(aged)) %>%
   group_by(decennie = decennie_a_partir_annee(age)) %>%
   summarise(n())
 
