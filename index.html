@@ -523,18 +523,14 @@
 <ol start="0" type="1">
 <li class="fragment">Si vous ne l’avez pas fait lors de la première partie de la formation, créer un compte sur <a href="https://github.com/">GitHub</a> et <a href="https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">générer un <em>token</em></a> (jeton d’accès) d’authentification</li>
 <li class="fragment">Créer un nouveau dépôt public sur <a href="https://github.com/">GitHub</a></li>
-<li class="fragment">Lancer un service <code>RStudio</code> sur le <a href="https://datalab.sspcloud.fr/home">Datalab</a></li>
-<li class="fragment">Utiliser un <code>terminal</code> pour activer le stockage des identifiants :
-<ul>
-<li class="fragment"><code>git config --global credential.helper store</code></li>
-</ul></li>
-<li class="fragment">Cloner le dépôt distant sur votre environnement local (<code>Datalab</code>):
+<li class="fragment">Lancer un service <code>RStudio</code>. Dans l’onglet de configuration <code>Git</code> du service, fixer la durée du <code>Cache</code> pour le stockage des identifiants <code>GitHub</code> à une valeur suffisamment élevée</li>
+<li class="fragment">Cloner le dépôt distant sur votre environnement local (ici, le <code>RStudio</code> du <code>Datalab</code>):
 <ul>
 <li class="fragment"><code>File</code> → <code>New project</code> → <code>Version Control</code> → <code>Git</code></li>
 </ul></li>
-<li class="fragment">Créer le script <code>script.R</code> dans votre dépôt en copiant le contenu de <a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/script.R">ce fichier</a></li>
 <li class="fragment">Créer un script <code>get_data.R</code> en copiant le contenu de <a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/get_data.R">ce fichier</a>, puis l’exécuter</li>
-<li class="fragment">Ajouter “individu_reg.*” au fichier <code>.gitignore</code></li>
+<li class="fragment">Créer le script <code>script.R</code> dans votre dépôt en copiant le contenu de <a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/script.R">ce fichier</a></li>
+<li class="fragment">Ajouter la règle “individu_reg.*” au fichier <code>.gitignore</code>. Que signifie-t-elle ?</li>
 <li class="fragment"><em>Commit</em>/<em>push</em> les changements</li>
 </ol>
 </div>
