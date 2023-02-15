@@ -699,7 +699,7 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 . . . 
 
-```r
+```
 #| eval: false
 #| echo: true
 
