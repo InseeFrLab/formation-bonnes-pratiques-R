@@ -1081,10 +1081,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li class="fragment">Déplacer toutes les fonctions dans un fichier <code>R/functions.R</code>.</li>
 <li class="fragment">Donner à la fonction <code>fonction_de_stat_agregee</code> un nom plus pertinent.</li>
 <li class="fragment">Dans <code>script.R</code>, appeler en début de chaîne ces fonctions avec <code>source("R/functions.R", encoding = "UTF-8")</code>.</li>
-<li class="fragment">Documenter la fonction principale au <a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">format attendu</a> par <code>roxygen2</code>.</li>
-<li class="fragment">Retirer <code>rm(list = ls())</code> au début du script</li>
-<li class="fragment"><code>library(tidyverse)</code> n’est pas recommandé. Remplacer par les appels aux packages utilisés qui font partie du <code>tidyverse</code></li>
-<li class="fragment">Redémarrer la session (en faisant <code>Session &gt; Restart R</code>).</li>
+<li class="fragment">Documenter la fonction principale au <a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">format attendu</a> par <code>roxygen2</code>. Ajouter les tests unitaires de la fonction comme exemples d’utilisation et les retirer de <code>script.R</code>.</li>
 <li class="fragment">Tester le bon fonctionnement de <code>script.R</code>.</li>
 </ol>
 </div>
