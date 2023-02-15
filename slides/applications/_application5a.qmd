@@ -2,12 +2,11 @@
 ## Utilisation du fichier `DESCRIPTION`
 
 :::{.incremental}
-1. Analyser le fichier `DESCRIPTION` qui se trouve à la racine du projet. En particulier, rechercher si nécessaire la différence entre `Imports` et `Suggests`.
+1. Créer un fichier `DESCRIPTION` à la racine du projet avec [ce contenu](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5a/DESCRIPTION).
 2. Retirer les `install.packages` au début de `script.R`.
-3. Si vous ne l'avez pas déjà fait, retirer `rm(list = ls())`.
-4. Désinstaller manuellement les packages utilisés dans `script.R` et vérifier que le script ne tourne plus.
-5. Installer les dépendances du projet avec la fonction `devtools::install_deps()`. Lire la documentation pour trouver les paramètres pertinents.
-6. Vérifier que `script.R` tourne à nouveau.
+3. Désinstaller manuellement les packages utilisés dans `script.R`, redémarrer la session `R` et vérifier que le script ne tourne plus.
+4. Installer les dépendances du projet avec la fonction `devtools::install_deps()`. Lire la documentation pour trouver les paramètres pertinents.
+5. Vérifier que `script.R` tourne à nouveau.
 :::
 
 :::

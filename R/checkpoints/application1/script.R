@@ -1,4 +1,3 @@
-rm(list = ls())
 
 if (!require("ggplot2")) install.packages("ggplot2")
 if (!require("stringr")) install.packages("stringr")
@@ -87,7 +86,7 @@ df %>%
   pull(aged) %>%
   fonction_de_stat_agregee()
 
-api_pwd <- "trotskitueleski$1917"
+api_token <- "trotskitueleski$1917"
 
 # modelisation
 df %>%

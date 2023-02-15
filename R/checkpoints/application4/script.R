@@ -11,11 +11,7 @@ source("R/functions.R", encoding = "UTF-8")
 
 # ENVIRONNEMENT -------------------------
 
-api_pwd <- yaml::read_yaml("secrets.yaml")$JETON_API
-
-stats_agregees(rnorm(10))
-stats_agregees(rnorm(10), "ecart-type")
-stats_agregees(rnorm(10), "variance")
+api_token <- yaml::read_yaml("secrets.yaml")$JETON_API
 
 # IMPORT DONNEES ------------------
 

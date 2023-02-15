@@ -1,4 +1,3 @@
-rm(list = ls())
 setwd("/home/onyxia/formation-bonnes-pratiques-R")
 
 if (!require('ggplot2')) install.packages('ggplot2')
@@ -69,7 +68,7 @@ fonction_de_stat_agregee(rnorm(10), "variance")
 fonction_de_stat_agregee(df  %>% filter(sexe == "Homme") %>% mutate(aged = as.numeric(aged)) %>% pull(aged))
 fonction_de_stat_agregee(df %>% filter(sexe == "Femme") %>% mutate(aged = as.numeric(aged)) %>% pull(aged))
 
-api_pwd <- "trotskitueleski$1917"
+api_token <- "trotskitueleski$1917"
 
 # modelisation
 # library(MASS)
