@@ -1,3 +1,8 @@
+if (!require("ggplot2")) install.packages("ggplot2")
+if (!require("stringr")) install.packages("stringr")
+if (!require("dplyr")) install.packages("dplyr")
+if (!require("forcats")) install.packages("forcats")
+
 library(tidyverse)
 library(dplyr)
 library(forcats)
