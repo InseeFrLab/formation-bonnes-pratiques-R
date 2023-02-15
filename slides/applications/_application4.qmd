@@ -3,9 +3,8 @@
 
 :::{.incremental}
 1. Effacer la base `individu_reg.csv` ;
-2. Transformer le script `get_data.R` pour n'utiliser que le format `parquet` ; 
-3. Sauvegarder la table `individu_reg` en format Parquet ;
-4. Modifier la phase d'import de `script.R` pour utiliser `arrow` et lire le fichier Parquet créé précédemment.
+2. Remplacer le script `get_data.R` par [cette version](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application4/get_data.R) pour privilégier que le format `Parquet` ; 
+4. Modifier la phase d'import de `script.R` pour utiliser `arrow::read_parquet` et lire le fichier `Parquet` créé précédemment.
 
 :::
 
