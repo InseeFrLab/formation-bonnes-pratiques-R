@@ -511,8 +511,8 @@
 <p><span class="emoji" data-emoji="six">6️⃣</span> Publication reproductible</p>
 </div>
 </section>
-<section id="exercice-0" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 0</h2>
+<section id="application-0" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 0</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -804,8 +804,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li>L’équivalent <code>Python</code> en <a href="https://ensae-reproductibilite.netlify.app/about/">3A d’ENSAE</a></li>
 </ul>
 </section>
-<section id="exercice-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 1</h2>
+<section id="application-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 1</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -817,8 +817,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 </div>
 </section>
-<section id="exercice-1-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 1</h2>
+<section id="application-1-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 1</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -839,22 +839,6 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li class="fragment">Enregistrer et faire un <em>commit</em> du fichier.</li>
 <li class="fragment">Prenez le temps de regarder le <em>diff</em> du <em>commit</em>. Comprenez-vous les modifications faites par le <em>formatter</em>?</li>
 </ul></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-1-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 1</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Partie 2 : premiers standards de qualité (suite)</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol start="5" type="1">
 <li class="fragment">Refaire tourner le <em>linter</em>. Il reste encore un certain nombre d’erreurs de formattage, car <code>styler</code> est un <em>formatter</em> peu intrusif.</li>
 <li class="fragment">Regarder les différents problèmes repérés par le <em>linter</em>, et en corriger quelques uns (un pour chaque type de problème).</li>
 </ol>
@@ -1015,14 +999,14 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/">eliocamp.github.io</a></li>
 </ul>
 </section>
-<section id="exercice-2-15" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 2 (1/5)</h2>
+<section id="application-2-12" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 2 (1/2)</h2>
 <p>Cette application vise à résoudre une partie des problèmes détectés précédemment.</p>
 <p><span class="emoji" data-emoji="warning">⚠️</span> La documentation du fichier est disponible <a href="https://www.insee.fr/fr/statistiques/fichier/4171523/contenu_RP2016_indreg.pdf">ici</a>.</p>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
-<p><strong>Travail sur le fichier : modifications de structure</strong></p>
+<p><strong>(Auto-)documentation du script</strong></p>
 </div>
 <div class="callout-content">
 <div>
@@ -1033,7 +1017,10 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </ul></li>
 <li class="fragment">Le script n’est pas construit dans un ordre logique. Déplacer les parties pour adopter une structure plus logique :
 <ul>
-<li class="fragment">Gestion de l’environnement -&gt; Définition de fonctions -&gt; Import des données -&gt; Retraitement des données -&gt; Statistiques descriptives -&gt; Graphiques -&gt; Modélisation On utilisera pour cela les standards de documentation reconnus par RStudio :</li>
+<li class="fragment">Gestion de l’environnement -&gt; Définition de fonctions -&gt; Import des données -&gt; Retraitement des données -&gt; Statistiques descriptives -&gt; Graphiques -&gt; Modélisation</li>
+</ul></li>
+<li class="fragment">Donner des titres aux parties/sous-parties en utilisant les standards de documentation reconnus par RStudio :
+<ul>
 <li class="fragment"><code># TITRE NIVEAU 1 ------------</code> et <code>## TITRE NIVEAU 2 ==========</code></li>
 </ul></li>
 </ol>
@@ -1042,87 +1029,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 </div>
 </section>
-<section id="exercice-2-25" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 2 (2/5)</h2>
-<p>Maintenant qu’on y voit plus clair, on va se pencher sur chaque partie du code :</p>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Modifications de la partie <span class="orange">import des données</span></strong></p>
-</div>
-<div class="callout-content">
-<div class="smaller">
-<ol start="4" type="1">
-<li class="fragment">Faire tourner le code jusqu’à l’import des données. Regarder les données.
-<ul>
-<li class="fragment">Quel problème repérez-vous ?</li>
-<li class="fragment">Corriger le problème en vous aidant de la documentation de <code>read_csv2</code>.</li>
-</ul></li>
-<li class="fragment">Faire tourner le code qui définit la table <code>df2</code>.
-<ul>
-<li class="fragment">Corriger le problème et faire un <em>commit</em>.</li>
-</ul></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-2-35" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 2 (3/5)</h2>
-<p>On se penche maintenant sur la partie retraitement des données :</p>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Modifications de la partie <span class="orange">restructuration des données</span></strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol start="6" type="1">
-<li class="fragment">Exécuter la partie de gestion des valeurs manquantes, remarquer des problèmes en regardant code et données.</li>
-</ol>
-<ul>
-<li class="fragment">Utiliser les fonctions <code>dplyr::mutate</code>, <code>dplyr::na_if</code> et <code>dplyr::across</code> pour simplifier le code.</li>
-<li class="fragment">Faire un <em>commit</em></li>
-</ul>
-<ol start="7" type="1">
-<li class="fragment">S’occuper de la partie gestion des variables catégorielles.</li>
-</ol>
-<ul>
-<li class="fragment">Repérer des problèmes en regardant les données et les corriger.</li>
-<li class="fragment">Faire un <em>commit</em></li>
-</ul>
-<ol start="8" type="1">
-<li class="fragment">Changer le type de la variable <code>aged</code> afin d’éviter les nombreux <code>as.numeric(aged)</code> ultérieurs.</li>
-</ol>
-<ul>
-<li class="fragment">Remplacer toutes les occurrences de <code>as.numeric(aged)</code>.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-2-45" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 2 (4/5)</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Modifications de la partie <span class="orange">statistiques descriptives</span></strong></p>
-</div>
-<div class="callout-content">
-<div style="margin-left: 30px;">
-<ol start="9" type="1">
-<li class="fragment">Trouver la cause des différents <em>warnings</em> produits par les fonctions de visualisation, et les résoudre.</li>
-<li class="fragment">Proposer une visualisation plus pertinente de la distribution des âges.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-2-55" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 2 (5/5)</h2>
+<section id="application-2-22" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 2 (2/2)</h2>
 <p>On souhaite maintenant traiter correctement les informations confidentielles (<em>secrets</em>).</p>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
@@ -1131,7 +1039,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 <div class="callout-content">
 <div style="margin-left: 30px;">
-<ol start="11" type="1">
+<ol type="1">
 <li class="fragment">Repérer le jeton d’API dans le code. Retirer le jeton d’API du code et créer à la racine du projet un fichier YAML nommé <code>secrets.yaml</code> où vous écrivez ce secret sous la forme <code>key: value</code>.</li>
 <li class="fragment">Dans <code>script.R</code>, importer ce YAML (avec <code>yaml::read_yaml("secrets.yaml")</code>) pour créer une variable <code>api_token</code> ayant cette valeur.</li>
 <li class="fragment">Ajouter dans <code>.gitignore</code> le fichier <code>secrets.yaml</code> et indiquer dans le <code>README.md</code> de votre projet que les secrets sont stockés dans ce fichier. <span class="red2"><span class="emoji" data-emoji="warning">⚠️</span> Attention</span> : il ne faut pas committer <code>secrets.yaml</code> car le jeton d’API est personnel et secret!</li>
@@ -1147,8 +1055,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application2/script.R">script.R</a></li>
 </ul>
 </section>
-<section id="bilan-de-lexercice" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Bilan de l’exercice</h2>
+<section id="bilan-de-lapplication" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Bilan de l’Application</h2>
 <div>
 <ul>
 <li class="fragment">Un code mal structuré
@@ -1168,8 +1076,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 </div>
 </section>
-<section id="exercice-3-modularisation" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 3: modularisation</h2>
+<section id="application-3-modularisation" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 3: modularisation</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1182,6 +1090,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li class="fragment">Donner à la fonction <code>fonction_de_stat_agregee</code> un nom plus pertinent.</li>
 <li class="fragment">Dans <code>script.R</code>, appeler en début de chaîne ces fonctions avec <code>source("R/functions.R", encoding = "UTF-8")</code>.</li>
 <li class="fragment">Documenter la fonction principale au <a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">format attendu</a> par <code>roxygen2</code>.</li>
+<li class="fragment">Retirer <code>rm(list = ls())</code> au début du script</li>
+<li class="fragment"><code>library(tidyverse)</code> n’est pas recommandé. Remplacer par les appels aux packages utilisés qui font partie du <code>tidyverse</code></li>
 <li class="fragment">Redémarrer la session (en faisant <code>Session &gt; Restart R</code>).</li>
 <li class="fragment">Tester le bon fonctionnement de <code>script.R</code>.</li>
 </ol>
@@ -1238,8 +1148,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </ul>
 </div>
 </section>
-<section id="exercice-4" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 4</h2>
+<section id="application-4" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 4</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1249,9 +1159,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <div>
 <ol type="1">
 <li class="fragment">Effacer la base <code>individu_reg.csv</code> ;</li>
-<li class="fragment">Transformer le script <code>get_data.R</code> pour n’utiliser que le format <code>parquet</code> ;</li>
-<li class="fragment">Sauvegarder la table <code>individu_reg</code> en format Parquet ;</li>
-<li class="fragment">Modifier la phase d’import de <code>script.R</code> pour utiliser <code>arrow</code> et lire le fichier Parquet créé précédemment.</li>
+<li class="fragment">Remplacer le script <code>get_data.R</code> par <a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application4/get_data.R">cette version</a> pour privilégier que le format <code>Parquet</code> ;</li>
+<li class="fragment">Modifier la phase d’import de <code>script.R</code> pour utiliser <code>arrow::read_parquet</code> et lire le fichier <code>Parquet</code> créé précédemment.</li>
 </ol>
 </div>
 </div>
@@ -1306,69 +1215,22 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </ul>
 </div>
 </section>
-<section id="exercice-5a" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 5A</h2>
+<section id="application-5a" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 5A</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
-<p><strong>Création du fichier <code>Description</code></strong></p>
+<p><strong>Utilisation du fichier <code>DESCRIPTION</code></strong></p>
 </div>
 <div class="callout-content">
 <div>
 <ol type="1">
-<li class="fragment">Utiliser <code>usethis::use_description(check_name = FALSE)</code> pour créer le modèle de fichier <code>Description</code>. Un nouveau fichier apparaît dans le dossier RStudio.</li>
-<li class="fragment">Taper <code>usethis::use_package("ggplot2")</code> dans la commande et observer le changement dans ce fichier <code>Description</code>. Faire un <em>commit</em>.</li>
-<li class="fragment">Taper <code>usethis::use_package("tidyverse")</code> et observer le message.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-5a-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 5A</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Modifications du fichier <code>Description</code></strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>On va suivre le conseil des développeurs de <code>tidyverse</code>:
-<ul>
-<li>il vaut mieux retirer <code>tidyverse</code> des dépendances de notre code et plutôt lister uniquement les <em>packages</em> qu’on utilise.</li>
-</ul></li>
-</ul>
-<div>
-<ol start="4" type="1">
-<li class="fragment">Retourner dans <code>script.R</code>. Repartir d’un environnement vide (en relançant <code>R</code>) et supprimer la ligne <code>library(tidyverse)</code></li>
-<li class="fragment">Exécuter les lignes l’une après l’autre. S’il y a une erreur, vérifier la fonction responsable et son package associé.</li>
-<li class="fragment">Vérifier que le code tourne toujours.</li>
-<li class="fragment">Une fois que la liste est stabilisée faire <code>lapply(c("package1", "package2"...), usethis::use_package)</code> pour les ajouter au fichier <code>Description</code>.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercice-5a-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 5A</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Utilisation du fichier <code>Description</code></strong></p>
-</div>
-<div class="callout-content">
-<div style="margin-left: 30px;">
-<ol start="8" type="1">
+<li class="fragment">Analyser le fichier <code>DESCRIPTION</code> qui se trouve à la racine du projet. En particulier, rechercher si nécessaire la différence entre <code>Imports</code> et <code>Suggests</code>.</li>
 <li class="fragment">Retirer les <code>install.packages</code> au début de <code>script.R</code>.</li>
 <li class="fragment">Si vous ne l’avez pas déjà fait, retirer <code>rm(list = ls())</code>.</li>
-<li class="fragment">En option, vous pouvez compléter les autres champs de votre <code>Description</code>.</li>
-<li class="fragment">Committer et pusher les fichiers modifiés.</li>
-<li class="fragment">Créer un nouveau service RStudio, comme dans l’exercice 0.</li>
-<li class="fragment">Cloner le dépôt, comme dans l’exercice 0.</li>
-<li class="fragment">Installer les dépendances du projet avec <code>devtools::install_deps(upgrade = "never")</code>.</li>
-<li class="fragment">Tester <code>get_data.R</code> puis <code>script.R</code>. Tout doit fonctionner (normalement…).</li>
+<li class="fragment">Désinstaller manuellement les packages utilisés dans <code>script.R</code> et vérifier que le script ne tourne plus.</li>
+<li class="fragment">Installer les dépendances du projet avec la fonction <code>devtools::install_deps()</code>. Lire la documentation pour trouver les paramètres pertinents.</li>
+<li class="fragment">Vérifier que <code>script.R</code> tourne à nouveau.</li>
 </ol>
 </div>
 </div>
@@ -1514,8 +1376,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li><p><a href="https://elise.maigne.pages.mia.inra.fr/2021_package_renv/presentation.html#1">Une présentation sur <code>renv</code></a></p></li>
 </ul>
 </section>
-<section id="exercice-5b" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 5B</h2>
+<section id="application-5b" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 5B</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1530,30 +1392,31 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li class="fragment"><p>Installer le <a href="https://gt.rstudio.com/">package <code>gt</code></a> et observer le message dans la console.</p></li>
 <li class="fragment"><p>Dans la partie sur les statistiques descriptives d’âge, ajouter ce code :</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>stats_age <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">group_by</span>(<span class="at">decennie =</span> <span class="fu">decennie_a_partir_annee</span>(age)) <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">summarise</span>(<span class="fu">n</span>())</span>
-<span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a>table_age <span class="ot">&lt;-</span> gt<span class="sc">::</span><span class="fu">gt</span>(stats_age) <span class="sc">%&gt;%</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(</span>
-<span id="cb4-7"><a href="#cb4-7"></a>    <span class="at">title =</span> <span class="st">"Distribution des âges dans notre population"</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a>  gt<span class="sc">::</span><span class="fu">fmt_number</span>(</span>
-<span id="cb4-10"><a href="#cb4-10"></a>    <span class="at">columns =</span> <span class="st">`</span><span class="at">n()</span><span class="st">`</span>,</span>
-<span id="cb4-11"><a href="#cb4-11"></a>    <span class="at">sep_mark =</span> <span class="st">" "</span>,</span>
-<span id="cb4-12"><a href="#cb4-12"></a>    <span class="at">decimals =</span> <span class="dv">0</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a>  gt<span class="sc">::</span><span class="fu">cols_label</span>(</span>
-<span id="cb4-15"><a href="#cb4-15"></a>    <span class="at">decennie =</span> <span class="st">"Tranche d'âge"</span>,</span>
-<span id="cb4-16"><a href="#cb4-16"></a>    <span class="st">`</span><span class="at">n()</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Population"</span></span>
-<span id="cb4-17"><a href="#cb4-17"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">mutate</span>(<span class="at">age =</span> <span class="fu">as.numeric</span>(aged))</span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">group_by</span>(<span class="at">decennie =</span> <span class="fu">decennie_a_partir_annee</span>(age)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">summarise</span>(<span class="fu">n</span>())</span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a>table_age <span class="ot">&lt;-</span> gt<span class="sc">::</span><span class="fu">gt</span>(stats_age) <span class="sc">%&gt;%</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>  gt<span class="sc">::</span><span class="fu">tab_header</span>(</span>
+<span id="cb4-8"><a href="#cb4-8"></a>    <span class="at">title =</span> <span class="st">"Distribution des âges dans notre population"</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>  gt<span class="sc">::</span><span class="fu">fmt_number</span>(</span>
+<span id="cb4-11"><a href="#cb4-11"></a>    <span class="at">columns =</span> <span class="st">`</span><span class="at">n()</span><span class="st">`</span>,</span>
+<span id="cb4-12"><a href="#cb4-12"></a>    <span class="at">sep_mark =</span> <span class="st">" "</span>,</span>
+<span id="cb4-13"><a href="#cb4-13"></a>    <span class="at">decimals =</span> <span class="dv">0</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a>  gt<span class="sc">::</span><span class="fu">cols_label</span>(</span>
+<span id="cb4-16"><a href="#cb4-16"></a>    <span class="at">decennie =</span> <span class="st">"Tranche d'âge"</span>,</span>
+<span id="cb4-17"><a href="#cb4-17"></a>    <span class="st">`</span><span class="at">n()</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Population"</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercice-5b-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 5B</h2>
+<section id="application-5b-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 5B</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1565,7 +1428,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li class="fragment">Dans la console, faire <code>renv::status()</code> et observer le message.</li>
 <li class="fragment">Effectuer <code>renv::snapshot()</code> pour intégrer les nouveaux packages au <em>lockfile</em></li>
 <li class="fragment">Faire un <em>commit</em> et un <em>push</em> des fichiers <code>script.R</code>, <code>.Rprofile</code>, <code>renv.lock</code> et du dossier <code>renv/</code>. <em>Push</em>.</li>
-<li class="fragment">Ouvrir un nouveau service <code>RStudio</code> sur le <code>SSPCloud</code> et cloner le projet dans les mêmes conditions que l’exercice 0. Regarder les messages dans la console.</li>
+<li class="fragment">Ouvrir un nouveau service <code>RStudio</code> sur le <code>SSPCloud</code> et cloner le projet dans les mêmes conditions que l’Application 0. Regarder les messages dans la console.</li>
 <li class="fragment">Exécuter <code>renv::restore()</code> pour installer les packages nécessaires à l’exécution du projet.</li>
 <li class="fragment">Vérifier que le <code>script.R</code> s’exécute correctement dans ce nouvel environnement.</li>
 </ol>
@@ -1590,6 +1453,14 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <ul>
 <li>Une analyse de données ou une chaîne de production font intervenir des <span class="orange"><strong>étapes standardisées</strong></span></li>
 </ul>
+
+<img data-src="https://astrakhan.fr/wp-content/uploads/2020/10/Data-Engineering.png" class="r-stretch"><p><a href="https://astrakhan.fr/blog/formation-au-data-engineering-une-nouvelle-offre-dastrakhan/">Source</a></p>
+</section>
+<section id="motivations-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Motivations</h2>
+<ul>
+<li>Une analyse de données ou une chaîne de production font intervenir des <span class="orange"><strong>étapes standardisées</strong></span></li>
+</ul>
 <div>
 <ul>
 <li class="fragment">Modéliser ces étapes sous forme de <span class="orange"><strong>pipeline (<em>direct acyclic graph</em>)</strong></span> a plusieurs avantages :
@@ -1602,7 +1473,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 </section>
 <section id="targets" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>targets</h2>
+<h2><code>targets</code></h2>
 <ul>
 <li><code>targets</code> est un <em>framework</em> de modélisation de <em>pipelines</em> spécifiquement dédié aux projets <code>R</code>.</li>
 </ul>
@@ -1616,11 +1487,15 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </ul>
 </div>
 </section>
-<section id="utilisation-de-targets" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Utilisation de <code>targets</code></h2>
-</section>
 <section id="un-projet-minimaliste" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2><span class="emoji" data-emoji="one">1️⃣</span> Un projet minimaliste</h2>
+<ul>
+<li>Données et scripts <code>R</code>,</li>
+<li>Un nouveau fichier: <code>_targets.R</code>
+<ul>
+<li>Contrôle le comportement de notre chaine de traitement</li>
+</ul></li>
+</ul>
 <pre><code>├── _targets.R
 ├── data
 │   ├── raw
@@ -1634,18 +1509,24 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <ul>
 <li class="fragment">Le fichier <code>_targets.R</code> doit satisfaire plusieurs conditions :
 <ol type="1">
-<li class="fragment">Charger le_package_<code>targets</code> ;</li>
+<li class="fragment">Charger le <em>package</em> <code>targets</code> ;</li>
 <li class="fragment">Charger dans l’environnement les fonctions nécessaires ;</li>
-<li class="fragment">Déclarer les_packages_nécessaires aux différentes étapes ;</li>
+<li class="fragment">Déclarer les <em>packages</em> nécessaires aux différentes étapes ;</li>
 <li class="fragment">Définir le <em>pipeline</em>.</li>
 </ol></li>
 </ul>
 </div>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/targets.png" height="250"></p>
-</figure>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Les fonctions <code>get_data</code>, <code>fit_model</code> et <code>plot_model</code> sont définies dans 📁 <code>R/functions.R</code></p>
+</div>
 </div>
 </div>
 </section>
@@ -1660,10 +1541,10 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </figure>
 </div>
 </section>
-<section id="exécuter-le-pipeline" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<section id="exécuter-le-pipeline" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
 <h2><span class="emoji" data-emoji="three">3️⃣</span> Exécuter le <em>pipeline</em></h2>
 <ul>
-<li>La fonction <code>tar_make</code> exécute le <em>pipeline</em></li>
+<li>La fonction <code>tar_make</code> exécute le <em>pipeline</em> défini dans <code>_targets.R</code></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1671,11 +1552,11 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </figure>
 </div>
 <ul>
-<li>Lors des exécutions suivantes, <code>targets</code> saute automatiquement les étapes qui n’ont pas changé</li>
+<li>💡 Lors des exécutions suivantes, <code>targets</code> saute automatiquement les étapes qui n’ont pas changé</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/pipeline_run2.png" height="100"></p>
+<p><img data-src="img/pipeline_run2.png" height="150"></p>
 </figure>
 </div>
 </section>
@@ -1686,8 +1567,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li><p>La <a href="https://www.book.utilitr.org/targets.html">fiche UtilitR dédiée à <code>targets</code></a></p></li>
 </ul>
 </section>
-<section id="exercice-6" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 6</h2>
+<section id="application-6" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 6</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1697,19 +1578,34 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <div>
 <ol start="0" type="1">
 <li class="fragment">Installer le package <code>targets</code>.</li>
-<li class="fragment">Créer un fichier <code>_targets.R</code> à la racine du dépôt, dans la documentation.</li>
-<li class="fragment">Ajouter <code>_targets/</code> dans le .gitignore.</li>
-<li class="fragment">Commençons par les dépendances. Reporter les <code>library</code> dans le fichier <code>R/functions.R</code> et récupérer les noms des packages pour les mettre dans la section <code>tar_option_set()</code>.</li>
-<li class="fragment">Créer dans <code>R/functions.R</code> une fonction <code>read_yaml_secret</code> qui prend en arguments le chemin du fichier et la clé associée au secret, et renvoie le jeton de l’API.</li>
-<li class="fragment">Créer dans <code>R/functions.R</code> une fonction <code>read_from_parquet</code> qui prend en argument le chemin du fichier et renvoie notre dataframe de départ.</li>
+<li class="fragment">Créer un fichier <code>_targets.R</code> à la racine du dépôt, à partir de <a href="https://books.ropensci.org/targets/walkthrough.html">l’exemple</a> dans la documentation.</li>
+<li class="fragment">Ajouter <code>_targets/</code> dans le <code>.gitignore</code>.</li>
+<li class="fragment">Reporter les <code>library</code> dans le fichier <code>R/functions.R</code> et récupérer les noms des packages pour les mettre dans la section <code>tar_option_set()</code>.</li>
+<li class="fragment">Créer dans <code>R/functions.R</code> les fonctions <code>read_yaml_secret</code> et <code>read_from_parquet</code>:</li>
 </ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co">#| echo: true</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>read_yaml_secret <span class="ot">&lt;-</span> <span class="cf">function</span>(path, key) {</span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">return</span>(yaml<span class="sc">::</span><span class="fu">read_yaml</span>(path)[[key]])</span>
+<span id="cb6-5"><a href="#cb6-5"></a>}</span>
+<span id="cb6-6"><a href="#cb6-6"></a>read_from_parquet <span class="ot">&lt;-</span> <span class="cf">function</span>(path) {</span>
+<span id="cb6-7"><a href="#cb6-7"></a>  df <span class="ot">&lt;-</span> arrow<span class="sc">::</span><span class="fu">read_parquet</span>(</span>
+<span id="cb6-8"><a href="#cb6-8"></a>    path,</span>
+<span id="cb6-9"><a href="#cb6-9"></a>    <span class="at">col_select  =</span> <span class="fu">c</span>(</span>
+<span id="cb6-10"><a href="#cb6-10"></a>      <span class="st">"region"</span>, <span class="st">"aemm"</span>, <span class="st">"aged"</span>, <span class="st">"anai"</span>, <span class="st">"catl"</span>, <span class="st">"cs1"</span>, <span class="st">"cs2"</span>, <span class="st">"cs3"</span>,</span>
+<span id="cb6-11"><a href="#cb6-11"></a>      <span class="st">"couple"</span>, <span class="st">"na38"</span>, <span class="st">"naf08"</span>, <span class="st">"pnai12"</span>, <span class="st">"sexe"</span>, <span class="st">"surf"</span>, <span class="st">"tp"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12"></a>      <span class="st">"trans"</span>, <span class="st">"ur"</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>    )</span>
+<span id="cb6-14"><a href="#cb6-14"></a>  )</span>
+<span id="cb6-15"><a href="#cb6-15"></a>  <span class="fu">return</span>(df)</span>
+<span id="cb6-16"><a href="#cb6-16"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercice-6-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 6</h2>
+<section id="application-6-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 6</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1718,7 +1614,16 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <div class="callout-content">
 <div>
 <ol start="6" type="1">
-<li class="fragment">A partir du modèle dans la documentation de <code>targets</code>, créer les quatres premières cibles (<em>targets</em>): respectivement, les deux fichiers (utiliser l’argument <code>format = 'file'</code>) et les deux objets <code>R</code> construits à partir des fonctions <code>read_yaml_secret</code> et <code>read_from_parquet</code>. Pour cette dernière, utiliser le <code>format = 'parquet'</code>.</li>
+<li class="fragment">Créer les deux premières cibles (<em>targets</em>):
+<ul>
+<li class="fragment">Créer <code>file_token</code> et <code>file_data</code> stockant les chemins de nos fichiers en entrée</li>
+<li class="fragment">Ne pas oublier l’argument <code>format = 'file'</code> dans <code>tar_target</code></li>
+</ul></li>
+<li class="fragment">Créer les deux cibles suivantes <code>R</code>
+<ul>
+<li class="fragment">Utiliser les fonctions <code>read_yaml_secret</code> (l’appeler <code>token</code>) et <code>read_from_parquet</code> (l’appeler <code>data</code>).</li>
+<li class="fragment">Pour <code>input_data</code>, utiliser l’argument <code>format = 'parquet'</code> dans <code>tar_target</code>.</li>
+</ul></li>
 <li class="fragment">Visualiser les relations entre objets de notre <em>pipeline</em> à partir de <code>tar_visnetwork()</code>.</li>
 <li class="fragment">Exécuter <code>tar_make()</code> dans la console et observer le changement d’état avec <code>tar_visnetwork()</code>.</li>
 </ol>
@@ -1727,8 +1632,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 </div>
 </section>
-<section id="exercice-6-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 6</h2>
+<section id="application-6-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 6</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1840,8 +1745,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li><p>La <a href="https://quarto.org/">documentation officielle de <code>quarto</code></a></p></li>
 </ul>
 </section>
-<section id="exercice-7" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 7</h2>
+<section id="application-7" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 7</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1853,19 +1758,18 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li class="fragment">Cliquer sur <code>File &gt; New file &gt; Quarto document</code>:
 <ul>
 <li class="fragment">Donner un titre et un.e auteur.e au rapport</li>
-<li class="fragment">Choisir <code>pdf</code> comme format de sortie</li>
+<li class="fragment">Choisir <code>HTML</code> comme format de sortie</li>
 <li class="fragment">Décocher la case <code>Use visual markdown editor</code></li>
 </ul></li>
 <li class="fragment">Sauvegarder le fichier sous le nom <code>report.qmd</code>.</li>
-<li class="fragment">Pour pouvoir générer un document <code>PDF</code>, une distribution de <code>LaTeX</code> est nécessaire. Lancer la commande <code>tinytex::install_tinytex()</code> pour l’installer, puis redémarrer l’environnement R (<code>File</code> -&gt; <code>Quit Session</code>) pour mettre l’environnement à jour.</li>
 </ol>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercice-7-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Exercice 7</h2>
+<section id="application-7-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 7</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
