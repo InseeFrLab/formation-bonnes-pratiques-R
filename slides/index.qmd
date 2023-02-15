@@ -697,6 +697,23 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
   4. Définir le *pipeline*.
 :::
 
+. . . 
+
+```r
+#| eval: false
+#| echo: true
+# _targets.R file
+library(targets)
+source("R/functions.R")
+tar_option_set(packages = c("readr", "dplyr", "ggplot2"))
+list(
+  tar_target(file, "data.csv", format = "file"),
+  tar_target(data, get_data(file)),
+  tar_target(model, fit_model(data)),
+  tar_target(plot, plot_model(model, data))
+)
+```
+
 ::: {.callout-note}
 Les fonctions `get_data`, `fit_model` et `plot_model` sont définies
 dans 📁 `R/functions.R`
