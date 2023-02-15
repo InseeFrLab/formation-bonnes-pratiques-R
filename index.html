@@ -1516,6 +1516,19 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </ol></li>
 </ul>
 </div>
+<div class="fragment">
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co">#| echo: true</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># _targets.R file</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">library</span>(targets)</span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="fu">source</span>(<span class="st">"R/functions.R"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="fu">tar_option_set</span>(<span class="at">packages =</span> <span class="fu">c</span>(<span class="st">"readr"</span>, <span class="st">"dplyr"</span>, <span class="st">"ggplot2"</span>))</span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="fu">list</span>(</span>
+<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">tar_target</span>(file, <span class="st">"data.csv"</span>, <span class="at">format =</span> <span class="st">"file"</span>),</span>
+<span id="cb6-9"><a href="#cb6-9"></a>  <span class="fu">tar_target</span>(data, <span class="fu">get_data</span>(file)),</span>
+<span id="cb6-10"><a href="#cb6-10"></a>  <span class="fu">tar_target</span>(model, <span class="fu">fit_model</span>(data)),</span>
+<span id="cb6-11"><a href="#cb6-11"></a>  <span class="fu">tar_target</span>(plot, <span class="fu">plot_model</span>(model, data))</span>
+<span id="cb6-12"><a href="#cb6-12"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1526,6 +1539,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 <div class="callout-content">
 <p>Les fonctions <code>get_data</code>, <code>fit_model</code> et <code>plot_model</code> sont définies dans 📁 <code>R/functions.R</code></p>
+</div>
 </div>
 </div>
 </div>
@@ -1583,22 +1597,22 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li class="fragment">Reporter les <code>library</code> dans le fichier <code>R/functions.R</code> et récupérer les noms des packages pour les mettre dans la section <code>tar_option_set()</code>.</li>
 <li class="fragment">Créer dans <code>R/functions.R</code> les fonctions <code>read_yaml_secret</code> et <code>read_from_parquet</code>:</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="co">#| echo: true</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>read_yaml_secret <span class="ot">&lt;-</span> <span class="cf">function</span>(path, key) {</span>
-<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">return</span>(yaml<span class="sc">::</span><span class="fu">read_yaml</span>(path)[[key]])</span>
-<span id="cb6-5"><a href="#cb6-5"></a>}</span>
-<span id="cb6-6"><a href="#cb6-6"></a>read_from_parquet <span class="ot">&lt;-</span> <span class="cf">function</span>(path) {</span>
-<span id="cb6-7"><a href="#cb6-7"></a>  df <span class="ot">&lt;-</span> arrow<span class="sc">::</span><span class="fu">read_parquet</span>(</span>
-<span id="cb6-8"><a href="#cb6-8"></a>    path,</span>
-<span id="cb6-9"><a href="#cb6-9"></a>    <span class="at">col_select  =</span> <span class="fu">c</span>(</span>
-<span id="cb6-10"><a href="#cb6-10"></a>      <span class="st">"region"</span>, <span class="st">"aemm"</span>, <span class="st">"aged"</span>, <span class="st">"anai"</span>, <span class="st">"catl"</span>, <span class="st">"cs1"</span>, <span class="st">"cs2"</span>, <span class="st">"cs3"</span>,</span>
-<span id="cb6-11"><a href="#cb6-11"></a>      <span class="st">"couple"</span>, <span class="st">"na38"</span>, <span class="st">"naf08"</span>, <span class="st">"pnai12"</span>, <span class="st">"sexe"</span>, <span class="st">"surf"</span>, <span class="st">"tp"</span>,</span>
-<span id="cb6-12"><a href="#cb6-12"></a>      <span class="st">"trans"</span>, <span class="st">"ur"</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a>    )</span>
-<span id="cb6-14"><a href="#cb6-14"></a>  )</span>
-<span id="cb6-15"><a href="#cb6-15"></a>  <span class="fu">return</span>(df)</span>
-<span id="cb6-16"><a href="#cb6-16"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>read_yaml_secret <span class="ot">&lt;-</span> <span class="cf">function</span>(path, key) {</span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">return</span>(yaml<span class="sc">::</span><span class="fu">read_yaml</span>(path)[[key]])</span>
+<span id="cb7-5"><a href="#cb7-5"></a>}</span>
+<span id="cb7-6"><a href="#cb7-6"></a>read_from_parquet <span class="ot">&lt;-</span> <span class="cf">function</span>(path) {</span>
+<span id="cb7-7"><a href="#cb7-7"></a>  df <span class="ot">&lt;-</span> arrow<span class="sc">::</span><span class="fu">read_parquet</span>(</span>
+<span id="cb7-8"><a href="#cb7-8"></a>    path,</span>
+<span id="cb7-9"><a href="#cb7-9"></a>    <span class="at">col_select  =</span> <span class="fu">c</span>(</span>
+<span id="cb7-10"><a href="#cb7-10"></a>      <span class="st">"region"</span>, <span class="st">"aemm"</span>, <span class="st">"aged"</span>, <span class="st">"anai"</span>, <span class="st">"catl"</span>, <span class="st">"cs1"</span>, <span class="st">"cs2"</span>, <span class="st">"cs3"</span>,</span>
+<span id="cb7-11"><a href="#cb7-11"></a>      <span class="st">"couple"</span>, <span class="st">"na38"</span>, <span class="st">"naf08"</span>, <span class="st">"pnai12"</span>, <span class="st">"sexe"</span>, <span class="st">"surf"</span>, <span class="st">"tp"</span>,</span>
+<span id="cb7-12"><a href="#cb7-12"></a>      <span class="st">"trans"</span>, <span class="st">"ur"</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a>    )</span>
+<span id="cb7-14"><a href="#cb7-14"></a>  )</span>
+<span id="cb7-15"><a href="#cb7-15"></a>  <span class="fu">return</span>(df)</span>
+<span id="cb7-16"><a href="#cb7-16"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
