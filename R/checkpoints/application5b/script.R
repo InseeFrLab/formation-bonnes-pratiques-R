@@ -26,8 +26,6 @@ df <- arrow::read_parquet(
 
 # RETRAITEMENT DONNEES -------------------
 
-df[, ncol(df) - 1] <- factor(pull(df[, ncol(df) - 1]))
-
 df$sexe <- df$sexe %>%
   as.character() %>%
   fct_recode(Homme = "1", Femme = "2")
@@ -57,18 +55,6 @@ df2 <- df %>%
   summarise(x = n()) %>%
   group_by(couple) %>%
   mutate(y = 100 * x / sum(x))
-
-df %>%
-  filter(sexe == "Homme") %>%
-  mutate(aged = as.numeric(aged)) %>%
-  pull(aged) %>%
-  stats_agregees()
-
-df %>%
-  filter(sexe == "Femme") %>%
-  mutate(aged = as.numeric(aged)) %>%
-  pull(aged) %>%
-  stats_agregees()
 
 stats_age <- df %>%
   mutate(age = as.numeric(aged)) %>%
