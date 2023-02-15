@@ -11,8 +11,6 @@ récupérer les noms des packages pour les mettre dans la section `tar_option_se
 4. Créer dans `R/functions.R` les fonctions `read_yaml_secret` et `read_from_parquet`:
 
   ```r
-  #| eval: false
-  #| echo: true
   read_yaml_secret <- function(path, key) {
     return(yaml::read_yaml(path)[[key]])
   }

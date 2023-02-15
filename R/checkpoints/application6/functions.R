@@ -55,7 +55,8 @@ read_from_parquet <- function(path) {
 produce_table_age <- function(df) {
 
   stats_age <- df %>%
-    group_by(decennie = decennie_a_partir_annee(aged)) %>%
+    mutate(age = as.numeric(aged)) %>%
+    group_by(decennie = decennie_a_partir_annee(age)) %>%
     summarise(n_indiv = n(),
               n_femmes = sum(sexe == "Femme"),
               n_hommes = sum(sexe == "Homme")
