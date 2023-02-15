@@ -9,7 +9,6 @@ Cette application vise à résoudre une partie des problèmes détectés précé
 
 :::{.incremental}
 1. Déplacer les `library` pour les mettre tous ensemble au début du script.
-    + Attention à l'ordre des _packages_ (`MASS` après `tidyverse` notamment).
 2. Le script n'est pas construit dans un ordre logique. Déplacer les parties 
 pour adopter une structure plus logique : 
     + Gestion de l'environnement -> Définition de fonctions -> Import des données -> Retraitement des données -> Statistiques descriptives -> Graphiques -> Modélisation
