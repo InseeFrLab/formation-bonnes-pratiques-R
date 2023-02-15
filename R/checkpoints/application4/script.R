@@ -67,13 +67,13 @@ df %>%
   filter(sexe == "Homme") %>%
   mutate(aged = as.numeric(aged)) %>%
   pull(aged) %>%
-  fonction_de_stat_agregee()
+  stats_agregees()
 
 df %>%
   filter(sexe == "Femme") %>%
   mutate(aged = as.numeric(aged)) %>%
   pull(aged) %>%
-  fonction_de_stat_agregee()
+  stats_agregees()
 
 
 # GRAPHIQUES -----------
