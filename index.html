@@ -1147,9 +1147,9 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <div class="callout-content">
 <div>
 <ol type="1">
-<li class="fragment">Effacer la base <code>individu_reg.csv</code> ;</li>
-<li class="fragment">Remplacer le script <code>get_data.R</code> par <a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application4/get_data.R">cette version</a> pour privilégier que le format <code>Parquet</code> ;</li>
-<li class="fragment">Modifier la phase d’import de <code>script.R</code> pour utiliser <code>arrow::read_parquet</code> et lire le fichier <code>Parquet</code> créé précédemment.</li>
+<li class="fragment">Effacer la base <code>individu_reg.csv</code></li>
+<li class="fragment">Remplacer le script <code>get_data.R</code> par <a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application4/get_data.R">cette version</a> pour privilégier que le format <code>Parquet</code></li>
+<li class="fragment">Modifier la phase d’import de <code>script.R</code> pour utiliser <code>arrow::read_parquet</code> et lire le fichier <code>Parquet</code> créé précédemment</li>
 </ol>
 </div>
 </div>
@@ -1214,10 +1214,9 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <div class="callout-content">
 <div>
 <ol type="1">
-<li class="fragment">Analyser le fichier <code>DESCRIPTION</code> qui se trouve à la racine du projet. En particulier, rechercher si nécessaire la différence entre <code>Imports</code> et <code>Suggests</code>.</li>
+<li class="fragment">Créer un fichier <code>DESCRIPTION</code> à la racine du projet avec <a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5a/DESCRIPTION">ce contenu</a>.</li>
 <li class="fragment">Retirer les <code>install.packages</code> au début de <code>script.R</code>.</li>
-<li class="fragment">Si vous ne l’avez pas déjà fait, retirer <code>rm(list = ls())</code>.</li>
-<li class="fragment">Désinstaller manuellement les packages utilisés dans <code>script.R</code> et vérifier que le script ne tourne plus.</li>
+<li class="fragment">Désinstaller manuellement les packages utilisés dans <code>script.R</code>, redémarrer la session <code>R</code> et vérifier que le script ne tourne plus.</li>
 <li class="fragment">Installer les dépendances du projet avec la fonction <code>devtools::install_deps()</code>. Lire la documentation pour trouver les paramètres pertinents.</li>
 <li class="fragment">Vérifier que <code>script.R</code> tourne à nouveau.</li>
 </ol>
