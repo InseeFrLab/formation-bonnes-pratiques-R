@@ -21,16 +21,6 @@ Un code reproductible est avant toute chose un code fonctionnel ! Repérez les e
 4. Nettoyer le fichier `styler::style_file("R/script.R")`.
     + Enregistrer et faire un _commit_ du fichier.
     + Prenez le temps de regarder le _diff_ du _commit_. Comprenez-vous les modifications faites par le _formatter_?
-:::
-
-:::
-
-## Exercice 1
-
-:::{.callout-tip collapse="true" icon=false}
-## Partie 2 : premiers standards de qualité (suite)
-
-:::{.incremental}
 5. Refaire tourner le _linter_. Il reste encore un certain nombre d'erreurs de formattage, car `styler` est un _formatter_ peu intrusif.
 6. Regarder les différents problèmes repérés par le _linter_, et en corriger quelques uns (un pour chaque type de problème).
 :::
