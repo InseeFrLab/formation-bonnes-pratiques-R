@@ -1,0 +1,6 @@
+
+:::{.callout-tip collapse="true" icon=false}
+## Conteneurisation (exercice facultatif)
+
+WIP
+:::

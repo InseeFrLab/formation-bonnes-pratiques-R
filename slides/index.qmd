@@ -638,7 +638,10 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 {{< include applications/_application5b.qmd >}}
 
 
+## Pour aller plus loin: la conteneurisation
 
+
+{{< include applications/_application5c.qmd >}}
 
 
 # V- *Pipelines* de données
