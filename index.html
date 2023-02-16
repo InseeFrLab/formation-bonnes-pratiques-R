@@ -825,11 +825,11 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <ol type="1">
 <li class="fragment">Installer les <em>packages</em> <code>R</code> <a href="https://github.com/r-lib/lintr"><code>lintr</code></a> et <a href="https://github.com/r-lib/styler"><code>styler</code></a>.</li>
 <li class="fragment">Définir le <em>linter</em> à utiliser comme étant de type <code>tidyverse</code> : <code>lintr::use_lintr(type = "tidyverse")</code></li>
-<li class="fragment">Diagnostiquer le script <code>script.R</code> : <code>lintr::lint("R/script.R")</code>.
+<li class="fragment">Diagnostiquer le script <code>script.R</code> : <code>lintr::lint("script.R")</code>.
 <ul>
 <li class="fragment">Comprenez-vous la nature des problèmes détectés par le <em>linter</em>?</li>
 </ul></li>
-<li class="fragment">Appliquer le _<code>styler</code><em>formatter</em> au <code>script.R</code> : <code>styler::style_file("R/script.R")</code>.
+<li class="fragment">Appliquer le _<code>styler</code><em>formatter</em> au <code>script.R</code> : <code>styler::style_file("script.R")</code>.
 <ul>
 <li class="fragment">Enregistrer et faire un <em>commit</em> du fichier.</li>
 <li class="fragment">Prenez le temps de regarder le <em>diff</em> du <em>commit</em>. Comprenez-vous les modifications faites par le <em>formatter</em>?</li>
