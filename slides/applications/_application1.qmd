@@ -17,7 +17,7 @@ Un code reproductible est avant toute chose un code fonctionnel ! Repérez les e
 2. Définir le _linter_ à utiliser comme étant de type `tidyverse` : `lintr::use_lintr(type = "tidyverse")`
 3. Diagnostiquer le script `script.R` : `lintr::lint("script.R")`.
     + Comprenez-vous la nature des problèmes détectés par le _linter_?
-4. Appliquer le _`styler`_formatter_ au `script.R` : `styler::style_file("script.R")`.
+4. Appliquer le _formatter_ au `script.R` : `styler::style_file("script.R")`.
     + Enregistrer et faire un _commit_ du fichier.
     + Prenez le temps de regarder le _diff_ du _commit_. Comprenez-vous les modifications faites par le _formatter_?
 5. Refaire tourner le _linter_. Il reste encore un certain nombre d'erreurs de formattage, car `styler` est un _formatter_ peu intrusif.
