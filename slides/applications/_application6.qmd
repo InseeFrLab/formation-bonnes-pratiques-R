@@ -40,11 +40,11 @@ récupérer les noms des packages pour les mettre dans la section `tar_option_se
 
 6. Créer les deux premières
 cibles (_targets_): 
-    + Créer `file_token` et `file_data` stockant les chemins de nos fichiers en entrée
-    + Ne pas oublier l'argument `format = 'file'` dans `tar_target`
+    + Créer les _targets_ `file_token` et `file_data` stockant les chemins de nos fichiers en entrée
+    + ⚠️ Ne pas oublier l'argument `format = 'file'` dans `tar_target`
 7. Créer les deux cibles suivantes `R`
-    + Utiliser les fonctions `read_yaml_secret` (l'appeler `token`) et `read_from_parquet` (l'appeler `data`).
-    + Pour `input_data`, utiliser l'argument `format = 'parquet'` dans `tar_target`.
+    + Créer `token` et `data` à partir, respectivement, de `read_yaml_secret` et `read_from_parquet`.
+    + Pour `data`, utiliser l'argument `format = 'parquet'` dans `tar_target`.
 7. Visualiser les relations entre objets de notre _pipeline_ à partir de `tar_visnetwork()`.
 8. Exécuter `tar_make()` dans la console et observer le changement d'état avec `tar_visnetwork()`.
 :::
