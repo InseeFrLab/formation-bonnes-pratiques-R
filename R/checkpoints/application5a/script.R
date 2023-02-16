@@ -22,8 +22,6 @@ df <- arrow::read_parquet(
 
 # RETRAITEMENT DONNEES -------------------
 
-df[, ncol(df) - 1] <- factor(pull(df[, ncol(df) - 1]))
-
 df$sexe <- df$sexe %>%
   as.character() %>%
   fct_recode(Homme = "1", Femme = "2")
