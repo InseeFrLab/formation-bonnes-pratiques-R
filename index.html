@@ -1445,6 +1445,19 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <ul>
 <li><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5b/script.R">script.R</a></li>
 </ul>
+</section>
+<section id="pour-aller-plus-loin-la-conteneurisation" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Pour aller plus loin: la conteneurisation</h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Conteneurisation (exercice facultatif)</strong></p>
+</div>
+<div class="callout-content">
+<p>WIP</p>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="v--pipelines-de-données" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
@@ -1520,18 +1533,16 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </ul>
 </div>
 <div class="fragment">
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="co">#| echo: true</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># _targets.R file</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">library</span>(targets)</span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="fu">source</span>(<span class="st">"R/functions.R"</span>)</span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="fu">tar_option_set</span>(<span class="at">packages =</span> <span class="fu">c</span>(<span class="st">"readr"</span>, <span class="st">"dplyr"</span>, <span class="st">"ggplot2"</span>))</span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="fu">list</span>(</span>
-<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">tar_target</span>(file, <span class="st">"data.csv"</span>, <span class="at">format =</span> <span class="st">"file"</span>),</span>
-<span id="cb6-9"><a href="#cb6-9"></a>  <span class="fu">tar_target</span>(data, <span class="fu">get_data</span>(file)),</span>
-<span id="cb6-10"><a href="#cb6-10"></a>  <span class="fu">tar_target</span>(model, <span class="fu">fit_model</span>(data)),</span>
-<span id="cb6-11"><a href="#cb6-11"></a>  <span class="fu">tar_target</span>(plot, <span class="fu">plot_model</span>(model, data))</span>
-<span id="cb6-12"><a href="#cb6-12"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># _targets.R file</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">library</span>(targets)</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">source</span>(<span class="st">"R/functions.R"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">tar_option_set</span>(<span class="at">packages =</span> <span class="fu">c</span>(<span class="st">"readr"</span>, <span class="st">"dplyr"</span>, <span class="st">"ggplot2"</span>))</span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="fu">list</span>(</span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">tar_target</span>(file, <span class="st">"data.csv"</span>, <span class="at">format =</span> <span class="st">"file"</span>),</span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">tar_target</span>(data, <span class="fu">get_data</span>(file)),</span>
+<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">tar_target</span>(model, <span class="fu">fit_model</span>(data)),</span>
+<span id="cb6-9"><a href="#cb6-9"></a>  <span class="fu">tar_target</span>(plot, <span class="fu">plot_model</span>(model, data))</span>
+<span id="cb6-10"><a href="#cb6-10"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1631,13 +1642,13 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <ol start="6" type="1">
 <li class="fragment">Créer les deux premières cibles (<em>targets</em>):
 <ul>
-<li class="fragment">Créer <code>file_token</code> et <code>file_data</code> stockant les chemins de nos fichiers en entrée</li>
-<li class="fragment">Ne pas oublier l’argument <code>format = 'file'</code> dans <code>tar_target</code></li>
+<li class="fragment">Créer les <em>targets</em> <code>file_token</code> et <code>file_data</code> stockant les chemins de nos fichiers en entrée</li>
+<li class="fragment">⚠️ Ne pas oublier l’argument <code>format = 'file'</code> dans <code>tar_target</code></li>
 </ul></li>
 <li class="fragment">Créer les deux cibles suivantes <code>R</code>
 <ul>
-<li class="fragment">Utiliser les fonctions <code>read_yaml_secret</code> (l’appeler <code>token</code>) et <code>read_from_parquet</code> (l’appeler <code>data</code>).</li>
-<li class="fragment">Pour <code>input_data</code>, utiliser l’argument <code>format = 'parquet'</code> dans <code>tar_target</code>.</li>
+<li class="fragment">Créer <code>token</code> et <code>data</code> à partir, respectivement, de <code>read_yaml_secret</code> et <code>read_from_parquet</code>.</li>
+<li class="fragment">Pour <code>data</code>, utiliser l’argument <code>format = 'parquet'</code> dans <code>tar_target</code>.</li>
 </ul></li>
 <li class="fragment">Visualiser les relations entre objets de notre <em>pipeline</em> à partir de <code>tar_visnetwork()</code>.</li>
 <li class="fragment">Exécuter <code>tar_make()</code> dans la console et observer le changement d’état avec <code>tar_visnetwork()</code>.</li>
