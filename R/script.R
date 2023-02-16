@@ -43,7 +43,6 @@ p <- ggplot(df3) +
 
 ggsave("p.png", p)
 
-df[,ncol(df)-1] <- factor(df[,ncol(df)-1])
 library(forcats)
 df$sexe <- df$sexe %>%
   as.character() %>%
