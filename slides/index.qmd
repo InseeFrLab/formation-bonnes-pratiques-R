@@ -391,9 +391,8 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 │   │   └── data2.csv
 │   └── derived
 │       └── partial data.csv
-├── scripts
-│   └── script.R
-├── analysis
+├── R
+|   ├── script.R
 │   ├── script_final.R
 │   └── report.Rmd
 └── output
@@ -415,9 +414,8 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 │   │   └── dpe_logement_202003.csv
 │   └── derived
 │       └── dpe_logement_merged_preprocessed.csv
-├── scripts
-│   └── preprocessing.R
-├── analysis
+├── R
+|   ├── preprocessing.R
 │   ├── generate_plots.R
 │   └── report.Rmd
 └── output
@@ -683,8 +681,8 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 ├── data
 │   ├── raw
 │   │   └── data.csv
-├── scripts
-│   └── fonctions.R
+├── R
+│   └── functions.R
 ```
 
 ## :two: Le fichier `_targets.R` {.smaller}
