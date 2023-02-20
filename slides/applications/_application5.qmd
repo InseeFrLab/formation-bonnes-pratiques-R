@@ -1,7 +1,7 @@
-## Application 5 (1/3)
+## Application 5
 
 :::{.callout-tip collapse="true" icon=false}
-## Prise en main de la librairie `renv`
+## Partie 1 : prise en main de la librairie `renv`
 
 :::{.incremental}
 0. Installer le package [`renv`](https://rstudio.github.io/renv/articles/renv.html)
@@ -36,10 +36,10 @@
 
 :::
 
-## Application 5 (2/3)
+## Application 5
 
 :::{.callout-tip collapse="true" icon=false}
-## Prise en main de la librairie `renv`
+## Partie 2 : faire un *snapshot* de l'environnement
 
 :::{.incremental style="margin-left: 30px;"}
 5. Dans la console, faire `renv::status()` et observer le message.
@@ -49,10 +49,10 @@
 
 :::
 
-## Application 5 (3/3)
+## Application 5
 
 :::{.callout-tip collapse="true" icon=false}
-## Prise en main de la librairie `renv` (facultatif)
+## Partie 3 : test de la portabilité (facultatif)
 
 :::{.incremental style="margin-left: 30px;"}
 8. Ouvrir un nouveau service `RStudio` sur le `SSPCloud`

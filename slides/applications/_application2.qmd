@@ -1,11 +1,11 @@
-## Application 2 (1/2)
+## Application 2
 
 Cette application vise à résoudre une partie des problèmes détectés précédemment.
 
 :warning: La documentation du fichier est disponible [ici](https://www.insee.fr/fr/statistiques/fichier/4171523/contenu_RP2016_indreg.pdf).
 
 :::{.callout-tip collapse="true" icon=false}
-## (Auto-)documentation du script
+## Partie 1 : (auto-)documentation du code
 
 :::{.incremental}
 1. Déplacer les `library` pour les mettre tous ensemble au début du script.
@@ -18,12 +18,12 @@ pour adopter une structure plus logique :
 
 :::
 
-## Application 2 (2/2)
+## Application 2
 
 On souhaite maintenant traiter correctement les informations confidentielles (*secrets*).
 
 :::{.callout-tip collapse="true" icon=false}
-## Modifications de la partie [gestion des secrets]{.orange}
+## Partie 2 : une meilleure gestion des [secrets]{.orange}
 
 :::{.incremental style="margin-left: 30px;"}
 
