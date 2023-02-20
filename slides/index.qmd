@@ -442,7 +442,7 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 {{< include applications/_application2.qmd >}}
 
 
-## Bilan de l'Application
+## Bilan de l'application 2
 
 ::: {.incremental}
 - Un code mal structuré
