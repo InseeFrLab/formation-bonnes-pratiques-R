@@ -1,7 +1,7 @@
-## Application 3 (1/2)
+## Application 3
 
 :::{.callout-tip collapse="true" icon=false}
-## Modularisation du projet
+## Partie 1 : modularisation du projet
 
 :::{.incremental}
 1. Déplacer toutes les fonctions dans un fichier `R/functions.R`.
@@ -14,10 +14,11 @@
 
 :::
 
-## Application 3 (1/2)
+## Application 3
 
 :::{.callout-tip collapse="true" icon=false}
-## Création d'un *package*
+## Partie 2 : création d'un *package*
+
 
 :::{.incremental}
 
