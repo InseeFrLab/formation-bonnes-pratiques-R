@@ -897,6 +897,11 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li><span class="orange"><strong>Documenter</strong></span> son projet</li>
 </ol>
 </div>
+<div class="fragment">
+<ol start="5" type="1">
+<li>(Faire de son projet un <span class="orange"><strong>package</strong></span>)</li>
+</ol>
+</div>
 </section>
 <section id="utiliser-les-projets-rstudio" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2><span class="emoji" data-emoji="one">1️⃣</span> Utiliser les projets RStudio</h2>
@@ -985,6 +990,9 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </ul></li>
 </ul>
 </div>
+</section>
+<section id="faire-de-son-projet-un-package" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2><span class="emoji" data-emoji="five">5️⃣</span> Faire de son projet un <em>package</em></h2>
 </section>
 <section id="ressources-supplémentaires-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Ressources supplémentaires</h2>
@@ -1081,9 +1089,25 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li class="fragment">Déplacer toutes les fonctions dans un fichier <code>R/functions.R</code>.</li>
 <li class="fragment">Donner à la fonction <code>fonction_de_stat_agregee</code> un nom plus pertinent.</li>
 <li class="fragment">Dans <code>script.R</code>, appeler en début de chaîne ces fonctions avec <code>source("R/functions.R", encoding = "UTF-8")</code>.</li>
-<li class="fragment">Documenter la fonction principale au <a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">format attendu</a> par <code>roxygen2</code>. Ajouter les tests unitaires de la fonction comme exemples d’utilisation et les retirer de <code>script.R</code>.</li>
+<li class="fragment">Documenter la fonction principale au <a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">format attendu</a> par <code>roxygen2</code>.</li>
+<li class="fragment">Ajouter les tests unitaires de la fonction comme exemples d’utilisation et les retirer de <code>script.R</code>.</li>
 <li class="fragment">Tester le bon fonctionnement de <code>script.R</code>.</li>
 </ol>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="application-3-12-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 3 (1/2)</h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Création d’un <em>package</em></strong></p>
+</div>
+<div class="callout-content">
+<div>
+
 </div>
 </div>
 </div>
@@ -1095,21 +1119,6 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <li><p><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3a/script.R">script.R</a></p></li>
 <li><p><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3a/functions.R">functions.R</a></p></li>
 </ul>
-</section>
-<section id="application-3-22" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Application 3 (2/2)</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Création d’un <em>package</em></strong></p>
-</div>
-<div class="callout-content">
-<div>
-<p>WIP</p>
-</div>
-</div>
-</div>
-</div>
 </section></section>
 <section>
 <section id="iii--formats-de-données" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
@@ -1219,36 +1228,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </ul>
 </div>
 </section>
-<section id="application-5a" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Application 5A</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Utilisation du fichier <code>DESCRIPTION</code></strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol type="1">
-<li class="fragment">Créer un fichier <code>DESCRIPTION</code> à la racine du projet avec <a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5a/DESCRIPTION">ce contenu</a>.</li>
-<li class="fragment">Retirer les <code>install.packages</code> au début de <code>script.R</code>.</li>
-<li class="fragment">Désinstaller manuellement les packages utilisés dans <code>script.R</code>, redémarrer la session <code>R</code> et vérifier que le script ne tourne plus.</li>
-<li class="fragment">Installer les dépendances du projet avec la fonction <code>devtools::install_deps()</code>. Lire la documentation pour trouver les paramètres pertinents.</li>
-<li class="fragment">Vérifier que <code>script.R</code> tourne à nouveau.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="checkpoint-4" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Checkpoint</h2>
-<ul>
-<li><p><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5a/script.R">script.R</a></p></li>
-<li><p><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5a/DESCRIPTION">DESCRIPTION</a></p></li>
-</ul>
-</section>
-<section id="une-solution-plus-complète-renv" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Une solution plus complète : <code>renv</code></h2>
+<section id="des-environnements-reproductibles-avec-renv" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Des environnements reproductibles avec <code>renv</code></h2>
 <ul>
 <li><code>renv</code> permet de créer des <strong>env</strong>ironnements <strong>r</strong>eproductibles</li>
 </ul>
@@ -1349,38 +1330,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </ul>
 </div>
 </section>
-<section id="vers-une-reproductibilité-optimale" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Vers une reproductibilité optimale</h2>
-<div>
-<ul>
-<li class="fragment"><span class="orange"><strong>Limites</strong></span> des environnements virtuels :
-<ul>
-<li class="fragment">Les <span class="blue2"><strong>librairies système</strong></span> ne sont pas gérées</li>
-<li class="fragment">Lourdeur de la phase d’installation à chaque changement d’environnement</li>
-<li class="fragment">Peu adaptés à un environnement de production</li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>La <span class="orange"><strong>conteneurisation</strong></span> (ex : <code>Docker</code>) apporte la solution</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><span class="orange"><strong>Intuition</strong></span> : au lieu de distribuer la recette pour recréer l’environnement, <span class="blue2"><strong>distribuer directement une “machine” qui contient <em>tout</em> l’environnement nécessaire au projet</strong></span></li>
-</ul>
-</div>
-</section>
-<section id="ressources-supplémentaires-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Ressources supplémentaires</h2>
-<ul>
-<li><p>La <a href="https://rstudio.github.io/renv/articles/renv.html">documentation officielle de <code>renv</code></a></p></li>
-<li><p><a href="https://elise.maigne.pages.mia.inra.fr/2021_package_renv/presentation.html#1">Une présentation sur <code>renv</code></a></p></li>
-</ul>
-</section>
-<section id="application-5b" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Application 5B</h2>
+<section id="application-5-13" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 5 (1/3)</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -1418,21 +1369,39 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 </div>
 </section>
-<section id="application-5b-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Application 5B</h2>
+<section id="application-5-23" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 5 (2/3)</h2>
 <div class="callout callout-tip no-icon callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
-<p><strong>Prise en main de la librairie <code>renv</code> (suite)</strong></p>
+<p><strong>Prise en main de la librairie <code>renv</code></strong></p>
 </div>
 <div class="callout-content">
 <div style="margin-left: 30px;">
 <ol start="5" type="1">
 <li class="fragment">Dans la console, faire <code>renv::status()</code> et observer le message.</li>
 <li class="fragment">Effectuer <code>renv::snapshot()</code> pour intégrer les nouveaux packages au <em>lockfile</em></li>
+<li class="fragment">Supprimer les installations de <em>packages</em> de <code>script.R</code></li>
 <li class="fragment">Faire un <em>commit</em> / <em>push</em> des fichiers <code>script.R</code>, <code>.Rprofile</code>, <code>renv.lock</code> et du dossier <code>renv/</code>.</li>
-<li class="fragment">Ouvrir un nouveau service <code>RStudio</code> sur le <code>SSPCloud</code> et cloner le projet dans les mêmes conditions que l’Application 0. Regarder les messages dans la console.</li>
-<li class="fragment">Exécuter <code>renv::restore()</code> pour installer les packages nécessaires à l’exécution du projet.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="application-5-33" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 5 (3/3)</h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Prise en main de la librairie <code>renv</code> (facultatif)</strong></p>
+</div>
+<div class="callout-content">
+<div style="margin-left: 30px;">
+<ol start="9" type="1">
+<li class="fragment">Ouvrir un nouveau service <code>RStudio</code> sur le <code>SSPCloud</code></li>
+<li class="fragment">Cloner votre dépôt</li>
+<li class="fragment">Exécuter <code>renv::restore()</code> pour installer les packages nécessaires à l’exécution du projet</li>
 <li class="fragment">Vérifier que le <code>script.R</code> s’exécute correctement dans ce nouvel environnement.</li>
 </ol>
 </div>
@@ -1440,24 +1409,41 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 </div>
 </section>
-<section id="checkpoint-5" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<section id="checkpoint-4" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Checkpoint</h2>
 <ul>
-<li><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5b/script.R">script.R</a></li>
+<li><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5/script.R">script.R</a></li>
 </ul>
 </section>
-<section id="pour-aller-plus-loin-la-conteneurisation" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Pour aller plus loin: la conteneurisation</h2>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Conteneurisation (exercice facultatif)</strong></p>
+<section id="vers-une-reproductibilité-optimale" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Vers une reproductibilité optimale</h2>
+<div>
+<ul>
+<li class="fragment"><span class="orange"><strong>Limites</strong></span> des environnements virtuels :
+<ul>
+<li class="fragment">Les <span class="blue2"><strong>librairies système</strong></span> ne sont pas gérées</li>
+<li class="fragment">Lourdeur de la phase d’installation à chaque changement d’environnement</li>
+<li class="fragment">Peu adaptés à un environnement de production</li>
+</ul></li>
+</ul>
 </div>
-<div class="callout-content">
-<p>WIP</p>
+<div class="fragment">
+<ul>
+<li>La <span class="orange"><strong>conteneurisation</strong></span> (ex : <code>Docker</code>) apporte la solution</li>
+</ul>
 </div>
+<div class="fragment">
+<ul>
+<li><span class="orange"><strong>Intuition</strong></span> : au lieu de distribuer la recette pour recréer l’environnement, <span class="blue2"><strong>distribuer directement une “machine” qui contient <em>tout</em> l’environnement nécessaire au projet</strong></span></li>
+</ul>
 </div>
-</div>
+</section>
+<section id="ressources-supplémentaires-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Ressources supplémentaires</h2>
+<ul>
+<li><p>La <a href="https://rstudio.github.io/renv/articles/renv.html">documentation officielle de <code>renv</code></a></p></li>
+<li><p><a href="https://elise.maigne.pages.mia.inra.fr/2021_package_renv/presentation.html#1">Une présentation sur <code>renv</code></a></p></li>
+</ul>
 </section></section>
 <section>
 <section id="v--pipelines-de-données" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
@@ -1680,7 +1666,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 </div>
 </section>
-<section id="checkpoint-6" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<section id="checkpoint-5" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Checkpoint</h2>
 <ul>
 <li><p><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application6/functions.R">functions.R</a></p></li>
@@ -1832,7 +1818,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 </div>
 </section>
-<section id="checkpoint-7" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<section id="checkpoint-6" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Checkpoint</h2>
 <ul>
 <li><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application7/report.qmd">report.qmd</a></li>
