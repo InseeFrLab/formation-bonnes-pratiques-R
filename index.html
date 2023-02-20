@@ -1172,8 +1172,8 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <div>
 <ol type="1">
 <li class="fragment">Effacer la base <code>individu_reg.csv</code></li>
-<li class="fragment">Remplacer le script <code>get_data.R</code> par <a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application4/get_data.R">cette version</a> pour privilégier que le format <code>Parquet</code></li>
-<li class="fragment">Modifier la phase d’import de <code>script.R</code> pour utiliser <code>arrow::read_parquet</code> et lire le fichier <code>Parquet</code> créé précédemment</li>
+<li class="fragment">Modifier le script <code>get_data.R</code> pour écrire les données au format <code>Parquet</code> à l’aide de la librairie <code>Arrow</code></li>
+<li class="fragment">Modifier la phase d’import de <code>script.R</code> pour importer le fichier <code>Parquet</code> créé précédemment à l’aide de la librairie <code>Arrow</code></li>
 </ol>
 </div>
 </div>
