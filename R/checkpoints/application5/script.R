@@ -1,5 +1,5 @@
-library(tidyverse)
 library(dplyr)
+library(ggplot2)
 library(forcats)
 
 source("R/functions.R", encoding = "UTF-8")

@@ -6,7 +6,7 @@
 :::{.incremental}
 1. Effacer la base `individu_reg.csv`
 2. Modifier le script `get_data.R` pour écrire les données au format `Parquet` à l'aide de la librairie `Arrow`
-3. Modifier la phase d'import de `script.R` pour importer le fichier `Parquet` créé précédemment à l'aide de la librairie `Arrow`
+3. Modifier la phase d'import dans `script.R` pour importer le fichier `Parquet` créé précédemment à l'aide de la librairie `Arrow`
 :::
 
 :::

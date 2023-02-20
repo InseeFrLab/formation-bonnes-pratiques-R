@@ -26,6 +26,19 @@ Un code reproductible est avant toute chose un code fonctionnel ! Repérez les e
 
 :::
 
+## Application 1
+
+:::{.callout-tip collapse="true" icon=false}
+## Partie 3 : une meilleure gestion des *packages* utilisés
+
+:::{.incremental}
+1. Limiter les ambiguités sur les *packages* en utilisant la syntaxe `package::fonction` pour les *packages* rarement utilisés dans le script.
+2. L'installation des *packages* dans un script n'est pas une bonne pratique. Supprimer les instructions correspondantes.
+3. Importer le `tidyverse` au complet est rarement utile. N'importer à la place que les *packages* effectivement utilisés dans le script.
+:::
+
+:::
+
 ## Checkpoint
 
 - [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application1/script.R)
