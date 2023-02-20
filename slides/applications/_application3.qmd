@@ -19,7 +19,7 @@
 :::{.callout-tip collapse="true" icon=false}
 ## Partie 2 : création d'un *package*
 En vous aidant de la [Bible des packages R](https://r-pkgs.org/whole-game.html) :
-1. Initialiser un *package*
+1. Initialiser un *package* avec la fonction `usethis::create_package()`
 2. Placer dans le dossier `R` du *package* un module `stat.R` et y copier la fonction de statistique agrégée
 3. Charger le package avec la fonction `devtools::load_all()` et vérifier que la fonction marche correctement
 4. Remplir le fichier `DESCRIPTION`. En particulier, spécifier les dépendances nécessaires (`Imports`) et facultatives (`Suggests`)
