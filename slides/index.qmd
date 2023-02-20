@@ -125,8 +125,6 @@ Améliorations graduelles dans l'échelle de la reproductibilité :
 . . .
 
 
-## Application 0
-
 {{< include applications/_application0.qmd >}}
 
 
@@ -316,6 +314,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 - [Un cours complet](https://eliocamp.github.io/reproducibility-with-r/) sur la reproductibilité avec `R`
 - L'équivalent `Python` en [3A d'ENSAE](https://ensae-reproductibilite.netlify.app/about/)
 
+
 {{< include applications/_application1.qmd >}}
 
 
@@ -363,6 +362,10 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 . . .
 
 4. [**Documenter**]{.orange} son projet
+
+. . .
+
+5. (Faire de son projet un [**package**]{.orange})
 
 ## :one: Utiliser les projets RStudio
 
@@ -441,12 +444,17 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
   - [utilitR](https://github.com/InseeFrLab/utilitR/blob/master/README.md)
   - [DoReMIFaSol](https://github.com/InseeFrLab/DoReMIFaSol)
 
+## :five: Faire de son projet un *package*
+
+
+
 ## Ressources supplémentaires
 
 <br>
 
 - La documentation [utilitR](https://www.book.utilitr.org/rproject.html)
 - [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/)
+
 
 {{< include applications/_application2.qmd >}}
 
@@ -467,9 +475,9 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 :::
 
-{{< include applications/_application3a.qmd >}}
 
-{{< include applications/_application3b.qmd >}}
+{{< include applications/_application3.qmd >}}
+
 
 # III- Formats de données
 
@@ -496,7 +504,6 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
     - Gestion native des méta-données
 :::
 
-## Application 4
 
 {{< include applications/_application4.qmd >}}
 
@@ -533,12 +540,8 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 - [**Portabilité limitée**]{.orange} : difficile de préciser dans un fichier les dépendances spécifiques à un projet.
 
-## Application 5A
 
-{{< include applications/_application5a.qmd >}}
-
-
-## Une solution plus complète : `renv`
+## Des environnements reproductibles avec `renv`
 
 - `renv` permet de créer des **env**ironnements **r**eproductibles
 
@@ -610,6 +613,10 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 - [**Portabilité**]{.orange} : un tiers peut recréer un environnement avec les mêmes spécifications
 
+
+{{< include applications/_application5.qmd >}}
+
+
 ## Vers une reproductibilité optimale
 
 ::: {.incremental}
@@ -632,17 +639,6 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 - La [documentation officielle de `renv`](https://rstudio.github.io/renv/articles/renv.html)
 
 - [Une présentation sur `renv`](https://elise.maigne.pages.mia.inra.fr/2021_package_renv/presentation.html#1)
-
-## Application 5B
-
-{{< include applications/_application5b.qmd >}}
-
-
-## Pour aller plus loin: la conteneurisation
-
-
-{{< include applications/_application5c.qmd >}}
-
 
 # V- *Pipelines* de données
 
@@ -743,10 +739,8 @@ dans 📁 `R/functions.R`
 
 - La [fiche UtilitR dédiée à `targets`](https://www.book.utilitr.org/targets.html)
 
-## Application 6
 
 {{< include applications/_application6.qmd >}}
-
 
 
 
@@ -810,11 +804,8 @@ dans 📁 `R/functions.R`
 
 - La [documentation officielle de `quarto`](https://quarto.org/)
 
-## Application 7
 
 {{< include applications/_application7.qmd >}}
-
-
 
 
 

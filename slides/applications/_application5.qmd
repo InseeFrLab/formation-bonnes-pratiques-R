@@ -1,3 +1,4 @@
+## Application 5 (1/3)
 
 :::{.callout-tip collapse="true" icon=false}
 ## Prise en main de la librairie `renv`
@@ -35,22 +36,34 @@
 
 :::
 
-## Application 5B
+## Application 5 (2/3)
 
 :::{.callout-tip collapse="true" icon=false}
-## Prise en main de la librairie `renv` (suite)
+## Prise en main de la librairie `renv`
 
 :::{.incremental style="margin-left: 30px;"}
 5. Dans la console, faire `renv::status()` et observer le message.
 6. Effectuer `renv::snapshot()` pour intégrer les nouveaux packages au *lockfile*
-7. Faire un _commit_ / _push_ des fichiers `script.R`, `.Rprofile`, `renv.lock` et du dossier `renv/`.
-8. Ouvrir un nouveau service `RStudio` sur le `SSPCloud` et cloner le projet dans les mêmes conditions que l'Application 0. Regarder les messages dans la console. 
-9. Exécuter `renv::restore()` pour installer les packages nécessaires à l'exécution du projet.
-10. Vérifier que le `script.R` s'exécute correctement dans ce nouvel environnement.
+7. Supprimer les installations de *packages* de `script.R`
+8. Faire un _commit_ / _push_ des fichiers `script.R`, `.Rprofile`, `renv.lock` et du dossier `renv/`.
+:::
+
+:::
+
+## Application 5 (3/3)
+
+:::{.callout-tip collapse="true" icon=false}
+## Prise en main de la librairie `renv` (facultatif)
+
+:::{.incremental style="margin-left: 30px;"}
+9. Ouvrir un nouveau service `RStudio` sur le `SSPCloud`
+10. Cloner votre dépôt
+11. Exécuter `renv::restore()` pour installer les packages nécessaires à l'exécution du projet
+12. Vérifier que le `script.R` s'exécute correctement dans ce nouvel environnement.
 :::
 
 :::
 
 ## Checkpoint
 
-- [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5b/script.R)
+- [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5/script.R)

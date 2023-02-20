@@ -1,3 +1,5 @@
+## Application 0
+
 :::{.callout-tip collapse="true" icon=false}
 ## Préparation de l'environnement de travail
 
