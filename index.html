@@ -842,6 +842,25 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 </div>
 </section>
+<section id="application-1-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 1</h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Partie 3 : une meilleure gestion des <em>packages</em> utilisés</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol type="1">
+<li class="fragment">Limiter les ambiguités sur les <em>packages</em> en utilisant la syntaxe <code>package::fonction</code> pour les <em>packages</em> rarement utilisés dans le script.</li>
+<li class="fragment">L’installation des <em>packages</em> dans un script n’est pas une bonne pratique. Supprimer les instructions correspondantes.</li>
+<li class="fragment">Importer le <code>tidyverse</code> au complet est rarement utile. N’importer à la place que les <em>packages</em> effectivement utilisés dans le script.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="checkpoint" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Checkpoint</h2>
 <ul>
@@ -1173,7 +1192,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <ol type="1">
 <li class="fragment">Effacer la base <code>individu_reg.csv</code></li>
 <li class="fragment">Modifier le script <code>get_data.R</code> pour écrire les données au format <code>Parquet</code> à l’aide de la librairie <code>Arrow</code></li>
-<li class="fragment">Modifier la phase d’import de <code>script.R</code> pour importer le fichier <code>Parquet</code> créé précédemment à l’aide de la librairie <code>Arrow</code></li>
+<li class="fragment">Modifier la phase d’import dans <code>script.R</code> pour importer le fichier <code>Parquet</code> créé précédemment à l’aide de la librairie <code>Arrow</code></li>
 </ol>
 </div>
 </div>
@@ -1381,7 +1400,6 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 <ol start="5" type="1">
 <li class="fragment">Dans la console, faire <code>renv::status()</code> et observer le message.</li>
 <li class="fragment">Effectuer <code>renv::snapshot()</code> pour intégrer les nouveaux packages au <em>lockfile</em></li>
-<li class="fragment">Supprimer les installations de <em>packages</em> de <code>script.R</code></li>
 <li class="fragment">Faire un <em>commit</em> / <em>push</em> des fichiers <code>script.R</code>, <code>.Rprofile</code>, <code>renv.lock</code> et du dossier <code>renv/</code>.</li>
 </ol>
 </div>
@@ -1398,7 +1416,7 @@ Le_package_`conflicted` aide à gérer les conflits de_packages_de manière flui
 </div>
 <div class="callout-content">
 <div style="margin-left: 30px;">
-<ol start="9" type="1">
+<ol start="8" type="1">
 <li class="fragment">Ouvrir un nouveau service <code>RStudio</code> sur le <code>SSPCloud</code></li>
 <li class="fragment">Cloner votre dépôt</li>
 <li class="fragment">Exécuter <code>renv::restore()</code> pour installer les packages nécessaires à l’exécution du projet</li>
