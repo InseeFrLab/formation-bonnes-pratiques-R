@@ -13,6 +13,9 @@ df <- readr::read_csv2(
   "individu_reg.csv",
   col_select = c("region", "aemm", "aged", "anai","catl","cs1", "cs2", "cs3", "couple", "na38", "naf08", "pnai12", "sexe", "surf", "tp", "trans", "ur"))
 
+df <- df %>%
+  mutate(aged = as.numeric(aged))
+
 summarise(group_by(df, aged), n())
 
 decennie_a_partir_annee    = function(ANNEE){ return(ANNEE - ANNEE %%
@@ -35,8 +38,8 @@ df %>%
 # ) + geom_bar(aes(x = as.numeric(aged), y = SH_sexe), stat="identity") + geom_point(aes(x = as.numeric(aged), y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
 
 # stats trans par statut
-df3 = tibble(df %>% group_by(couple, trans) %>% summarise(x = n()) %>% group_by(couple) %>% mutate(y = 100*x/sum(x))
-)
+df3 = df %>% group_by(couple, trans) %>% summarise(x = n()) %>% group_by(couple) %>% mutate(y = 100*x/sum(x))
+
 p <- ggplot(df3) +
   geom_bar(aes(x = trans, y = y, color = couple), stat = "identity", position = "dodge")
 
@@ -63,8 +66,8 @@ fonction_de_stat_agregee(rnorm(10))
 fonction_de_stat_agregee(rnorm(10), "ecart-type")
 fonction_de_stat_agregee(rnorm(10), "variance")
 
-fonction_de_stat_agregee(df  %>% filter(sexe == "Homme") %>% mutate(aged = as.numeric(aged)) %>% pull(aged))
-fonction_de_stat_agregee(df %>% filter(sexe == "Femme") %>% mutate(aged = as.numeric(aged)) %>% pull(aged))
+fonction_de_stat_agregee(df %>% filter(sexe == "Homme") %>% pull(aged))
+fonction_de_stat_agregee(df %>% filter(sexe == "Femme") %>% pull(aged))
 
 api_token <- "trotskitueleski$1917"
 
