@@ -1,24 +1,29 @@
-
 decennie_a_partir_annee <- function(annee) {
   return(annee - annee %% 10)
 }
 
-#' Compute aggregated statistics
+#' Calcul automatique de stats agrégées
 #'
-#' @param x A numeric vector of values.
-#' @param stat A string. The name of the statistic to compute.
-#' @return A number.
+#' @param x Un vecteur
+#' @param stat La statistique d'intérêt. Peut-être "moyenne", "écart-type"
+#'  ou "variance". Par défaut "moyenne"
+#' @param ...  Arguments additionnels à passer aux fonctions de stats agrégées
+#'
+#' @return Un vecteur avec la statistique d'intérêt
+#' @export
+#'
 #' @examples
-#' calcul_stats_desc(rnorm(10))
-#' calcul_stats_desc(rnorm(10), "ecart-type")
-#' calcul_stats_desc(rnorm(10), "variance")
-calcul_stats_desc <- function(x, stat = "moyenne", ...) {
+#' fonction_de_stat_agregee(rnorm(10))
+#' fonction_de_stat_agregee(rnorm(10), "ecart-type")
+#' fonction_de_stat_agregee(rnorm(10), "variance")
+stats_agregees <- function(x, stat = "moyenne", ...) {
   if (stat == "moyenne") {
-    res <- mean(x, na.rm = TRUE, ...)
+    resultat <- mean(x, na.rm = TRUE, ...)
   } else if (stat == "ecart-type" || stat == "sd") {
-    res <- sd(x, na.rm = TRUE, ...)
+    resultat <- sd(x, na.rm = TRUE, ...)
   } else if (stat == "variance") {
-    res <- var(x, na.rm = TRUE, ...)
+    resultat <- var(x, na.rm = TRUE, ...)
   }
-  return(res)
+  return(resultat)
 }
+
