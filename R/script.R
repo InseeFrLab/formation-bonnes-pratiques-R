@@ -1,3 +1,4 @@
+rm(list = ls())
 setwd("/home/onyxia/formation-bonnes-pratiques-R")
 
 if (!require('ggplot2')) install.packages('ggplot2')
@@ -30,7 +31,7 @@ df %>%
   group_by(aged) %>% 
   mutate(SH_sexe = SH_sexe/sum(SH_sexe)) %>% 
   filter(sexe==1) %>%
-  ggplot() + geom_bar(aes(x = as.numeric(aged), y = SH_sexe), stat="identity") + geom_point(aes(x = as.numeric(aged), y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
+  ggplot() + geom_bar(aes(x = aged, y = SH_sexe), stat="identity") + geom_point(aes(x = aged, y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
 
 # correction (qu'il faudra retirer)
 # ggplot(
