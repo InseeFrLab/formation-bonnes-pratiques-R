@@ -1184,8 +1184,8 @@
 <div>
 <ol type="1">
 <li class="fragment">Effacer la base <code>individu_reg.csv</code></li>
-<li class="fragment">Modifier le script <code>get_data.R</code> pour écrire les données au format <code>Parquet</code> à l’aide de la librairie <code>Arrow</code></li>
-<li class="fragment">Modifier la phase d’import dans <code>script.R</code> pour importer le fichier <code>Parquet</code> créé précédemment à l’aide de la librairie <code>Arrow</code></li>
+<li class="fragment">Modifier le script <code>get_data.R</code> pour écrire les données au format <code>Parquet</code> à l’aide de la fonction <code>arrow::write_parquet</code></li>
+<li class="fragment">Modifier la phase d’import dans <code>script.R</code> pour importer le fichier <code>Parquet</code> à l’aide de la fonction <code>arrow::read_parquet</code></li>
 </ol>
 </div>
 </div>
