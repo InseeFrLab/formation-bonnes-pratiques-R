@@ -1,4 +1,4 @@
-## Application 6
+## Application 5
 
 :::{.callout-tip collapse="true" icon=false}
 ## Modélisation d'un projet sous forme de *pipeline* de données
@@ -33,7 +33,7 @@ récupérer les noms des packages pour les mettre dans la section `tar_option_se
 
 :::
 
-## Application 6
+## Application 5
 
 :::{.callout-tip collapse="true" icon=false}
 ## Modélisation d'un projet sous forme de *pipeline* de données (suite)
@@ -53,7 +53,7 @@ cibles (_targets_):
 
 :::
 
-## Application 6
+## Application 5
 
 :::{.callout-tip collapse="true" icon=false}
 ## Modélisation d'un projet sous forme de *pipeline* de données (suite)

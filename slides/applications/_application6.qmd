@@ -1,4 +1,4 @@
-## Application 7
+## Application 6
 
 :::{.callout-tip collapse="true" icon=false}
 ## Introduction à la publication reproductible
@@ -13,7 +13,7 @@
 
 :::
 
-## Application 7
+## Application 6
 
 :::{.callout-tip collapse="true" icon=false}
 ## Introduction à la publication reproductible (suite)

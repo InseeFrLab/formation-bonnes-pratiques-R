@@ -1,4 +1,4 @@
-## Application 3
+## Application 2
 
 :::{.callout-tip collapse="true" icon=false}
 ## Partie 1 : modularisation du projet
@@ -14,7 +14,7 @@
 
 :::
 
-## Application 3
+## Application 2
 
 :::{.callout-tip collapse="true" icon=false}
 ## Partie 2 : création d'un *package*
