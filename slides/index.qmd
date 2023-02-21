@@ -283,14 +283,31 @@ portion de code plus de deux fois ([**_don't repeat yourself_ (DRY)**]{.red2})
 
 <br>
 
-- [_R Packages_](https://r-pkgs.org/man.html) par Hadley Wickham and Jenny Bryan
-- Une [présentation très bien faite](https://mitmat.github.io/slides/2022-05-26-egu/code-data-open-science.html#1)
 - [Un cours complet](https://eliocamp.github.io/reproducibility-with-r/) sur la reproductibilité avec `R`
+- Une [présentation très complète](https://mitmat.github.io/slides/2022-05-26-egu/code-data-open-science.html#1) sur le partage de code et de données avec `R`
 - L'équivalent `Python` en [3A d'ENSAE](https://ensae-reproductibilite.netlify.app/about/)
 
 
 {{< include applications/_application1.qmd >}}
 
+{{< include applications/_application2.qmd >}}
+
+
+## Bilan
+
+::: {.incremental}
+- Un code mal structuré
+  - Limite la lisibilité du projet
+  - Est très coûteux à maintenir (dette technique)
+:::
+
+. . .
+
+::: {layout="[80,30]"}
+
+![](https://www.earthdatascience.org/images/earth-analytics/clean-code/reproducible-science-is-about-being-lazy-hadley-wickham.png)
+
+:::
 
 # II- Structure des projets
 
@@ -438,26 +455,6 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 - La documentation [utilitR](https://www.book.utilitr.org/rproject.html)
 - La [bible des packages R](https://r-pkgs.org/whole-game.html)
 - Un excellent [workshop sur la reproductibilité avec R](https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/)
-
-
-{{< include applications/_application2.qmd >}}
-
-
-## Bilan de l'application 2
-
-::: {.incremental}
-- Un code mal structuré
-  - Limite la lisibilité du projet
-  - Est très coûteux à maintenir (dette technique)
-:::
-
-. . .
-
-::: {layout="[80,30]"}
-
-![](https://www.earthdatascience.org/images/earth-analytics/clean-code/reproducible-science-is-about-being-lazy-hadley-wickham.png)
-
-:::
 
 
 {{< include applications/_application3.qmd >}}
@@ -622,7 +619,7 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 - La [documentation officielle de `renv`](https://rstudio.github.io/renv/articles/renv.html)
 
-- [Une présentation sur `renv`](https://elise.maigne.pages.mia.inra.fr/2021_package_renv/presentation.html#1)
+- La [fiche utilitR sur la gestion des dépendances](https://www.book.utilitr.org/03_fiches_thematiques/fiche_gerer_dependances)
 
 # V- *Pipelines* de données
 
