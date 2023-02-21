@@ -771,9 +771,8 @@
 <h2>Ressources supplémentaires</h2>
 <p><br></p>
 <ul>
-<li><a href="https://r-pkgs.org/man.html"><em>R Packages</em></a> par Hadley Wickham and Jenny Bryan</li>
-<li>Une <a href="https://mitmat.github.io/slides/2022-05-26-egu/code-data-open-science.html#1">présentation très bien faite</a></li>
 <li><a href="https://eliocamp.github.io/reproducibility-with-r/">Un cours complet</a> sur la reproductibilité avec <code>R</code></li>
+<li>Une <a href="https://mitmat.github.io/slides/2022-05-26-egu/code-data-open-science.html#1">présentation très complète</a> sur le partage de code et de données avec <code>R</code></li>
 <li>L’équivalent <code>Python</code> en <a href="https://ensae-reproductibilite.netlify.app/about/">3A d’ENSAE</a></li>
 </ul>
 </section>
@@ -843,6 +842,80 @@
 <ul>
 <li><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application1/script.R">script.R</a></li>
 </ul>
+</section>
+<section id="application-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 2</h2>
+<p>Cette application vise à résoudre une partie des problèmes détectés précédemment.</p>
+<p><span class="emoji" data-emoji="warning">⚠️</span> La documentation du fichier est disponible <a href="https://www.insee.fr/fr/statistiques/fichier/4171523/contenu_RP2016_indreg.pdf">ici</a>.</p>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Partie 1 : (auto-)documentation du code</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol type="1">
+<li class="fragment">Déplacer les <code>library</code> pour les mettre tous ensemble au début du script.</li>
+<li class="fragment">Le script n’est pas construit dans un ordre logique. Déplacer les parties pour adopter une structure plus logique :
+<ul>
+<li class="fragment">Gestion de l’environnement -&gt; Définition de fonctions -&gt; Import des données -&gt; Retraitement des données -&gt; Statistiques descriptives -&gt; Graphiques -&gt; Modélisation</li>
+</ul></li>
+<li class="fragment">Donner des titres aux parties/sous-parties en utilisant les standards de documentation reconnus par RStudio :
+<ul>
+<li class="fragment"><code># TITRE NIVEAU 1 ------------</code> et <code>## TITRE NIVEAU 2 ==========</code></li>
+</ul></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="application-2-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 2</h2>
+<p>On souhaite maintenant traiter correctement les informations confidentielles (<em>secrets</em>).</p>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Partie 2 : une meilleure gestion des <span class="orange">secrets</span></strong></p>
+</div>
+<div class="callout-content">
+<div style="margin-left: 30px;">
+<ol type="1">
+<li class="fragment">Repérer le jeton d’API dans le code. Retirer le jeton d’API du code et créer à la racine du projet un fichier YAML nommé <code>secrets.yaml</code> où vous écrivez ce secret sous la forme <code>key: value</code>. <span class="red2"><span class="emoji" data-emoji="warning">⚠️</span> Attention</span> : le package <code>yaml</code> impose la création d’une ligne vierge à la fin du fichier pour être valide.</li>
+<li class="fragment">Dans <code>script.R</code>, importer ce YAML (avec <code>yaml::read_yaml("secrets.yaml")</code>) pour créer une variable <code>api_token</code> ayant cette valeur.</li>
+<li class="fragment">Ajouter dans <code>.gitignore</code> le fichier <code>secrets.yaml</code> et indiquer dans le <code>README.md</code> de votre projet que les secrets sont stockés dans ce fichier. <span class="red2"><span class="emoji" data-emoji="warning">⚠️</span> Attention</span> : il ne faut pas committer <code>secrets.yaml</code> car le jeton d’API est personnel et secret!</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="checkpoint-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Checkpoint</h2>
+<ul>
+<li><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application2/script.R">script.R</a></li>
+</ul>
+</section>
+<section id="bilan" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Bilan</h2>
+<div>
+<ul>
+<li class="fragment">Un code mal structuré
+<ul>
+<li class="fragment">Limite la lisibilité du projet</li>
+<li class="fragment">Est très coûteux à maintenir (dette technique)</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 72.7%;justify-content: center;">
+<p><img data-src="https://www.earthdatascience.org/images/earth-analytics/clean-code/reproducible-science-is-about-being-lazy-hadley-wickham.png"></p>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="ii--structure-des-projets" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
@@ -1014,80 +1087,6 @@
 <li>La <a href="https://r-pkgs.org/whole-game.html">bible des packages R</a></li>
 <li>Un excellent <a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/">workshop sur la reproductibilité avec R</a></li>
 </ul>
-</section>
-<section id="application-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Application 2</h2>
-<p>Cette application vise à résoudre une partie des problèmes détectés précédemment.</p>
-<p><span class="emoji" data-emoji="warning">⚠️</span> La documentation du fichier est disponible <a href="https://www.insee.fr/fr/statistiques/fichier/4171523/contenu_RP2016_indreg.pdf">ici</a>.</p>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Partie 1 : (auto-)documentation du code</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<ol type="1">
-<li class="fragment">Déplacer les <code>library</code> pour les mettre tous ensemble au début du script.</li>
-<li class="fragment">Le script n’est pas construit dans un ordre logique. Déplacer les parties pour adopter une structure plus logique :
-<ul>
-<li class="fragment">Gestion de l’environnement -&gt; Définition de fonctions -&gt; Import des données -&gt; Retraitement des données -&gt; Statistiques descriptives -&gt; Graphiques -&gt; Modélisation</li>
-</ul></li>
-<li class="fragment">Donner des titres aux parties/sous-parties en utilisant les standards de documentation reconnus par RStudio :
-<ul>
-<li class="fragment"><code># TITRE NIVEAU 1 ------------</code> et <code>## TITRE NIVEAU 2 ==========</code></li>
-</ul></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="application-2-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Application 2</h2>
-<p>On souhaite maintenant traiter correctement les informations confidentielles (<em>secrets</em>).</p>
-<div class="callout callout-tip no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>Partie 2 : une meilleure gestion des <span class="orange">secrets</span></strong></p>
-</div>
-<div class="callout-content">
-<div style="margin-left: 30px;">
-<ol type="1">
-<li class="fragment">Repérer le jeton d’API dans le code. Retirer le jeton d’API du code et créer à la racine du projet un fichier YAML nommé <code>secrets.yaml</code> où vous écrivez ce secret sous la forme <code>key: value</code>. <span class="red2"><span class="emoji" data-emoji="warning">⚠️</span> Attention</span> : le package <code>yaml</code> impose la création d’une ligne vierge à la fin du fichier pour être valide.</li>
-<li class="fragment">Dans <code>script.R</code>, importer ce YAML (avec <code>yaml::read_yaml("secrets.yaml")</code>) pour créer une variable <code>api_token</code> ayant cette valeur.</li>
-<li class="fragment">Ajouter dans <code>.gitignore</code> le fichier <code>secrets.yaml</code> et indiquer dans le <code>README.md</code> de votre projet que les secrets sont stockés dans ce fichier. <span class="red2"><span class="emoji" data-emoji="warning">⚠️</span> Attention</span> : il ne faut pas committer <code>secrets.yaml</code> car le jeton d’API est personnel et secret!</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="checkpoint-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Checkpoint</h2>
-<ul>
-<li><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application2/script.R">script.R</a></li>
-</ul>
-</section>
-<section id="bilan-de-lapplication-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2>Bilan de l’application 2</h2>
-<div>
-<ul>
-<li class="fragment">Un code mal structuré
-<ul>
-<li class="fragment">Limite la lisibilité du projet</li>
-<li class="fragment">Est très coûteux à maintenir (dette technique)</li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 72.7%;justify-content: center;">
-<p><img data-src="https://www.earthdatascience.org/images/earth-analytics/clean-code/reproducible-science-is-about-being-lazy-hadley-wickham.png"></p>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section id="application-3" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Application 3</h2>
@@ -1463,7 +1462,7 @@
 <h2>Ressources supplémentaires</h2>
 <ul>
 <li><p>La <a href="https://rstudio.github.io/renv/articles/renv.html">documentation officielle de <code>renv</code></a></p></li>
-<li><p><a href="https://elise.maigne.pages.mia.inra.fr/2021_package_renv/presentation.html#1">Une présentation sur <code>renv</code></a></p></li>
+<li><p>La <a href="https://www.book.utilitr.org/03_fiches_thematiques/fiche_gerer_dependances">fiche utilitR sur la gestion des dépendances</a></p></li>
 </ul>
 </section></section>
 <section>
