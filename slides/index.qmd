@@ -207,7 +207,7 @@ Deux outils pratiques aident à respecter les standards :
 
 Dans le cas de {{< fa brands r-project >}} : 
 
-- le [_linter_]{.orange} à utiliser est le _package_ [`lintr`](https://github.com/r-lib/lintr);
+- le [_linter_]{.orange} à utiliser est le _package_ [`lintr`](https://github.com/r-lib/lintr)
 - le [_formatter_]{.orange} à utiliser est le _package_ [`styler`](https://github.com/r-lib/styler).
     + Existe également le _package_ [`formatR`](https://github.com/yihui/formatR).
 
@@ -230,8 +230,8 @@ portion de code plus de deux fois ([**_don't repeat yourself_ (DRY)**]{.red2})
 ::: {.callout-tip}
 ## Règles pour écrire des fonctions **pertinentes**
 
-- Une tâche = une fonction ;
-- Une tâche complexe = un enchaînement de fonctions réalisant chacune une tâche simple ;
+- Une tâche = une fonction
+- Une tâche complexe = un enchaînement de fonctions réalisant chacune une tâche simple
 - Limiter l'utilisation de variables globales.
 
 :::
@@ -239,7 +239,7 @@ portion de code plus de deux fois ([**_don't repeat yourself_ (DRY)**]{.red2})
 ## :three: Documenter son code
 
 - Grands principes :
-  - Documenter le [__pourquoi__]{.orange} plutôt que le [__comment__]{.orange} ;
+  - Documenter le [__pourquoi__]{.orange} plutôt que le [__comment__]{.orange}
   - Privilégier l'auto-documentation via des [**nommages pertinents**]{.orange}.
 
 . . .
@@ -247,8 +247,8 @@ portion de code plus de deux fois ([**_don't repeat yourself_ (DRY)**]{.red2})
 ::: {.callout-tip}
 ## Comment bien documenter un script ?
 
-- [**Minimum**]{.orange} 🚦 : commentaire au début du script pour décrire ce qu'il fait ;
-- [**Bien**]{.orange} 👍 : commenter les parties "délicates" du code ;
+- [**Minimum**]{.orange} 🚦 : commentaire au début du script pour décrire ce qu'il fait
+- [**Bien**]{.orange} 👍 : commenter les parties "délicates" du code
 - [**Idéal**]{.orange} 💪 : documenter ses fonctions avec la syntaxe `roxygen2`.
 
 :::
@@ -360,8 +360,8 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 ::: {.incremental}
 - [**Objectif**]{.orange} : favoriser la [**reproductibilité**]{.blue2}
-  - Tous les fichiers nécessaires au projet dans un même dossier ;
-  - Le dossier contenant le projet RStudio est automatiquement utilisé comme ***working directory*** ;
+  - Tous les fichiers nécessaires au projet dans un même dossier
+  - Le dossier contenant le projet RStudio est automatiquement utilisé comme ***working directory***
   - Utilisation de [**chemins relatifs**]{.blue2} plutôt qu'absolus.
 :::
 
@@ -493,8 +493,8 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 ::: {.incremental}
 - Imaginons la situation suivante :
-  - J'installe une version de `R` sur mon poste ;
-  - Je développe un projet en installant les _packages_ nécessaires ;
+  - J'installe une version de `R` sur mon poste
+  - Je développe un projet en installant les _packages_ nécessaires
   - Une fois terminé, je passe au projet suivant, et ainsi de suite.
 
 
@@ -670,9 +670,9 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 ::: {.incremental}
 - Le fichier `_targets.R` doit satisfaire plusieurs conditions :
-  1. Charger le _package_ `targets` ;
-  2. Charger dans l'environnement les fonctions nécessaires ;
-  3. Déclarer les _packages_ nécessaires aux différentes étapes ;
+  1. Charger le _package_ `targets`
+  2. Charger dans l'environnement les fonctions nécessaires
+  3. Déclarer les _packages_ nécessaires aux différentes étapes
   4. Définir le *pipeline*.
 :::
 
@@ -755,7 +755,7 @@ dans 📁 `R/functions.R`
 
 ::: {.incremental}
 - Un document est [**compilé**]{.orange} en deux étapes
-  - [***knit***]{.green2} : le package `knitr` transforme le texte et les sorties `R` en un document `Markdown` standard ;
+  - [***knit***]{.green2} : le package `knitr` transforme le texte et les sorties `R` en un document `Markdown` standard
   - [***convert***]{.green2} : le logiciel `pandoc` transforme le document `.md` en un format de sortie standard (`html`, `pdf`, etc.)
 :::
 
