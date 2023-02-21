@@ -18,7 +18,6 @@
 
 :::{.callout-tip collapse="true" icon=false}
 ## Partie 2 : création d'un *package*
-En vous aidant de la [Bible des packages R](https://r-pkgs.org/whole-game.html) :
 
 :::{.incremental}
 1. Initialiser un *package* avec la fonction `usethis::create_package()`

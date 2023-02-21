@@ -436,7 +436,8 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 <br>
 
 - La documentation [utilitR](https://www.book.utilitr.org/rproject.html)
-- [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/)
+- La [bible des packages R](https://r-pkgs.org/whole-game.html)
+- Un excellent [workshop sur la reproductibilité avec R](https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/)
 
 
 {{< include applications/_application2.qmd >}}
