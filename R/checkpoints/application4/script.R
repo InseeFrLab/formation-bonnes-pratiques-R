@@ -1,12 +1,15 @@
+# Chaine de production sur le fichier recensement diffusé par l'Insee
+
+# GESTION ENVIRONNEMENT ----------------------
+
 library(dplyr)
 library(ggplot2)
 library(forcats)
 
+api_token <- yaml::read_yaml("secrets.yaml")$JETON_API
+
 source("R/functions.R", encoding = "UTF-8")
 
-# ENVIRONNEMENT -------------------------
-
-api_token <- yaml::read_yaml("secrets.yaml")$JETON_API
 
 # IMPORT DONNEES ------------------
 
@@ -19,8 +22,10 @@ df <- arrow::read_parquet(
   )
 )
 
+# RETRAITEMENT --------------------------------
 
-# RETRAITEMENT DONNEES -------------------
+df <- df %>%
+  mutate(aged = as.numeric(aged))
 
 df$sexe <- df$sexe %>%
   as.character() %>%
@@ -31,30 +36,11 @@ df$sexe <- df$sexe %>%
 
 summarise(group_by(df, aged), n())
 
-
-# part d'homme dans chaque cohort
-df %>%
-  group_by(aged, sexe) %>%
-  summarise(SH_sexe = n()) %>%
-  group_by(aged) %>%
-  mutate(SH_sexe = SH_sexe / sum(SH_sexe)) %>%
-  filter(sexe == 1) %>%
-  ggplot() +
-  geom_bar(aes(x = as.numeric(aged), y = SH_sexe), stat = "identity") +
-  geom_point(aes(x = as.numeric(aged), y = SH_sexe), stat = "identity",
-             color = "red") +
-  coord_cartesian(c(0, 100))
-
-# stats trans par statut
-df2 <- df %>%
-  group_by(couple, trans) %>%
-  summarise(x = n()) %>%
-  group_by(couple) %>%
-  mutate(y = 100 * x / sum(x))
+stats_agregees(df %>% filter(sexe == "Homme") %>% pull(aged))
+stats_agregees(df %>% filter(sexe == "Femme") %>% pull(aged))
 
 stats_age <- df %>%
-  mutate(age = as.numeric(aged)) %>%
-  group_by(decennie = decennie_a_partir_annee(age)) %>%
+  group_by(decennie = decennie_a_partir_annee(aged)) %>%
   summarise(n())
 
 table_age <- gt::gt(stats_age) %>%
@@ -70,24 +56,55 @@ table_age <- gt::gt(stats_age) %>%
     decennie = "Tranche d'âge",
     `n()` = "Population"
   )
-# GRAPHIQUES -----------
+
+## stats trans par statut =====================
+
+df3 <- df %>%
+  group_by(couple, trans) %>%
+  summarise(x = n()) %>%
+  group_by(couple) %>%
+  mutate(y = 100 * x / sum(x))
+
+
+# GRAPHIQUES -----------------------------------
 
 ggplot(df) +
-  geom_histogram(aes(x = 5 * floor(as.numeric(aged) / 5)), stat = "count")
+  geom_histogram(aes(x = 5 * floor(aged / 5)), stat = "count")
+
+# part d'homme dans chaque cohort
+df %>%
+  group_by(aged, sexe) %>%
+  summarise(SH_sexe = n()) %>%
+  group_by(aged) %>%
+  mutate(SH_sexe = SH_sexe / sum(SH_sexe)) %>%
+  filter(sexe == "Homme") %>%
+  ggplot() +
+  geom_bar(aes(x = aged, y = SH_sexe), stat = "identity") +
+  geom_point(
+    aes(x = aged, y = SH_sexe),
+    stat = "identity", color = "red") +
+  coord_cartesian(c(0, 100))
 
 
-p <- ggplot(df2) +
-  geom_bar(aes(x = trans, y = y, color = couple), stat = "identity",
-           position = "dodge")
+p <- ggplot(df3) +
+  geom_bar(
+    aes(x = trans, y = y, color = couple),
+    stat = "identity", position = "dodge"
+  )
 
 ggsave("p.png", p)
 
 
-# MODELISATION ---------------------
+# MODELISATION -------------------------------
 
+df3 <- df %>%
+  select(surf, cs1, ur, couple, aged) %>%
+  filter(surf != "Z")
 
-df %>%
-  dplyr::select(surf, cs1, ur, couple, aged) %>%
-  filter(surf != "Z") %>%
-  MASS::polr(factor(surf) ~ cs1 + factor(ur), .)
+df3 <- df3 %>%
+  mutate(
+    surf = factor(df3$surf, ordered = TRUE),
+    cs1 = factor(cs1)
+  )
 
+MASS::polr(surf ~ cs1 + factor(ur), df3)
