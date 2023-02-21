@@ -1,42 +1,40 @@
-## Application 2
-
-Cette application vise à résoudre une partie des problèmes détectés précédemment.
-
-:warning: La documentation du fichier est disponible [ici](https://www.insee.fr/fr/statistiques/fichier/4171523/contenu_RP2016_indreg.pdf).
+## Application 3
 
 :::{.callout-tip collapse="true" icon=false}
-## Partie 1 : (auto-)documentation du code
+## Partie 1 : modularisation du projet
 
 :::{.incremental}
-1. Déplacer les `library` pour les mettre tous ensemble au début du script.
-2. Le script n'est pas construit dans un ordre logique. Déplacer les parties 
-pour adopter une structure plus logique : 
-    + Gestion de l'environnement -> Définition de fonctions -> Import des données -> Retraitement des données -> Statistiques descriptives -> Graphiques -> Modélisation
-3. Donner des titres aux parties/sous-parties en utilisant les standards de documentation reconnus par RStudio :
-    + `# TITRE NIVEAU 1 ------------` et `## TITRE NIVEAU 2 ==========`
+1. Déplacer toutes les fonctions dans un fichier `R/functions.R`.
+2. Donner à la fonction `fonction_de_stat_agregee` un nom plus pertinent.
+3. Dans `script.R`, appeler en début de chaîne ces fonctions avec `source("R/functions.R", encoding = "UTF-8")`.
+4. Documenter la fonction principale au [format attendu](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) par `roxygen2`.
+5. Ajouter les tests unitaires de la fonction comme exemples d'utilisation et les retirer de `script.R`.
+6. Tester le bon fonctionnement de `script.R`.
 :::
 
 :::
 
-## Application 2
-
-On souhaite maintenant traiter correctement les informations confidentielles (*secrets*).
+## Application 3
 
 :::{.callout-tip collapse="true" icon=false}
-## Partie 2 : une meilleure gestion des [secrets]{.orange}
+## Partie 2 : création d'un *package*
 
-:::{.incremental style="margin-left: 30px;"}
-
-1. Repérer le jeton d'API dans le code. Retirer le jeton d'API du code et créer à la racine du projet un fichier YAML nommé `secrets.yaml` où vous écrivez ce secret sous la forme `key: value`.
-[:warning: Attention]{.red2} : le package `yaml` impose la création d'une ligne vierge à la fin du fichier pour être valide.
-2. Dans `script.R`, importer ce YAML (avec `yaml::read_yaml("secrets.yaml")`) pour créer une variable `api_token` ayant cette valeur.
-3. Ajouter dans `.gitignore` le fichier `secrets.yaml` et indiquer dans le `README.md` de votre projet que les secrets sont stockés dans ce fichier.
-[:warning: Attention]{.red2} : il ne faut pas committer `secrets.yaml` car le jeton d'API est personnel et secret!
-
+:::{.incremental}
+1. Initialiser un *package* avec la fonction `usethis::create_package()`
+2. Placer dans le dossier `R` du *package* un module `stat.R` et y copier la fonction de statistique agrégée
+3. Charger le package avec la fonction `devtools::load_all()` et vérifier que la fonction marche correctement
+4. Remplir le fichier `DESCRIPTION`. En particulier, spécifier les dépendances nécessaires (`Imports`) et facultatives (`Suggests`)
+5. Construire la documentation du *package* avec la fonction `devtools::document()`. Où est-elle stockée et sous quel format ?
+6. Vérifier que la documentation de notre fonction est accessible avec `?ma_fonction`
+7. (Facultatif) Initialiser un nouveau projet sur `GitHub` est y mettre le code du *package*. Vérifier que le *package* peut être installé en local avec la fonction `devtools::install_github()`.
 :::
-  
+
 :::
 
 ## Checkpoint
 
 - [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application2/script.R)
+
+- [functions.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application2/functions.R)
+
+- [Package R](https://github.com/InseeFrLab/formation-bonnes-pratiques-R/tree/main/package)

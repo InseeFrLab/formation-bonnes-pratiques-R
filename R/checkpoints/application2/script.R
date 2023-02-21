@@ -2,32 +2,11 @@
 library(dplyr)
 library(ggplot2)
 
+source("R/functions.R", encoding = "UTF-8")
 
 # ENVIRONNEMENT -------------------------
 
 api_token <- yaml::read_yaml("secrets.yaml")$JETON_API
-
-# DEFINITION FONCTIONS -------------------------
-
-decennie_a_partir_annee <- function(annee) {
-  return(annee - annee %%
-           10)
-}
-
-fonction_de_stat_agregee <- function(a, b = "moyenne", ...) {
-  if (b == "moyenne") {
-    x <- mean(a, na.rm = TRUE, ...)
-  } else if (b == "ecart-type" || b == "sd") {
-    x <- sd(a, na.rm = TRUE, ...)
-  } else if (b == "variance") {
-    x <- var(a, na.rm = TRUE, ...)
-  }
-  return(x)
-}
-
-fonction_de_stat_agregee(rnorm(10))
-fonction_de_stat_agregee(rnorm(10), "ecart-type")
-fonction_de_stat_agregee(rnorm(10), "variance")
 
 # IMPORT DONNEES ------------------
 
@@ -76,13 +55,13 @@ df %>%
   filter(sexe == "Homme") %>%
   mutate(aged = as.numeric(aged)) %>%
   pull(aged) %>%
-  fonction_de_stat_agregee()
+  calcul_stats_desc()
 
 df %>%
   filter(sexe == "Femme") %>%
   mutate(aged = as.numeric(aged)) %>%
   pull(aged) %>%
-  fonction_de_stat_agregee()
+  calcul_stats_desc()
 
 
 # GRAPHIQUES -----------
@@ -102,7 +81,7 @@ ggsave("p.png", p)
 
 
 df %>%
-  select(surf, cs1, ur, couple, aged) %>%
+  dplyr::select(surf, cs1, ur, couple, aged) %>%
   filter(surf != "Z") %>%
   MASS::polr(factor(surf) ~ cs1 + factor(ur), .)
 

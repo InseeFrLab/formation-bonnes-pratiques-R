@@ -1,40 +1,18 @@
-## Application 3
+## Application 4
 
 :::{.callout-tip collapse="true" icon=false}
-## Partie 1 : modularisation du projet
+## Manipulation des formats CSV et Parquet
 
 :::{.incremental}
-1. Déplacer toutes les fonctions dans un fichier `R/functions.R`.
-2. Donner à la fonction `fonction_de_stat_agregee` un nom plus pertinent.
-3. Dans `script.R`, appeler en début de chaîne ces fonctions avec `source("R/functions.R", encoding = "UTF-8")`.
-4. Documenter la fonction principale au [format attendu](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) par `roxygen2`.
-5. Ajouter les tests unitaires de la fonction comme exemples d'utilisation et les retirer de `script.R`.
-6. Tester le bon fonctionnement de `script.R`.
-:::
-
-:::
-
-## Application 3
-
-:::{.callout-tip collapse="true" icon=false}
-## Partie 2 : création d'un *package*
-
-:::{.incremental}
-1. Initialiser un *package* avec la fonction `usethis::create_package()`
-2. Placer dans le dossier `R` du *package* un module `stat.R` et y copier la fonction de statistique agrégée
-3. Charger le package avec la fonction `devtools::load_all()` et vérifier que la fonction marche correctement
-4. Remplir le fichier `DESCRIPTION`. En particulier, spécifier les dépendances nécessaires (`Imports`) et facultatives (`Suggests`)
-5. Construire la documentation du *package* avec la fonction `devtools::document()`. Où est-elle stockée et sous quel format ?
-6. Vérifier que la documentation de notre fonction est accessible avec `?ma_fonction`
-7. (Facultatif) Initialiser un nouveau projet sur `GitHub` est y mettre le code du *package*. Vérifier que le *package* peut être installé en local avec la fonction `devtools::install_github()`.
+1. Effacer la base `individu_reg.csv`
+2. Modifier le script `get_data.R` pour écrire les données au format `Parquet` à l'aide de la librairie `Arrow`
+3. Modifier la phase d'import dans `script.R` pour importer le fichier `Parquet` créé précédemment à l'aide de la librairie `Arrow`
 :::
 
 :::
 
 ## Checkpoint
 
-- [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3a/script.R)
+- [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3/script.R)
 
-- [functions.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3a/functions.R)
-
-- [Package R](https://github.com/InseeFrLab/formation-bonnes-pratiques-R/tree/main/package)
+- [get_data.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3/get_data.R)

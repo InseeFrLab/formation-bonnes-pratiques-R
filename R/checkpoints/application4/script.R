@@ -1,6 +1,6 @@
-
 library(dplyr)
 library(ggplot2)
+library(forcats)
 
 source("R/functions.R", encoding = "UTF-8")
 
@@ -18,6 +18,7 @@ df <- arrow::read_parquet(
     "trans", "ur"
   )
 )
+
 
 # RETRAITEMENT DONNEES -------------------
 
@@ -51,19 +52,24 @@ df2 <- df %>%
   group_by(couple) %>%
   mutate(y = 100 * x / sum(x))
 
-df %>%
-  filter(sexe == "Homme") %>%
-  mutate(aged = as.numeric(aged)) %>%
-  pull(aged) %>%
-  stats_agregees()
+stats_age <- df %>%
+  mutate(age = as.numeric(aged)) %>%
+  group_by(decennie = decennie_a_partir_annee(age)) %>%
+  summarise(n())
 
-df %>%
-  filter(sexe == "Femme") %>%
-  mutate(aged = as.numeric(aged)) %>%
-  pull(aged) %>%
-  stats_agregees()
-
-
+table_age <- gt::gt(stats_age) %>%
+  gt::tab_header(
+    title = "Distribution des âges dans notre population"
+  ) %>%
+  gt::fmt_number(
+    columns = `n()`,
+    sep_mark = " ",
+    decimals = 0
+  ) %>%
+  gt::cols_label(
+    decennie = "Tranche d'âge",
+    `n()` = "Population"
+  )
 # GRAPHIQUES -----------
 
 ggplot(df) +

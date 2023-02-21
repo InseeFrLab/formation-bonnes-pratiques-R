@@ -39,6 +39,39 @@ Un code reproductible est avant toute chose un code fonctionnel ! Repérez les e
 
 :::
 
+## Application 1
+
+:::{.callout-tip collapse="true" icon=false}
+## Partie 4 : (auto-)documentation du code
+
+:::{.incremental}
+1. Déplacer les `library` pour les mettre tous ensemble au début du script.
+2. Le script n'est pas construit dans un ordre logique. Déplacer les parties 
+pour adopter une structure plus logique : 
+    + Gestion de l'environnement -> Définition de fonctions -> Import des données -> Retraitement des données -> Statistiques descriptives -> Graphiques -> Modélisation
+3. Donner des titres aux parties/sous-parties en utilisant les standards de documentation reconnus par RStudio :
+    + `# TITRE NIVEAU 1 ------------` et `## TITRE NIVEAU 2 ==========`
+:::
+
+:::
+
+## Application 1
+
+:::{.callout-tip collapse="true" icon=false}
+## Partie 5 : une meilleure gestion des [secrets]{.orange}
+
+:::{.incremental style="margin-left: 30px;"}
+
+1. Repérer le jeton d'API dans le code. Retirer le jeton d'API du code et créer à la racine du projet un fichier YAML nommé `secrets.yaml` où vous écrivez ce secret sous la forme `key: value`.
+[:warning: Attention]{.red2} : le package `yaml` impose la création d'une ligne vierge à la fin du fichier pour être valide.
+2. Dans `script.R`, importer ce YAML (avec `yaml::read_yaml("secrets.yaml")`) pour créer une variable `api_token` ayant cette valeur.
+3. Ajouter dans `.gitignore` le fichier `secrets.yaml` et indiquer dans le `README.md` de votre projet que les secrets sont stockés dans ce fichier.
+[:warning: Attention]{.red2} : il ne faut pas committer `secrets.yaml` car le jeton d'API est personnel et secret!
+
+:::
+  
+:::
+
 ## Checkpoint
 
 - [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application1/script.R)

@@ -1,68 +1,78 @@
-## Application 5
+## Application 6
 
 :::{.callout-tip collapse="true" icon=false}
-## Partie 1 : prise en main de la librairie `renv`
+## Modélisation d'un projet sous forme de *pipeline* de données
 
 :::{.incremental}
-0. Installer le package [`renv`](https://rstudio.github.io/renv/articles/renv.html)
-1. Taper dans la console `renv::init()`, __lire le message__ et accepter.
-2. Observer les nouveaux élements qui sont apparus dans le projet.
-3. Installer le [package `gt`](https://gt.rstudio.com/) et observer le message dans la console.
-4. Dans la partie sur les statistiques descriptives d'âge, ajouter ce code :
+0. Installer le package `targets`.
+1. Créer un fichier `_targets.R` à la racine du dépôt,
+à partir de [l'exemple](https://books.ropensci.org/targets/walkthrough.html) dans la documentation.
+2. Ajouter `_targets/` dans le `.gitignore`.
+3. Reporter les `library` dans le fichier `R/functions.R` et
+récupérer les noms des packages pour les mettre dans la section `tar_option_set()`.
+4. Créer dans `R/functions.R` les fonctions `read_yaml_secret` et `read_from_parquet`:
 
-    ```r
-    stats_age <- df %>%
-      mutate(age = as.numeric(aged))
-      group_by(decennie = decennie_a_partir_annee(age)) %>%
-      summarise(n())
-    
-    table_age <- gt::gt(stats_age) %>%
-      gt::tab_header(
-        title = "Distribution des âges dans notre population"
-      ) %>%
-      gt::fmt_number(
-        columns = `n()`,
-        sep_mark = " ",
-        decimals = 0
-      ) %>%
-      gt::cols_label(
-        decennie = "Tranche d'âge",
-        `n()` = "Population"
+  ```r
+  read_yaml_secret <- function(path, key) {
+    return(yaml::read_yaml(path)[[key]])
+  }
+  read_from_parquet <- function(path) {
+    df <- arrow::read_parquet(
+      path,
+      col_select  = c(
+        "region", "aemm", "aged", "anai", "catl", "cs1", "cs2", "cs3",
+        "couple", "na38", "naf08", "pnai12", "sexe", "surf", "tp",
+        "trans", "ur"
       )
-
-    ```
+    )
+    return(df)
+  }
+  ```
 
 :::
 
 :::
 
-## Application 5
+## Application 6
 
 :::{.callout-tip collapse="true" icon=false}
-## Partie 2 : faire un *snapshot* de l'environnement
+## Modélisation d'un projet sous forme de *pipeline* de données (suite)
 
-:::{.incremental style="margin-left: 30px;"}
-5. Dans la console, faire `renv::status()` et observer le message.
-6. Effectuer `renv::snapshot()` pour intégrer les nouveaux packages au *lockfile*
-7. Faire un _commit_ / _push_ des fichiers `script.R`, `.Rprofile`, `renv.lock` et du dossier `renv/`.
+:::{.incremental}
+
+6. Créer les deux premières
+cibles (_targets_): 
+    + Créer les _targets_ `file_token` et `file_data` stockant les chemins de nos fichiers en entrée
+    + ⚠️ Ne pas oublier l'argument `format = 'file'` dans `tar_target`
+7. Créer les deux cibles suivantes `R`
+    + Créer `token` et `data` à partir, respectivement, de `read_yaml_secret` et `read_from_parquet`.
+    + Pour `data`, utiliser l'argument `format = 'parquet'` dans `tar_target`.
+7. Visualiser les relations entre objets de notre _pipeline_ à partir de `tar_visnetwork()`.
+8. Exécuter `tar_make()` dans la console et observer le changement d'état avec `tar_visnetwork()`.
 :::
 
 :::
 
-## Application 5
+## Application 6
 
 :::{.callout-tip collapse="true" icon=false}
-## Partie 3 : test de la portabilité (facultatif)
+## Modélisation d'un projet sous forme de *pipeline* de données (suite)
 
-:::{.incremental style="margin-left: 30px;"}
-8. Ouvrir un nouveau service `RStudio` sur le `SSPCloud`
-9. Cloner votre dépôt
-10. Exécuter `renv::restore()` pour installer les packages nécessaires à l'exécution du projet
-11. Vérifier que le `script.R` s'exécute correctement dans ce nouvel environnement.
+:::{.incremental}
+9. Créer une fonction `produce_table_age` qui produit le tableau `gt` que vous avez créé précédemment
+et intégrer sa production dans le _pipeline_ défini dans `_targets.R` (sous le nom `table_age`)
+10. Exécuter `tar_make()` pour lancer le *pipeline* et analyser la sortie dans la console.
+11. A l'aide de la fonction `tar_read`, visualiser la table des âges produite.
+12. Modifier la fonction `produce_table_age` pour que la table affiche également le nombre de femmes
+et d'hommes par tranche d'âge.
+13. Exécuter `tar_make()` pour lancer le *pipeline* et analyser la sortie dans la console.
+14. A l'aide de la fonction `tar_read`, vérifier que la table de sortie a bien été mise à jour.
 :::
 
 :::
 
 ## Checkpoint
 
-- [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5/script.R)
+- [functions.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5/functions.R)
+
+- [_targets.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5/_targets.R)

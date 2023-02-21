@@ -290,8 +290,6 @@ portion de code plus de deux fois ([**_don't repeat yourself_ (DRY)**]{.red2})
 
 {{< include applications/_application1.qmd >}}
 
-{{< include applications/_application2.qmd >}}
-
 
 ## Bilan
 
@@ -457,7 +455,7 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 - Un excellent [workshop sur la reproductibilité avec R](https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/)
 
 
-{{< include applications/_application3.qmd >}}
+{{< include applications/_application2.qmd >}}
 
 
 # III- Formats de données
@@ -486,7 +484,7 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 :::
 
 
-{{< include applications/_application4.qmd >}}
+{{< include applications/_application3.qmd >}}
 
 
 # IV- Environnements reproductibles
@@ -595,7 +593,7 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 - [**Portabilité**]{.orange} : un tiers peut recréer un environnement avec les mêmes spécifications
 
 
-{{< include applications/_application5.qmd >}}
+{{< include applications/_application4.qmd >}}
 
 
 ## Vers une reproductibilité optimale
@@ -721,7 +719,7 @@ dans 📁 `R/functions.R`
 - La [fiche UtilitR dédiée à `targets`](https://www.book.utilitr.org/targets.html)
 
 
-{{< include applications/_application6.qmd >}}
+{{< include applications/_application5.qmd >}}
 
 
 
@@ -786,7 +784,7 @@ dans 📁 `R/functions.R`
 - La [documentation officielle de `quarto`](https://quarto.org/)
 
 
-{{< include applications/_application7.qmd >}}
+{{< include applications/_application6.qmd >}}
 
 
 
