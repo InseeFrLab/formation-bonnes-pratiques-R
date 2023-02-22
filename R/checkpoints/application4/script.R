@@ -72,7 +72,7 @@ ggplot(df) +
   geom_histogram(aes(x = 5 * floor(aged / 5)), stat = "count")
 
 # part d'homme dans chaque cohort
-df %>%
+p <- df %>%
   group_by(aged, sexe) %>%
   summarise(SH_sexe = n()) %>%
   group_by(aged) %>%
@@ -84,13 +84,6 @@ df %>%
     aes(x = aged, y = SH_sexe),
     stat = "identity", color = "red") +
   coord_cartesian(c(0, 100))
-
-
-p <- ggplot(df3) +
-  geom_bar(
-    aes(x = trans, y = y, color = couple),
-    stat = "identity", position = "dodge"
-  )
 
 ggsave("p.png", p)
 

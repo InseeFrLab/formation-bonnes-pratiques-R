@@ -24,15 +24,6 @@ decennie_a_partir_annee    = function(ANNEE){ return(ANNEE - ANNEE %%
 
 ggplot(df) + geom_histogram(aes(x = 5*floor(as.numeric(aged)/5)), stat = "count")
 
-# part d'homme dans chaque cohort
-df %>% 
-  group_by(aged, sexe) %>% 
-  summarise(SH_sexe = n()) %>% 
-  group_by(aged) %>% 
-  mutate(SH_sexe = SH_sexe/sum(SH_sexe)) %>% 
-  filter(sexe==1) %>%
-  ggplot() + geom_bar(aes(x = aged, y = SH_sexe), stat="identity") + geom_point(aes(x = aged, y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
-
 # correction (qu'il faudra retirer)
 # ggplot(
 #   df %>% group_by(aged, sexe) %>% summarise(SH_sexe = n()) %>% group_by(aged) %>% mutate(SH_sexe = SH_sexe/sum(SH_sexe)) %>% filter(sexe==1)
@@ -41,8 +32,15 @@ df %>%
 # stats trans par statut
 df3 = df %>% group_by(couple, trans) %>% summarise(x = n()) %>% group_by(couple) %>% mutate(y = 100*x/sum(x))
 
-p <- ggplot(df3) +
-  geom_bar(aes(x = trans, y = y, color = couple), stat = "identity", position = "dodge")
+p <- # part d'homme dans chaque cohort
+  df %>% 
+  group_by(aged, sexe) %>% 
+  summarise(SH_sexe = n()) %>% 
+  group_by(aged) %>% 
+  mutate(SH_sexe = SH_sexe/sum(SH_sexe)) %>% 
+  filter(sexe==1) %>%
+  ggplot() + geom_bar(aes(x = aged, y = SH_sexe), stat="identity") + geom_point(aes(x = aged, y = SH_sexe), stat="identity", color = "red") + coord_cartesian(c(0,100))
+
 
 ggsave("p.png", p)
 
