@@ -13,6 +13,10 @@
 
 ## Checkpoint
 
-- [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3/script.R)
+::: {layout=[30,70]}
 
+- [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3/script.R)
 - [get_data.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application3/get_data.R)
+
+![](checkpoint.jpg){width=60%}
+:::

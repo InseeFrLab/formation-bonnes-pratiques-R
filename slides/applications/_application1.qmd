@@ -72,4 +72,9 @@ pour adopter une structure plus logique :
 
 ## Checkpoint
 
+::: {layout=[30,70]}
+
 - [script.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application1/script.R)
+
+![](checkpoint.jpg){width=60%}
+:::
