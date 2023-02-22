@@ -1931,39 +1931,89 @@
 <div class="callout-content">
 <div>
 <ol start="4" type="1">
-<li class="fragment">En vous inspirant du code d’exemple, modifier le fichier <code>report.qmd</code> pour :
+<li class="fragment">Produire une courte note présentant le tableau des âges produit précédemment :
 <ul>
-<li class="fragment">Importer les fonctions du script <code>functions.R</code></li>
-<li class="fragment">Importer les données avec la fonction <code>read_from_parquet</code></li>
-<li class="fragment">Produire la table avec la fonction <code>produce_table_age</code></li>
+<li class="fragment">Un <em>chunk</em> <code>R</code> qui importe le <em>package</em> <code>targets</code>. Le contenu produit par ce <em>chunk</em> doit être caché, il est donc nécessaire d’utiliser une <a href="https://quarto.org/docs/computations/execution-options.html">option</a></li>
+<li class="fragment">Une courte phrase d’introduction</li>
+<li class="fragment">Dans le fichier <code>.qmd</code>, importer l’objet <code>table_age</code> via <code>tar_load</code> et faire en sorte d’afficher ce tableau dans le document</li>
 </ul></li>
-</ol>
-<div class="callout callout-note callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>Seuls le code utilisé et la table doivent apparaître dans le rapport final</p>
-</div>
-</div>
-</div>
-<ol start="5" type="1">
 <li class="fragment">Générer le rapport avec le bouton <code>Render</code> et vérifier que l’<em>output</em> correspond à celui attendu.</li>
 </ol>
 </div>
 </div>
 </div>
 </div>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>En supposant que ce document est à vocation d’une audience non technique, masquer le code ayant généré les sorties</p>
+</div>
+</div>
+</div>
+</section>
+<section id="application-6-2" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
+<h2>Application 6</h2>
+<div class="callout callout-tip no-icon callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<p><strong>Introduction à la publication reproductible (suite)</strong></p>
+</div>
+<div class="callout-content">
+<ol start="6" type="1">
+<li>Dans <code>script.R</code>, nous avions créé un graphique <code>p.png</code>.
+<ul>
+<li>A partir des exemples de la <a href="https://quarto.org/docs/authoring/figures.html">documentation</a> introduire cette figure</li>
+<li>La faire précéder d’une phrase d’introduction.</li>
+<li>Êtes-vous sûr que cette figure est à jour ?</li>
+</ul></li>
+<li>A partir de la fonction suivante à mettre dans <code>R/functions.R</code>, créer une nouvelle <em>target</em> <code>graph_part_hommes</code> dans <code>_targets.R</code>.</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>figure_part_homme_age <span class="ot">&lt;-</span> <span class="cf">function</span>(df){</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  p <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>    <span class="fu">group_by</span>(aged, sexe) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>    <span class="fu">summarise</span>(<span class="at">SH_sexe =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>    <span class="fu">group_by</span>(aged) <span class="sc">%&gt;%</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a>    <span class="fu">mutate</span>(<span class="at">SH_sexe =</span> SH_sexe <span class="sc">/</span> <span class="fu">sum</span>(SH_sexe)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a>    <span class="fu">filter</span>(sexe <span class="sc">==</span> <span class="st">"Homme"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> aged, <span class="at">y =</span> SH_sexe), <span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a>    <span class="fu">geom_point</span>(</span>
+<span id="cb10-11"><a href="#cb10-11"></a>      <span class="fu">aes</span>(<span class="at">x =</span> aged, <span class="at">y =</span> SH_sexe),</span>
+<span id="cb10-12"><a href="#cb10-12"></a>      <span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb10-13"><a href="#cb10-13"></a>    <span class="fu">coord_cartesian</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span>
+<span id="cb10-14"><a href="#cb10-14"></a>  <span class="fu">return</span>(p)</span>
+<span id="cb10-15"><a href="#cb10-15"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="8" type="1">
+<li>Faire tourner le <em>pipeline</em> (<code>tar_make</code>)</li>
+<li>Pour être certain que votre note utilise la dernière version du <em>pipeline</em>, introduire un <code>tar_make()</code> dans votre document à la suite du <code>library(targets)</code></li>
+<li>Cliquer sur le bouton <code>Render</code> pour mettre à jour votre note</li>
+</ol>
+</div>
+</div>
+</div>
 </section>
 <section id="checkpoint-5" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Checkpoint</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 30.0%;justify-content: center;">
 <ul>
 <li><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application6/report.qmd">report.qmd</a></li>
+<li><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application6/functions.R">functions.R</a></li>
+<li><a href="https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application6/_targets.R">_targets.R</a></li>
 </ul>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 70.0%;justify-content: center;">
+<p><img data-src="checkpoint.jpg"></p>
+</div>
+</div>
+</div>
 </section></section>
 <section id="conclusion" class="title-slide slide level1 center" data-background-image="background.svg" data-background-size="contain">
 <h1>Conclusion</h1>
