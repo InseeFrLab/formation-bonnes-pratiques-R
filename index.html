@@ -1503,6 +1503,15 @@
 <section id="motivations-1" class="slide level2" data-background-image="background.svg" data-background-size="contain">
 <h2>Motivations</h2>
 <ul>
+<li><p>Une analyse de données ou une chaîne de production font intervenir des <span class="orange"><strong>étapes standardisées</strong></span></p></li>
+<li><p>Ces étapes peuvent être formalisées sous forme d’un <span class="orange"><strong>pipeline (<em>direct acyclic graph</em>)</strong></span></p></li>
+</ul>
+
+<img data-src="img/dag_argo.png" class="r-stretch"><p><a href="https://medium.com/hashmapinc/building-ml-pipelines-8e27344a42d2">Source</a></p>
+</section>
+<section id="motivations-2" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Motivations</h2>
+<ul>
 <li>Une analyse de données ou une chaîne de production font intervenir des <span class="orange"><strong>étapes standardisées</strong></span></li>
 </ul>
 <div>
@@ -1516,8 +1525,8 @@
 </ul>
 </div>
 </section>
-<section id="targets" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><code>targets</code></h2>
+<section id="le-package-targets" class="slide level2" data-background-image="background.svg" data-background-size="contain">
+<h2>Le package <code>targets</code></h2>
 <ul>
 <li><code>targets</code> est un <em>framework</em> de modélisation de <em>pipelines</em> spécifiquement dédié aux projets <code>R</code>.</li>
 </ul>
@@ -1531,21 +1540,64 @@
 </ul>
 </div>
 </section>
-<section id="un-projet-minimaliste" class="slide level2" data-background-image="background.svg" data-background-size="contain">
-<h2><span class="emoji" data-emoji="one">1️⃣</span> Un projet minimaliste</h2>
+<section id="méthode-de-travail-avec-targets" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
+<h2>Méthode de travail avec <code>targets</code></h2>
 <ul>
-<li>Données et scripts <code>R</code>,</li>
-<li>Un nouveau fichier: <code>_targets.R</code>
+<li>On développe dans des scripts :
 <ul>
-<li>Contrôle le comportement de notre chaine de traitement</li>
+<li>Fonctions dans un ou plusieurs fichiers dédiés</li>
+<li>Chaîne de production dans un fichier <code>_targets.R</code></li>
 </ul></li>
 </ul>
+<div class="fragment">
+<ul>
+<li>On gère l’exécution du <em>pipeline</em> directement dans la console
+<ul>
+<li><code>tar_visnetwork()</code> pour inspecter la structure du <em>pipeline</em></li>
+<li><code>tar_make</code> pour exécuter la chaine de production</li>
+</ul></li>
+</ul>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Quand on part du chaine de traitement dans un fichier déja existant (<code>script.R</code> par exemple), il faut faire la transition vers un fichier <code>_targets.R</code> dont la structure est particulière.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="un-projet-minimaliste" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
+<h2><span class="emoji" data-emoji="one">1️⃣</span> Un projet minimaliste</h2>
+<ul>
+<li>Structure de projet <em>opinionated</em> :
+<ul>
+<li><del>Long script <code>script.R</code></del> <code>_targets.R</code></li>
+<li>Chaîne de production: suite d’appels à des fonctions définies dans <code>R/functions.R</code></li>
+</ul></li>
+</ul>
+<p><br></p>
 <pre><code>├── _targets.R
 ├── data
 │   ├── raw
 │   │   └── data.csv
 ├── R
 │   └── functions.R</code></pre>
+<div class="fragment">
+<p><br></p>
+<ul>
+<li>Nouveau fichier: <code>_targets.R</code>
+<ul>
+<li>Contrôle le comportement de notre chaine de traitement</li>
+<li>Enchaînement d’étapes de transformation de données selon une syntaxe particulière</li>
+</ul></li>
+</ul>
+</div>
 </section>
 <section id="le-fichier-_targets.r" class="slide level2 smaller" data-background-image="background.svg" data-background-size="contain">
 <h2><span class="emoji" data-emoji="two">2️⃣</span> Le fichier <code>_targets.R</code></h2>
