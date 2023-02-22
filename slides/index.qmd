@@ -629,6 +629,17 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 
 [Source](https://astrakhan.fr/blog/formation-au-data-engineering-une-nouvelle-offre-dastrakhan/)
 
+
+## Motivations
+
+- Une analyse de données ou une chaîne de production font intervenir des [**étapes standardisées**]{.orange}
+
+- Ces étapes peuvent être formalisées sous forme d'un [**pipeline (*direct acyclic graph*)**]{.orange}
+
+![](img/dag_argo.png)
+
+[Source](https://medium.com/hashmapinc/building-ml-pipelines-8e27344a42d2)
+
 ## Motivations
 
 - Une analyse de données ou une chaîne de production font intervenir des [**étapes standardisées**]{.orange}
@@ -640,7 +651,9 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
   - Facilite la [**prise en main**]{.blue2} du projet par un tiers
 :::
 
-## `targets`
+
+
+## Le package `targets`
 
 - `targets` est un *framework* de modélisation de *pipelines* spécifiquement dédié aux projets `R`.
 
@@ -650,12 +663,33 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
   2. Garantir la [**reproductibilité**]{.orange} de la chaîne en traçant les changements de ces ***targets***
 :::
 
+## Méthode de travail avec `targets` {.smaller}
 
-## :one: Un projet minimaliste
+- On développe dans des scripts :
+    + Fonctions dans un ou plusieurs fichiers dédiés
+    + Chaîne de production dans un fichier `_targets.R`
 
-- Données et scripts `R`,
-- Un nouveau fichier: `_targets.R`
-    + Contrôle le comportement de notre chaine de traitement
+. . .
+    
+- On gère l'exécution du _pipeline_ directement dans la console
+    + `tar_visnetwork()` pour inspecter la structure du _pipeline_
+    + `tar_make` pour exécuter la chaine de production
+    
+::: {.callout-note}
+
+Quand on part du chaine de traitement dans un fichier déja existant
+(`script.R` par exemple), il faut faire la transition vers un fichier
+`_targets.R` dont la structure est particulière.
+
+:::
+
+## :one: Un projet minimaliste {.smaller}
+
+- Structure de projet _opinionated_ :
+    + ~~Long script `script.R`~~ `_targets.R`
+    + Chaîne de production: suite d'appels à des fonctions définies dans `R/functions.R`
+
+<br>
 
 ```
 ├── _targets.R
@@ -665,6 +699,14 @@ Source : [eliocamp.github.io](https://eliocamp.github.io/reproducibility-with-r/
 ├── R
 │   └── functions.R
 ```
+
+. . .
+
+<br>
+
+- Nouveau fichier: `_targets.R`
+    + Contrôle le comportement de notre chaine de traitement
+    + Enchaînement d'étapes de transformation de données selon une syntaxe particulière
 
 ## :two: Le fichier `_targets.R` {.smaller}
 
