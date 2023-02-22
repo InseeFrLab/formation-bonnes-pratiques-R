@@ -117,6 +117,10 @@ df <- df %>%
 
 ## Checkpoint
 
-- [functions.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5/functions.R)
+::: {layout=[30,70]}
 
+- [functions.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5/functions.R)
 - [_targets.R](https://raw.githubusercontent.com/InseeFrLab/formation-bonnes-pratiques-R/main/R/checkpoints/application5/_targets.R)
+
+![](checkpoint.jpg){width=60%}
+:::
