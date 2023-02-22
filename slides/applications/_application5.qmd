@@ -62,7 +62,7 @@ cibles (_targets_) dans `_targets.R`:
 (`clean_data` et `table_age`) qui automatisent la production
 du tableau `gt`
 
-```{r}
+```r
 retraitement_donnees <- function(df){
   df <- df %>%
     mutate(aged = as.numeric(aged))
@@ -101,7 +101,7 @@ produce_table_age <- function(df){
 12. Ajouter les commandes suivantes au sein de la fonction `retraitement_donnees` pour 
 la modifier:
 
-```{r}
+```r
 df <- df %>%
   mutate(
     surf = factor(surf, ordered = TRUE),
