@@ -1,29 +1,30 @@
 ---
 title: "Mon super rapport"
 author: "Daffy Duck"
-format: pdf
+format: html
+execute:
+  echo: false
 ---
 
 ```{r}
-#| include: false
-source("R/functions.R")
+#| output: false
+library(targets)
+tar_make()
 ```
 
-## Import des données
+A partir du recensement de la population, on peut déduire que la
+pyramide des âges est la suivante:
 
-Avant tout, j'importe mon fichier de données. Au format `parquet`, bien entendu. 
 
 ```{r}
-#| echo: true
-df <- read_from_parquet("individu_reg.parquet")
+tar_read(table_age)
 ```
 
-## Statistiques descriptives
-
-
-Je vous propose d'admirer cette distribution de la population par décennie d'âge.
-Pas mal, non ?
+Des statistiques supplémentaires sur la part d'homme dans chaque cohorte:
 
 ```{r}
-produce_table_age(df)
+tar_load(graph_part_hommes)
+graph_part_hommes
 ```
+
+
