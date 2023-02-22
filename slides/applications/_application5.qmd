@@ -6,11 +6,11 @@
 :::{.incremental}
 0. Installer le package `targets`.
 1. Créer un fichier `_targets.R` à la racine du dépôt,
-à partir de [l'exemple](https://books.ropensci.org/targets/walkthrough.html) dans la documentation.
+à partir de [l'exemple](https://books.ropensci.org/targets/walkthrough.html#target-script-file) dans la documentation.
 2. Ajouter `_targets/` dans le `.gitignore`.
 3. Reporter les `library` dans le fichier `R/functions.R` et
 récupérer les noms des packages pour les mettre dans la section `tar_option_set()`.
-4. Créer dans `R/functions.R` les fonctions `read_yaml_secret` et `read_from_parquet`:
+4. Ajouter dans `R/functions.R` les fonctions `read_yaml_secret` et `read_from_parquet`:
 
   ```r
   read_yaml_secret <- function(path, key) {
@@ -40,14 +40,14 @@ récupérer les noms des packages pour les mettre dans la section `tar_option_se
 
 :::{.incremental}
 
-6. Créer les deux premières
-cibles (_targets_): 
+6. En extrayant du contenu de `script.R`, créer les deux premières
+cibles (_targets_) dans `_targets.R`: 
     + Créer les _targets_ `file_token` et `file_data` stockant les chemins de nos fichiers en entrée
     + ⚠️ Ne pas oublier l'argument `format = 'file'` dans `tar_target`
-7. Créer les deux cibles suivantes `R`
+7. Créer les deux cibles suivantes dans `_targets.R`:
     + Créer `token` et `data` à partir, respectivement, de `read_yaml_secret` et `read_from_parquet`.
     + Pour `data`, utiliser l'argument `format = 'parquet'` dans `tar_target`.
-7. Visualiser les relations entre objets de notre _pipeline_ à partir de `tar_visnetwork()`.
+7. Visualiser les relations entre objets de notre _pipeline_ en utilisant dans la console `R` la fonction `tar_visnetwork()`.
 8. Exécuter `tar_make()` dans la console et observer le changement d'état avec `tar_visnetwork()`.
 :::
 
@@ -58,15 +58,59 @@ cibles (_targets_):
 :::{.callout-tip collapse="true" icon=false}
 ## Modélisation d'un projet sous forme de *pipeline* de données (suite)
 
-:::{.incremental}
-9. Créer une fonction `produce_table_age` qui produit le tableau `gt` que vous avez créé précédemment
-et intégrer sa production dans le _pipeline_ défini dans `_targets.R` (sous le nom `table_age`)
-10. Exécuter `tar_make()` pour lancer le *pipeline* et analyser la sortie dans la console.
-11. A l'aide de la fonction `tar_read`, visualiser la table des âges produite.
-12. Modifier la fonction `produce_table_age` pour que la table affiche également le nombre de femmes
-et d'hommes par tranche d'âge.
-13. Exécuter `tar_make()` pour lancer le *pipeline* et analyser la sortie dans la console.
-14. A l'aide de la fonction `tar_read`, vérifier que la table de sortie a bien été mise à jour.
+9. A partir des fonctions suivantes, créer deux nouvelles cibles 
+(`clean_data` et `table_age`) qui automatisent la production
+du tableau `gt`
+
+```{r}
+retraitement_donnees <- function(df){
+  df <- df %>%
+    mutate(aged = as.numeric(aged))
+  df$sexe <- df$sexe %>%
+    as.character() %>%
+    fct_recode(Homme = "1", Femme = "2")
+  return(df)
+}
+
+
+produce_table_age <- function(df){
+  stats_age <- df %>%
+    group_by(decennie = decennie_a_partir_annee(aged)) %>%
+    summarise(n())
+  
+  table_age <- gt::gt(stats_age) %>%
+    gt::tab_header(
+      title = "Distribution des âges dans notre population"
+    ) %>%
+    gt::fmt_number(
+      columns = `n()`,
+      sep_mark = " ",
+      decimals = 0
+    ) %>%
+    gt::cols_label(
+      decennie = "Tranche d'âge",
+      `n()` = "Population"
+    )
+  return(table_age)
+}
+```
+
+
+10. En console, visualiser l'état du _pipeline_ avec `tar_visnetwork` puis exécuter `tar_make()`. Analyser la sortie dans la console.
+11. A l'aide de la fonction `tar_read(table_age)`, visualiser la table des âges produite.
+12. Ajouter les commandes suivantes au sein de la fonction `retraitement_donnees` pour 
+la modifier:
+
+```{r}
+df <- df %>%
+  mutate(
+    surf = factor(surf, ordered = TRUE),
+    cs1 = factor(cs1)
+  )
+```
+
+13. Depuis la console, inspecter le _pipeline avec `tar_visnetwork` puis exécuter `tar_make()` pour lancer le *pipeline*. Analyser la sortie.
+14. Si vous avez le temps, continuer à enrichir votre _pipeline_
 :::
 
 :::
